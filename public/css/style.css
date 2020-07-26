@@ -1,0 +1,304 @@
+/********************************
+*	Author: S. M. Amirul Islam	*
+*	Ennvisio Digital			*
+*								*
+********************************/
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	/*overflow-x: hidden;*/
+	font-family: 'Noto Sans', sans-serif;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	transition: all 300ms ease-in-out;
+}
+
+a:hover,
+a:active {
+	text-decoration: none;
+}
+
+.my-container {
+	width: 100%;
+	height: auto;
+	margin: 0 0;
+	padding: 0 0;
+}
+
+.my-row {
+	margin: 0 !important;
+}
+
+.err_msg{
+	color: red;
+}
+.app_img_wrapper{
+	text-align: center;
+}
+/**********************/
+.site-footer .container-fluid{
+	width: 90%;
+}
+.site-wrap #header {
+	background-color: #ffc1071a;
+}
+
+.site-wrap #header .container {
+	background-color: transparent;
+}
+.site-wrap .container{
+	background-color: #ffc1071a;
+}
+.site-footer .container,.site-footer .container-fluid{
+	background-color: #ffefbc;
+}
+.wrapper {
+	box-sizing: border-box;
+	/*width: 96%;
+	margin: 0 2%;
+	/*margin-top: 2px;*/
+	/* background-color: #cacaca; */
+}
+
+
+#right-panel .content {
+    min-height: calc( 100vh - 55px - 90px );
+}
+.header-bar {
+	/*height: 60px;*/
+	/* background-color: #009fdd; */
+	/*margin-bottom: 50px;*/
+}
+
+#home-header-bar ul {
+	margin: 0;
+	text-align: right;
+	padding: 1px 0;
+}
+
+#home-header-bar ul li {
+	display: inline-block;
+	padding: 5px 10px;
+}
+
+#home-header-bar ul li a {
+	color: #fff;
+}
+
+#home-header-bar ul li a:hover {
+	color: #2f2f2f;
+}
+
+#home-header-bar ul li:first-child {
+	border-right: 1px solid #e3e3e3;
+}
+
+#header {
+	/* background-color: #d9e2e1; */
+}
+
+#logo > a > img {
+	width: 200px;
+	vertical-align: middle;
+	margin: 10px 10px;
+	text-align: center;
+}
+
+/* #header-img > a > img {
+	width: 80%;
+	margin: 20px 20% 0 0;
+	} */
+
+	#header-img {
+		padding-left: 15px;
+	}
+
+	#header-img h1:first-child{
+		margin-top: 30px;
+		font-weight: bold;
+		color: #f47920;
+	}
+	#header-img h2 {
+		color: #243d8a;
+	}
+	.header-info > ul {
+		margin: 15px 0 0 0;
+	}
+
+	.header-info > ul > li {
+		font-size: 15px;
+		padding-bottom: 10px;
+
+	}
+
+	.header-info > ul > li > i {
+		margin-right: 5px;
+	}
+	
+	.header-info > ul > li > i.fas.fa-phone-volume {
+		transform: rotate(-60deg);
+	}
+
+	.action-bar {
+		min-height: 20px;
+		background-color: #000;
+	}
+
+	#dataForm label {
+		font-size: 18px;
+	}
+
+	footer.site-footer .container{
+		background-color: #ffc1071a;
+		border-top: 1px solid #1d21245c;
+	}
+	#footer-bar {
+		padding-bottom: 1px;
+		margin: 0 0px;
+
+	}
+
+	#footer-bar > p {
+		text-align: center;
+		padding: 10px 0;
+		margin: 0;
+	}
+
+
+	/* user-info */
+
+	#header.wrapper .row {
+		position: relative;
+	}
+
+	.user-info {
+		position:  absolute;
+		top: 84px;
+		right: 15px;
+		padding-right: 15px;
+	}
+	ul.dropdown-menu.show {
+		background: transparent;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		left: auto!important;
+		right: 0;
+		top: 6px!important;
+	}
+
+	ul.dropdown-menu.show li a {
+		padding: 7px 15px;
+		background: #dddd;
+		display:  block;
+	}
+
+
+
+
+	.warp-search {
+		padding: 0;
+		margin: 200px 0 460px 0;
+		display:  flex;
+		flex-flow:  row wrap;
+		position: relative;
+	}
+
+	.warp-search span{
+		position: absolute;
+		top: -110px;
+		right: 0;
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+		font-size: 25px;
+	}
+
+	.warp-search .input-search input {
+		border-radius: 0;
+		padding:  6px 15px;
+	}
+
+	.warp-search .input-submit button {
+		border-radius:  0;
+		border: none;
+		padding:  7px 13px;
+		margin-right: -1px;    
+		background: #1AA3DB;
+	}
+
+	.warp-search .input-search {
+		width: calc( 100% - 76px );
+	}
+
+	.warp-search .input-search input:focus,.warp-search .input-submit button:focus {
+		outline:  none;
+		box-shadow: none;
+	}
+	.dataform-1 button.btn.btn-success.btn-block {
+		width: 250px;
+		margin: 0;
+		background-color: #1AA3DB;
+		border-color: #1AA3DB;
+	}
+	.form_field_mandatory{
+		color:red;
+		padding-left: 5px;
+	}
+	.counter{
+		background: #fbfbfb;
+	}
+	#left-panel .navbar .navbar-nav li > a:hover, #left-panel .navbar .navbar-nav li > a:hover .menu-icon {
+		color: #08b317;
+	}
+	#left-panel .navbar .navbar-nav > li.active {
+		background: #78b560;
+	}
+	#left-panel .navbar .navbar-nav li.active > a  {
+		color: #fff;
+	}
+	#left-panel .navbar .navbar-nav li > a  {
+		font-size: 16px;
+	}
+	#left-panel .navbar .navbar-nav li.active > a .menu-icon {
+		color: #fff;
+	}
+	#left-panel .navbar .navbar-nav li > a .hide-left-menu-title {
+		display: none;
+	}
+	.stat-content .stat-heading{
+		font-size: 18px;
+	}
+	.stat-content .count{
+		font-weight: bold;
+	}
+	
+
+
+
+	.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+		color: #ffffff;
+		background-color: #849c7a;
+		border-color: #dee2e6 #dee2e6 #fff;
+	}
+	
+	.nav-tabs .nav-link.active h4 {
+		font-size: 1.1rem;
+	}
+	.card .nav-tabs a {
+		padding: .435em .865em;
+		/* text-transform: uppercase; */
+	}
