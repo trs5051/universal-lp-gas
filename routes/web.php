@@ -36,11 +36,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // frontend
-
-
 Route::get('/index','IndexController@index')->name('front-end-index');
-
-
 // frontend
+
+// backend
+Route::get('/settings','SettingController@settings')->name('front-end-settings');
+
+// backend
 
 
