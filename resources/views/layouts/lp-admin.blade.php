@@ -129,6 +129,12 @@
 
                     <!-- tauhid dashboard -->
                     <li class="header">System</li>
+                    <li class="  ">
+                        <a href="#/admin/menus">
+                            <i class="fa fa-header"></i>
+                            <span>header & footer</span>
+                        </a>
+                    </li>
 
                     <li class="treeview">
                         <a href="">
@@ -189,7 +195,7 @@
 
                     <li class="  ">
                         <a href="#/admin/menus">
-                            <i class="fa fa-bars"></i>
+                            <i class="fa fa-users"></i>
                             <span>Management</span>
                         </a>
                     </li>
@@ -244,7 +250,7 @@
 
                     <li class="treeview">
                         <a href="">
-                            <i class="fa fa-bars"></i>
+                            <i class="fa fa-spinner"></i>
                             <span>Plant & Process</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
