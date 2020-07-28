@@ -46,7 +46,7 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 logo-col">
                             <div class="logo wow">
-                                <a href="{{route('front-end-index')}}">                                    
+                                <a href="{{route('frontend-index')}}">                                    
                                     <img src= "{{url('frontend/assets/images/management/footer-logo.png')}}" alt="site logo">
                                 </a>
                             </div>
@@ -104,7 +104,7 @@
                                         <i class="fa fa-bars"></i>
                                     </button>
                                     <ul class="unstyled main-menu">
-                                        <li class="active"><a href="{{route('front-end-index')}}">Home</a></li>
+                                        <li class="active"><a href="{{route('frontend-index')}}">Home</a></li>
                                         <li><a href="about.html">about</a>
                                             <ul class="sub-menu">
                                                 <li><a href="mission-and-vission.html">Mission & Vission </a></li>
@@ -225,7 +225,7 @@
                             </h4>
 
                             <ul class="unstyled">
-                                <li><a href="{{route('front-end-index')}}">Home</a></li>
+                                <li><a href="{{route('frontend-index')}}">Home</a></li>
                                 <li><a href="about.html">about</a></li>
                                 <li><a href="cylender-safety.html">Cylender Safety</a></li>
                                 <li><a href="projects.html">Product</a></li>
@@ -291,7 +291,7 @@
                     <div class="row">
                         <!-- copyright  -->
                         <div class="col-md-6 copyright wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                            Copyright &copy; 2019 <a href="{{route('front-end-index')}}">Universal Group</a>. All Right Reserved.
+                            Copyright &copy; 2019 <a href="{{route('frontend-index')}}">Universal Group</a>. All Right Reserved.
                         </div>
                         <!-- /.copyright  -->
 

@@ -12533,15 +12533,15 @@ $(document).ready(function () {
             url: '/admin/notification/clearcurrentnotifications',
             dataType: "JSON",
             success: function(data){
-                getNotifications();
+                // getNotifications();
             }
         });
 
     });
 
-    getNotifications();
+    // getNotifications();
     setInterval(function () {
-        getNotifications();
+        // getNotifications();
     }, 60000);
 });
 

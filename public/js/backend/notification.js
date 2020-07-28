@@ -7,26 +7,26 @@ $(document).ready(function () {
             url: '/admin/notification/clearcurrentnotifications',
             dataType: "JSON",
             success: function(data){
-                getNotifications();
+                // getNotifications();
             }
         });
 
     });
 
-    getNotifications();
+    // getNotifications();
     setInterval(function () {
-        getNotifications();
+        // getNotifications();
     }, 60000);
 });
 
-function getNotifications() {
-    $.ajax({
-        type: "GET",
-        url: '/admin/notification/getlist',
-        dataType: "JSON",
-        success: function (result) {
-            $(".notification-counter").text(result.count);
-            $(".notification-menu-container").html(result.view);
-        }
-    });
-}
+// function getNotifications() {
+//     $.ajax({
+//         type: "GET",
+//         url: '/admin/notification/getlist',
+//         dataType: "JSON",
+//         success: function (result) {
+//             $(".notification-counter").text(result.count);
+//             $(".notification-menu-container").html(result.view);
+//         }
+//     });
+// }

@@ -26,21 +26,26 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
+
+
+// frontend
+Route::get('/','IndexController@index')->name('frontend-index');
+// frontend
+
+// backend
 Route::get('/profile','HomeController@getProfile');
 Route::post('/change/password','HomeController@changePassword');
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('backend-home');
 
+Route::get('/settings','SettingController@settings')->name('backend-settings');
 
-// frontend
+Route::get('/header-footer','SettingController@headerFooter')->name('backend-header-footer');
+Route::post('/header-footer/update','SettingController@headerFooterUpdate')->name('update-hearder-footer');
 
-
-Route::get('/index','IndexController@index')->name('front-end-index');
-
-
-// frontend
+// backend
 
 
