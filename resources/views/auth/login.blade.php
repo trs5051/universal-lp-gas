@@ -1,4 +1,4 @@
-@extends('layouts.auth-master')
+@extends('backend.layouts.auth-master')
 
 @section('content')
     <div class="sufee-login d-flex align-content-center flex-wrap">

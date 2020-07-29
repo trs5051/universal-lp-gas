@@ -18,13 +18,13 @@
 
 <!-- Main content -->
 <section class="content">
-    <!-- Flash Message Vue component -->
-    <flash message="" type="" dont-hide=""></flash>
+
     <form method="POST" action="{{route('update-hearder-footer')}}" accept-charset="UTF-8" class="form-horizontal" role="form" id="edit-settings" enctype="multipart/form-data">
         @csrf
         <div class="box box-info">
             <div class="box-header">
                 <h3 class="box-title">Edit Header & Footer</h3>
+            <input type="hidden" name="Settings Id" value="{{$settings->id}}">
             </div>
             <!-- /.box-header -->
             <div class="box-body setting-block">
@@ -104,14 +104,14 @@
                             <label for="company_address" class="col-lg-2 control-label">Company Address</label>
 
                             <div class="col-lg-10">
-                                <textarea class="form-control" placeholder="Company Address" rows="2" name="company_address" cols="50" id="company_address"></textarea>
+                                <textarea class="form-control" placeholder="Company Address" rows="2" name="company_address" cols="50" id="company_address"  >{{$settings->address}}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="company_contact" class="col-lg-2 control-label">Contact Number</label>
 
                             <div class="col-lg-10">
-                                <input class="form-control" placeholder="Contact Number" rows="2" name="company_contact" type="text" id="company_contact">
+                            <input class="form-control" placeholder="Contact Number" rows="2" name="company_contact" type="text" id="company_contact" value="{{$settings->contact}}">
                             </div>
                         </div>
                         <!--form control-->
@@ -119,7 +119,7 @@
                             <label for="company_email" class="col-lg-2 control-label">Company Email</label>
 
                             <div class="col-lg-10">
-                                <input class="form-control" placeholder="Company Email" rows="2" name="company_email" type="text" id="company_email">
+                                <input class="form-control" placeholder="Company Email" rows="2" name="company_email" type="text" id="company_email" value="{{$settings->email}}">
                             </div>
                         </div>
                         <!--form control-->

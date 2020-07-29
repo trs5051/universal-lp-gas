@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -7,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Favicon -->
-    <link rel="shortcut icon"  href="{{url('frontend/assets/images/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('frontend/assets/images/favicon.png') }}" type="image/x-icon">
 
     <!-- Title Tag -->
     <title>Universal Group</title>
@@ -16,12 +17,12 @@
     <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link href="{{url('frontend/assets/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{url('frontend/assets/css/mdb.min.css')}}" rel="stylesheet">
-    <link href="{{url('frontend/assets/css/magnific-popup.css')}}" rel="stylesheet">
-    <link href="{{url('frontend/assets/css/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{url('frontend/assets/css/owl.theme.default.min.css')}}" rel="stylesheet">
-    <link href="{{url('frontend/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{ url('frontend/assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url('frontend/assets/css/mdb.min.css') }}" rel="stylesheet">
+    <link href="{{ url('frontend/assets/css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url('frontend/assets/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url('frontend/assets/css/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link href="{{ url('frontend/assets/css/style.css') }}" rel="stylesheet">
 </head>
 
 <body class="home">
@@ -46,8 +47,9 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 logo-col">
                             <div class="logo wow">
-                                <a href="{{route('frontend-index')}}">                                    
-                                    <img src= "{{url('frontend/assets/images/management/footer-logo.png')}}" alt="site logo">
+                                <a href="{{ route('frontend-index') }}">
+                                    <img src="{{ url('frontend/assets/images/management/footer-logo.png') }}"
+                                        alt="site logo">
                                 </a>
                             </div>
                         </div>
@@ -57,7 +59,8 @@
                                 <i class="fa fa-phone"></i>
 
                                 <div class="phone-no">
-                                    +88028419450<br>
+                                   {{ isset($settings->contact) ? $settings->contact : 'no number' }}
+                                    <br>
                                     <span class="dark">Make a call</span>
                                 </div>
                             </a>
@@ -99,12 +102,14 @@
                         <div class="col-lg-12">
                             <div class="menu-search-form-wrapper">
                                 <!-- main-menu-wrapper -->
+                                {{-- main nav-bar --}}
                                 <nav class="main-menu-wrapper">
                                     <button class="nav-icon d-none">
                                         <i class="fa fa-bars"></i>
                                     </button>
+
                                     <ul class="unstyled main-menu">
-                                        <li class="active"><a href="{{route('frontend-index')}}">Home</a></li>
+                                        <li class="active"><a href="{{ route('frontend-index') }}">Home</a></li>
                                         <li><a href="about.html">about</a>
                                             <ul class="sub-menu">
                                                 <li><a href="mission-and-vission.html">Mission & Vission </a></li>
@@ -118,12 +123,15 @@
                                             <ul class="sub-menu">
                                                 <li><a href="universal-agency.html">Universal Agency</a></li>
                                                 <li><a href="ms-enterprise.html">MS Enterprise</a></li>
-                                                <li><a href="universal-gas-cylender.html">Universal Gas & Gas Cylender Ltd</a></li>
+                                                <li><a href="universal-gas-cylender.html">Universal Gas & Gas Cylender
+                                                        Ltd</a></li>
                                                 <li><a href="amb-traders-pvt.html">AMB Traders Pvt Ltd</a></li>
                                                 <li><a href="us-energy-power-pvt.html">US Energy & Power Pvt Ltd</a>
                                                 </li>
-                                                <li><a href="universal-cng-petrol-pump.html">Universal CNG & Petrol Pump</a></li>
-                                                <li><a href="universal-engineerin-ltd.html">Universal Engineering Ltd</a></li>
+                                                <li><a href="universal-cng-petrol-pump.html">Universal CNG & Petrol
+                                                        Pump</a></li>
+                                                <li><a href="universal-engineerin-ltd.html">Universal Engineering
+                                                        Ltd</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="projects.html">Products</a></li>
@@ -141,10 +149,13 @@
                                     </ul>
                                 </nav>
                                 <!-- /.main-menu-wrapper -->
+
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </section>
             <!--/.header-area -->
         </header>
@@ -154,10 +165,10 @@
 
         <!-- Main content -->
         <section class="content">
-                @yield('content')
+            @yield('content')
 
-            </section><!-- /.content -->
-            <!-- Main Footer -->
+        </section><!-- /.content -->
+        <!-- Main Footer -->
 
         <!-- end main part -->
         <!-- trusted-partner-section -->
@@ -186,7 +197,7 @@
         </section>
         <!--/.trusted-partner-section -->
 
-        
+
 
         <!-- site-footer -->
         <footer class="site-footer">
@@ -197,9 +208,11 @@
                     <div class="row footer-widgets">
 
                         <!-- footer-widget -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                        <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp"
+                            data-wow-duration="0.75s" data-wow-delay="0s">
                             <div class="footer-logo">
-                                <img src="{{url('frontend/assets/images/management/footer-logo.png')}}" alt="site logo">
+                                <img src="{{ url('frontend/assets/images/management/footer-logo.png') }}"
+                                    alt="site logo">
                             </div>
 
                             <h4 class="widget-title">
@@ -218,14 +231,15 @@
                         <!-- /.footer-widget -->
 
                         <!-- footer-widget -->
-                        <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-12  footer-widget widget-2 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
+                        <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-12  footer-widget widget-2 wow fadeInUp"
+                            data-wow-duration="0.75s" data-wow-delay="0.1s">
 
                             <h4 class="widget-title">
                                 &nbsp;
                             </h4>
 
                             <ul class="unstyled">
-                                <li><a href="{{route('frontend-index')}}">Home</a></li>
+                                <li><a href="{{ route('frontend-index') }}">Home</a></li>
                                 <li><a href="about.html">about</a></li>
                                 <li><a href="cylender-safety.html">Cylender Safety</a></li>
                                 <li><a href="projects.html">Product</a></li>
@@ -235,7 +249,8 @@
                         <!-- /.footer-widget -->
 
                         <!-- footer-widget -->
-                        <div class="col-xl-4 offset-xl-1 col-lg-4 col-md-6  footer-widget widget-3 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
+                        <div class="col-xl-4 offset-xl-1 col-lg-4 col-md-6  footer-widget widget-3 wow fadeInUp"
+                            data-wow-duration="0.75s" data-wow-delay="0.2s">
 
                             <h4 class="widget-title">
                                 &nbsp;
@@ -291,12 +306,14 @@
                     <div class="row">
                         <!-- copyright  -->
                         <div class="col-md-6 copyright wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                            Copyright &copy; 2019 <a href="{{route('frontend-index')}}">Universal Group</a>. All Right Reserved.
+                            Copyright &copy; 2019 <a href="{{ route('frontend-index') }}">Universal Group</a>. All Right
+                            Reserved.
                         </div>
                         <!-- /.copyright  -->
 
                         <!-- developer  -->
-                        <div class="col-md-6 developer text-right wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                        <div class="col-md-6 developer text-right wow fadeInUp" data-wow-duration="0.75s"
+                            data-wow-delay="0s">
                             Designed & Developed by <a href="https://www.ennvisiodigital.tech/" target="_blank">Ennvisio
                                 Digital Pvt. Ltd.</a>
                         </div>
@@ -319,16 +336,16 @@
 
     <!-- Scripts -->
 
-    
 
-    <script src="{{url('frontend/assets/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{url('frontend/assets/js/popper.min.js')}}"></script>
-    <script src="{{url('frontend/assets/js/bootstrap.min.js')}}"></script>
-    <script src="{{url('frontend/assets/js/mdb.min.js')}}"></script>
-    <script src="{{url('frontend/assets/js/owl.carousel.min.js')}}"></script>
-    <script src="{{url('frontend/assets/js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{url('frontend/assets/js/mixitup.min.js')}}"></script>
-    <script src="{{url('frontend/assets/js/custom.js')}}"></script>
+
+    <script src="{{ url('frontend/assets/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url('frontend/assets/js/popper.min.js') }}"></script>
+    <script src="{{ url('frontend/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url('frontend/assets/js/mdb.min.js') }}"></script>
+    <script src="{{ url('frontend/assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url('frontend/assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url('frontend/assets/js/mixitup.min.js') }}"></script>
+    <script src="{{ url('frontend/assets/js/custom.js') }}"></script>
 
     <script>
         function injectSvgSprite(path) {
@@ -344,6 +361,7 @@
             }
         }
         injectSvgSprite('https://demo.bootstrapious.com/sell/1-2-0/icons/orion-svg-sprite.svg');
+
     </script>
 </body>
 
