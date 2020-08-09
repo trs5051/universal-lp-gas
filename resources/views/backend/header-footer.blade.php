@@ -73,7 +73,7 @@
 
                             <div class="col-lg-10">
                                 <div class="preview-favicon">
-                                    <img src="{{ asset('/storage/favicon/' . $settings->favicon) }}" width="100"/>
+                                    <img src="{{ asset('/storage/favicon/' . $settings->favicon) }}" width="40"/>
                                 </div>
                                 <br>
                                 <div class="custom-file-input">
@@ -104,14 +104,16 @@
                             <label for="company_address" class="col-lg-2 control-label">Company Address</label>
 
                             <div class="col-lg-10">
-                                <textarea class="form-control" placeholder="Company Address" rows="2" name="company_address" cols="50" id="company_address"  >{{$settings->address}}</textarea>
+                                {{-- <textarea class="form-control" placeholder="Company Address" rows="2" name="company_address" cols="50" id="company_address"  >{{$settings->address}}</textarea> --}}
+                                <input class="form-control" placeholder="Address 1st part " rows="2" name="Company Address First Part" type="text" maxlength="45" value="{{$settings->address_first_part}}">
+                                <input class="form-control" placeholder="Address 2nd part " rows="2" name="Company Address Second Part" type="text" maxlength="45" value="{{$settings->address_second_part}}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="company_contact" class="col-lg-2 control-label">Contact Number</label>
 
                             <div class="col-lg-10">
-                            <input class="form-control" placeholder="Contact Number" rows="2" name="company_contact" type="text" id="company_contact" value="{{$settings->contact}}">
+                            <input class="form-control" placeholder="Contact Number" rows="2" name="company_contact" type="text" maxlength="15" id="company_contact" value="{{$settings->contact}}">
                             </div>
                         </div>
                         <!--form control-->
@@ -119,7 +121,7 @@
                             <label for="company_email" class="col-lg-2 control-label">Company Email</label>
 
                             <div class="col-lg-10">
-                                <input class="form-control" placeholder="Company Email" rows="2" name="company_email" type="text" id="company_email" value="{{$settings->email}}">
+                                <input class="form-control" placeholder="Company Email" rows="2" name="company_email" type="email" maxlength="34" id="company_email" value="{{$settings->email}}">
                             </div>
                         </div>
                         <!--form control-->

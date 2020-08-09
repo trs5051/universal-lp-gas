@@ -4,29 +4,29 @@
         <!-- main part -->
 
         <!-- slider-area -->
-        <section class="cylender-slider-section">
-            <div class="cylender-slider owl-carousel owl-theme">
-                <div class="cylender-slide">
-                   
+        <section class="cylinder-slider-section">
+            <div class="cylinder-slider owl-carousel owl-theme">
+                <div class="cylinder-slide">
+
                     <img src=" {{url('frontend/assets/images/slider/Slider-1.jpg')}}" />
-                    <div class="slide-desc cylender-slide-caption">
+                    <div class="slide-desc cylinder-slide-caption">
                         <h1 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                             Welcome To Universal Group
                         </h1>
                     </div>
                 </div>
-                <div class="cylender-slide">
+                <div class="cylinder-slide">
                     <img src=" {{url('frontend/assets/images/slider/Slider-2.jpg')}}" />
                 </div>
-                <div class="cylender-slide">
+                <div class="cylinder-slide">
                     <img src=" {{url('frontend/assets/images/slider/Slider-3.jpg')}}" />
                 </div>
-                <div class="cylender-slide">
-                    
+                <div class="cylinder-slide">
+
                     <img src=" {{url('frontend/assets/images/slider/Slider-4.jpg')}}" />
                 </div>
-                <div class="cylender-slide">
-                   
+                <div class="cylinder-slide">
+
                     <img src=" {{url('frontend/assets/images/slider/Slider-5.jpg')}}" />
                 </div>
             </div>
@@ -163,7 +163,7 @@
                         <!-- /.single-concern-feature -->
 
                         <!-- single-concern-feature -->
-                        <a href="universal-gas-cylender.html">
+                        <a href="universal-gas-cylinder.html">
 
                             <div class="single-concern-feature">
                                 <figure class="scf-photo">
@@ -171,7 +171,7 @@
                                 </figure>
 
                                 <div class="concern-feature-desc">
-                                    <h3>Universal Gas & Gas Cylender Ltd</h3>
+                                    <h3>Universal Gas & Gas Cylinder Ltd</h3>
                                 </div>
                             </div>
                         </a>
@@ -223,7 +223,7 @@
                         <!-- /.single-concern-feature -->
 
                         <!-- single-concern-feature -->
-                        <a href="universal-engineerin-ltd.html">
+                        <a href="universal-engineering-ltd.html">
 
                             <div class="single-concern-feature">
                                 <figure class="scf-photo">
@@ -351,7 +351,7 @@
                     <div class="col-lg-12 portfolio-filter">
                         <ul class="unstyled d-flex controls wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                             <li><a href="javascript:void(0)" class="control" data-filter="all">All Products</a></li>
-                            <li><a href="javascript:void(0)" class="control" data-filter=".gas-cylender">Gas Cylender</a></li>
+                            <li><a href="javascript:void(0)" class="control" data-filter=".gas-cylinder">Gas Cylinder</a></li>
                             <li><a href="javascript:void(0)" class="control" data-filter=".bitumen">Bitumen</a></li>
                             <li><a href="javascript:void(0)" class="control" data-filter=".others">lube</a></li>
                         </ul>
@@ -419,7 +419,7 @@
                     <!-- /.project  -->
 
                     <!-- project  -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylender">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylinder">
                         <figure class="project-thumb">
                             <img src="{{url('frontend/assets/images/ms-enterprise/cylinder1.jpg')}}" alt="project">
                         </figure>
@@ -431,7 +431,7 @@
                     <!-- /.project  -->
 
                     <!-- project  -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylender">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylinder">
                         <figure class="project-thumb">
                             <img src="{{url('frontend/assets/images/ms-enterprise/cylinder5.jpg')}}" alt="project">
                         </figure>
@@ -443,7 +443,7 @@
                     <!-- /.project  -->
 
                     <!-- project  -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylender">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylinder">
                         <figure class="project-thumb">
                             <img src="{{url('frontend/assets/images/ms-enterprise/cylinder3.jpg')}}" alt="project">
                         </figure>
@@ -455,7 +455,7 @@
                     <!-- /.project  -->
 
                     <!-- project  -->
-                    <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylender">
+                    <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylinder">
                         <figure class="project-thumb">
                             <img src="{{url('frontend/assets/images/portfolio/project-8.jpg')}}" alt="project">
                         </figure>

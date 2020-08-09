@@ -60,11 +60,11 @@
             <a href="{{route('backend-home')}}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini">
-                <h3><i> <b>ULG</b></i></h3>  
+                <h3><i> <b>ULG</b></i></h3>
                 </span>
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg">
-                    <h3><i> <b> Universal LP GAS </b></i></h3>                    
+                    <h3><i> <b> Universal LP GAS </b></i></h3>
                 </span>
             </a>
 
@@ -209,7 +209,7 @@
                     <li class="treeview">
                         <a href="">
                             <i class="fa fa-bars"></i>
-                            <span>Sister Concerns</span>
+                            <span>Associate Connccern's</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu " style="display: none; ">
@@ -264,7 +264,7 @@
                             <li class="  ">
                                 <a href="#/admin/blogCategories">
                                     <i class="fa fa-hand-o-right"></i>
-                                    <span>Cylender Sefty</span>
+                                    <span>Cylinder Sefty</span>
                                 </a>
                             </li>
                             <li class="  ">
@@ -284,7 +284,7 @@
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Why LPG?</span>
                                 </a>
-                            </li>                           
+                            </li>
 
                         </ul>
                     </li>
@@ -311,7 +311,7 @@
                         </a>
                     </li>
 
-                    
+
                     <li class="  ">
                         <a href="#/admin/faqs">
                             <i class="fa fa-address-card"></i>
@@ -325,7 +325,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            
+
 
             <!-- Main content -->
             <section class="content">

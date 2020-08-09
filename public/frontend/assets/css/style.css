@@ -3,7 +3,7 @@
  */
 
 /**===============================================
- * Global CSS 
+ * Global CSS
  *===============================================*/
 body {
     margin: 0;
@@ -42,7 +42,7 @@ img {
         max-width: 1170px;
     }
 }
-    
+
 .s16 {
     width: 16px;
     height: 16px;
@@ -84,7 +84,7 @@ img {
 
 
 /**===============================================
- * preloader 
+ * preloader
  *===============================================*/
 .preloader {
     position: fixed;
@@ -175,14 +175,14 @@ a.phone-wrapper, a.email-wrapper {
     margin-top: 7px;
 }
 
-a.phone-wrapper i, 
+a.phone-wrapper i,
 a.email-wrapper i {
     margin-top: 3px;
     margin-right: 10px;
     color: #f2a918;
 }
 
-a.phone-wrapper .dark, 
+a.phone-wrapper .dark,
 a.email-wrapper .dark {
     color: #999999;
 }
@@ -254,7 +254,7 @@ nav.main-menu-wrapper ul li a i {
 }
 
 nav.main-menu-wrapper ul li.active > a,
-nav.main-menu-wrapper ul li a:hover, 
+nav.main-menu-wrapper ul li a:hover,
 nav.main-menu-wrapper ul li a:focus {
     color: #f2a918;
     border-bottom: 3px solid #f2a918;
@@ -262,17 +262,17 @@ nav.main-menu-wrapper ul li a:focus {
 
 /* .sub-menu */
 nav.main-menu-wrapper li.has-childern {
-    position: relative;   
+    position: relative;
 }
 nav.main-menu-wrapper  ul.sub-menu {
     position: absolute;
     width: 250px;
     padding: 0;
     top: 100%;
-    left: 0; 
+    left: 0;
     background: #000000;
     display: none;
-    list-style: none;  
+    list-style: none;
     margin-top: 0px;
 	z-index:9;
 }
@@ -286,8 +286,8 @@ nav.main-menu-wrapper ul.sub-menu li a {
     font-size: 17px;
 }
 
-nav.main-menu-wrapper ul.sub-menu li a:hover, 
-nav.main-menu-wrapper ul.sub-menu li a:focus {    
+nav.main-menu-wrapper ul.sub-menu li a:hover,
+nav.main-menu-wrapper ul.sub-menu li a:focus {
     border-bottom: 1px solid #fff;
 }
 
@@ -408,8 +408,8 @@ section.slider-area {
     text-decoration: none;
 }
 
-.slide-desc p a.btn-slide:hover, 
-.slide-desc p a.btn-slide:not(.disabled):active, 
+.slide-desc p a.btn-slide:hover,
+.slide-desc p a.btn-slide:not(.disabled):active,
 .slide-desc p a.btn-slide:focus {
     background-color: #f99b04!important;
     border-color: #f99b04!important;
@@ -531,7 +531,7 @@ section.slider-area {
 .owl-theme .owl-dots {
     margin-top: 15px;
 }
-.owl-theme .owl-dots .owl-dot:hover, 
+.owl-theme .owl-dots .owl-dot:hover,
 .owl-theme .owl-dots .owl-dot:focus {
     outline: none;
 }
@@ -1032,7 +1032,7 @@ section.footer-top-section {
     font-weight: 700;
 }
 
-.newsletter-wrapper .call-us a:hover, 
+.newsletter-wrapper .call-us a:hover,
 .newsletter-wrapper .call-us a:focus {
     color: #319532;
 }
@@ -1183,10 +1183,10 @@ ol.breadcrumb li.breadcrumb-item.active {
     margin-top: 45px;
     border: 2px solid #f4aa33;
     color: #000;
-    transition: 0.3s;    
+    transition: 0.3s;
 }
 
-.leading-left p .btn-lpg:hover, 
+.leading-left p .btn-lpg:hover,
 .leading-left p .btn-lpg:focus {
     background: #eb9204;
     border: 2px solid #eb9204;
@@ -1194,7 +1194,7 @@ ol.breadcrumb li.breadcrumb-item.active {
 
 .leading-left p .btn-lpg i {
     margin-left: 5px;
-    transition: 0.3s;   
+    transition: 0.3s;
 }
 
 .leading-left p .btn-lpg:hover i {
@@ -1205,11 +1205,11 @@ ol.breadcrumb li.breadcrumb-item.active {
     background: #000000;
     border: 2px solid #000;
     transition: 0.3s;
-    color: #fff;  
-    transition: 0.3s; 
+    color: #fff;
+    transition: 0.3s;
 }
 
-.leading-left p .btn-lpg.alt:hover, 
+.leading-left p .btn-lpg.alt:hover,
 .leading-left p .btn-lpg.alt:focus {
     background: #333;
     border: 2px solid #333;
@@ -1260,7 +1260,7 @@ ol.breadcrumb li.breadcrumb-item.active {
     margin: 0 auto;
 }
 
-.our-clients:before, 
+.our-clients:before,
 .our-clients:after {
     content: "";
     width: 60%;
@@ -1366,7 +1366,7 @@ h2.content-header {
     width: 100%;
 }
 
-.service-navtabs-wrapper ul.nav-tabs li.nav-item a.nav-link.active, 
+.service-navtabs-wrapper ul.nav-tabs li.nav-item a.nav-link.active,
 .service-navtabs-wrapper ul.nav-tabs li.nav-item a.nav-link:hover {
     background: #F4AA33;
     color: #000;
@@ -1488,58 +1488,58 @@ h2.content-header {
 }
 
 /**=========================================================================
- * body.cylender-sefety
+ * body.cylinder-sefety
  *=========================================================================*/
 
 
 /**
- * body.cylender-sefety .menu-search-form-wrapper
+ * body.cylinder-sefety .menu-search-form-wrapper
  */
-body.cylender-sefety .menu-search-form-wrapper {
+body.cylinder-sefety .menu-search-form-wrapper {
     background: #fbc23f;
 }
 
-body.cylender-sefety nav.main-menu-wrapper ul li.active a, 
-body.cylender-sefety nav.main-menu-wrapper ul li a:hover, 
-body.cylender-sefety nav.main-menu-wrapper ul li a:focus {
+body.cylinder-sefety nav.main-menu-wrapper ul li.active a,
+body.cylinder-sefety nav.main-menu-wrapper ul li a:hover,
+body.cylinder-sefety nav.main-menu-wrapper ul li a:focus {
     color: #3F51B5;
     border-bottom: 3px solid #fff;
 }
 
-body.cylender-sefety nav.main-menu-wrapper ul.sub-menu li a:hover, 
-body.cylender-sefety nav.main-menu-wrapper ul.sub-menu li a:focus {
-    color: #f2a918;    
+body.cylinder-sefety nav.main-menu-wrapper ul.sub-menu li a:hover,
+body.cylinder-sefety nav.main-menu-wrapper ul.sub-menu li a:focus {
+    color: #f2a918;
     border-bottom: 1px solid #fff;
 }
 /**
- * body.cylender-sefety .search-form
+ * body.cylinder-sefety .search-form
  */
-body.cylender-sefety .search-form .form-group button {
+body.cylinder-sefety .search-form .form-group button {
     background-color: green!important;
 }
 
 
 /**
- * body.cylender-sefety .page-header-section
+ * body.cylinder-sefety .page-header-section
  */
 
-body.cylender-sefety .page-header-section:before {
+body.cylinder-sefety .page-header-section:before {
     display: block;
     opacity: 0.5;
 }
 
-body.cylender-sefety .page-header {
+body.cylinder-sefety .page-header {
     max-width: 75%;
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.75);
     padding: 30px 75px;
 }
 
-body.cylender-sefety .page-header h3 {
+body.cylinder-sefety .page-header h3 {
     font-size: 50px;
 }
 
-body.cylender-sefety .page-header .page-subtitle {
+body.cylinder-sefety .page-header .page-subtitle {
     font-size: 24px;
 
   -webkit-hyphens: auto;
@@ -1579,9 +1579,9 @@ body.cylender-sefety .page-header .page-subtitle {
 }
 
 /**
- * .cylender-user-guide
+ * .cylinder-user-guide
  */
-.cylender-user-guide {
+.cylinder-user-guide {
     display: flex;
     border: 1px solid #ddd;
     padding: 30px;
@@ -1590,66 +1590,66 @@ body.cylender-sefety .page-header .page-subtitle {
     flex-flow: row wrap;
 }
 
-.cylender-user-guide-desc {
+.cylinder-user-guide-desc {
     width: 50%;
     padding-right: 15px;
     font-size: 20px;
 }
 
-.cylender-user-guide figure {
+.cylinder-user-guide figure {
     width: 50%;
     margin: 0;
     text-align: center;
 }
 
 
-.cylender-user-guide.right .cylender-user-guide-desc {
+.cylinder-user-guide.right .cylinder-user-guide-desc {
     order: 1;
     margin-right: 0;
 }
 
-.cylender-user-guide.left figure, 
-.cylender-user-guide.right figure {
+.cylinder-user-guide.left figure,
+.cylinder-user-guide.right figure {
     height: 219px;
 }
 
-.cylender-user-guide.left figure img,
-.cylender-user-guide.right figure img  {
+.cylinder-user-guide.left figure img,
+.cylinder-user-guide.right figure img  {
     max-width: 100%;
     max-height: 100%;
 }
 
 /**
- * .cylender-user-guide.style-2
+ * .cylinder-user-guide.style-2
  */
-.cylender-user-guide.style-2 {
+.cylinder-user-guide.style-2 {
     flex-flow: column wrap;
     padding: 15px;
     text-align: center;
     height: 100%;
 }
 
-.cylender-user-guide.style-2 .cylender-user-guide-desc {
+.cylinder-user-guide.style-2 .cylinder-user-guide-desc {
     width: 100%;
     padding-right: 0;
     order: 1;
     font-size: 14px;
 }
 
-.cylender-user-guide.style-2 figure {
+.cylinder-user-guide.style-2 figure {
     width: 100%;
     margin-bottom: 1rem;
 }
 
 /**
- * .cylender-user-guide.style-3
+ * .cylinder-user-guide.style-3
  */
-.cylender-user-guide.style-3 {
+.cylinder-user-guide.style-3 {
     border: none;
     padding: 0;
 }
 
-.cylender-user-guide.style-3 figure {
+.cylinder-user-guide.style-3 figure {
     width: 100%;
     text-align: center;
 }
@@ -1725,7 +1725,7 @@ body.cylender-sefety .page-header .page-subtitle {
     margin-bottom: 10px;
 }
 
-.zillaname address, 
+.zillaname address,
 .zillaname address p:last-child {
     margin: 0;
 }
@@ -1768,7 +1768,7 @@ body.cylender-sefety .page-header .page-subtitle {
 
 .zilla {
     fill: #fff;
-    stroke: #09A9BF!important    
+    stroke: #09A9BF!important
 }
 
 .map-bn text {
@@ -1776,7 +1776,7 @@ body.cylender-sefety .page-header .page-subtitle {
 }
 
 
-.cylender {
+.cylinder {
     position: absolute;
     bottom: 0;
     width: 14px;
@@ -1785,18 +1785,18 @@ body.cylender-sefety .page-header .page-subtitle {
     z-index: 9;
 }
 
-.cylender.Dhaka {
+.cylinder.Dhaka {
     bottom: 50.50%;
     left: 55%;
 }
 
-.cylender.Tangail {
+.cylinder.Tangail {
     bottom: 62.5%;
     left: 49%;
 }
 
 
-.cylender.Chittagong {
+.cylinder.Chittagong {
     left: 80%;
     bottom: 32%;
     top: auto;
@@ -1820,8 +1820,8 @@ body.cylender-sefety .page-header .page-subtitle {
 
 
 /*header-top-area*/
-a.phone-wrapper, 
-a.email-wrapper, 
+a.phone-wrapper,
+a.email-wrapper,
 address.address-wrapper {
     font-size: 14px;
 }
@@ -1936,15 +1936,15 @@ nav.main-menu-wrapper ul.sub-menu li a {
 }
 
 /**
- * cylender-sefety page
+ * cylinder-sefety page
  */
 
-/* .cylender-sefety .page-header */
+/* .cylinder-sefety .page-header */
 
-body.cylender-sefety .page-header h3 {
+body.cylinder-sefety .page-header h3 {
     font-size: 40px;
 }
-body.cylender-sefety .page-header .page-subtitle {
+body.cylinder-sefety .page-header .page-subtitle {
     font-size: 20px;
 }
 
@@ -1955,12 +1955,12 @@ body.cylender-sefety .page-header .page-subtitle {
     margin-bottom: 20px;
 }
 
-/* .cylender-user-guide */
-.cylender-user-guide.left figure, 
-.cylender-user-guide.right figure {
+/* .cylinder-user-guide */
+.cylinder-user-guide.left figure,
+.cylinder-user-guide.right figure {
     height: 175px;
 }
-.cylender-user-guide-desc {
+.cylinder-user-guide-desc {
     font-size: 18px;
 }
 
@@ -1986,20 +1986,20 @@ body.cylender-sefety .page-header .page-subtitle {
     margin-bottom: 30px;
 }
 /*.header-top-area*/
-.header-top-area .row :nth-child(1) { 
-    order: 1; 
+.header-top-area .row :nth-child(1) {
+    order: 1;
 }
 
-.header-top-area .row :nth-child(2) { 
-    order: 3; 
+.header-top-area .row :nth-child(2) {
+    order: 3;
 }
 
-.header-top-area .row :nth-child(3) { 
-    order: 4; 
+.header-top-area .row :nth-child(3) {
+    order: 4;
 }
 
-.header-top-area .row :nth-child(4) { 
-    order: 2; 
+.header-top-area .row :nth-child(4) {
+    order: 2;
 }
 .header-top-area .row .phone-col,
 .header-top-area .row .email-col {
@@ -2104,16 +2104,16 @@ nav.main-menu-wrapper ul li a {
 }
 
 /* footer-top-section */
-.footer-widgets :nth-child(1) { 
-    order: 1; 
+.footer-widgets :nth-child(1) {
+    order: 1;
 }
 
-.footer-widgets :nth-child(2) { 
-    order: 3; 
+.footer-widgets :nth-child(2) {
+    order: 3;
 }
 
-.footer-widgets :nth-child(3) { 
-    order: 2; 
+.footer-widgets :nth-child(3) {
+    order: 2;
 }
 
 .footer-widget.widget-2 {
@@ -2121,7 +2121,7 @@ nav.main-menu-wrapper ul li a {
 }
 
 /**
- * .footer-bottom-section 
+ * .footer-bottom-section
  */
 .footer-bottom-section {
     padding: 15px 0;
@@ -2210,15 +2210,15 @@ h2.content-header {
 }
 
 /**
- * cylender-sefety page
+ * cylinder-sefety page
  */
 
 /* .section-header.style-2 */
 .section-header.style-2 h3 {
     font-size: 25px;
 }
-/* .cylender-sefety .page-header */
-body.cylender-sefety .page-header {
+/* .cylinder-sefety .page-header */
+body.cylinder-sefety .page-header {
     max-width: 85%;
     padding: 30px 45px;
 }
@@ -2233,22 +2233,22 @@ body.cylender-sefety .page-header {
     margin-bottom: 15px;
 }
 
-/* .cylender-user-guide */
-.cylender-user-guide {
+/* .cylinder-user-guide */
+.cylinder-user-guide {
     padding: 15px;
     height: 100%;
 }
-.cylender-user-guide-desc {
+.cylinder-user-guide-desc {
     font-size: 16px;
     width: 60%;
 }
-.cylender-user-guide.left figure, .cylender-user-guide.right figure {
-    height: 90px;    
+.cylinder-user-guide.left figure, .cylinder-user-guide.right figure {
+    height: 90px;
     width: 35%;
 }
 
 
-.cylender-user-guide-style-2 {
+.cylinder-user-guide-style-2 {
     margin-bottom: 30px;
 }
 
@@ -2517,21 +2517,21 @@ ul.controls li a.mixitup-control-active:after {
 }
 
 /**
- * cylender-sefety page
+ * cylinder-sefety page
  */
 
-body.cylender-sefety nav.main-menu-wrapper ul li.active a,
-body.cylender-sefety nav.main-menu-wrapper ul li a:hover, 
-body.cylender-sefety nav.main-menu-wrapper ul li a:focus {
+body.cylinder-sefety nav.main-menu-wrapper ul li.active a,
+body.cylinder-sefety nav.main-menu-wrapper ul li a:hover,
+body.cylinder-sefety nav.main-menu-wrapper ul li a:focus {
     color: #FDC350;
     border-bottom: 1px solid #ffffff30;
 }
 
-/*body.cylender-sefety .page-header*/
-body.cylender-sefety .page-header h3 {
+/*body.cylinder-sefety .page-header*/
+body.cylinder-sefety .page-header h3 {
     font-size: 35px;
 }
-body.cylender-sefety .page-header .page-subtitle {
+body.cylinder-sefety .page-header .page-subtitle {
     font-size: 16px;
 }
 
@@ -2540,14 +2540,14 @@ body.cylender-sefety .page-header .page-subtitle {
     margin: 0 auto 30px;
 }
 
-.cylender-user-guide-style-1 {
+.cylinder-user-guide-style-1 {
     margin-bottom: 30px;
 }
-.cylender-user-guide.left figure, 
-.cylender-user-guide.right figure {
+.cylinder-user-guide.left figure,
+.cylinder-user-guide.right figure {
     height: 150px;
 }
-.cylender-user-guide.right .cylender-user-guide-desc {
+.cylinder-user-guide.right .cylinder-user-guide-desc {
     padding-right: 0;
     padding-left: 15px;
 }
@@ -2597,8 +2597,8 @@ nav.main-menu-wrapper ul li a{
     padding: 8px 15px;
     border-bottom: 1px solid #ffffff30;
 }
-nav.main-menu-wrapper ul li.active a, 
-nav.main-menu-wrapper ul li a:hover, 
+nav.main-menu-wrapper ul li.active a,
+nav.main-menu-wrapper ul li a:hover,
 nav.main-menu-wrapper ul li a:focus {
     color: #f2a918;
     border-bottom: 1px solid #ffffff30;
@@ -2641,7 +2641,7 @@ section.slider-area {
 .slide-desc {
     padding: 40px 5%;
     font-size: 15px;
-    line-height: 1.5; 
+    line-height: 1.5;
 }
 .slide-desc h1 {
     font-size: 30px;
@@ -2760,22 +2760,22 @@ section.slider-area {
 
 
 /**
- * cylender-sefety page
+ * cylinder-sefety page
  */
 
-/*body.cylender-sefety .page-header*/
-body.cylender-sefety .page-header {
+/*body.cylinder-sefety .page-header*/
+body.cylinder-sefety .page-header {
     max-width: 90%;
     padding: 15px;
 }
-body.cylender-sefety .page-header h3 {
+body.cylinder-sefety .page-header h3 {
     font-size: 28px;
 }
-body.cylender-sefety .page-header .page-subtitle {
+body.cylinder-sefety .page-header .page-subtitle {
     font-size: 14px;
 }
-/*.cylender-user-guide.style-3*/
-.cylender-user-guide.style-3 figure {
+/*.cylinder-user-guide.style-3*/
+.cylinder-user-guide.style-3 figure {
     margin: 0 0 30px;
 }
 
@@ -2788,26 +2788,26 @@ body.cylender-sefety .page-header .page-subtitle {
 }
 
 /* By rony */
-.cylender-slider.owl-theme .owl-nav {
+.cylinder-slider.owl-theme .owl-nav {
     position: unset;
     right: unset;
     top: unset;
 }
-.cylender-slider.owl-theme .owl-nav button {
+.cylinder-slider.owl-theme .owl-nav button {
     left: 0;
     position: absolute;
 	top: 50%;
 }
-.cylender-slider.owl-theme .owl-nav .owl-next {
+.cylinder-slider.owl-theme .owl-nav .owl-next {
     right: 0;
-    left: auto;	
+    left: auto;
 }
-.cylender-slide {
+.cylinder-slide {
 	position:relative;
 }
-.cylender-slide:after {
+.cylinder-slide:after {
     position: absolute;
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.1);
     content: "";
     left: 0;
     top: 0;
@@ -2815,7 +2815,7 @@ body.cylender-sefety .page-header .page-subtitle {
     right: 0;
     bottom: 0;
 }
-.cylender-slide-caption {
+.cylinder-slide-caption {
     position: absolute;
     top: 35%;
     text-align: center;
@@ -2829,15 +2829,15 @@ body.cylender-sefety .page-header .page-subtitle {
     background: transparent;
 	padding:0
 }
-.cylender-slide img {
+.cylinder-slide img {
     height: 600px;
 }
-section.cylender-slider-section {
+section.cylinder-slider-section {
     margin-bottom: 100px;
 }
 
 @media (max-width: 767px) {
-	.cylender-slide img {
+	.cylinder-slide img {
 		height: auto;
 	}
 }

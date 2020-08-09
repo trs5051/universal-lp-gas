@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url('frontend/assets/images/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/storage/favicon/' . $settings->favicon) }}" type="image/x-icon">
 
     <!-- Title Tag -->
     <title>Universal Group</title>
@@ -23,6 +23,8 @@
     <link href="{{ url('frontend/assets/css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ url('frontend/assets/css/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ url('frontend/assets/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body class="home">
@@ -47,19 +49,18 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 logo-col">
                             <div class="logo wow">
-                                <a href="{{ route('frontend-index') }}">
-                                    <img src="{{ url('frontend/assets/images/management/footer-logo.png') }}"
-                                        alt="site logo">
-                                </a>
+                                <a href="{{ route('frontend.index') }}">
+                                <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200"/>
+                            </a>
                             </div>
                         </div>
 
                         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-5 phone-col">
-                            <a href="callto:" class="phone-wrapper">
+                            <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}" class="phone-wrapper">
                                 <i class="fa fa-phone"></i>
 
                                 <div class="phone-no">
-                                   {{ isset($settings->contact) ? $settings->contact : 'no number' }}
+                                   {{ !empty($settings->contact) ? $settings->contact : 'no number' }}
                                     <br>
                                     <span class="dark">Make a call</span>
                                 </div>
@@ -71,7 +72,7 @@
                                 <i class="fa fa-envelope"></i>
 
                                 <div class="email-address">
-                                    info@universallpgas.com<br>
+                                    {{ !empty($settings->email) ? $settings->email : 'no email' }}<br>
                                     <span class="dark">Drop us a line</span>
                                 </div>
                             </a>
@@ -80,10 +81,9 @@
                         <div class="col-xl-4  col-lg-4 col-md-6 col-sm-7 address-col">
                             <address class="not-active address-wrapper">
                                 <i class="fas fa-map-marker-alt"></i>
-
                                 <div class="address">
-                                    House: #514 (3rd Floor), Road: #9 <br>
-                                    DOHS, Baridhara, Dhaka, Bangladesh
+                                    {{ !empty($settings->address_first_part) ? $settings->address_first_part : 'no address' }} <br>
+                                    {{ !empty($settings->address_second_part) ? $settings->address_second_part : 'no address' }}
                                 </div>
                             </address>
                         </div>
@@ -109,43 +109,48 @@
                                     </button>
 
                                     <ul class="unstyled main-menu">
-                                        <li class="active"><a href="{{ route('frontend-index') }}">Home</a></li>
-                                        <li><a href="about.html">about</a>
+
+                                        <li class="active"><a href="{{ route('frontend.index') }}">Home</a></li>
+
+                                        <li>
+                                            <a href="#">about</a>
                                             <ul class="sub-menu">
-                                                <li><a href="mission-and-vission.html">Mission & Vission </a></li>
-                                                <li><a href="universal-lpgas.html">Universal LP Gas</a></li>
-                                                <li><a href="board-of-directors.html">Board of Directors</a></li>
-                                                <li><a href="management.html">Management</a></li>
+                                                <li><a href="{{route('frontend.about')}}">About Us</a></li>
+                                                <li><a href="{{route('frontend.mission-and-vission') }}">Mission & Vission </a></li>
+                                                <li><a href="{{route('frontend.universal-lp-gas')}}">Universal LP Gas</a></li>
+                                                <li><a href="{{route('frontend.board-of-directors')}}">Board of Directors</a></li>
+                                                <li><a href="{{route('frontend.management')}}">Management</a></li>
+
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">Associate Connccern's</a>
                                             <ul class="sub-menu">
-                                                <li><a href="universal-agency.html">Universal Agency</a></li>
-                                                <li><a href="ms-enterprise.html">MS Enterprise</a></li>
-                                                <li><a href="universal-gas-cylender.html">Universal Gas & Gas Cylender
+                                                <li><a href="{{route('frontend.universal-agency')}}">Universal Agency</a></li>
+                                                <li><a href="{{route('frontend.ms-enterprise')}}">MS Enterprise</a></li>
+                                                <li><a href="{{route('frontend.universal-gas-cylinder')}}">Universal Gas & Gas Cylinder
                                                         Ltd</a></li>
-                                                <li><a href="amb-traders-pvt.html">AMB Traders Pvt Ltd</a></li>
-                                                <li><a href="us-energy-power-pvt.html">US Energy & Power Pvt Ltd</a>
+                                                <li><a href="{{route('frontend.amb-traders-pvt')}}">AMB Traders Pvt Ltd</a></li>
+                                                <li><a href="{{route('frontend.us-energy-power-pvt')}}">US Energy & Power Pvt Ltd</a>
                                                 </li>
-                                                <li><a href="universal-cng-petrol-pump.html">Universal CNG & Petrol
+                                                <li><a href="{{route('frontend.universal-cng-petrol-pump')}}">Universal CNG & Petrol
                                                         Pump</a></li>
-                                                <li><a href="universal-engineerin-ltd.html">Universal Engineering
+                                                <li><a href="{{route('frontend.universal-engineering-ltd')}}">Universal Engineering
                                                         Ltd</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="projects.html">Products</a></li>
+                                    <li><a href="{{route('frontend.product')}}">Products</a></li>
                                         <li><a href="#">Plant & Process</a>
                                             <ul class="sub-menu">
-                                                <li><a href="cylender-safety.html">Cylender Sefty</a></li>
-                                                <li><a href="plants.html">Plants</a></li>
-                                                <li><a href="compliance.html">Compliance</a></li>
-                                                <li><a href="why-lpg.html">Why LPG?</a></li>
+                                                <li><a href="{{route('frontend.cylinder-safety')}}">Cylinder Sefty</a></li>
+                                                <li><a href="{{route('frontend.plants')}}">Plants</a></li>
+                                                <li><a href="{{route('frontend.compliance')}}">Compliance</a></li>
+                                                <li><a href="{{route('frontend.why-lpg')}}">Why LPG?</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="distribution.html">Distribution</a></li>
-                                        <li><a href="news-events.html">News & Events</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="{{route('frontend.distribution')}}">Distribution</a></li>
+                                        <li><a href="{{route('frontend.news-events')}}">News & Events</a></li>
+                                        <li><a href="{{route('frontend.contact')}}">Contact</a></li>
                                     </ul>
                                 </nav>
                                 <!-- /.main-menu-wrapper -->
@@ -197,6 +202,52 @@
         </section>
         <!--/.trusted-partner-section -->
 
+        <!-- our-clients-section -->
+        <section class="our-clients-section sp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- our-clients -->
+                        <div class="our-clients owl-carousel owl-theme wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+
+                            <!-- single-client -->
+                            <div class="single-client">
+                                <img src="{{url('frontend/assets/images/our-clients/our-client-1.png')}}" alt="our-client">
+                            </div>
+                            <!-- /.single-client -->
+
+                            <!-- single-client -->
+                            <div class="single-client">
+                                <img src="{{url('frontend/assets/images/our-clients/our-client-2.png')}}" alt="our-client">
+                            </div>
+                            <!-- /.single-client -->
+
+                            <!-- single-client -->
+                            <div class="single-client">
+                                <img src="{{url('frontend/assets/images/our-clients/our-client-3.png')}}" alt="our-client">
+                            </div>
+                            <!-- /.single-client -->
+
+                            <!-- single-client -->
+                            <div class="single-client">
+                                <img src="{{url('frontend/assets/images/our-clients/our-client-4.png')}}" alt="our-client">
+                            </div>
+                            <!-- /.single-client -->
+
+                            <!-- single-client -->
+                            <div class="single-client">
+                                <img src="{{url('frontend/assets/images/our-clients/our-client-5.png')}}" alt="our-client">
+
+                            </div>
+                            <!-- /.single-client -->
+                        </div>
+                        <!-- /.our-clients -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/.our-clients-section -->
+
 
 
         <!-- site-footer -->
@@ -211,8 +262,7 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp"
                             data-wow-duration="0.75s" data-wow-delay="0s">
                             <div class="footer-logo">
-                                <img src="{{ url('frontend/assets/images/management/footer-logo.png') }}"
-                                    alt="site logo">
+                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" alt="site logo"/>
                             </div>
 
                             <h4 class="widget-title">
@@ -220,13 +270,13 @@
                             </h4>
 
                             <p>
-                                House: #514 (3rd Floor), Road: #9 <br>
-                                DOHS, Baridhara, Dhaka, Bangladesh
+                                {{ !empty($settings->address_first_part) ? $settings->address_first_part : 'no address' }} <br>
+                                {{ !empty($settings->address_second_part) ? $settings->address_second_part : 'no address' }}
                             </p>
 
-                            <p>Phone: +88028419450</p>
+                            <p>Phone: {{ !empty($settings->contact) ? $settings->contact : 'no number' }}</p>
 
-                            <p>Email : <a href="mailto:info@universallpgas.com">info@universallpgas.com</a></p>
+                            <p>Email : <a href="mailto:{{ !empty($settings->email) ? $settings->email : 'no email' }}">{{ !empty($settings->email) ? $settings->email : 'no email' }}</a></p>
                         </div>
                         <!-- /.footer-widget -->
 
@@ -239,9 +289,9 @@
                             </h4>
 
                             <ul class="unstyled">
-                                <li><a href="{{ route('frontend-index') }}">Home</a></li>
+                                <li><a href="{{ route('frontend.index') }}">Home</a></li>
                                 <li><a href="about.html">about</a></li>
-                                <li><a href="cylender-safety.html">Cylender Safety</a></li>
+                                <li><a href="cylinder-safety.html">Cylinder Safety</a></li>
                                 <li><a href="projects.html">Product</a></li>
                                 <li><a href="contact.html">Contact us</a></li>
                             </ul>
@@ -276,7 +326,7 @@
 
                                     <div class="call-us">
                                         or <br>
-                                        <b>Call us: <a href="callto:+88028419450">+88028419450</a></b>
+                                        <b>Call us: <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}">{{ !empty($settings->contact) ? $settings->contact : 'no number' }}</a></b>
                                     </div>
                                 </form>
                             </div>
@@ -306,7 +356,7 @@
                     <div class="row">
                         <!-- copyright  -->
                         <div class="col-md-6 copyright wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                            Copyright &copy; 2019 <a href="{{ route('frontend-index') }}">Universal Group</a>. All Right
+                            Copyright &copy; 2019 <a href="{{ route('frontend.index') }}">Universal Group</a>. All Right
                             Reserved.
                         </div>
                         <!-- /.copyright  -->

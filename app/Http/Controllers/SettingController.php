@@ -44,10 +44,13 @@ class SettingController extends Controller
         }
         // dd($request->all());
 
-        if($request->company_address){
-            Setting::where('id',$request->Settings_Id)->where('delete_status',1)->first()->update(['address' => $request->company_address]);
-
+        if($request->Company_Address_First_Part){
+            Setting::where('id',$request->Settings_Id)->where('delete_status',1)->first()->update(['address_first_part' => $request->Company_Address_First_Part]);
         }
+        if($request->Company_Address_Second_Part){
+            Setting::where('id',$request->Settings_Id)->where('delete_status',1)->first()->update(['address_second_part' => $request->Company_Address_Second_Part]);
+        }
+
         if($request->company_contact){
             Setting::where('id',$request->Settings_Id)->where('delete_status',1)->first()->update(['contact' => $request->company_contact]);
 
