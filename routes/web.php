@@ -32,10 +32,9 @@ Route::get('/distribution','DistributionController@index')->name('frontend.distr
 Route::get('/news-events','NewsEventController@index')->name('frontend.news-events');
 Route::get('/contact','ContactController@index')->name('frontend.contact');
 
-
-
 Route::get('/projects','ProductController@product')->name('frontend.products');
-// frontend
+// frontend end
+
 
 // backend
 Route::get('/profile','HomeController@getProfile');
@@ -43,8 +42,19 @@ Route::post('/change/password','HomeController@changePassword');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('backend-home');
 Route::get('/settings','SettingController@settings')->name('backend-settings');
-Route::get('/header-footer','SettingController@headerFooter')->name('backend-header-footer');
+Route::get('/header-footer','SettingController@headerFooter')->name('backend.header-footer');
 Route::post('/header-footer/update','SettingController@headerFooterUpdate')->name('update-hearder-footer');
-// backend
+
+// front slider
+Route::get('/front-slider','FrontSliderController@index')->name('backend.front-slider');
+Route::get('/front-slider-create','FrontSliderController@create')->name('front-slider.create');
+Route::post('/front-slider-store','FrontSliderController@store')->name('front-slider.store');
+Route::post('/front-slider-destroy','FrontSliderController@destroy')->name('front-slider.destroy');
+
+// front slider
+
+Route::get('/our-proud-left','OurProudLeftController@index')->name('backend.our-proud-left');
+
+// backend end
 
 

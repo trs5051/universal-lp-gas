@@ -6,29 +6,24 @@
         <!-- slider-area -->
         <section class="cylinder-slider-section">
             <div class="cylinder-slider owl-carousel owl-theme">
+                @forelse ($frontSliders as $key => $item)
                 <div class="cylinder-slide">
-
-                    <img src=" {{url('frontend/assets/images/slider/Slider-1.jpg')}}" />
+                    <img src="{!! asset('/storage/sliderImage/' . $item->img) !!}" />
+                    @if ($key == 0)
                     <div class="slide-desc cylinder-slide-caption">
                         <h1 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                             Welcome To Universal Group
                         </h1>
                     </div>
-                </div>
-                <div class="cylinder-slide">
-                    <img src=" {{url('frontend/assets/images/slider/Slider-2.jpg')}}" />
-                </div>
-                <div class="cylinder-slide">
-                    <img src=" {{url('frontend/assets/images/slider/Slider-3.jpg')}}" />
-                </div>
-                <div class="cylinder-slide">
+                    @endif
 
-                    <img src=" {{url('frontend/assets/images/slider/Slider-4.jpg')}}" />
                 </div>
-                <div class="cylinder-slide">
 
-                    <img src=" {{url('frontend/assets/images/slider/Slider-5.jpg')}}" />
-                </div>
+                @empty
+
+                @endforelse
+
+
             </div>
         </section>
         <!--/.slider-area -->

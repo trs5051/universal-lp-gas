@@ -8,8 +8,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="apple-touch-icon" href="{{asset('/images/logo-1.png')}}">
-    <link rel="shortcut icon" href="{{asset('/images/logo-1.png')}}">
+    <link rel="apple-touch-icon" href="{{ asset('/images/logo-1.png') }}">
+    <link rel="shortcut icon" href="{{ asset('/images/logo-1.png') }}">
 
     <title>Universal LP GAS</title>
 
@@ -23,8 +23,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link media="all" type="text/css" rel="stylesheet" href="{{url('/css/backend.css')}}">
-    <link media="all" type="text/css" rel="stylesheet" href="{{url('/css/backend-custom.css')}}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{ url('/css/backend.css') }}">
+    <link media="all" type="text/css" rel="stylesheet" href="{{ url('/css/backend-custom.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
 
 
     <!-- dd -->
@@ -33,15 +34,17 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>
+        window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
+
     </script>
 
     <style>
         .skin-blue-light .main-header .logo {
-    background-color: #495867 !important;
-    color: #fff !important;
-    border-bottom: 0 solid transparent;
-}
+            background-color: #495867 !important;
+            color: #fff !important;
+            border-bottom: 0 solid transparent;
+        }
+
     </style>
 
 
@@ -57,10 +60,10 @@
 
         <header class="main-header">
 
-            <a href="{{route('backend-home')}}" class="logo">
+            <a href="{{ route('backend-home') }}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini">
-                <h3><i> <b>ULG</b></i></h3>
+                    <h3><i> <b>ULG</b></i></h3>
                 </span>
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg">
@@ -86,20 +89,20 @@
 
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="{{asset('/images/admin.jpg')}}" class="user-image" alt="User Avatar" />
+                                <img src="{{ asset('/images/admin.jpg') }}" class="user-image" alt="User Avatar" />
                                 <span class="hidden-xs">Admin</span>
                                 <div class="clearfix"></div>
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="user-header">
-                                    <img src="{{asset('/images/admin.jpg')}}" class="img-circle" alt="User Avatar" />
+                                    <img src="{{ asset('/images/admin.jpg') }}" class="img-circle" alt="User Avatar" />
                                 </li>
 
 
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="{{url('/profile')}}" class="btn btn-default btn-flat">
+                                        <a href="{{ url('/profile') }}" class="btn btn-default btn-flat">
                                             <i class="fa fa-home"></i>
                                             My Profile
                                         </a>
@@ -107,11 +110,13 @@
                                     <div class="pull-right">
 
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();" class="btn btn-danger btn-flat">
+                                            document.getElementById('logout-form').submit();"
+                                            class="btn btn-danger btn-flat">
                                             <i class="fa fa-sign-out"></i>
                                             Logout
                                         </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
 
@@ -136,7 +141,7 @@
                     <!-- tauhid dashboard -->
                     <li class="header">System</li>
                     <li class="  ">
-                        <a href="{{route('backend-header-footer')}}">
+                        <a href="{{ route('backend.header-footer') }}">
                             <i class="fa fa-header"></i>
                             <span>header & footer</span>
                         </a>
@@ -148,17 +153,23 @@
                             <span>Home</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: none; ">
-                            <li class="  ">
-                                <a href="#/admin/blogCategories">
+                        <ul class="treeview-menu" style="display: none; ">
+                            <li class="">
+                                <a href="{{ route('backend.front-slider') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Front Slider</span>
                                 </a>
                             </li>
                             <li class="  ">
+                            <a href="{{route('backend.our-proud-left')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Our Proud left</span>
+                                </a>
+                            </li>
+                            <li class="  ">
                                 <a href="#/admin/blogTags">
                                     <i class="fa fa-hand-o-right"></i>
-                                    <span>Our Proud</span>
+                                    <span>Our Proud right</span>
                                 </a>
                             </li>
                             <li class="  ">
@@ -305,7 +316,7 @@
                     </li>
 
                     <li class="  ">
-                        <a href="{{route('backend-settings')}}">
+                        <a href="{{ route('backend-settings') }}">
                             <i class="fa fa-gear"></i>
                             <span>Settings</span>
                         </a>
@@ -324,17 +335,8 @@
         </aside>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-
-
-            <!-- Main content -->
-            <section class="content">
                 @yield('content')
-
-            </section><!-- /.content -->
-            <!-- Main Footer -->
-
-        </div><!-- /.content-wrapper -->
+        </div>
 
     </div>
 
@@ -346,8 +348,19 @@
 
 
 
-    <script src="{{url('/js/backend.js')}}"></script>
-    <script src="{{url('/js/backend-custom.js')}}"></script>
+    <script src="{{ url('/js/backend.js') }}"></script>
+    <script src="{{ url('/js/backend-custom.js') }}"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.datatable').DataTable();
+        });
+
+    </script>
+
+    @yield('js')
 </body>
 
 </html>

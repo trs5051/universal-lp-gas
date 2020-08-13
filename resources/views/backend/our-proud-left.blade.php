@@ -50,10 +50,7 @@
 
                             <div class="col-lg-10">
                             <div class="preview-logo">
-
-                                    @isset($settings)
-                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" alt="Site Logo" width="200"/>
-                                    @endisset
+                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200"/>
                                 </div>
                                 <br>
 
@@ -76,10 +73,7 @@
 
                             <div class="col-lg-10">
                                 <div class="preview-favicon">
-                                    @isset($settings)
                                     <img src="{{ asset('/storage/favicon/' . $settings->favicon) }}" width="40"/>
-
-                                    @endisset
                                 </div>
                                 <br>
                                 <div class="custom-file-input">
@@ -104,14 +98,14 @@
 
                             <div class="col-lg-10">
                                 {{-- <textarea class="form-control" placeholder="Company Address" rows="2" name="company_address" cols="50" id="company_address"  >{{$settings->address}}</textarea> --}}
-                                <input class="form-control" placeholder="Address 1st part " rows="2" name="Company Address First Part" type="text" maxlength="45" value="{{!empty($settings->address_first_part)?$settings->address_first_part:''}}">
-                                <input class="form-control" placeholder="Address 2nd part " rows="2" name="Company Address Second Part" type="text" maxlength="45" value="{{!empty($settings->address_second_part)?$settings->address_second_part:''}}">
+                                <input class="form-control" placeholder="Address 1st part " rows="2" name="Company Address First Part" type="text" maxlength="45" value="{{$settings->address_first_part}}">
+                                <input class="form-control" placeholder="Address 2nd part " rows="2" name="Company Address Second Part" type="text" maxlength="45" value="{{$settings->address_second_part}}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="company_contact" class="col-lg-2 control-label">Contact Number</label>
                             <div class="col-lg-10">
-                            <input class="form-control" placeholder="Contact Number" rows="2" name="company_contact" type="text" maxlength="15" id="company_contact" value="{{!empty($settings->contact)?$settings->contact:''}}">
+                            <input class="form-control" placeholder="Contact Number" rows="2" name="company_contact" type="text" maxlength="15" id="company_contact" value="{{$settings->contact}}">
                             </div>
                         </div>
                         <!--form control-->
@@ -119,7 +113,7 @@
                             <label for="company_email" class="col-lg-2 control-label">Company Email</label>
 
                             <div class="col-lg-10">
-                                <input class="form-control" placeholder="Company Email" rows="2" name="company_email" type="email" maxlength="34" id="company_email" value="{{!empty($settings->email)?$settings->email:''}}">
+                                <input class="form-control" placeholder="Company Email" rows="2" name="company_email" type="email" maxlength="34" id="company_email" value="{{$settings->email}}">
                             </div>
                         </div>
                         <!--form control-->
@@ -164,7 +158,7 @@
 
         <!-- hidden setting id variable -->
 
-        <input type="hidden" name="Settings Id" value="{{!empty($settings->id)?$settings->id:''}}">
+        <input type="hidden" name="Settings Id" value="{{$settings->id}}">
     </form>
 </section>
 <!-- /.content -->

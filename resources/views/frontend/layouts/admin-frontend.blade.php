@@ -8,7 +8,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('/storage/favicon/' . $settings->favicon) }}" type="image/x-icon">
+    @isset($settings)
+        <link rel="shortcut icon" href="{{ asset('/storage/favicon/' . $settings->favicon) }}" type="image/x-icon">
+    @endisset
+
 
     <!-- Title Tag -->
     <title>Universal Group</title>
@@ -50,17 +53,21 @@
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 logo-col">
                             <div class="logo wow">
                                 <a href="{{ route('frontend.index') }}">
-                                <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200"/>
-                            </a>
+
+                                    @isset($settings)
+                                        <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" />
+                                    @endisset
+                                </a>
                             </div>
                         </div>
 
                         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-5 phone-col">
-                            <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}" class="phone-wrapper">
+                            <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}"
+                                class="phone-wrapper">
                                 <i class="fa fa-phone"></i>
 
                                 <div class="phone-no">
-                                   {{ !empty($settings->contact) ? $settings->contact : 'no number' }}
+                                    {{ !empty($settings->contact) ? $settings->contact : 'no number' }}
                                     <br>
                                     <span class="dark">Make a call</span>
                                 </div>
@@ -82,7 +89,8 @@
                             <address class="not-active address-wrapper">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div class="address">
-                                    {{ !empty($settings->address_first_part) ? $settings->address_first_part : 'no address' }} <br>
+                                    {{ !empty($settings->address_first_part) ? $settings->address_first_part : 'no address' }}
+                                    <br>
                                     {{ !empty($settings->address_second_part) ? $settings->address_second_part : 'no address' }}
                                 </div>
                             </address>
@@ -115,42 +123,53 @@
                                         <li>
                                             <a href="#">about</a>
                                             <ul class="sub-menu">
-                                                <li><a href="{{route('frontend.about')}}">About Us</a></li>
-                                                <li><a href="{{route('frontend.mission-and-vission') }}">Mission & Vission </a></li>
-                                                <li><a href="{{route('frontend.universal-lp-gas')}}">Universal LP Gas</a></li>
-                                                <li><a href="{{route('frontend.board-of-directors')}}">Board of Directors</a></li>
-                                                <li><a href="{{route('frontend.management')}}">Management</a></li>
+                                                <li><a href="{{ route('frontend.about') }}">About Us</a></li>
+                                                <li><a href="{{ route('frontend.mission-and-vission') }}">Mission &
+                                                        Vission </a></li>
+                                                <li><a href="{{ route('frontend.universal-lp-gas') }}">Universal LP
+                                                        Gas</a></li>
+                                                <li><a href="{{ route('frontend.board-of-directors') }}">Board of
+                                                        Directors</a></li>
+                                                <li><a href="{{ route('frontend.management') }}">Management</a></li>
 
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">Associate Connccern's</a>
                                             <ul class="sub-menu">
-                                                <li><a href="{{route('frontend.universal-agency')}}">Universal Agency</a></li>
-                                                <li><a href="{{route('frontend.ms-enterprise')}}">MS Enterprise</a></li>
-                                                <li><a href="{{route('frontend.universal-gas-cylinder')}}">Universal Gas & Gas Cylinder
-                                                        Ltd</a></li>
-                                                <li><a href="{{route('frontend.amb-traders-pvt')}}">AMB Traders Pvt Ltd</a></li>
-                                                <li><a href="{{route('frontend.us-energy-power-pvt')}}">US Energy & Power Pvt Ltd</a>
+                                                <li><a href="{{ route('frontend.universal-agency') }}">Universal
+                                                        Agency</a></li>
+                                                <li><a href="{{ route('frontend.ms-enterprise') }}">MS Enterprise</a>
                                                 </li>
-                                                <li><a href="{{route('frontend.universal-cng-petrol-pump')}}">Universal CNG & Petrol
+                                                <li><a href="{{ route('frontend.universal-gas-cylinder') }}">Universal
+                                                        Gas & Gas Cylinder
+                                                        Ltd</a></li>
+                                                <li><a href="{{ route('frontend.amb-traders-pvt') }}">AMB Traders Pvt
+                                                        Ltd</a></li>
+                                                <li><a href="{{ route('frontend.us-energy-power-pvt') }}">US Energy &
+                                                        Power Pvt Ltd</a>
+                                                </li>
+                                                <li><a href="{{ route('frontend.universal-cng-petrol-pump') }}">Universal
+                                                        CNG & Petrol
                                                         Pump</a></li>
-                                                <li><a href="{{route('frontend.universal-engineering-ltd')}}">Universal Engineering
+                                                <li><a href="{{ route('frontend.universal-engineering-ltd') }}">Universal
+                                                        Engineering
                                                         Ltd</a></li>
                                             </ul>
                                         </li>
-                                    <li><a href="{{route('frontend.product')}}">Products</a></li>
+                                        <li><a href="{{ route('frontend.product') }}">Products</a></li>
                                         <li><a href="#">Plant & Process</a>
                                             <ul class="sub-menu">
-                                                <li><a href="{{route('frontend.cylinder-safety')}}">Cylinder Sefty</a></li>
-                                                <li><a href="{{route('frontend.plants')}}">Plants</a></li>
-                                                <li><a href="{{route('frontend.compliance')}}">Compliance</a></li>
-                                                <li><a href="{{route('frontend.why-lpg')}}">Why LPG?</a></li>
+                                                <li><a href="{{ route('frontend.cylinder-safety') }}">Cylinder Sefty</a>
+                                                </li>
+                                                <li><a href="{{ route('frontend.plants') }}">Plants</a></li>
+                                                <li><a href="{{ route('frontend.compliance') }}">Compliance</a></li>
+                                                <li><a href="{{ route('frontend.why-lpg') }}">Why LPG?</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="{{route('frontend.distribution')}}">Distribution</a></li>
-                                        <li><a href="{{route('frontend.news-events')}}">News & Events</a></li>
-                                        <li><a href="{{route('frontend.contact')}}">Contact</a></li>
+                                        <li><a href="{{ route('frontend.distribution') }}">Distribution</a></li>
+                                        <li><a href="{{ route('frontend.news-events') }}">News & Events</a></li>
+                                        <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                                     </ul>
                                 </nav>
                                 <!-- /.main-menu-wrapper -->
@@ -208,35 +227,41 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- our-clients -->
-                        <div class="our-clients owl-carousel owl-theme wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                        <div class="our-clients owl-carousel owl-theme wow fadeInUp" data-wow-duration="0.75s"
+                            data-wow-delay="0s">
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{url('frontend/assets/images/our-clients/our-client-1.png')}}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-1.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{url('frontend/assets/images/our-clients/our-client-2.png')}}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-2.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{url('frontend/assets/images/our-clients/our-client-3.png')}}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-3.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{url('frontend/assets/images/our-clients/our-client-4.png')}}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-4.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{url('frontend/assets/images/our-clients/our-client-5.png')}}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-5.png') }}"
+                                    alt="our-client">
 
                             </div>
                             <!-- /.single-client -->
@@ -262,7 +287,11 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp"
                             data-wow-duration="0.75s" data-wow-delay="0s">
                             <div class="footer-logo">
-                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" alt="site logo"/>
+
+                                @isset($settings)
+                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200"
+                                        alt="site logo" />
+                                @endisset
                             </div>
 
                             <h4 class="widget-title">
@@ -270,13 +299,16 @@
                             </h4>
 
                             <p>
-                                {{ !empty($settings->address_first_part) ? $settings->address_first_part : 'no address' }} <br>
+                                {{ !empty($settings->address_first_part) ? $settings->address_first_part : 'no address' }}
+                                <br>
                                 {{ !empty($settings->address_second_part) ? $settings->address_second_part : 'no address' }}
                             </p>
 
                             <p>Phone: {{ !empty($settings->contact) ? $settings->contact : 'no number' }}</p>
 
-                            <p>Email : <a href="mailto:{{ !empty($settings->email) ? $settings->email : 'no email' }}">{{ !empty($settings->email) ? $settings->email : 'no email' }}</a></p>
+                            <p>Email : <a
+                                    href="mailto:{{ !empty($settings->email) ? $settings->email : 'no email' }}">{{ !empty($settings->email) ? $settings->email : 'no email' }}</a>
+                            </p>
                         </div>
                         <!-- /.footer-widget -->
 
@@ -326,7 +358,8 @@
 
                                     <div class="call-us">
                                         or <br>
-                                        <b>Call us: <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}">{{ !empty($settings->contact) ? $settings->contact : 'no number' }}</a></b>
+                                        <b>Call us: <a
+                                                href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}">{{ !empty($settings->contact) ? $settings->contact : 'no number' }}</a></b>
                                     </div>
                                 </form>
                             </div>
