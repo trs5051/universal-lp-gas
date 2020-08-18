@@ -37,7 +37,7 @@
                 <div class="box-body">
                     <div class="table-responsive data-table-wrapper">
 
-                        <table id="menus-table" class="datatable table table-condensed table-hover table-bordered">
+                        <table id="slider-table" class="datatable table table-condensed table-hover table-bordered">
                             <thead>
                                 <tr>
                                     <th width="5%">Sl</th>
@@ -50,7 +50,7 @@
                             </thead>
                             <tbody>
                                 @forelse ($frontSliders as $key => $item)
-                                    <tr>
+                                    <tr id="tr_{{ $item->id }}">
                                         <th>{{ $key + 1 }}</th>
                                         <td><span><img src="{!!  asset('/storage/sliderImage/' . $item->img) !!}"
                                                     width="100px"></span> <br> {!! $item->img ?? '' !!}</td>
@@ -58,8 +58,6 @@
                                             <h4> {!! $item->title ?? '' !!}</h4>
                                         </td> --}}
                                         <td>
-                                            {{-- <button class="btn btn-sm btn-danger"
-                                                id="delete">Delete</button> --}}
 
                                             <a id="delete_slider_img" data-id="{{ $item->id }}"
                                                 class="btn btn-danger text-white">Delete</a>
@@ -67,9 +65,6 @@
                                     </tr>
                                 @empty
 
-                                    <h1>No data Here
-
-                                    </h1>
 
                                 @endforelse
 
@@ -104,6 +99,7 @@
 
         $(document).on('click', '#delete_slider_img', function(e) {
             e.preventDefault();
+            var table = $('#slider-table').DataTable();
             var id = $(this).data('id');
             swal({
                     title: "Are you sure!",
@@ -121,13 +117,10 @@
                             id: id
                         },
                         success: function(data) {
-
-
-
-
-
-
-
+                            var tr_id = data['id'];
+                            swal('Congratulation!',
+                                'Requested Image deleted successfully', 'success')
+                            table.row("tr#tr_" + tr_id).remove().draw();
                         }
                     });
                 });

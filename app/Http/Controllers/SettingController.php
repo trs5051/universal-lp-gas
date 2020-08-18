@@ -68,40 +68,40 @@ class SettingController extends Controller
                 Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['twitter' => $request->twitter]);
             }
         } else {
+
+            if ($request->Company_Address_First_Part) {
+                $company_address_first = $request->Company_Address_First_Part;
+            }
+            if ($request->Company_Address_Second_Part) {
+                $company_address_second = $request->Company_Address_Second_Part;            }
+
+            if ($request->company_contact) {
+                $contact = $request->company_contact;
+            }
+            if ($request->company_email) {
+                $email = $request->company_email;
+            }
+
+            $settings = new Setting();
+
+            $settings->address_first_part = $company_address_first;
+            $settings->address_second_part = $company_address_second;
+            $settings->contact = $contact;
+            $settings->email = $email;
             if ($request->hasFile('logo')) {
                 $logoName = $request->logo->getClientOriginalName();
                 $request->logo->storeAs('logo', $logoName, 'public');
+                $settings->logo = $logoName;
             }
             if ($request->hasFile('favicon')) {
 
                 $faviconName = $request->favicon->getClientOriginalName();
                 $request->favicon->storeAs('favicon', $faviconName, 'public');
-
+                $settings->favicon = $faviconName;
             }
-            if ($request->Company_Address_First_Part) {
-                $company_email_first = $request->Company_Address_First_Part;
-            }
-            if ($request->Company_Address_Second_Part) {
-                $company_email_second = $request->Company_Address_Second_Part;            }
-
-            if ($request->company_contact) {
-                Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['contact' => $request->company_contact]);
-            }
-            if ($request->company_email) {
-                Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['email' => $request->company_email]);
-            }
-
-            $settings = new Setting();
-            $settings->logo = $logoName;
-            $settings->favicon = $faviconName;
-            $settings->favicon = $faviconName;
+            $settings->save();
 
         }
-
-
-
-
-
         return redirect()->back();
     }
 }

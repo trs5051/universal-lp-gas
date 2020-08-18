@@ -6,6 +6,7 @@ use App\Models\FrontSlider;
 use App\Models\Slider;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FrontSliderController extends Controller
 {
@@ -40,6 +41,10 @@ class FrontSliderController extends Controller
 
         $frontSlider = Slider::where('id',$request->id)->first();
         $frontSlider->delete();
+
+        if ($frontSlider->img) {
+            Storage::delete('/public/sliderImage/' . $frontSlider->img);
+        }
         return $frontSlider;
 
     }

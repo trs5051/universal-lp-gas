@@ -1,12 +1,24 @@
 <?php
 
-
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('frontend.index');
 // });
+//Clear Cache facade value:
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    $exitCode = Artisan::call('route:clear');
+    $exitCode = Artisan::call('view:clear');
+    // $exitCode = Artisan::call('optimize');
+    // $exitCode = Artisan::call('route:cache');
+    $exitCode = Artisan::call('config:cache');
+    return '<h1>cache route view cleared optimize</h1>';
+});
+
+
 
 
 // frontend
@@ -51,10 +63,26 @@ Route::get('/front-slider-create','FrontSliderController@create')->name('front-s
 Route::post('/front-slider-store','FrontSliderController@store')->name('front-slider.store');
 Route::post('/front-slider-destroy','FrontSliderController@destroy')->name('front-slider.destroy');
 
-// front slider
+// our proud
+Route::get('/our-proud','OurProudController@index')->name('backend.our-proud');
+Route::post('/our-proud-store','OurProudController@store')->name('ourproud.store');
 
-Route::get('/our-proud-left','OurProudLeftController@index')->name('backend.our-proud-left');
+// OUR BUSINESS CONCERN
+Route::get('/our-business-concern','InformationController@businessConcern')->name('backend.our-business-concern');
+Route::post('/our-business-concern-update','InformationController@businessConcernUpdate')->name('our-business-concern.update');
+
+// sustainability
+Route::get('/sustainability','OurProudController@sustainability')->name('backend.sustainability');
+Route::post('/sustainability-store','OurProudController@sustainabilityStore')->name('sustainability.store');
+
+
+
+
+
+
 
 // backend end
+
+
 
 

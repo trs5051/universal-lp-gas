@@ -39,12 +39,9 @@
                                 <div class="our-proud-desc">
                                     <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Our proud</p>
 
-                                    <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">25 years of
-                                        undefeated success</h3>
+                                    <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $ourProud->heading }}</h3>
 
-                                    <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">We have a
-                                        long and proud history givin emphasis to environment social and economic
-                                        outcomes to deliver places that respond.</p>
+                                    <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">{{ $ourProud->description }}</p>
                                 </div>
                                 <!-- /.our-proud-desc -->
                             </div>
@@ -56,58 +53,66 @@
                                     <!-- single-pfeature -->
                                     <div class="col-sm-6 single-pfeature">
                                         <figure class="icon wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                                            <img src=" {{url('frontend/assets/images/proud-features/proud-feature-1.png')}}" alt="proud-feature">
+                                            @isset($ourProud)
+                                            <img src="{{ asset('/storage/ourProud/' . $ourProud->img1) }}" alt="proud-feature"/>
+                                            @endisset
                                         </figure>
 
                                         <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                                            <div class="pf-number">06</div>
+                                            <div class="pf-number">{{ $ourProud->number1 }}</div>
 
-                                            <p>Successfully project continue</p>
+                                            <p>{{ $ourProud->text1 }}</p>
                                         </div>
                                     </div>
                                     <!-- /.single-pfeature -->
-
                                     <!-- single-pfeature -->
                                     <div class="col-sm-6 single-pfeature">
-                                        <figure class="icon wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                                            <img src=" {{url('frontend/assets/images/proud-features/proud-feature-2.png')}}" alt="proud-feature">
+                                        <figure class="icon wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                                            @isset($ourProud)
+                                            <img src="{{ asset('/storage/ourProud/' . $ourProud->img2) }}" alt="proud-feature"/>
+                                            @endisset
                                         </figure>
 
-                                        <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                                            <div class="pf-number">25</div>
+                                        <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                                            <div class="pf-number">{{ $ourProud->number2 }}</div>
 
-                                            <p>Year of experience With Proud</p>
+                                            <p>{{ $ourProud->text2 }}</p>
                                         </div>
                                     </div>
                                     <!-- /.single-pfeature -->
-
                                     <!-- single-pfeature -->
                                     <div class="col-sm-6 single-pfeature">
-                                        <figure class="icon wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                                            <img src="{{url('frontend/assets/images/proud-features/proud-feature-3.png ')}}" alt="proud-feature">
+                                        <figure class="icon wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                                            @isset($ourProud)
+                                            <img src="{{ asset('/storage/ourProud/' . $ourProud->img3) }}" alt="proud-feature"/>
+                                            @endisset
                                         </figure>
 
-                                        <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                                            <div class="pf-number">1</div>
+                                        <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                                            <div class="pf-number">{{ $ourProud->number3 }}</div>
 
-                                            <p>Bangladesh overall Service</p>
+                                            <p>{{ $ourProud->text3 }}</p>
                                         </div>
                                     </div>
                                     <!-- /.single-pfeature -->
-
                                     <!-- single-pfeature -->
                                     <div class="col-sm-6 single-pfeature">
-                                        <figure class="icon wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.3s">
-                                            <img src="{{url('frontend/assets/images/proud-features/proud-feature-4.png')}}" alt="proud-feature">
+                                        <figure class="icon wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                                            @isset($ourProud)
+                                            <img src="{{ asset('/storage/ourProud/' . $ourProud->img4) }}" alt="proud-feature"/>
+                                            @endisset
                                         </figure>
 
-                                        <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.3s">
-                                            <div class="pf-number">75+</div>
+                                        <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                                            <div class="pf-number">{{ $ourProud->number4 }}</div>
 
-                                            <p>Collaegues & Counting</p>
+                                            <p>{{ $ourProud->text4 }}</p>
                                         </div>
                                     </div>
                                     <!-- /.single-pfeature -->
+
+
+
                                 </div>
                                 <!-- /.proud-features -->
                             </div>
@@ -125,12 +130,7 @@
                     <div class="col-lg-12">
                         <div class="section-header text-center">
                             <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Our business <span class="colored">Concern</span></h3>
-                            <p class="sub-title wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                                Universal Group is the creation of MD. SHAHJAHAN SHAJU. MR. SHAJU is the key person and
-                                promoter of the group. The dynamic person started the business through establishment of
-                                MS ENTERPRISE in the year 1990 and began import & supply of various products in the
-                                Bangladesh Market.
-                            </p>
+                        <p class="sub-title wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $information->text1 }}</p>
                         </div>
                     </div>
                 </div>
@@ -259,13 +259,9 @@
                     <div class="col-lg-6 col-md-6 col-sm-12 sustainability-left">
                         <h5 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">SUSTAINABILITY</h5>
 
-                        <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">Committed to keep
-                            people
-                            healthy & safe</h3>
+                        <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $sustainability->heading }}</h3>
 
-                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">Benefit of the socie
-                            where we operate. A success website obusly
-                            needs great design to be one</p>
+                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">{{ $sustainability->description }}</p>
                     </div>
                     <!-- /.sustainability-left -->
 
@@ -273,55 +269,56 @@
                     <!-- sustainability-right -->
                     <div class="col-lg-6 col-md-6 col-sm-12 sustainability-right">
 
-                        <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">We are best in the field
-                        </h3>
-                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                            Benefit of the socie where we operate. A success
-                            website obusly needs great design to be
-                            one of the top 10 IT
-                        </p>
+                        <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{{ $sustainability->heading2 }}</h3>
+                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $sustainability->description2 }}</p>
                         <!-- best-fields -->
                         <div class="row best-fields">
 
                             <!-- single-best-field -->
                             <div class="col-lg-6 col-md-12 col-sm-6 single-best-field wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                                 <figure class="icon">
-                                    <img src="{{url('frontend/assets/images/best-fields/best-field-1.png')}}" alt="best-field">
-                                </figure>
+                                    @isset($sustainability)
+                                            <img src="{{ asset('/storage/ourProud/' . $sustainability->img1) }}" alt="best-field"/>
+                                            @endisset
+                                          </figure>
 
-                                <h5>Sustainability</h5>
+                                <h5>{{ $sustainability->text1 }}</h5>
                             </div>
                             <!-- /.single-best-field -->
-
                             <!-- single-best-field -->
-                            <div class="col-lg-6 col-md-12 col-sm-6 single-best-field wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
+                            <div class="col-lg-6 col-md-12 col-sm-6 single-best-field wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                                 <figure class="icon">
-                                    <img src="{{url('frontend/assets/images/best-fields/best-field-3.png')}}" alt="best-field">
-                                </figure>
+                                    @isset($sustainability)
+                                            <img src="{{ asset('/storage/ourProud/' . $sustainability->img2) }}" alt="best-field"/>
+                                            @endisset
+                                          </figure>
 
-                                <h5>Project on time</h5>
+                                <h5>{{ $sustainability->text2 }}</h5>
                             </div>
                             <!-- /.single-best-field -->
-
                             <!-- single-best-field -->
-                            <div class="col-lg-6 col-md-12 col-sm-6 single-best-field wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
+                            <div class="col-lg-6 col-md-12 col-sm-6 single-best-field wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                                 <figure class="icon">
-                                    <img src="{{url('frontend/assets/images/best-fields/best-field-2.png')}}" alt="best-field">
-                                </figure>
+                                    @isset($sustainability)
+                                            <img src="{{ asset('/storage/ourProud/' . $sustainability->img3) }}" alt="best-field"/>
+                                            @endisset
+                                          </figure>
 
-                                <h5>Modern Tech</h5>
+                                <h5>{{ $sustainability->text3 }}</h5>
                             </div>
                             <!-- /.single-best-field -->
-
                             <!-- single-best-field -->
-                            <div class="col-lg-6 col-md-12 col-sm-6 single-best-field wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.3s">
+                            <div class="col-lg-6 col-md-12 col-sm-6 single-best-field wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                                 <figure class="icon">
-                                    <img src="{{url('frontend/assets/images/best-fields/best-field-4.png')}}" alt="best-field">
-                                </figure>
+                                    @isset($sustainability)
+                                            <img src="{{ asset('/storage/ourProud/' . $sustainability->img4) }}" alt="best-field"/>
+                                            @endisset
+                                          </figure>
 
-                                <h5>Latest Design</h5>
+                                <h5>{{ $sustainability->text4 }}</h5>
                             </div>
                             <!-- /.single-best-field -->
+
                         </div>
                         <!-- /.best-fields -->
                     </div>

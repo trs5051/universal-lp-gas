@@ -161,19 +161,20 @@
                                 </a>
                             </li>
                             <li class="  ">
-                            <a href="{{route('backend.our-proud-left')}}">
+                            <a href="{{route('backend.our-proud')}}">
                                     <i class="fa fa-hand-o-right"></i>
-                                    <span>Our Proud left</span>
+                                    <span>Our Proud</span>
+                                </a>
+                            </li>
+
+                            <li class="  ">
+                            <a href="{{route('backend.our-business-concern')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Our Business Concern</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogTags">
-                                    <i class="fa fa-hand-o-right"></i>
-                                    <span>Our Proud right</span>
-                                </a>
-                            </li>
-                            <li class="  ">
-                                <a href="#/admin/blogs">
+                            <a href="{{route('backend.sustainability')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Sustainability</span>
                                 </a>

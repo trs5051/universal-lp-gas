@@ -60,7 +60,7 @@
                 </div>
                 <div class="edit-form-btn">
                 <a href="{{URL::previous()}}" class="btn btn-danger btn-md">Cancel</a>
-                <input type="submit" value="Create" class="btn btn-primary btn-md">
+                <input type="submit" value="Add" class="btn btn-primary btn-md">
                     <div class="clearfix"></div>
                 </div>
             </div>
