@@ -124,10 +124,8 @@
                                             <a href="#">about</a>
                                             <ul class="sub-menu">
                                                 <li><a href="{{ route('frontend.about') }}">About Us</a></li>
-                                                <li><a href="{{ route('frontend.mission-and-vission') }}">Mission &
-                                                        Vission </a></li>
-                                                <li><a href="{{ route('frontend.universal-lp-gas') }}">Universal LP
-                                                        Gas</a></li>
+                                                <li><a href="{{ route('frontend.mission-and-vision') }}">Mission & Vision </a></li>
+                                                <li><a href="{{ route('frontend.universal-lp-gas') }}">Universal LP Gas</a></li>
                                                 <li><a href="{{ route('frontend.board-of-directors') }}">Board of
                                                         Directors</a></li>
                                                 <li><a href="{{ route('frontend.management') }}">Management</a></li>

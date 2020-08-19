@@ -17,8 +17,9 @@ class IndexController extends Controller
         $ourProud = OurProud::where('use_for','our_proud')->where('delete_status',1)->first();
         $information = Information::where('information_for','our_business_concern')->first();
         $sustainability = OurProud::where('use_for','sustainability')->where('delete_status',1)->first();
+        $aboutUs = Information::where('information_for','about_us')->where('delete_status',1)->first();
 
 
-        return view('frontend.index',compact('settings','frontSliders','ourProud','information','sustainability'));
+        return view('frontend.index',compact('settings','frontSliders','ourProud','information','sustainability','aboutUs'));
     }
 }

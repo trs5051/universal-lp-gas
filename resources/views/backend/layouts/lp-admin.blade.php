@@ -190,19 +190,25 @@
                         </a>
                         <ul class="treeview-menu " style="display: none; ">
                             <li class="  ">
-                                <a href="#/admin/blogCategories">
+                            <a href="{{route('backend.about-us')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>About Us</span>
+                                </a>
+                            </li>
+                            <li class="  ">
+                            <a href="{{route('backend.mission-vision')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Mission & Vission</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogTags">
+                            <a href="{{route('backend.universal-lp-gas')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal LP Gas</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogs">
+                            <a href="{{route('backend.directors')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Board of Directors</span>
                                 </a>

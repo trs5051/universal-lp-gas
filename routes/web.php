@@ -18,13 +18,10 @@ Route::get('/clear-cache', function() {
     return '<h1>cache route view cleared optimize</h1>';
 });
 
-
-
-
 // frontend
 Route::get('/','IndexController@index')->name('frontend.index');
 Route::get('/about','AboutController@index')->name('frontend.about');
-Route::get('/mission-and-vission','MissionVisionController@index')->name('frontend.mission-and-vission');
+Route::get('/mission-and-vision','MissionVisionController@index')->name('frontend.mission-and-vision');
 Route::get('/universal-lp-gas','UniversalLPGasController@index')->name('frontend.universal-lp-gas');
 Route::get('/board-of-directors','DirectorController@index')->name('frontend.board-of-directors');
 Route::get('/management','ManagementController@index')->name('frontend.management');
@@ -43,7 +40,6 @@ Route::get('/why-lpg','WhyLpgController@index')->name('frontend.why-lpg');
 Route::get('/distribution','DistributionController@index')->name('frontend.distribution');
 Route::get('/news-events','NewsEventController@index')->name('frontend.news-events');
 Route::get('/contact','ContactController@index')->name('frontend.contact');
-
 Route::get('/projects','ProductController@product')->name('frontend.products');
 // frontend end
 
@@ -75,6 +71,21 @@ Route::post('/our-business-concern-update','InformationController@businessConcer
 Route::get('/sustainability','OurProudController@sustainability')->name('backend.sustainability');
 Route::post('/sustainability-store','OurProudController@sustainabilityStore')->name('sustainability.store');
 
+// about us
+Route::get('/about-us','InformationController@aboutUs')->name('backend.about-us');
+Route::post('/about-us-update','InformationController@informationUpdate')->name('aboutUs.store');
+
+// mission-vision
+Route::get('/mission-vision','ConcernController@missionVission')->name('backend.mission-vision');
+Route::post('/mission-vision-update','ConcernController@concernUpdate')->name('mission-vision.update');
+
+// universal-lp-gas
+Route::get('/universal/lp/gas','ConcernController@universalLpGas')->name('backend.universal-lp-gas');
+Route::post('/universal/lp/gas/update','ConcernController@concernUpdate')->name('universal-lp-gas.update');
+
+// directors
+Route::get('/directors','InformationController@directors')->name('backend.directors');
+Route::get('/directors/update','InformationController@informationUpdate')->name('directors.update');
 
 
 

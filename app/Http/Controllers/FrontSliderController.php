@@ -25,7 +25,7 @@ class FrontSliderController extends Controller
     {
         // dd($request->all());
         if ($request->hasFile('Slider_Image')) {
-            $imgName = $request->Slider_Image->getClientOriginalName();
+            $imgName = time().'-'.$request->Slider_Image->getClientOriginalName();
             $request->Slider_Image->storeAs('sliderImage', $imgName, 'public');
         }
 

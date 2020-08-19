@@ -12,8 +12,8 @@ class OurProudController extends Controller
     public function index()
     {
         // $settings = Setting::where('delete_status',1)->first();
-        $ourProud = OurProud::where('delete_status',1)->where('use_for','our_proud')->first();
-        return view('backend.our-proud',compact('settings','ourProud'));
+        $ourProud = OurProud::where('delete_status', 1)->where('use_for', 'our_proud')->first();
+        return view('backend.our-proud', compact('settings', 'ourProud'));
     }
     public function store(Request $request)
     {
@@ -27,7 +27,7 @@ class OurProudController extends Controller
                 if ($oldfavicon) {
                     Storage::delete('/public/ourProud/' . $oldfavicon);
                 }
-                $faviconName = $request->img1->getClientOriginalName();
+                $faviconName = time().'-'.$request->img1->getClientOriginalName();
                 $request->img1->storeAs('ourProud', $faviconName, 'public');
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['img1' => $faviconName]);
             }
@@ -36,7 +36,7 @@ class OurProudController extends Controller
                 if ($oldfavicon) {
                     Storage::delete('/public/ourProud/' . $oldfavicon);
                 }
-                $faviconName = $request->img2->getClientOriginalName();
+                $faviconName = time().'-'.$request->img2->getClientOriginalName();
                 $request->img2->storeAs('ourProud', $faviconName, 'public');
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['img2' => $faviconName]);
             }
@@ -45,7 +45,7 @@ class OurProudController extends Controller
                 if ($oldfavicon) {
                     Storage::delete('/public/ourProud/' . $oldfavicon);
                 }
-                $faviconName = $request->img3->getClientOriginalName();
+                $faviconName = time().'-'.$request->img3->getClientOriginalName();
                 $request->img3->storeAs('ourProud', $faviconName, 'public');
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['img3' => $faviconName]);
             }
@@ -54,7 +54,7 @@ class OurProudController extends Controller
                 if ($oldfavicon) {
                     Storage::delete('/public/ourProud/' . $oldfavicon);
                 }
-                $faviconName = $request->img4->getClientOriginalName();
+                $faviconName = time().'-'.$request->img4->getClientOriginalName();
                 $request->img4->storeAs('ourProud', $faviconName, 'public');
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['img4' => $faviconName]);
             }
@@ -99,18 +99,14 @@ class OurProudController extends Controller
             if ($request->text4) {
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['text4' => $request->text4]);
             }
-
         }
         return redirect()->back();
-
     }
 
     public function sustainability()
     {
         // $settings = Setting::where('delete_status',1)->first();
-        $ourProud = OurProud::where('delete_status',1)->where('use_for','sustainability')->first();
-        return view('backend.sustainability',compact('settings','ourProud'));
+        $ourProud = OurProud::where('delete_status', 1)->where('use_for', 'sustainability')->first();
+        return view('backend.sustainability', compact('settings', 'ourProud'));
     }
-
-
 }

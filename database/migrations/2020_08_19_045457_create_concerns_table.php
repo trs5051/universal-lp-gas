@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInformationTable extends Migration
+class CreateConcernsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateInformationTable extends Migration
      */
     public function up()
     {
-        Schema::create('information', function (Blueprint $table) {
+        Schema::create('concerns', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
             $table->string('heading')->nullable();
             $table->text('text1')->nullable();
+            $table->text('text2')->nullable();
             $table->string('img')->nullable();
             $table->string('img_title')->nullable();
-            $table->string('number')->nullable();
-            $table->text('text2')->nullable();
+            $table->string('bk_img')->nullable();
             $table->text('text3')->nullable();
             $table->string('information_for')->nullable();
-
+            $table->tinyInteger('delete_status')->default(1);
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ class CreateInformationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('information');
+        Schema::dropIfExists('concerns');
     }
 }
