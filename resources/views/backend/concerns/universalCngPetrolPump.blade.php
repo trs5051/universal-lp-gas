@@ -5,13 +5,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Universal LP Gas Management
-            <small>Edit Universal LP Gas</small>
+            Universal CNG & Petrol Pump  Management
+            <small>Edit Universal CNG & Petrol Pump </small>
         </h1>
         <!-- Breadcrumbs would render from routes/breadcrumb.php -->
         <ol class="breadcrumb">
             <li><a href="{{ route('backend-home') }}">Dashboard</a></li>
-            <li class="active">Edit Universal LP Gas</li>
+            <li class="active">Edit Universal CNG & Petrol Pump </li>
         </ol>
 
     </section>
@@ -24,7 +24,7 @@
             @csrf
             <div class="box box-info">
                 <div class="box-header">
-                    <h3 class="box-title">Edit Universal LP Gas</h3>
+                    <h3 class="box-title">Edit Universal CNG & Petrol Pump </h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body setting-block">

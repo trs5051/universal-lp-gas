@@ -232,31 +232,43 @@
                         </a>
                         <ul class="treeview-menu " style="display: none; ">
                             <li class="  ">
-                                <a href="#/admin/blogCategories">
+                            <a href="{{route('backend.universal-Agency')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal Agency</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogTags">
+                                <a href="{{route('backend.ms-Enterprise')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>MS Enterprise</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogs">
+                                <a href="{{route('backend.universal-gas-cylinder-ltd')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Universal Gas & Gas Cylinder Ltd</span>
+                                </a>
+                            </li>
+                            <li class="  ">
+                                <a href="{{route('backend.amb-traders')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>AMB Traders Pvt Ltd</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogs">
+                                <a href="{{route('backend.us-energy-power')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>US Energy & Power Pvt Ltd</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogs">
+                                <a href="{{route('backend.universal-cng-petrol-pump')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Universal CNG & Petrol Pump </span>
+                                </a>
+                            </li>
+                            <li class="  ">
+                                <a href="{{route('backend.universal-engineering-ltd')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal Engineering Ltd</span>
                                 </a>
@@ -286,7 +298,7 @@
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogTags">
+                            <a href="{{route('backend.plants')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Plants</span>
                                 </a>

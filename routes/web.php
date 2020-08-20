@@ -85,10 +85,41 @@ Route::post('/universal/lp/gas/update','ConcernController@concernUpdate')->name(
 
 // directors
 Route::get('/directors','InformationController@directors')->name('backend.directors');
-Route::get('/directors/update','InformationController@informationUpdate')->name('directors.update');
+Route::post('/directors/update','InformationController@informationUpdate')->name('directors.update');
 
+// backend.universal-Agency
+Route::get('/universal/agency','ConcernController@universalAgency')->name('backend.universal-Agency');
+Route::post('/universal/agency/update','ConcernController@concernUpdate')->name('universal-Agency.update');
 
+// backend.ms-Enterprise
+Route::get('/ms/enterprise','ConcernController@msEnterprise')->name('backend.ms-Enterprise');
+Route::post('/ms/enterprise/update','ConcernController@concernUpdate')->name('ms-Enterprise.update');
 
+// backend.universal-gas-cylinder-ltd
+Route::get('/universal/gas/cylinder/ltd','ConcernController@universalGasCylinderLtd')->name('backend.universal-gas-cylinder-ltd');
+Route::post('/universal/gas/cylinder/ltd/update','ConcernController@concernUpdate')->name('universal-gas-cylinder-ltd.update');
+
+// backend.amb-traders
+Route::get('/amb/traders','ConcernController@ambTraders')->name('backend.amb-traders');
+Route::post('/amb/traders/update','ConcernController@concernUpdate')->name('amb-traders.update');
+
+// backend.us-energy-power
+Route::get('us/energy/power','ConcernController@usEnergyPower')->name('backend.us-energy-power');
+Route::post('us/energy/power/update','ConcernController@concernUpdate')->name('us-energy-power.update');
+
+// backend.universal-cng-petrol-pump
+Route::get('/universal/cng/petrol/pump','ConcernController@universalCngPetrolPump')->name('backend.universal-cng-petrol-pump');
+Route::post('/universal/cng/petrol/pump/update','ConcernController@concernUpdate')->name('universal-cng-petrol-pump.update');
+
+// backend.universal-engineering-ltd
+Route::get('/universal/engineering/ltd','ConcernController@universalEngineeringLtd')->name('backend.universal-engineering-ltd');
+Route::post('/universal/engineering/ltd/update','ConcernController@concernUpdate')->name('universal-engineering-ltd.update');
+
+// backend.plants
+Route::get('/backend/plants','PlantController@plants')->name('backend.plants');
+Route::get('/backend/plants/create','PlantController@create')->name('plants.create');
+Route::post('/backend/plants/store','PlantController@store')->name('plants.store');
+Route::post('/backend/plants/destroy','PlantController@destroy')->name('plants.destroy');
 
 
 

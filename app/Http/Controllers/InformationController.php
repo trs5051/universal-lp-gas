@@ -62,11 +62,14 @@ class InformationController extends Controller
         if ($request->text1) {
             Information::where('id', $request->information_Id)->first()->update(['text1' => $request->text1]);
         }
-        if ($request->text2) {
+
             Information::where('id', $request->information_Id)->first()->update(['text2' => $request->text2]);
-        }
-        if ($request->text3) {
+
+
             Information::where('id', $request->information_Id)->first()->update(['text3' => $request->text3]);
+
+        if ($request->text4) {
+            Information::where('id', $request->information_Id)->first()->update(['text4' => $request->text4]);
         }
 
         $oldInformation = Information::where('id', $request->information_Id)->where('delete_status', 1)->first();

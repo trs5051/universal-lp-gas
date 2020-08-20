@@ -20,6 +20,41 @@ class ConcernController extends Controller
         $concern = Concern::where('information_for','universal_lp_gas')->where('delete_status',1)->first();
         return view('backend.universal-lp-gas',compact('concern'));
     }
+    public function universalAgency()
+    {
+        $concern = Concern::where('information_for','universal_agency')->where('delete_status',1)->first();
+        return view('backend.concerns.universal-agency',compact('concern'));
+    }
+    public function msEnterprise()
+    {
+        $concern = Concern::where('information_for','msEnterprise')->where('delete_status',1)->first();
+        return view('backend.concerns.msEnterprise',compact('concern'));
+    }
+    public function universalGasCylinderLtd()
+    {
+        $concern = Concern::where('information_for','universalGasCylinderLtd')->where('delete_status',1)->first();
+        return view('backend.concerns.universalGasCylinderLtd',compact('concern'));
+    }
+    public function ambTraders()
+    {
+        $concern = Concern::where('information_for','ambTraders')->where('delete_status',1)->first();
+        return view('backend.concerns.ambTraders',compact('concern'));
+    }
+    public function usEnergyPower()
+    {
+        $concern = Concern::where('information_for','usEnergyPower')->where('delete_status',1)->first();
+        return view('backend.concerns.usEnergyPower',compact('concern'));
+    }
+    public function universalCngPetrolPump()
+    {
+        $concern = Concern::where('information_for','universalCngPetrolPump')->where('delete_status',1)->first();
+        return view('backend.concerns.universalCngPetrolPump',compact('concern'));
+    }
+    public function universalEngineeringLtd()
+    {
+        $concern = Concern::where('information_for','universalEngineeringLtd')->where('delete_status',1)->first();
+        return view('backend.concerns.universalEngineeringLtd',compact('concern'));
+    }
 
 
 
