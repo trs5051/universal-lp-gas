@@ -128,3 +128,5 @@ Route::post('/backend/plants/destroy','PlantController@destroy')->name('plants.d
 
 
 
+Route::get('file','TestController@create');
+Route::post('file','TestController@store');

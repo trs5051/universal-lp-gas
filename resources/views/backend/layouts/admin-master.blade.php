@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="apple-touch-icon" href="{{asset('/images/logo-1.png')}}">
-    <link rel="shortcut icon" href="{{asset('/images/logo-1.png')}}"> 
+    <link rel="shortcut icon" href="{{asset('/images/logo-1.png')}}">
 
 
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
@@ -22,8 +22,10 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
     <link rel="stylesheet" href="{{url('/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{url('/css/style.css')}}">
+
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css" />
 
@@ -139,7 +141,7 @@ $totaldata = 0;
                         </a>
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="{{url('/profile')}}"><i class="fas fa-user"></i> My Profile</a>
-                            
+
                             <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();"><i class="fas fa-power-off"></i> Logout
                             </a>

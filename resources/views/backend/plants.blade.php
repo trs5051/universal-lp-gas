@@ -47,7 +47,8 @@
                         <tr id="tr_{{ $item->id }}">
                             <th>{{ $key + 1 }}</th>
                             <td><span><img src="{!!  asset('/storage/plantsimage/' . $item->img) !!}"
-                                        width="100px"></span> <br> {!! $item->img ?? '' !!}</td>
+                                        width="100px"></span>
+                            </td>
                             <td>
                                 <h4> {!! $item->heading ?? '' !!}</h4>
                             </td>
@@ -85,8 +86,8 @@
         aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
 
-        <form method="POST" action="{{route('plants.store')}}" accept-charset="UTF-8" class="form-horizontal" role="form" id="add_plant_form"
-                enctype="multipart/form-data">
+            <form method="POST" action="#" accept-charset="UTF-8" class="form-horizontal" role="form"
+                id="add_plant_form" enctype="multipart/form-data">
                 @csrf
                 <div class="box box-info">
                     <div class="box-header">
@@ -104,7 +105,8 @@
 
                             <div class="col-lg-10">
                                 <div class="custom-file-input">
-                                    <input class="form-control inputfile inputfile-1" name="image" type="file" id="image">
+                                    <input class="form-control inputfile inputfile-1" name="image" type="file"
+                                        id="image">
                                     <label for="image">
                                         <i class="fa fa-upload"></i>
                                         <span>Change image</span>
@@ -145,7 +147,8 @@
                         <div class="row">
                             <div class="col-lg-offset-2 col-lg-10 footer-btn">
                                 <input class="btn btn-primary btn-md " type="button" data-dismiss="modal" value="Close">
-                                <input class="btn btn-primary btn-md " type="button" id="add_plant" value="Add">
+                                {{-- <input class="btn btn-primary btn-md " type="button" id="add_plant" value="Add"> --}}
+                                <button class="btn btn-primary btn-md " id="add_plant">Add</button>
                                 <div class="clearfix"></div>
                             </div>
 
@@ -158,9 +161,6 @@
                 <!-- hidden setting id variable -->
 
             </form>
-
-
-
         </div>
     </div>
 </section>
@@ -173,17 +173,47 @@
 <script>
     $(document).ready(function() {
 
-        $(document).on('click', '#add_plant', function(e) {
-            e.preventDefault();
-            var frm = $('#add_plant_form');
 
-        $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),
-            data: frm.serialize(),
-            success: function (data) {
+        $(document).on('submit', '#add_plant_form', function(e) {
+            e.preventDefault();
+            var table = $('#slider-table').DataTable();
+            var sl = table.rows().count();
+
+            $.ajax({
+                    url:"{{route('plants.store')}}",
+                    method:"POST",
+                    data:new FormData(this),
+                    dataType:'JSON',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success:function(data)
+                    {
                 console.log('Submission was successful.');
                 console.log(data);
+                swal('Congratulation!', 'New Plant Added successfully', 'success')
+                var id = data['id'];
+                var image = data['img'];
+
+                var img = '<img src="{!!  asset(\'/storage/plantsimage/\' . '+image+') !!}" width="100px">';
+
+                console.log(id);
+
+                var myvar = '<a id="edit_plant" data-id="'+id+'" class="btn btn-primary text-white">Edit</a>'+
+                '<a id="delete_plant"  data-id="'+id+'"  class="btn btn-danger text-white">Delete</a>';
+
+
+                table.row.add( [
+                    sl+1,
+                    img,
+                    data['heading'],
+                    data['text1'],
+                    myvar,
+                        ] ).node().id = 'tr_'+id;
+        table.draw( false );
+
+        $('#exampleModal').modal('toggle');
+
             },
             error: function (data) {
                 console.log('An error occurred.');

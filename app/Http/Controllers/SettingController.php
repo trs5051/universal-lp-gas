@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Setting;
-use Storage;
+use Illuminate\Support\Facades\Storage ;
 
 class SettingController extends Controller
 {
