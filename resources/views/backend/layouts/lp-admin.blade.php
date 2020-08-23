@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
@@ -161,20 +161,20 @@
                                 </a>
                             </li>
                             <li class="  ">
-                            <a href="{{route('backend.our-proud')}}">
+                                <a href="{{ route('backend.our-proud') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Our Proud</span>
                                 </a>
                             </li>
 
                             <li class="  ">
-                            <a href="{{route('backend.our-business-concern')}}">
+                                <a href="{{ route('backend.our-business-concern') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Our Business Concern</span>
                                 </a>
                             </li>
                             <li class="  ">
-                            <a href="{{route('backend.sustainability')}}">
+                                <a href="{{ route('backend.sustainability') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Sustainability</span>
                                 </a>
@@ -190,25 +190,25 @@
                         </a>
                         <ul class="treeview-menu " style="display: none; ">
                             <li class="  ">
-                            <a href="{{route('backend.about-us')}}">
+                                <a href="{{ route('backend.about-us') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>About Us</span>
                                 </a>
                             </li>
                             <li class="  ">
-                            <a href="{{route('backend.mission-vision')}}">
+                                <a href="{{ route('backend.mission-vision') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Mission & Vission</span>
                                 </a>
                             </li>
                             <li class="  ">
-                            <a href="{{route('backend.universal-lp-gas')}}">
+                                <a href="{{ route('backend.universal-lp-gas') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal LP Gas</span>
                                 </a>
                             </li>
                             <li class="  ">
-                            <a href="{{route('backend.directors')}}">
+                                <a href="{{ route('backend.directors') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Board of Directors</span>
                                 </a>
@@ -232,43 +232,43 @@
                         </a>
                         <ul class="treeview-menu " style="display: none; ">
                             <li class="  ">
-                            <a href="{{route('backend.universal-Agency')}}">
+                                <a href="{{ route('backend.universal-Agency') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal Agency</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="{{route('backend.ms-Enterprise')}}">
+                                <a href="{{ route('backend.ms-Enterprise') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>MS Enterprise</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="{{route('backend.universal-gas-cylinder-ltd')}}">
+                                <a href="{{ route('backend.universal-gas-cylinder-ltd') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal Gas & Gas Cylinder Ltd</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="{{route('backend.amb-traders')}}">
+                                <a href="{{ route('backend.amb-traders') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>AMB Traders Pvt Ltd</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="{{route('backend.us-energy-power')}}">
+                                <a href="{{ route('backend.us-energy-power') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>US Energy & Power Pvt Ltd</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="{{route('backend.universal-cng-petrol-pump')}}">
+                                <a href="{{ route('backend.universal-cng-petrol-pump') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal CNG & Petrol Pump </span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="{{route('backend.universal-engineering-ltd')}}">
+                                <a href="{{ route('backend.universal-engineering-ltd') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal Engineering Ltd</span>
                                 </a>
@@ -298,7 +298,7 @@
                                 </a>
                             </li>
                             <li class="  ">
-                            <a href="{{route('backend.plants')}}">
+                                <a href="{{ route('backend.plants') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Plants</span>
                                 </a>
@@ -354,7 +354,7 @@
         </aside>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-                @yield('content')
+            @yield('content')
         </div>
 
     </div>

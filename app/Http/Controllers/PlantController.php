@@ -27,19 +27,45 @@ class PlantController extends Controller
     {
         // dd($request->all());
         $validatedData = $request->validate([
-            'heading' => 'required|unique:plants|max:255',
+            'Plant_Name' => 'required|unique:plants,heading|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         if ($request->hasFile('image')) {
-            $img = time().'-'.$request->image->getClientOriginalName();
+            $img = time() . '-' . $request->image->getClientOriginalName();
             $request->image->storeAs('plantsimage', $img, 'public');
         }
         $plants = new Plant();
         $plants->img = $img;
-        $plants->heading = $request->heading;
+        $plants->heading = $request->Plant_Name;
         $plants->text1 = $request->text1;
         $plants->text2 = $request->text2;
         $plants->save();
+        return $plants;
+    }
+    public function findOne(Request $request)
+    {
+        $plants = Plant::findOrFail($request->id);
+        return $plants;
+    }
+
+    public function update(Request $request)
+    {
+        // dd($request->all());
+        $validatedData = $request->validate([
+            'Plant_Name' => 'required|unique:plants,heading|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        if ($request->hasFile('image')) {
+            $img = time() . '-' . $request->image->getClientOriginalName();
+            $request->image->storeAs('plantsimage', $img, 'public');
+        }
+
+        $plants = Plant::findOrFail($request->Plant_Id);
+        $plants->img = $img;
+        $plants->heading = $request->Plant_Name;
+        $plants->text1 = $request->text1;
+        $plants->text2 = $request->text2;
+        $plants->update();
         return $plants;
     }
 }

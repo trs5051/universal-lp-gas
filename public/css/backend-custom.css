@@ -515,6 +515,9 @@ html, body {
 
 .box-header {
     padding: 15px 10px;
+    background-color: #495867;
+    text-align: center;
+    font-size: 16px;
 }
 
 .box-header>.box-tools {
@@ -701,7 +704,7 @@ div.dataTables_wrapper div.dataTables_filter label input {width: 395px;}
 body { font-family:'Fira Sans', sans-serif; }
 .alert { padding: 10px 15px; margin-bottom: 15px; }
 label { font-weight: 500; }
-.box-header .box-title { line-height: 30px; }
+.box-header .box-title { line-height: 30px; color: white; }
 .select2-dropdown { border-color: #ddd; }
 .form-horizontal .control-label { font-weight: 500; }
 .btn.focus, .btn:focus, .btn:hover { outline: none; }
