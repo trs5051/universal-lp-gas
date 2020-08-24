@@ -32,7 +32,7 @@
             <div class="box-body">
                 <div class="table-responsive data-table-wrapper">
 
-                    <table id="slider-table" class="datatable table table-condensed table-hover table-bordered">
+                    <table id="plant_table" class="datatable table table-condensed table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th>Sl</th>
@@ -277,7 +277,7 @@
             e.preventDefault();
             $('#image_errors').empty();
             $('#Plant_Name_errors').empty();
-            var table = $('#slider-table').DataTable();
+            var table = $('#plant_table').DataTable();
             var sl = table.rows().count();
 
             $.ajax({
@@ -339,7 +339,7 @@
         $(document).on('click', '#edit_plant', function(e) {
             e.preventDefault();
             var id = $(this).data('id');
-            var table = $('#slider-table').DataTable();
+            var table = $('#plant_table').DataTable();
             $.ajax({
                 type: "get",
                 url: "{{ route('plantfindOne') }}",
@@ -377,7 +377,7 @@
             e.preventDefault();
             $('#image_errors').empty();
             $('#Plant_Name_errors').empty();
-            var table = $('#slider-table').DataTable();
+            var table = $('#plant_table').DataTable();
             var sl = table.rows().count();
 
             $.ajax({
@@ -403,19 +403,12 @@
                         ' <a id="delete_plant"  data-id="' + id +
                         '"  class="btn btn-danger text-white">Delete</a>';
 
-                    table.row.add([
-                        sl + 1,
-                        img,
-                        data['heading'],
-                        data['text1'],
-                        btn,
-                    ]).node().id = 'tr_' + id;
-                    table.draw(false);
-
                     $("#edit_plant_form").trigger("reset");
 
                     $('#img_span').empty().append('Choose an image');
-                    $('#exampleModal').modal('toggle');
+                    $('#editModal').modal('toggle');
+                    location.reload();
+
                 },
 
                 error: function(xhr) {
@@ -437,9 +430,9 @@
         });
 
 
-        $(document).on('click', '#delete_slider_img', function(e) {
+        $(document).on('click', '#delete_plant', function(e) {
             e.preventDefault();
-            var table = $('#slider-table').DataTable();
+            var table = $('#plant_table').DataTable();
             var id = $(this).data('id');
             swal({
                     title: "Are you sure!",
@@ -453,14 +446,14 @@
 
                     $.ajax({
                         type: "POST",
-                        url: "{{ route('front-slider.destroy') }}",
+                        url: "{{ route('plant.destroy') }}",
                         data: {
                             id: id
                         },
                         success: function(data) {
                             var tr_id = data['id'];
                             swal('Congratulation!',
-                                'Requested Image deleted successfully', 'success')
+                                'Requested plant deleted successfully', 'success')
                             table.row("tr#tr_" + tr_id).remove().draw();
                         }
                     });

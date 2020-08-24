@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Information;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -27,6 +28,19 @@ class InformationController extends Controller
         $directors = Information::where('information_for','directors')->where('delete_status',1)->first();
         return view('backend.directors',compact('directors'));
     }
+    public function compliance()
+    {
+        $compliance  = Information::where('information_for','compliance')->where('delete_status',1)->first();
+        // dd($compliance);
+        return view('backend.compliance',compact('compliance'));
+    }
+    public function whyLPG()
+    {
+        $whyLPG  = Information::where('information_for','whyLPG')->where('delete_status',1)->first();
+        // dd($whyLPG);
+        return view('backend.whyLPG',compact('whyLPG'));
+    }
+
 
 
 

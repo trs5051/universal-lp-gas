@@ -304,13 +304,13 @@
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogs">
+                            <a href="{{ route('backend.compliance')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Compliance</span>
                                 </a>
                             </li>
                             <li class="  ">
-                                <a href="#/admin/blogs">
+                            <a href="{{ route('backend.whyLPG') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Why LPG?</span>
                                 </a>
@@ -343,7 +343,7 @@
 
 
                     <li class="  ">
-                        <a href="#/admin/faqs">
+                    <a href="{{ route('backend.contact') }}">
                             <i class="fa fa-address-card"></i>
                             <span>Contact</span>
                         </a>

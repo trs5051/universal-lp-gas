@@ -45,84 +45,95 @@ Route::get('/projects', 'ProductController@product')->name('frontend.products');
 
 
 // backend
-Route::get('/profile', 'HomeController@getProfile');
-Route::post('/change/password', 'HomeController@changePassword');
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('backend-home');
-Route::get('/settings', 'SettingController@settings')->name('backend-settings');
-Route::get('/header-footer', 'SettingController@headerFooter')->name('backend.header-footer');
-Route::post('/header-footer/update', 'SettingController@headerFooterUpdate')->name('update-hearder-footer');
 
-// front slider
-Route::get('/front-slider', 'FrontSliderController@index')->name('backend.front-slider');
-Route::get('/front-slider-create', 'FrontSliderController@create')->name('front-slider.create');
-Route::post('/front-slider-store', 'FrontSliderController@store')->name('front-slider.store');
-Route::post('/front-slider-destroy', 'FrontSliderController@destroy')->name('front-slider.destroy');
+    Route::get('/profile', 'HomeController@getProfile');
+    Route::post('/change/password', 'HomeController@changePassword');
+    Auth::routes();
+    Route::get('/home', 'HomeController@index')->name('backend-home');
+    Route::get('/settings', 'SettingController@settings')->name('backend-settings');
+    Route::get('/header-footer', 'SettingController@headerFooter')->name('backend.header-footer');
+    Route::post('/header-footer/update', 'SettingController@headerFooterUpdate')->name('update-hearder-footer');
 
-// our proud
-Route::get('/our-proud', 'OurProudController@index')->name('backend.our-proud');
-Route::post('/our-proud-store', 'OurProudController@store')->name('ourproud.store');
+    // front slider
+    Route::get('/front-slider', 'FrontSliderController@index')->name('backend.front-slider');
+    Route::get('/front-slider-create', 'FrontSliderController@create')->name('front-slider.create');
+    Route::post('/front-slider-store', 'FrontSliderController@store')->name('front-slider.store');
+    Route::post('/front-slider-destroy', 'FrontSliderController@destroy')->name('front-slider.destroy');
 
-// OUR BUSINESS CONCERN
-Route::get('/our-business-concern', 'InformationController@businessConcern')->name('backend.our-business-concern');
-Route::post('/our-business-concern-update', 'InformationController@businessConcernUpdate')->name('our-business-concern.update');
+    // our proud
+    Route::get('/our-proud', 'OurProudController@index')->name('backend.our-proud');
+    Route::post('/our-proud-store', 'OurProudController@store')->name('ourproud.store');
 
-// sustainability
-Route::get('/sustainability', 'OurProudController@sustainability')->name('backend.sustainability');
-Route::post('/sustainability-store', 'OurProudController@sustainabilityStore')->name('sustainability.store');
+    // OUR BUSINESS CONCERN
+    Route::get('/our-business-concern', 'InformationController@businessConcern')->name('backend.our-business-concern');
+    Route::post('/our-business-concern-update', 'InformationController@businessConcernUpdate')->name('our-business-concern.update');
 
-// about us
-Route::get('/about-us', 'InformationController@aboutUs')->name('backend.about-us');
-Route::post('/about-us-update', 'InformationController@informationUpdate')->name('aboutUs.store');
+    // sustainability
+    Route::get('/sustainability', 'OurProudController@sustainability')->name('backend.sustainability');
+    Route::post('/sustainability-store', 'OurProudController@sustainabilityStore')->name('sustainability.store');
 
-// mission-vision
-Route::get('/mission-vision', 'ConcernController@missionVission')->name('backend.mission-vision');
-Route::post('/mission-vision-update', 'ConcernController@concernUpdate')->name('mission-vision.update');
+    // about us
+    Route::get('/about-us', 'InformationController@aboutUs')->name('backend.about-us');
+    Route::post('/about-us-update', 'InformationController@informationUpdate')->name('aboutUs.store');
 
-// universal-lp-gas
-Route::get('/universal/lp/gas', 'ConcernController@universalLpGas')->name('backend.universal-lp-gas');
-Route::post('/universal/lp/gas/update', 'ConcernController@concernUpdate')->name('universal-lp-gas.update');
+    // mission-vision
+    Route::get('/mission-vision', 'ConcernController@missionVission')->name('backend.mission-vision');
+    Route::post('/mission-vision-update', 'ConcernController@concernUpdate')->name('mission-vision.update');
 
-// directors
-Route::get('/directors', 'InformationController@directors')->name('backend.directors');
-Route::post('/directors/update', 'InformationController@informationUpdate')->name('directors.update');
+    // universal-lp-gas
+    Route::get('/universal/lp/gas', 'ConcernController@universalLpGas')->name('backend.universal-lp-gas');
+    Route::post('/universal/lp/gas/update', 'ConcernController@concernUpdate')->name('universal-lp-gas.update');
 
-// backend.universal-Agency
-Route::get('/universal/agency', 'ConcernController@universalAgency')->name('backend.universal-Agency');
-Route::post('/universal/agency/update', 'ConcernController@concernUpdate')->name('universal-Agency.update');
+    // directors
+    Route::get('/directors', 'InformationController@directors')->name('backend.directors');
+    Route::post('/directors/update', 'InformationController@informationUpdate')->name('directors.update');
 
-// backend.ms-Enterprise
-Route::get('/ms/enterprise', 'ConcernController@msEnterprise')->name('backend.ms-Enterprise');
-Route::post('/ms/enterprise/update', 'ConcernController@concernUpdate')->name('ms-Enterprise.update');
+    // backend.universal-Agency
+    Route::get('/universal/agency', 'ConcernController@universalAgency')->name('backend.universal-Agency');
+    Route::post('/universal/agency/update', 'ConcernController@concernUpdate')->name('universal-Agency.update');
 
-// backend.universal-gas-cylinder-ltd
-Route::get('/universal/gas/cylinder/ltd', 'ConcernController@universalGasCylinderLtd')->name('backend.universal-gas-cylinder-ltd');
-Route::post('/universal/gas/cylinder/ltd/update', 'ConcernController@concernUpdate')->name('universal-gas-cylinder-ltd.update');
+    // backend.ms-Enterprise
+    Route::get('/ms/enterprise', 'ConcernController@msEnterprise')->name('backend.ms-Enterprise');
+    Route::post('/ms/enterprise/update', 'ConcernController@concernUpdate')->name('ms-Enterprise.update');
 
-// backend.amb-traders
-Route::get('/amb/traders', 'ConcernController@ambTraders')->name('backend.amb-traders');
-Route::post('/amb/traders/update', 'ConcernController@concernUpdate')->name('amb-traders.update');
+    // backend.universal-gas-cylinder-ltd
+    Route::get('/universal/gas/cylinder/ltd', 'ConcernController@universalGasCylinderLtd')->name('backend.universal-gas-cylinder-ltd');
+    Route::post('/universal/gas/cylinder/ltd/update', 'ConcernController@concernUpdate')->name('universal-gas-cylinder-ltd.update');
 
-// backend.us-energy-power
-Route::get('us/energy/power', 'ConcernController@usEnergyPower')->name('backend.us-energy-power');
-Route::post('us/energy/power/update', 'ConcernController@concernUpdate')->name('us-energy-power.update');
+    // backend.amb-traders
+    Route::get('/amb/traders', 'ConcernController@ambTraders')->name('backend.amb-traders');
+    Route::post('/amb/traders/update', 'ConcernController@concernUpdate')->name('amb-traders.update');
 
-// backend.universal-cng-petrol-pump
-Route::get('/universal/cng/petrol/pump', 'ConcernController@universalCngPetrolPump')->name('backend.universal-cng-petrol-pump');
-Route::post('/universal/cng/petrol/pump/update', 'ConcernController@concernUpdate')->name('universal-cng-petrol-pump.update');
+    // backend.us-energy-power
+    Route::get('us/energy/power', 'ConcernController@usEnergyPower')->name('backend.us-energy-power');
+    Route::post('us/energy/power/update', 'ConcernController@concernUpdate')->name('us-energy-power.update');
 
-// backend.universal-engineering-ltd
-Route::get('/universal/engineering/ltd', 'ConcernController@universalEngineeringLtd')->name('backend.universal-engineering-ltd');
-Route::post('/universal/engineering/ltd/update', 'ConcernController@concernUpdate')->name('universal-engineering-ltd.update');
+    // backend.universal-cng-petrol-pump
+    Route::get('/universal/cng/petrol/pump', 'ConcernController@universalCngPetrolPump')->name('backend.universal-cng-petrol-pump');
+    Route::post('/universal/cng/petrol/pump/update', 'ConcernController@concernUpdate')->name('universal-cng-petrol-pump.update');
 
-// backend.plants
-Route::get('/backend/plants', 'PlantController@plants')->name('backend.plants');
-Route::get('/backend/plants/create', 'PlantController@create')->name('plants.create');
-Route::post('/backend/plants/store', 'PlantController@store')->name('plants.store');
-Route::get('/backend/plants/findOne', 'PlantController@findOne')->name('plantfindOne');
-Route::post('/backend/plants/update', 'PlantController@update')->name('plants.update');
-Route::post('/backend/plants/destroy', 'PlantController@destroy')->name('plants.destroy');
+    // backend.universal-engineering-ltd
+    Route::get('/universal/engineering/ltd', 'ConcernController@universalEngineeringLtd')->name('backend.universal-engineering-ltd');
+    Route::post('/universal/engineering/ltd/update', 'ConcernController@concernUpdate')->name('universal-engineering-ltd.update');
 
+    // backend.plants
+    Route::get('/backend/plants', 'PlantController@plants')->name('backend.plants');
+    Route::get('/backend/plants/create', 'PlantController@create')->name('plants.create');
+    Route::post('/backend/plants/store', 'PlantController@store')->name('plants.store');
+    Route::get('/backend/plants/findOne', 'PlantController@findOne')->name('plantfindOne');
+    Route::post('/backend/plants/update', 'PlantController@update')->name('plants.update');
+    Route::post('/backend/plants/destroy', 'PlantController@destroy')->name('plant.destroy');
 
+    // backend.compliance
+    Route::get('/backend/compliance', 'InformationController@compliance')->name('backend.compliance');
+    Route::post('/backend/compliance/update', 'InformationController@informationUpdate')->name('compliance.update');
+
+    // backend.whyLPG
+    Route::get('/backend/whyLPG', 'InformationController@whyLPG')->name('backend.whyLPG');
+    Route::post('/backend/whyLPG/update', 'InformationController@informationUpdate')->name('whyLPG.update');
+
+    // backend.contact
+    Route::get('/backend/contact', 'ContactController@contact')->name('backend.contact');
+    Route::post('/backend/contact/update', 'ContactController@contactUpdate')->name('contact.update');
 
 // backend end

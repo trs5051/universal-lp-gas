@@ -52,8 +52,7 @@ class PlantController extends Controller
     {
         // dd($request->all());
         $validatedData = $request->validate([
-            'Plant_Name' => 'required|unique:plants,heading|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'Plant_Name' => 'required|max:255',
         ]);
         if ($request->hasFile('image')) {
             $img = time() . '-' . $request->image->getClientOriginalName();
@@ -61,11 +60,23 @@ class PlantController extends Controller
         }
 
         $plants = Plant::findOrFail($request->Plant_Id);
-        $plants->img = $img;
+        if ($request->hasFile('image')) {
+            $plants->img = $img;
+        }
+
         $plants->heading = $request->Plant_Name;
         $plants->text1 = $request->text1;
         $plants->text2 = $request->text2;
         $plants->update();
         return $plants;
+    }
+
+    public function destroy(Request $request)
+    {
+        $plants = Plant::where('id',$request->id)->first();
+        $plants->delete_status = 0;
+        $plants->update();
+        return $plants;
+
     }
 }
