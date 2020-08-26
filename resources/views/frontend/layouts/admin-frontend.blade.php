@@ -158,7 +158,7 @@
                                         <li><a href="{{ route('frontend.product') }}">Products</a></li>
                                         <li><a href="#">Plant & Process</a>
                                             <ul class="sub-menu">
-                                                <li><a href="{{ route('frontend.cylinder-safety') }}">Cylinder Sefty</a>
+                                                <li><a href="{{ route('frontend.cylinder-safety') }}">Cylinder Safety</a>
                                                 </li>
                                                 <li><a href="{{ route('frontend.plants') }}">Plants</a></li>
                                                 <li><a href="{{ route('frontend.compliance') }}">Compliance</a></li>

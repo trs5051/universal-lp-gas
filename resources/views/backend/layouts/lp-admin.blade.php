@@ -292,9 +292,9 @@
                         </a>
                         <ul class="treeview-menu " style="display: none; ">
                             <li class="  ">
-                                <a href="#/admin/blogCategories">
+                            <a href="{{ route('backend.cylinderSafety') }}">
                                     <i class="fa fa-hand-o-right"></i>
-                                    <span>Cylinder Sefty</span>
+                                    <span>Cylinder Safety</span>
                                 </a>
                             </li>
                             <li class="  ">
@@ -335,7 +335,7 @@
                     </li>
 
                     <li class="  ">
-                        <a href="{{ route('backend-settings') }}">
+                        <a href="#">
                             <i class="fa fa-gear"></i>
                             <span>Settings</span>
                         </a>

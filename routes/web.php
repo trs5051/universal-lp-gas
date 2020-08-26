@@ -136,4 +136,9 @@ Route::get('/projects', 'ProductController@product')->name('frontend.products');
     Route::get('/backend/contact', 'ContactController@contact')->name('backend.contact');
     Route::post('/backend/contact/update', 'ContactController@contactUpdate')->name('contact.update');
 
+    // backend.cylinderSafety
+    Route::get('/backend/cylinderSafety', 'CylinderSafetyController@cylinderSafety')->name('backend.cylinderSafety');
+    Route::post('/backend/cylinderSafety/update', 'CylinderSafetyController@cylinderSafetyUpdate')->name('cylinderSafety.update');
+
+
 // backend end
