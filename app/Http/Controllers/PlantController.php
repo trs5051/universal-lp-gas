@@ -42,6 +42,7 @@ class PlantController extends Controller
         $plants->save();
         return $plants;
     }
+
     public function findOne(Request $request)
     {
         $plants = Plant::findOrFail($request->id);

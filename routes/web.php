@@ -140,5 +140,25 @@ Route::get('/projects', 'ProductController@product')->name('frontend.products');
     Route::get('/backend/cylinderSafety', 'CylinderSafetyController@cylinderSafety')->name('backend.cylinderSafety');
     Route::post('/backend/cylinderSafety/update', 'CylinderSafetyController@cylinderSafetyUpdate')->name('cylinderSafety.update');
 
+    // backend.product
+    Route::get('/backend/product', 'ProductController@product')->name('backend.product');
+    Route::post('/backend/product/store', 'ProductController@store')->name('product.store');
+    Route::get('/backend/product/findOne', 'ProductController@findOne')->name('findOne.Product');
+    Route::post('/backend/product/update', 'ProductController@update')->name('product.update');
+    Route::post('/backend/product/destroy', 'ProductController@destroy')->name('product.destroy');
+
+    // backend.management.category
+    Route::get('/management/category', 'ManagementCategoryController@managementCategory')->name('backend.management.category');
+    Route::post('/management/category/store', 'ManagementCategoryController@store')->name('managementCategory.store');
+    Route::get('/management/category/findOne', 'ManagementCategoryController@findOne')->name('findOne.managementCategory');
+    Route::post('/management/category/update', 'ManagementCategoryController@update')->name('managementCategory.update');
+    Route::post('/management/category/destroy', 'ManagementCategoryController@destroy')->name('managementCategory.destroy');
+
+    // backend.management
+    Route::get('/backend/management', 'ManagementController@management')->name('backend.management');
+    Route::post('/backend/management/store', 'ManagementController@store')->name('management.store');
+    Route::get('/backend/management/findOne', 'ManagementController@findOne')->name('findOne.management');
+    Route::post('/backend/management/update', 'ManagementController@update')->name('management.update');
+    Route::post('/backend/management/destroy', 'ManagementController@destroy')->name('management.destroy');
 
 // backend end

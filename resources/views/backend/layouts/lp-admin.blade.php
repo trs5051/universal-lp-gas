@@ -217,11 +217,27 @@
                         </ul>
                     </li>
 
-                    <li class="  ">
-                        <a href="#/admin/menus">
+                    <li class="treeview">
+                    <a href="">
                             <i class="fa fa-users"></i>
                             <span>Management</span>
+                            <i class="fa fa-angle-left pull-right"></i>
                         </a>
+                        <ul class="treeview-menu " style="display: none; ">
+
+                            <li class="  ">
+                                <a href="{{Route('backend.management.category')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Management Category</span>
+                                </a>
+                            </li>
+                            <li class="  ">
+                                <a href="{{Route('backend.management')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Management List</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="treeview">
@@ -278,7 +294,7 @@
                     </li>
 
                     <li class="  ">
-                        <a href="#/admin/pages">
+                    <a href="{{ route('backend.product') }}">
                             <i class="fa fa-product-hunt"></i>
                             <span>Products</span>
                         </a>
@@ -318,8 +334,6 @@
 
                         </ul>
                     </li>
-
-
 
                     <li class="  ">
                         <a href="#/admin/settings/1/edit">

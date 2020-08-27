@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 24, 2020 at 10:11 AM
+-- Generation Time: Aug 27, 2020 at 10:56 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -80,14 +80,58 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `contacts`
 --
 
 INSERT INTO `contacts` (`id`, `title`, `office_name`, `address`, `land_line`, `email`, `contact_for`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'Head Office', 'Universal House House # 24, Road # 4\r\nRose Valley R/A, Zakir Hossain Road\r\nChittagong, Bangladesh.', '+880312566601-02\r\n+880312566456, +880312566727', 'shahjahanshaju037@gmail.com,\r\nuniversal.lpgas@yahoo.com', 'head_office', 1, NULL, NULL);
+(1, NULL, 'Head Office', 'Universal House House # 24, Road # 4\r\nRose Valley R/A, Zakir Hossain Road\r\nChittagong, Bangladesh.\r\nb', '+880312566601-02,+880312566456, +880312566727', 'shahjahanshaju037@gmail.com,universal.lpgas@yahoo.com', 'head_office', 1, NULL, '2020-08-25 00:30:56'),
+(2, NULL, 'Dhaka Office', 'House : #493/3 (1st Floor)\r\nRoad # 9, DOHS,m Baridhara\r\nDhaka, Bangladesh.', '+88028419450', 'info@universallpgas.com', 'dhaka_office', 1, NULL, '2020-08-25 00:31:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cylinder_safeties`
+--
+
+DROP TABLE IF EXISTS `cylinder_safeties`;
+CREATE TABLE IF NOT EXISTS `cylinder_safeties` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `top_heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `top_text` text COLLATE utf8mb4_unicode_ci,
+  `top_img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `safety_tips_img1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `safety_tips_img2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `safety_tips_heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `safety_tips_text` text COLLATE utf8mb4_unicode_ci,
+  `stove_img1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stove_img2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stove_text1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stove_text2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leakage_img1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leakage_img2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leakage_img3` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leakage_img4` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leakage_text1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leakage_text2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leakage_text3` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `leakage_text4` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `safely_img1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `safely_img2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cylinder_safeties`
+--
+
+INSERT INTO `cylinder_safeties` (`id`, `top_heading`, `top_text`, `top_img`, `safety_tips_img1`, `safety_tips_img2`, `safety_tips_heading`, `safety_tips_text`, `stove_img1`, `stove_img2`, `stove_text1`, `stove_text2`, `leakage_img1`, `leakage_img2`, `leakage_img3`, `leakage_img4`, `leakage_text1`, `leakage_text2`, `leakage_text3`, `leakage_text4`, `safely_img1`, `safely_img2`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, 'User Safety1', 'Universal LP Gas is the First WLPGA Member and so, safety is of paramount concern to all involved in the LPG business, from producers through the supply, storage, handling and distribution chain, through to the consumers.1', '1598435951-tiger.jpg', '1598437514-3cylinder.jpg', '1598437514-user-tips-1.jpg', 'Factors to consider before purchasing an LPG Cylinder.', 'Thermo-seal is in the appropriat e place. Safety Cap is in the appropriate place. LPG will cause natural rubber and some plastics to deteriorate. Only use hoses and other equipment specifically designed for LPG', '1598437558-guide-to-attach-1.jpg', '1598437558-guide-to-attach-2.jpg', 'LP Gas must be stored beneath the stove on an adjacent level.', 'LP Gas cylinders must be checked for leakage with soap water, keeping the regulator attached.', '1598437618-action-to-avoid-1.jpg', '1598437618-action-to-avoid-2.jpg', '1598437618-action-to-avoid-3.jpg', '1598437618-action-to-avoid-4.jpg', 'Never test a leakage with lighting fire.', 'Avoid smoking anywhere around the suspected leakage area.', 'Avoid candle anywhere around the suspected leakage area.', 'Avoid switching mobile phones or electric switches on and off.', '1598437642-tips-to-safety-1.jpg', '1598437642-tips-to-safety-2.jpg', '1', NULL, '2020-08-26 04:27:22');
 
 -- --------------------------------------------------------
 
@@ -161,7 +205,61 @@ INSERT INTO `information` (`id`, `title`, `heading1`, `heading2`, `heading3`, `h
 (2, NULL, 'We are leading International company in the world', 'Building Staffs', 'Building Staffs', 'Building Staffs', 'Benefit of the socie where we operate. A success website obusly needs great design to be one of the top 10.', 'We have a long and proud history givin emphasis to environment social and economic outcomes to deliver places that respond too the complex global forces shaping our future', 'We have a long and proud histiry givin emphasis to envi ronment social and economic outcomes.', 'We have a long and proud histiry givin emphasis to envi ronment social and economic outcomes.', 'We have a long and proud histiry givin emphasis to envi ronment social and economic outcomes.', NULL, NULL, 'leading-feature-1.png', 'leading-feature-2.png', 'leading-feature-3.png', NULL, 'about_us', 1, NULL, '2020-08-18 22:26:47'),
 (3, NULL, 'Chairman', 'Managing Director', NULL, NULL, NULL, NULL, 'Mrs. Rezvin Akther, wife of Mr. Md. Shahjahan Shaju is the Chairman of the Group. Born in 1973 at Noakhali Mrs. Akther completed her Graduation from National University, Bangladesh. As Chairman of the company she looks after the Branding, Administration and Marketing of the company. Mrs. Akther is a social person and she is the member of Feni Samity, Chittagong. Mrs. Akther also visited Singapore, Malaysia, Thailand, India, Dubai etc.', NULL, 'Mr. Md. Shahjahan Shaju is the founder Managing Director of the Group. Mr. Shaju born in 1967 in a prominent family of Feni. He completed his graduation in Management from National University, Bangladesh. Mr. Shaju is the key person of the group and the leading man. He actively participate in the overall activities of the company. With his active participation and leadership the company is growing to become a conglomerate.', 'Mr. Shaju is an well travelled businessperson, he visited Canada, Singapore, Thailand, Malaysia, Abu-Dhabi, India, China for various business purposes. Apart from business Mr. Shaju actively participate in various social activities.\r\nHe is serving as Director to Dutch Bangla Chamber of Commerce & Industry & also a life member of the Shadharan Shangshad Foundation [Founder: Dr. MA Wazed Meah, Husband of PM – Sheikh Hasina]. Besides these he is an active member of Dhaka Club, Dhaka; Gulshan Club, Dhaka; Chittagong Club, Chittagong; Golf Club, Bhatiary, Chittagong; Boat Club, Chittagong; Chittagong Chamber of Commerce & Industry; General Secretary of Rose Velly Residential Area, Kulshi, Ctg & Sports Secretary, Feni Samity, Chittagong.', NULL, '1597896609-chairman.jpg', '1597896609-md.jpg', NULL, NULL, 'directors', 1, NULL, '2020-08-19 22:30:02'),
 (4, NULL, 'WLPGA', 'ISO-9001', NULL, NULL, 'Universal Lp Gas has been an honored member of WLPGA since 20016.', 'Universal Lp Gas has been certified with ISO-9001 certification for its extraordinart plant and product procesing.', 'Universal Lp Gas has been an honored member of WLPGA since 20016.', 'Universal Lp Gas has been certified with ISO-9001 certification for its extraordinart plant and product procesing.', NULL, NULL, NULL, '1598241397-wlpa.jpg', '1598241397-ISO.jpg', NULL, NULL, 'compliance', 1, NULL, '2020-08-23 21:56:37'),
-(5, NULL, 'Universal Agency', NULL, NULL, NULL, NULL, NULL, 'The benefits of LPG begin from your kitchen and keep going on.\r\n\r\nHere is a fuel with limitless possibilities \r\nLPG is a highly efficient cooking fuel. It is economical and its excellent heating capacity helps you cook your food in less time, saving you a lot on fuel cost. It undergoes complete combustion, produces no residue and particulate matter, which means minimum maintenance cost and lesser carbon footprint. And that’s just some of its benefits that you can count on your fingers', 'LPG has a plethora of benefits which can be a life-changing experience for its users. It’s good for your health, your kitchen and our environment. Paying a little attention while working with LPG can make it even more beneficial, so you can save enough to plan your long-awaited road trip to your favorite destination.', NULL, NULL, NULL, '1598244629-tiger.jpg', NULL, NULL, NULL, 'whyLPG', 1, NULL, '2020-08-23 22:50:29');
+(5, NULL, 'Universal Agency', NULL, NULL, NULL, NULL, NULL, 'The benefits of LPG begin from your kitchen and keep going on.\r\n\r\nHere is a fuel with limitless possibilities \r\nLPG is a highly efficient cooking fuel. It is economical and its excellent heating capacity helps you cook your food in less time, saving you a lot on fuel cost. It undergoes complete combustion, produces no residue and particulate matter, which means minimum maintenance cost and lesser carbon footprint. And that’s just some of its benefits that you can count on your fingers', 'LPG has a plethora of benefits which can be a life-changing experience for its users. It’s good for your health, your kitchen and our environment. Paying a little attention while working with LPG can make it even more beneficial, so you can save enough to plan your long-awaited road trip to your favorite destination.', NULL, NULL, NULL, '1598437694-whylpg.jpg', NULL, NULL, NULL, 'whyLPG', 1, NULL, '2020-08-26 04:28:14');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `management`
+--
+
+DROP TABLE IF EXISTS `management`;
+CREATE TABLE IF NOT EXISTS `management` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `designation` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `delete_status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `management`
+--
+
+INSERT INTO `management` (`id`, `name`, `img`, `designation`, `text`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, 'Md.Sirajul Haque FCA', '', 'GM & CFO', 'Mr. Sirajul Haque FCA is working here as GM & CFO. Under their supervision a well professional experienced team are working.', 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `management_categories`
+--
+
+DROP TABLE IF EXISTS `management_categories`;
+CREATE TABLE IF NOT EXISTS `management_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `delete_status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `management_categories`
+--
+
+INSERT INTO `management_categories` (`id`, `title`, `delete_status`, `created_at`, `updated_at`) VALUES
+(14, 'Mother Terminal', 1, '2020-08-27 04:00:24', '2020-08-27 04:00:24'),
+(13, 'Chattogram Office', 1, '2020-08-27 04:00:12', '2020-08-27 04:00:12'),
+(12, 'Cylinder Manufacturing Plant', 1, '2020-08-27 03:59:59', '2020-08-27 03:59:59'),
+(11, 'Head Office', 1, '2020-08-27 03:59:46', '2020-08-27 03:59:46'),
+(15, 'Cylinder Refilling Plant', 1, '2020-08-27 04:00:34', '2020-08-27 04:00:34'),
+(16, 'CNG Station', 1, '2020-08-27 04:00:46', '2020-08-27 04:00:46');
 
 -- --------------------------------------------------------
 
@@ -175,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -193,7 +291,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2020_08_17_075320_create_our_prouds_table', 1),
 (10, '2020_08_19_045457_create_concerns_table', 2),
 (11, '2020_08_20_101842_create_plants_table', 3),
-(13, '2020_08_24_070137_create_contacts_table', 4);
+(13, '2020_08_24_070137_create_contacts_table', 4),
+(14, '2020_08_26_041818_create_cylinder_safeties_table', 5),
+(15, '2020_08_27_032832_create_product_categories_table', 6),
+(16, '2020_08_27_033406_create_products_table', 7),
+(17, '2020_08_27_091608_create_management_categories_table', 8),
+(18, '2020_08_27_101027_create_management_table', 9);
 
 -- --------------------------------------------------------
 
@@ -278,6 +381,68 @@ INSERT INTO `plants` (`id`, `img`, `heading`, `text1`, `text2`, `delete_status`,
 (41, '1598179624-ele(1).jpg', 'Dhaka', 'ne wmnew', 'gooo', '0', '2020-08-23 04:16:35', '2020-08-23 21:22:23'),
 (42, '1598238185-mission-vission.jpg', 'new', 'trfbhtgh', 'drehst', '1', '2020-08-23 21:03:05', '2020-08-23 21:03:05'),
 (40, '1598238922-missionVision.jpg', 'look2', 'see', NULL, '0', '2020-08-23 04:16:20', '2020-08-23 21:22:32');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `product_categories_id` int(11) NOT NULL,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `delete_status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `product_categories_id`, `img`, `delete_status`, `created_at`, `updated_at`) VALUES
+(10, 1, '1598505216-missionVision.jpg', 0, '2020-08-26 23:13:36', '2020-08-26 23:37:56'),
+(9, 4, '1598504780-footer-logo.png', 0, '2020-08-26 23:06:20', '2020-08-26 23:38:05'),
+(8, 2, '1598504457-whylpg.jpg', 0, '2020-08-26 23:00:57', '2020-08-26 23:38:08'),
+(7, 1, '1598504425-missionVision.jpg', 0, '2020-08-26 23:00:25', '2020-08-26 23:38:11'),
+(11, 1, '1598505320-tiger.jpg', 1, '2020-08-26 23:15:20', '2020-08-26 23:15:20'),
+(12, 1, '1598505371-favicon1.png', 1, '2020-08-26 23:16:11', '2020-08-26 23:16:11'),
+(13, 3, '1598508095-ele(1).jpg', 1, '2020-08-27 00:01:35', '2020-08-27 00:01:35'),
+(14, 4, '1598508556-whylpg.jpg', 1, '2020-08-27 00:09:16', '2020-08-27 00:09:16'),
+(15, 5, '1598508794-download.jpg', 1, '2020-08-27 00:13:14', '2020-08-27 00:13:14'),
+(16, 6, '1598509022-tiger.jpg', 0, '2020-08-27 00:17:02', '2020-08-27 00:21:08'),
+(17, 6, '1598509278-small-cylender.png', 0, '2020-08-27 00:21:18', '2020-08-27 00:21:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_categories`
+--
+
+DROP TABLE IF EXISTS `product_categories`;
+CREATE TABLE IF NOT EXISTS `product_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `delete_status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_categories`
+--
+
+INSERT INTO `product_categories` (`id`, `title`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, 'Gas Cylinder', 1, NULL, NULL),
+(2, 'Autogas', 1, NULL, NULL),
+(3, 'Households Gas', 1, NULL, NULL),
+(4, 'Industrial Gas', 1, NULL, NULL),
+(5, 'new', 1, '2020-08-27 00:13:14', '2020-08-27 00:13:14'),
+(6, 'tiger', 1, '2020-08-27 00:17:02', '2020-08-27 00:17:02');
 
 -- --------------------------------------------------------
 

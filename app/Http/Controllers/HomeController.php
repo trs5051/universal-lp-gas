@@ -39,11 +39,11 @@ class HomeController extends Controller
     {
         return view('land-tax-form');
     }
-    
+
     public function getProfile()
     {
         $profile = User::findOrFail(auth()->id());
-        return view('profile', compact('profile'));
+        return view('backend.profile', compact('profile'));
     }
 
     public function changePassword(Request $request)
