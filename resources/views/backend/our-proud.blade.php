@@ -50,7 +50,7 @@
                                 <label for="our_proud_heading" class="col-lg-2 control-label">Heading</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" placeholder="Heading" rows="2" name="heading1"
-                                        type="text" maxlength="15" value="{{ $ourProud->heading }}">
+                                        type="text" maxlength="150" value="{{ $ourProud->heading }}">
                                 </div>
                             </div>
                             <div class="form-group">

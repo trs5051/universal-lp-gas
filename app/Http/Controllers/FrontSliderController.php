@@ -34,7 +34,8 @@ class FrontSliderController extends Controller
         $slider->title = $request->Slider_Title;
         $slider->slider_for = 'front_slider';
         $slider->save();
-        return redirect('front-slider') ;
+        return redirect()->route('backend.front-slider') ;
+
     }
 
     public function destroy(Request $request){

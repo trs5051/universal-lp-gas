@@ -120,7 +120,6 @@
                                             {{ csrf_field() }}
                                         </form>
 
-
                                     </div>
                                 </li>
                             </ul>
@@ -139,41 +138,43 @@
                     <!-- tauhid general -->
 
                     <!-- tauhid dashboard -->
-                    <li class="header">System</li>
-                    <li class="  ">
+                    <li class="header">System </li>
+
+                    <li class="{{ Request::routeIs('backend.header-footer') ? 'active' : '' }}">
                         <a href="{{ route('backend.header-footer') }}">
                             <i class="fa fa-header"></i>
                             <span>header & footer</span>
                         </a>
                     </li>
 
-                    <li class="treeview">
+                <li class="treeview {{ (request()->is('backend/home*')) ? 'active' : '' }} ">
                         <a href="">
                             <i class="fa fa-home"></i>
-                            <span>Home</span>
+                        <span>Home</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu" style="display: none; ">
-                            <li class="">
+                        <ul class="treeview-menu" style="display: {{ (request()->is('backend/home*')) ? 'block' : 'none' }} ; ">
+
+                            <li class="{{ (request()->is('backend/home/front-slider')) ? 'active' : '' }}">
                                 <a href="{{ route('backend.front-slider') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Front Slider</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.our-proud') ? 'active' : '' }}">
                                 <a href="{{ route('backend.our-proud') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Our Proud</span>
                                 </a>
                             </li>
 
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.our-business-concern') ? 'active' : '' }}">
                                 <a href="{{ route('backend.our-business-concern') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Our Business Concern</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.sustainability') ? 'active' : '' }}">
                                 <a href="{{ route('backend.sustainability') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Sustainability</span>
@@ -182,32 +183,32 @@
 
                         </ul>
                     </li>
-                    <li class="treeview">
+                    <li class="treeview {{ (request()->is('backend/about*')) ? 'active' : '' }}">
                         <a href="">
                             <i class="fa fa-info-circle"></i>
                             <span>About</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: none; ">
-                            <li class="  ">
+                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/about*')) ? 'block' : 'none' }}; ">
+                            <li class="{{ Request::routeIs('backend.about-us') ? 'active' : '' }}">
                                 <a href="{{ route('backend.about-us') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>About Us</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.mission-vision') ? 'active' : '' }}">
                                 <a href="{{ route('backend.mission-vision') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Mission & Vission</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.universal-lp-gas') ? 'active' : '' }}">
                                 <a href="{{ route('backend.universal-lp-gas') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal LP Gas</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.directors') ? 'active' : '' }}">
                                 <a href="{{ route('backend.directors') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Board of Directors</span>
@@ -217,73 +218,74 @@
                         </ul>
                     </li>
 
-                    <li class="treeview">
+                    <li class="treeview {{ (request()->is('backend/management*')) ? 'active' : '' }}">
                     <a href="">
                             <i class="fa fa-users"></i>
                             <span>Management</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: none; ">
+                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/management*')) ? 'block' : 'none' }}; ">
 
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.management') ? 'active' : '' }}">
+                                <a href="{{Route('backend.management')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Member List</span>
+                                </a>
+                            </li>
+                            <li class="{{ Request::routeIs('backend.management.category') ? 'active' : '' }}">
                                 <a href="{{Route('backend.management.category')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Management Category</span>
                                 </a>
                             </li>
-                            <li class="  ">
-                                <a href="{{Route('backend.management')}}">
-                                    <i class="fa fa-hand-o-right"></i>
-                                    <span>Management List</span>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
 
-                    <li class="treeview">
+                    <li class="treeview {{ (request()->is('backend/concern*')) ? 'active' : '' }}">
                         <a href="">
                             <i class="fa fa-bars"></i>
                             <span>Associate Connccern's</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: none; ">
-                            <li class="  ">
+                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/concern*')) ? 'block' : 'none' }}; ">
+                            <li class="{{ Request::routeIs('backend.universal-Agency') ? 'active' : '' }}">
                                 <a href="{{ route('backend.universal-Agency') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal Agency</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.ms-Enterprise') ? 'active' : '' }}">
                                 <a href="{{ route('backend.ms-Enterprise') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>MS Enterprise</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.universal-gas-cylinder-ltd') ? 'active' : '' }}">
                                 <a href="{{ route('backend.universal-gas-cylinder-ltd') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal Gas & Gas Cylinder Ltd</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.amb-traders') ? 'active' : '' }}">
                                 <a href="{{ route('backend.amb-traders') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>AMB Traders Pvt Ltd</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.us-energy-power') ? 'active' : '' }}">
                                 <a href="{{ route('backend.us-energy-power') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>US Energy & Power Pvt Ltd</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.universal-cng-petrol-pump') ? 'active' : '' }}">
                                 <a href="{{ route('backend.universal-cng-petrol-pump') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal CNG & Petrol Pump </span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.universal-engineering-ltd') ? 'active' : '' }}">
                                 <a href="{{ route('backend.universal-engineering-ltd') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Universal Engineering Ltd</span>
@@ -293,39 +295,39 @@
                         </ul>
                     </li>
 
-                    <li class="  ">
+                    <li class="{{ Request::routeIs('backend.product') ? 'active' : '' }}">
                     <a href="{{ route('backend.product') }}">
                             <i class="fa fa-product-hunt"></i>
                             <span>Products</span>
                         </a>
                     </li>
 
-                    <li class="treeview">
+                    <li class="treeview {{ (request()->is('backend/plant-process*')) ? 'active' : '' }}">
                         <a href="">
                             <i class="fa fa-spinner"></i>
                             <span>Plant & Process</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: none; ">
-                            <li class="  ">
+                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/plant-process*')) ? 'block' : 'none' }}; ">
+                            <li class="{{ Request::routeIs('backend.cylinderSafety') ? 'active' : '' }}">
                             <a href="{{ route('backend.cylinderSafety') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Cylinder Safety</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.plants') ? 'active' : '' }}">
                                 <a href="{{ route('backend.plants') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Plants</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.compliance') ? 'active' : '' }}">
                             <a href="{{ route('backend.compliance')}}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Compliance</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li class="{{ Request::routeIs('backend.whyLPG') ? 'active' : '' }}">
                             <a href="{{ route('backend.whyLPG') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Why LPG?</span>
@@ -334,29 +336,15 @@
 
                         </ul>
                     </li>
-
-                    <li class="  ">
-                        <a href="#/admin/settings/1/edit">
-                            <i class="fa fa-industry"></i>
-                            <span>Distribution</span>
-                        </a>
-                    </li>
-                    <li class="  ">
-                        <a href="#/admin/settings/1/edit">
+                    <li class="">
+                        <a href="#">
                             <i class="fa fa-newspaper-o"></i>
                             <span>News & Events</span>
                         </a>
                     </li>
 
-                    <li class="  ">
-                        <a href="#">
-                            <i class="fa fa-gear"></i>
-                            <span>Settings</span>
-                        </a>
-                    </li>
 
-
-                    <li class="  ">
+                    <li class="{{ Request::routeIs('backend.contact') ? 'active' : '' }}">
                     <a href="{{ route('backend.contact') }}">
                             <i class="fa fa-address-card"></i>
                             <span>Contact</span>

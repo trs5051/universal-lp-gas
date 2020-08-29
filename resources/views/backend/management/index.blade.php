@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-             Management
+            Management
             <small>Edit </small>
         </h1>
         <!-- Breadcrumbs would render from routes/breadcrumb.php -->
@@ -25,7 +25,7 @@
                 <h3 class="box-title"> Management</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-backdrop='static' data-keyboard='false' data-whatever="@add">Add New Management</button>
+                        data-backdrop='static' data-keyboard='false' data-whatever="@add">Add New Member</button>
                 </div>
             </div>
 
@@ -39,6 +39,7 @@
                                 <th>image</th>
                                 <th>Name</th>
                                 <th>Designation</th>
+                                <th>Post</th>
                                 <th>text</th>
                                 <th>Action</th>
                             </tr>
@@ -47,13 +48,10 @@
                             @forelse ($managements as $key => $item)
                                 <tr id="tr_{{ $item->id }}">
                                     <th>{{ $key + 1 }}</th>
-                                    <td><span><img src="{!!  asset('/storage/managementsimage/' . $item->img) !!}"
-                                                width="100px"></span>
-                                    </td>
-                                    <td>
-                                        <h4> {!! $item->name ?? '' !!}</h4>
-                                    </td>
+                                    <td><span><img src="{!!  asset('/storage/managementImage/' . $item->img) !!}" width="100px"></span> </td>
+                                    <td><h4> {!! $item->name ?? '' !!}</h4> </td>
                                     <td>{!! $item->designation ?? '' !!}</td>
+                                    <td>{!! $item->managementCategory->title ?? '' !!}</td>
                                     <td>{!! $item->text ?? '' !!}</td>
                                     <td>
                                         <a id="edit_management" data-id="{{ $item->id }}" data-toggle="modal"
@@ -75,6 +73,7 @@
                                 <th>image</th>
                                 <th>Name</th>
                                 <th>Designation</th>
+                                <th>Post</th>
                                 <th>text</th>
                                 <th>Action</th>
                             </tr>
@@ -96,7 +95,7 @@
                     @csrf
                     <div class="box box-info">
                         <div class="box-header">
-                            <h3 class="box-title"><i class="fa fa-plus-square"></i> Add New Management </h3>
+                            <h3 class="box-title"><i class="fa fa-plus-square"></i> Add New Member </h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -104,49 +103,63 @@
 
                         <!-- /.box-header -->
                         <div class="box-body setting-block">
-
                             <div class="form-group">
-
                                 <label for="image" class="col-lg-2 control-label">image</label>
-
                                 <div class="col-lg-10">
                                     <div class="custom-file-input">
-                                        <input class="form-control inputfile inputfile-1" name="image" type="file"
-                                            id="image">
+                                        <input class="form-control inputfile inputfile-1" name="img" type="file" id="image">
                                         <label for="image">
                                             <i class="fa fa-upload"></i>
                                             <span id="img_span">Choose an image</span>
                                         </label>
                                     </div>
                                     <span id="image_errors"></span>
-
                                 </div>
                                 <!--col-lg-10-->
                             </div>
                             <!--form control-->
                             <br>
                             <div class="form-group">
-                                <label for="heading" class="col-lg-2 control-label">Heading</label>
+                                <label for="name" class="col-lg-2 control-label">Name</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="Heading" rows="2" name="Management Name" type=""
+                                    <input class="form-control" placeholder="name" rows="2" name="Name" type=""
                                         style="max-width: 75% ;">
                                     <span id="Management_Name_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="text1" class="col-lg-2 control-label">Text1</label>
+                                <label for="designation" class="col-lg-2 control-label">Designation</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" placeholder="text1" rows="2" name="text1" cols="500"
-                                        id="text1" style="max-width: 75% ; min-height: 150px;"></textarea>
+                                    <input class="form-control" placeholder="designation" rows="2" name="designation"
+                                        type="" style="max-width: 75% ;">
+                                    <span id="Management_Name_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="text2" class="col-lg-2 control-label">Text2</label>
+                                <label for="post" class="col-lg-2 control-label required">Post</label>
+
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" placeholder="text2" rows="2" name="text2" cols="500"
-                                        id="text2" style="max-width: 75% ; min-height: 150px;"></textarea>
+                                    <select class="form-control select2 post box-size" required="required" id="post" name="post">
+
+                                       @forelse ($categories as $item)
+                                    <option value="{{$item->id}}">{{$item->title}}</option>
+                                       @empty
+
+                                       @endforelse
+
+                                    </select>
+                                </div>
+                                <!--col-lg-3-->
+                            </div>
+                            <!--form control-->
+                            <div class="form-group">
+                                <label for="text" class="col-lg-2 control-label">Text</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" placeholder="text" rows="2" name="text" cols="500"
+                                        id="text" style="max-width: 75% ; min-height: 150px;"></textarea>
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- /.box-body -->
@@ -180,7 +193,7 @@
                     @csrf
                     <div class="box box-info">
                         <div class="box-header">
-                            <h3 class="box-title"><i class="fa fa-pencil-square"></i> Edit Management </h3>
+                            <h3 class="box-title"><i class="fa fa-pencil-square"></i> Edit Member Details </h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -188,14 +201,10 @@
 
                         <!-- /.box-header -->
                         <div class="box-body setting-block">
-
                             <div class="form-group">
-
                                 <label for="edit_image" class="col-lg-2 control-label">image</label>
-
                                 <div class="col-lg-10">
                                     <div class="preview-img">
-
                                     </div>
                                     <br>
                                     <div class="custom-file-input">
@@ -214,29 +223,47 @@
                             <!--form control-->
                             <br>
                             <div class="form-group">
-                                <label for="heading" class="col-lg-2 control-label">Management Name</label>
+                                <label for="name" class="col-lg-2 control-label">Name</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="Management Name" rows="2" name="Management Name" type="text" id="edit_management_name"
+                                <input class="form-control" placeholder="name" rows="2" name="Name" id="edit_member_name" value=""
                                         style="max-width: 75% ;">
-                                    <span id="update_Management_Name_errors"></span>
+                                    <span id="Management_Name_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="text1" class="col-lg-2 control-label">Text1</label>
+                                <label for="designation" class="col-lg-2 control-label">Designation</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" placeholder="text1" rows="2" name="text1" cols="500"
-                                        id="edit_text1" style="max-width: 75% ; min-height: 150px;"></textarea>
+                                    <input class="form-control" placeholder="designation" rows="2" name="designation" id="edit_designation" value=""
+                                        type="" style="max-width: 75% ;">
+                                    <span id="Management_Name_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="text2" class="col-lg-2 control-label">Text2</label>
-                                <div class="col-lg-10">
-                                    <textarea class="form-control" placeholder="text2" rows="2" name="text2" cols="500"
-                                        id="edit_text2" style="max-width: 75% ; min-height: 150px;"></textarea>
-                                </div>
-                            </div>
-                        </div>
+                                <label for="post" class="col-lg-2 control-label required">Post</label>
 
+                                <div class="col-lg-10">
+                                    <select class="form-control select2 post box-size" required="required" id="edit_post" name="post">
+
+                                       @forelse ($categories as $item)
+                                    <option value="{{$item->id}}">{{$item->title}}</option>
+                                       @empty
+
+                                       @endforelse
+
+                                    </select>
+                                </div>
+                                <!--col-lg-3-->
+                            </div>
+                            <!--form control-->
+                            <div class="form-group">
+                                <label for="text" class="col-lg-2 control-label">Text</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" placeholder="text" rows="2" name="text" cols="500"
+                                        id="edit_text" style="max-width: 75% ; min-height: 150px;"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <div class="row">
@@ -249,9 +276,7 @@
                             </div>
                         </div>
                     </div>
-
                     <!--box-->
-
                     <!-- hidden setting id variable -->
                     <input type="hidden" id="management_id" name="Management Id">
 
@@ -295,10 +320,10 @@
                     console.log('Submission was successful.');
                     console.log(data);
                     swal('Congratulation!', 'New Management Added successfully', 'success')
-                    var id = data['id'];
-                    var image = data['img'];
+                    var id = data[0]['id'];
+                    var image = data[0]['img'];
 
-                    var img = '<span><img src="{{ asset('/storage/managementsimage') }}/' +
+                    var img = '<span><img src="{{ asset('/storage/managementImage') }}/' +
                         image + '" width="100px"></span>';
 
                     var btn = '<a id="edit_management" data-id="' + id +
@@ -309,8 +334,10 @@
                     table.row.add([
                         sl + 1,
                         img,
-                        data['heading'],
-                        data['text1'],
+                        data[0]['name'],
+                        data[0]['designation'],
+                        data[1]['title'],
+                        data[0]['text'],
                         btn,
                     ]).node().id = 'tr_' + id;
                     table.draw(false);
@@ -323,12 +350,12 @@
 
                 error: function(xhr) {
                     $.each(xhr.responseJSON.errors, function(key, value) {
-                        if (key == 'image') {
+                        if (key == 'img') {
                             $('#image_errors').empty().append(
                                 '<strong style="color:red;">' + value +
                                 '</strong');
                         }
-                        if (key == 'Management_Name') {
+                        if (key == 'Name') {
                             $('#Management_Name_errors').empty().append(
                                 '<strong style="color:red;">' + value +
                                 '</strong');
@@ -353,11 +380,11 @@
                     console.log(data);
                     var id = data['id'];
                     var image = data['img'];
-                    var managementName = data['heading'];
-                    var txt1 = data['text1'];
-                    var txt2 = data['text2'];
+                    var name = data['name'];
+                    var designation = data['designation'];
+                    var text = data['text'];
 
-                    var img = '<span><img src="{{ asset('/storage/managementsimage') }}/' +
+                    var img = '<span><img src="{{ asset('/storage/managementImage') }}/' +
                         image + '" width="200px"></span>';
 
                     var btn = '<a id="edit_management" data-id="' + id +
@@ -368,9 +395,9 @@
 
                     $('#management_id').empty().val(id);
                     $('.preview-img').empty().append(img);
-                    $('#edit_management_name').empty().val(managementName);
-                    $('#edit_text1').empty().append(txt1);
-                    $('#edit_text12').empty().append(txt2);
+                    $('#edit_member_name').empty().val(name);
+                    $('#edit_designation').empty().val(designation);
+                    $('#edit_text').empty().append(text);
 
                 }
             });
@@ -398,7 +425,7 @@
                     var id = data['id'];
                     var image = data['img'];
 
-                    var img = '<span><img src="{{ asset('/storage/managementsimage') }}/' +
+                    var img = '<span><img src="{{ asset('/storage/managementImage ') }}/' +
                         image + '" width="100px"></span>';
 
                     var btn = '<a id="edit_management" data-id="' + id +
@@ -456,7 +483,8 @@
                         success: function(data) {
                             var tr_id = data['id'];
                             swal('Congratulation!',
-                                'Requested management deleted successfully', 'success')
+                                'Requested management deleted successfully',
+                                'success')
                             table.row("tr#tr_" + tr_id).remove().draw();
                         }
                     });

@@ -123,7 +123,7 @@
                                 <label for="company_contact" class="col-lg-2 control-label">Contact Number</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" placeholder="Contact Number" rows="2" name="company_contact"
-                                        type="text" maxlength="15" id="company_contact"
+                                        type="text" maxlength="150" id="company_contact"
                                         value="{{ !empty($settings->contact) ? $settings->contact : '' }}">
                                 </div>
                             </div>

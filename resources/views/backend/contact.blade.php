@@ -51,7 +51,7 @@
                                 <label for="office_name" class="col-lg-2 control-label">Title</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" placeholder="Contact Number" rows="2" name="head_office_name"
-                                        type="text" maxlength="15" id="office_name"
+                                        type="text" maxlength="50" id="office_name"
                                         value="{{ !empty($headOffice->office_name) ? $headOffice->office_name : '' }}">
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                                 <label for="dhaka_office_name" class="col-lg-2 control-label">Title</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" placeholder="Contact Number" rows="2" name="dhaka_office_name"
-                                        type="text" maxlength="15" id="dhaka_office_name"
+                                        type="text" maxlength="150" id="dhaka_office_name"
                                         value="{{ !empty($dhakaOffice->office_name) ? $dhakaOffice->office_name : '' }}">
                                 </div>
                             </div>
