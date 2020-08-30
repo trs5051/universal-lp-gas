@@ -11,7 +11,9 @@ class CylinderSafetyController extends Controller
 {
     public function index(){
         $settings = Setting::where('delete_status',1)->first();
-        return view('frontend.cylinder-safety',compact("settings"));
+        $cylinderSafety = CylinderSafety::where('delete_status',1)->first();
+
+        return view('frontend.cylinder-safety',compact("settings",'cylinderSafety'));
     }
 
     public function cylinderSafety()

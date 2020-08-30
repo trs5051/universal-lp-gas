@@ -12,7 +12,10 @@ class ProductController extends Controller
 {
     public function index(){
         $settings = Setting::where('delete_status',1)->first();
-        return view('frontend.projects',compact("settings"));
+        $products = Product::with('category')->where('delete_status',1)->get();
+        $categories = ProductCategory::where('delete_status',1)->get();
+        // dd($products);
+        return view('frontend.projects',compact("settings",'products','categories'));
     }
     public function product()
     {

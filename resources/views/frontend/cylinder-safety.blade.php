@@ -34,23 +34,20 @@
                     <div class="row factors-section wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                         <div class="col-lg-5 offset-lg-1 col-md-5 factors-left">
                             <figure>
-                                <img src="{{url('frontend/assets/images/3cylinder.jpg')}}" alt="3cylinder">
+                                <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->safety_tips_img1) }}" alt="3cylinder">
                             </figure>
                         </div>
 
                         <div class="col-lg-5 col-md-6 offset-md-1   factors-right">
                             <figure class="rounded">
-                                <img src="{{url('frontend/assets/images/user-tips-1.jpg')}}" alt="user-tips">
+                                <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->safety_tips_img2) }}" alt="user-tips">
                             </figure>
 
                             <h3>
-                                Factors to consider before purchasing an LPG Cylinder.
+                                {{ !empty($cylinderSafety->safety_tips_heading) ? $cylinderSafety->safety_tips_heading : '' }}
                             </h3>
 
-                            <p>
-
-                                Thermo-seal is in the appropriat e place. Safety Cap is in the appropriate place. LPG will cause natural rubber and some plastics to deteriorate. Only use hoses and other equipment specifically designed for LPG
-                            </p>
+                            <p>{{ $cylinderSafety->safety_tips_text }}</p>
 
                         </div>
                     </div>
@@ -65,12 +62,10 @@
                         <div class="col-md-6 cylinder-user-guide-style-1">
                             <!-- cylinder-user-guide -->
                             <div class="cylinder-user-guide left wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                                <div class="cylinder-user-guide-desc">
-                                    LP Gas must be stored beneath the stove on an adjacent level.
-                                </div>
+                                <div class="cylinder-user-guide-desc">{{$cylinderSafety->stove_text1}}</div>
 
                                 <figure>
-                                    <img src="{{url('frontend/assets/images/guide-to-attach-1.jpg')}}" alt="guide-to-attach">
+                                    <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->stove_img1) }}" alt="guide-to-attach">
                                 </figure>
                             </div>
                             <!-- /.cylinder-user-guide -->
@@ -79,12 +74,10 @@
                         <div class="col-md-6 cylinder-user-guide-style-1">
                             <!-- cylinder-user-guide -->
                             <div class="cylinder-user-guide right wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                                <div class="cylinder-user-guide-desc">
-                                    LP Gas cylinders must be checked for leakage with soap water, keeping the regulator attached.
-                                </div>
+                                <div class="cylinder-user-guide-desc">{{$cylinderSafety->stove_text2}}</div>
 
                                 <figure>
-                                    <img src="{{url('frontend/assets/images/guide-to-attach-2.jpg')}}" alt="guide-to-attach">
+                                    <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->stove_img2) }}" alt="guide-to-attach">
                                 </figure>
                             </div>
                             <!-- /.cylinder-user-guide -->
@@ -101,12 +94,10 @@
                         <div class="col-lg-3 col-md-4 col-sm-6 cylinder-user-guide-style-2">
                             <!-- cylinder-user-guide -->
                             <div class="cylinder-user-guide style-2">
-                                <div class="cylinder-user-guide-desc">
-                                    Never test a leakage with lighting fire.
-                                </div>
+                                <div class="cylinder-user-guide-desc">{{$cylinderSafety->leakage_text1}}</div>
 
                                 <figure>
-                                    <img src="{{url('frontend/assets/images/action-to-avoid-1.jpg')}}" alt="user-tips">
+                                    <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->leakage_img1) }}" alt="user-tips">
                                 </figure>
                             </div>
                             <!-- /.cylinder-user-guide -->
@@ -115,12 +106,10 @@
                         <div class="col-lg-3 col-md-4 col-sm-6 cylinder-user-guide-style-2">
                             <!-- cylinder-user-guide -->
                             <div class="cylinder-user-guide style-2">
-                                <div class="cylinder-user-guide-desc">
-                                    Avoid smoking anywhere around the suspected leakage area.
-                                </div>
+                                <div class="cylinder-user-guide-desc">{{$cylinderSafety->leakage_text2}}</div>
 
                                 <figure>
-                                    <img src="{{url('frontend/assets/images/action-to-avoid-2.jpg')}}" alt="user-tips">
+                                    <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->leakage_img2) }}" alt="user-tips">
                                 </figure>
                             </div>
                             <!-- /.cylinder-user-guide -->
@@ -129,12 +118,10 @@
                         <div class="col-lg-3 col-md-4 col-sm-6 cylinder-user-guide-style-2">
                             <!-- cylinder-user-guide -->
                             <div class="cylinder-user-guide style-2">
-                                <div class="cylinder-user-guide-desc">
-                                    Avoid candle anywhere around the suspected leakage area.
-                                </div>
+                                <div class="cylinder-user-guide-desc">{{$cylinderSafety->leakage_text3}}</div>
 
                                 <figure>
-                                    <img src="{{url('frontend/assets/images/action-to-avoid-3.jpg')}}" alt="user-tips">
+                                    <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->leakage_img3) }}" alt="user-tips">
                                 </figure>
                             </div>
                             <!-- /.cylinder-user-guide -->
@@ -143,12 +130,10 @@
                         <div class="col-lg-3 col-md-4 col-sm-6 cylinder-user-guide-style-2">
                             <!-- cylinder-user-guide -->
                             <div class="cylinder-user-guide style-2">
-                                <div class="cylinder-user-guide-desc">
-                                    Avoid switching mobile phones or electric switches on and off.
-                                </div>
+                                <div class="cylinder-user-guide-desc">{{$cylinderSafety->leakage_text4}}</div>
 
                                 <figure>
-                                    <img src="{{url('frontend/assets/images/action-to-avoid-4.jpg')}}" alt="user-tips">
+                                    <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->leakage_img4) }}" alt="user-tips">
                                 </figure>
                             </div>
                             <!-- /.cylinder-user-guide -->
@@ -166,7 +151,7 @@
                             <!-- cylinder-user-guide -->
                             <div class="cylinder-user-guide style-3">
                                 <figure>
-                                    <img src="{{url('frontend/assets/images/tips-to-safety-1.jpg')}}" alt="user-tips">
+                                    <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->safely_img1) }}" alt="user-tips">
                                 </figure>
                             </div>
                             <!-- /.cylinder-user-guide -->
@@ -176,7 +161,7 @@
                             <!-- cylinder-user-guide -->
                             <div class="cylinder-user-guide style-3">
                                 <figure>
-                                    <img src="{{url('frontend/assets/images/tips-to-safety-2.jpg')}}" alt="user-tips">
+                                    <img src="{{ asset('/storage/cylinderSafety/' . $cylinderSafety->safely_img2) }}" alt="user-tips">
                                 </figure>
                             </div>
                             <!-- /.cylinder-user-guide -->

@@ -22,22 +22,16 @@
                     <!-- mission-vission-left -->
                     <div class="col-md-5 mission-vission-left">
                         <figure class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                            <img src="{{url('frontend/assets/images/mission-vission/mission-vission.jpg')}}" alt="mission-vission">
+                           <img src="{{ asset('/storage/image/' . $concern->img) }}" alt="mission-vission">
                         </figure>
                     </div>
                     <!-- /.mission-vission-left -->
 
                     <!-- mission-vission-left -->
                     <div class="col-md-7 mission-vission-right">
-                        <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Universal Gas & Gas Cylinder Ltd</h4>
-
-                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                            Industrial concern of the group. The group right now has three plants at different location of the country. First one is LPG bottling plant located at Kaichutty, Chowddogram, Comilla with a capacity to fill 4000 Cylinders per day.
-                        </p>
-
-                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                          At the same location the company has a LPG Cylinder Manufacturing Plant with production capacity of 1000/cylinders per day. In Barabkunda, Chittagong under the same name a LPG Import, Storage, Bottling and Distribution plant is commercially running. The daily bottling capacity of the plant is 18,000/day.
-                        </p>
+                        <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{{ $concern->heading }}</h4>
+                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $concern->text1 }}</p>
+                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">{{ $concern->text2 }}</p>
                     </div>
                     <!-- /.mission-vission-left -->
                 </div>

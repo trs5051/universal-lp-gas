@@ -37,24 +37,13 @@
 
                     <!-- head-office-info -->
                     <div class="col-md-5 head-office-info">
-                        <h3>Head Office</h3>
+                        <h3>{{ !empty($headOffice->office_name) ? $headOffice->office_name : '' }}</h3>
 
-                        <p>
-                            Universal House
-                            House # 24, Road # 4 <br>
-                            Rose Valley R/A, Zakir Hossain Road <br>
-                            Chittagong, Bangladesh.
-                        </p>
+                        <p>{{ $headOffice->address }}</p>
 
-                        <p>
-                            Land Line : +880312566601-02 <br>
-                            +880312566456, +880312566727
-                        </p>
+                        <p>Land Line : {{ !empty($headOffice->land_line) ? $headOffice->land_line : '' }}</p>
 
-                        <p>
-                            email : shahjahanshaju037@gmail.com <br>
-                            universal.lpgas@yahoo.com
-                        </p>
+                        <p>Email : {{ !empty($headOffice->email) ? $headOffice->email : '' }}</p>
 
                         <p>
                             <a href="#" class="btn btn-lpg">Get Notification <i class="fa fa-arrow-right"></i></a>
@@ -78,13 +67,11 @@
 
                     <!-- head-office-info -->
                     <div class="col-md-5 head-office-info">
-                        <h3>Dhaka Office</h3>
+                        <h3>{{ !empty($dhakaOffice->office_name) ? $dhakaOffice->office_name : '' }}</h3>
 
-                        <p>
-                            House : #493/3 (1st Floor) <br>
-                            Road # 9, DOHS,m Baridhara <br>
-                            Dhaka, Bangladesh.
-                        </p>
+                        <p>{{ $dhakaOffice->address }}</p>
+                        <p>{{ !empty($dhakaOffice->land_line) ? $dhakaOffice->land_line : '' }}</p>
+                        <p>{{ !empty($dhakaOffice->email) ? $dhakaOffice->email : '' }}</p>
 
                         <p>
                             <b>Plant 1 :</b> <br>

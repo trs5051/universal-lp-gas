@@ -73,18 +73,9 @@
 
             @endforelse
         </div>
-
-
-
             @empty
 
             @endforelse
-
-
-
-
-
-
 
         </div>
 

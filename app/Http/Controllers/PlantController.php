@@ -15,7 +15,9 @@ class PlantController extends Controller
     public function index()
     {
         $settings = Setting::where('delete_status', 1)->first();
-        return view('frontend.plants', compact("settings"));
+        $plants = Plant::where('delete_status', 1)->get();
+
+        return view('frontend.plants', compact("settings",'plants'));
     }
     public function plants()
     {

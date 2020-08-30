@@ -22,22 +22,16 @@
                     <!-- mission-vission-left -->
                     <div class="col-md-5 mission-vission-left">
                         <figure class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                            <img src="{{url('frontend/assets/images/mission-vission/mission-vission.jpg')}}" alt="mission-vission">
+                           <img src="{{ asset('/storage/image/' . $concern->img) }}" alt="mission-vission">
                         </figure>
                     </div>
                     <!-- /.mission-vission-left -->
 
                     <!-- mission-vission-left -->
                     <div class="col-md-7 mission-vission-right">
-                        <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">US Energy & Power Pvt Ltd</h4>
-
-                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                           To strengthen the exposure of the group in the construction business Mr. Shaju decided to form US Energy & Power Pvt. in 2016. Ltd.
-                        </p>
-
-                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                            The aim of the company is to decant imported bitumen and supply in liquid form to various companies around the country. At the later stage the company will set up bitumen mixing plant to supply bitumen mixed aggregate to the various construction site.
-                        </p>
+                        <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{{ $concern->heading }}</h4>
+                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $concern->text1 }}</p>
+                        <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">{{ $concern->text2 }}</p>
                     </div>
                     <!-- /.mission-vission-left -->
                 </div>

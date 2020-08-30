@@ -150,6 +150,13 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::post('/backend/product/update', 'ProductController@update')->name('product.update');
     Route::post('/backend/product/destroy', 'ProductController@destroy')->name('product.destroy');
 
+    // backend.product.category
+    Route::get('/backend/product/category', 'ProductCategoryController@productCategory')->name('backend.product.category');
+    Route::post('/product/category/store', 'ProductCategoryController@store')->name('productCategory.store');
+    Route::get('/product/category/findOne', 'ProductCategoryController@findOne')->name('findOne.productCategory');
+    Route::post('/product/category/update', 'ProductCategoryController@update')->name('productCategory.update');
+    Route::post('/product/category/destroy', 'ProductCategoryController@destroy')->name('productCategory.destroy');
+
     // backend.management.category
     Route::get('/backend/management/category', 'ManagementCategoryController@managementCategory')->name('backend.management.category');
     Route::post('/management/category/store', 'ManagementCategoryController@store')->name('managementCategory.store');

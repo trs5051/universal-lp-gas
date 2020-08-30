@@ -10,7 +10,10 @@ class ContactController extends Controller
 {
     public function index(){
         $settings = Setting::where('delete_status',1)->first();
-        return view('frontend.contact',compact("settings"));
+        $headOffice  = Contact::where('contact_for','head_office')->where('delete_status',1)->first();
+        $dhakaOffice  = Contact::where('contact_for','dhaka_office')->where('delete_status',1)->first();
+
+        return view('frontend.contact',compact("settings",'headOffice','dhakaOffice'));
     }
     public function contact()
     {

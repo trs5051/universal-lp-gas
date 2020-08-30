@@ -29,9 +29,11 @@
             <div class="col-lg-12 portfolio-filter">
                 <ul class="unstyled d-flex controls wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                     <li><a href="javascript:void(0)" class="control" data-filter="all">All Products</a></li>
-                    <li><a href="javascript:void(0)" class="control" data-filter=".gas-cylinder">Gas Cylinder</a></li>
-                    <li><a href="javascript:void(0)" class="control" data-filter=".bitumen">Bitumen</a></li>
-                    <li><a href="javascript:void(0)" class="control" data-filter=".others">Others</a></li>
+
+                    @forelse ($categories as $category)
+                <li><a href="javascript:void(0)" class="control" data-filter=".category_{{$category->id}}">{{$category->title}}</a></li>
+                    @empty
+                    @endforelse
                 </ul>
             </div>
             <!-- /.portfolio-filter -->
@@ -40,108 +42,24 @@
         <!-- portfolio -->
         <div class="row portfolio wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
 
-            <!-- project  -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 project mix bitumen">
+            @forelse ($products as $product)
+
+             <!-- project  -->
+        <div class="col-xl-3 col-lg-4 col-sm-6 project mix category_{{$product->category->id}}">
                 <figure class="project-thumb">
-                    <img src="{{url('frontend/assets/images/portfolio/project-1.jpg')}}" alt="project">
+                    <img src="{!!  asset('/storage/productimage/' . $product->img) !!}" alt="project">
                 </figure>
-
                 <div class="project-desc">
-
                 </div>
             </div>
             <!-- /.project  -->
-
-            <!-- project  -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylinder">
-                <figure class="project-thumb">
-                    <img src="{{url('frontend/assets/images/portfolio/project-2.jpg')}}" alt="project">
-                </figure>
-
-                <div class="project-desc">
-
-                </div>
-            </div>
-            <!-- /.project  -->
-
-            <!-- project  -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylinder">
-                <figure class="project-thumb">
-                    <img src="{{url('frontend/assets/images/portfolio/project-3.jpg')}}" alt="project">
-                </figure>
-
-                <div class="project-desc">
-
-                </div>
-            </div>
-            <!-- /.project  -->
-
-            <!-- project  -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 project mix others">
-                <figure class="project-thumb">
-                    <img src="{{url('frontend/assets/images/portfolio/project-4.jpg')}}" alt="project">
-                </figure>
-
-                <div class="project-desc">
-
-                </div>
-            </div>
-            <!-- /.project  -->
-
-            <!-- project  -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 project mix others">
-                <figure class="project-thumb">
-                    <img src="{{url('frontend/assets/images/portfolio/project-5.jpg')}}" alt="project">
-                </figure>
-
-                <div class="project-desc">
-
-                </div>
-            </div>
-            <!-- /.project  -->
-
-            <!-- project  -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 project mix bitumen">
-                <figure class="project-thumb">
-                    <img src="{{url('frontend/assets/images/portfolio/project-6.jpg')}}" alt="project">
-                </figure>
-
-                <div class="project-desc">
-
-                </div>
-            </div>
-            <!-- /.project  -->
-
-            <!-- project  -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 project mix others">
-                <figure class="project-thumb">
-                    <img src="{{url('frontend/assets/images/portfolio/project-7.jpg')}}" alt="project">
-                </figure>
-
-                <div class="project-desc">
-
-                </div>
-            </div>
-            <!-- /.project  -->
-
-            <!-- project  -->
-            <div class="col-xl-3 col-lg-4 col-sm-6 project mix gas-cylinder">
-                <figure class="project-thumb">
-                    <img src="{{url('frontend/assets/images/portfolio/project-8.jpg')}}" alt="project">
-                </figure>
-
-                <div class="project-desc">
-
-                </div>
-            </div>
-            <!-- /.project  -->
+            @empty
+            @endforelse
         </div>
         <!-- /.portfolio -->
     </div>
 </section>
 <!--/.our-works-section -->
-
-
 
 <!-- upcoming-project-section -->
 <section class="upcoming-project-section sp">

@@ -76,7 +76,7 @@
                                 <label for="head_company_email" class="col-lg-2 control-label">Company Email</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" placeholder="Company Email" rows="2" name="head_company_email"
-                                        type="text" maxlength="34" id="head_company_email"
+                                        type="text" maxlength="340" id="head_company_email"
                                         value="{{ !empty($headOffice->email) ? $headOffice->email : '' }}">
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
                                 <label for="dhaka_company_email" class="col-lg-2 control-label">Company Email</label>
                                 <div class="col-lg-10">
                                     <input class="form-control" placeholder="Company Email" rows="2" name="dhaka_company_email"
-                                        type="text" maxlength="34" id="dhaka_company_email"
+                                        type="text" maxlength="340" id="dhaka_company_email"
                                         value="{{ !empty($dhakaOffice->email) ? $dhakaOffice->email : '' }}">
                                 </div>
                             </div>

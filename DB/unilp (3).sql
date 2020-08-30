@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 29, 2020 at 11:41 AM
+-- Generation Time: Aug 30, 2020 at 09:15 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -59,7 +59,7 @@ INSERT INTO `concerns` (`id`, `title`, `heading`, `text1`, `text2`, `img`, `img_
 (7, NULL, 'AMB Traders Pvt Ltd', 'Clearing and Forwarding agent, established solely to act as the C&F agent of the group for releasing imported items from the port. The firm was established in the year 2002.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1597906303-download 4.png', NULL, NULL, NULL, 'ambTraders', 1, NULL, '2020-08-20 00:51:43'),
 (8, NULL, 'US Energy & Power Pvt Ltd', 'To strengthen the exposure of the group in the construction business Mr. Shaju decided to form US Energy & Power Pvt. in 2016. Ltd.', 'The aim of the company is to decant imported bitumen and supply in liquid form to various companies around the country. At the later stage the company will set up bitumen mixing plant to supply bitumen mixed aggregate to the various construction site.', '1597906391-images.jpg', NULL, NULL, NULL, 'usEnergyPower', 1, NULL, '2020-08-20 00:53:11'),
 (9, NULL, 'Universal CNG & Petrol Pump', 'The first refuelling station of the group. The station provides refuelling facility for CNG and Diesel run vehicles. The station is located at Kaichutty, Chowddogram, Comilla adjacent to the Dhaka-Chittagong highway.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1597906454-download.jpg', NULL, NULL, NULL, 'universalCngPetrolPump', 1, NULL, '2020-08-20 00:54:14'),
-(10, NULL, 'Universal Engineering Ltd', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1597906507-download (1).jpg', NULL, NULL, NULL, 'universalEngineeringLtd', 1, NULL, '2020-08-20 00:55:07');
+(10, NULL, 'Universal Engineering Ltd', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1597906507-download (1).jpg', NULL, NULL, NULL, 'universalEngineeringLtd', 1, NULL, '2020-08-29 22:39:51');
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `title`, `office_name`, `address`, `land_line`, `email`, `contact_for`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'Head Office', 'Universal House House # 24, Road # 4\r\nRose Valley R/A, Zakir Hossain Road\r\nChittagong, Bangladesh.\r\nb', '+880312566601-02,+880312566456, +880312566727', 'shahjahanshaju037@gmail.com,universal.lpgas@yahoo.com', 'head_office', 1, NULL, '2020-08-25 00:30:56'),
+(1, NULL, 'Head Office', 'Universal House House # 24, Road # 4\r\nRose Valley R/A, Zakir Hossain Road\r\nChittagong, Bangladesh.', '+880312566601-02,+880312566456, +880312566727', 'shahjahanshaju037@gmail.com, universal.lpgas@yahoo.com', 'head_office', 1, NULL, '2020-08-30 02:47:49'),
 (2, NULL, 'Dhaka Office', 'House : #493/3 (1st Floor)\r\nRoad # 9, DOHS,m Baridhara\r\nDhaka, Bangladesh.', '+88028419450', 'info@universallpgas.com', 'dhaka_office', 1, NULL, '2020-08-25 00:31:31');
 
 -- --------------------------------------------------------
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `cylinder_safeties` (
 --
 
 INSERT INTO `cylinder_safeties` (`id`, `top_heading`, `top_text`, `top_img`, `safety_tips_img1`, `safety_tips_img2`, `safety_tips_heading`, `safety_tips_text`, `stove_img1`, `stove_img2`, `stove_text1`, `stove_text2`, `leakage_img1`, `leakage_img2`, `leakage_img3`, `leakage_img4`, `leakage_text1`, `leakage_text2`, `leakage_text3`, `leakage_text4`, `safely_img1`, `safely_img2`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, 'User Safety1', 'Universal LP Gas is the First WLPGA Member and so, safety is of paramount concern to all involved in the LPG business, from producers through the supply, storage, handling and distribution chain, through to the consumers.1', '1598435951-tiger.jpg', '1598437514-3cylinder.jpg', '1598437514-user-tips-1.jpg', 'Factors to consider before purchasing an LPG Cylinder.', 'Thermo-seal is in the appropriat e place. Safety Cap is in the appropriate place. LPG will cause natural rubber and some plastics to deteriorate. Only use hoses and other equipment specifically designed for LPG', '1598437558-guide-to-attach-1.jpg', '1598437558-guide-to-attach-2.jpg', 'LP Gas must be stored beneath the stove on an adjacent level.', 'LP Gas cylinders must be checked for leakage with soap water, keeping the regulator attached.', '1598437618-action-to-avoid-1.jpg', '1598437618-action-to-avoid-2.jpg', '1598437618-action-to-avoid-3.jpg', '1598437618-action-to-avoid-4.jpg', 'Never test a leakage with lighting fire.', 'Avoid smoking anywhere around the suspected leakage area.', 'Avoid candle anywhere around the suspected leakage area.', 'Avoid switching mobile phones or electric switches on and off.', '1598437642-tips-to-safety-1.jpg', '1598437642-tips-to-safety-2.jpg', '1', NULL, '2020-08-26 04:27:22');
+(1, 'User Safety1', 'Universal LP Gas is the First WLPGA Member and so, safety is of paramount concern to all involved in the LPG business, from producers through the supply, storage, handling and distribution chain, through to the consumers.1', '1598435951-tiger.jpg', '1598437514-3cylinder.jpg', '1598437514-user-tips-1.jpg', 'Factors to consider before purchasing an LPG Cylinder.', 'Thermo-seal is in the appropriat e place. Safety Cap is in the appropriate place. LPG will cause natural rubber and some plastics to deteriorate. Only use hoses and other equipment specifically designed for LPG', '1598437558-guide-to-attach-1.jpg', '1598437558-guide-to-attach-2.jpg', 'LP Gas must be stored beneath the stove on an adjacent level.', 'LP Gas cylinders must be checked for leakage with soap water, keeping the regulator attached.', '1598437618-action-to-avoid-1.jpg', '1598437618-action-to-avoid-2.jpg', '1598437618-action-to-avoid-3.jpg', '1598437618-action-to-avoid-4.jpg', 'Never test a leakage with lighting fire.', 'Avoid smoking anywhere around the suspected leakage area.', 'Avoid candle anywhere around the suspected leakage area.', 'Avoid switching mobile phones or electric switches on and off. 111111111111', '1598437642-tips-to-safety-1.jpg', '1598437642-tips-to-safety-2.jpg', '1', NULL, '2020-08-30 02:00:54');
 
 -- --------------------------------------------------------
 
@@ -204,8 +204,8 @@ INSERT INTO `information` (`id`, `title`, `heading1`, `heading2`, `heading3`, `h
 (1, NULL, 'OUR BUSINESS CONCERN', NULL, NULL, NULL, NULL, NULL, 'Universal Group is the creation of MD. SHAHJAHAN SHAJU. MR. SHAJU is the key person and promoter of the group. The dynamic person started the business through establishment of MS ENTERPRISE in the year 1990 and began import & supply of various products in the Bangladesh Market.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'our_business_concern', 1, NULL, '2020-08-29 04:31:47'),
 (2, NULL, 'We are leading International company in the world', 'Building Staffs', 'Building Staffs', 'Building Staffs', 'Benefit of the socie where we operate. A success website obusly needs great design to be one of the top 10.', 'We have a long and proud history givin emphasis to environment social and economic outcomes to deliver places that respond too the complex global forces shaping our future.', 'We have a long and proud histiry givin emphasis to envi ronment social and economic outcomes.', 'We have a long and proud histiry givin emphasis to envi ronment social and economic outcomes.', 'We have a long and proud histiry givin emphasis to envi ronment social and economic outcomes.', NULL, NULL, 'leading-feature-1.png', 'leading-feature-2.png', 'leading-feature-3.png', NULL, 'about_us', 1, NULL, '2020-08-29 04:32:50'),
 (3, NULL, 'Chairman', 'Managing Director', NULL, NULL, NULL, NULL, 'Mrs. Rezvin Akther, wife of Mr. Md. Shahjahan Shaju is the Chairman of the Group. Born in 1973 at Noakhali Mrs. Akther completed her Graduation from National University, Bangladesh. As Chairman of the company she looks after the Branding, Administration and Marketing of the company. Mrs. Akther is a social person and she is the member of Feni Samity, Chittagong. Mrs. Akther also visited Singapore, Malaysia, Thailand, India, Dubai etc.', NULL, 'Mr. Md. Shahjahan Shaju is the founder Managing Director of the Group. Mr. Shaju born in 1967 in a prominent family of Feni. He completed his graduation in Management from National University, Bangladesh. Mr. Shaju is the key person of the group and the leading man. He actively participate in the overall activities of the company. With his active participation and leadership the company is growing to become a conglomerate.', 'Mr. Shaju is an well travelled businessperson, he visited Canada, Singapore, Thailand, Malaysia, Abu-Dhabi, India, China for various business purposes. Apart from business Mr. Shaju actively participate in various social activities.\r\nHe is serving as Director to Dutch Bangla Chamber of Commerce & Industry & also a life member of the Shadharan Shangshad Foundation [Founder: Dr. MA Wazed Meah, Husband of PM – Sheikh Hasina]. Besides these he is an active member of Dhaka Club, Dhaka; Gulshan Club, Dhaka; Chittagong Club, Chittagong; Golf Club, Bhatiary, Chittagong; Boat Club, Chittagong; Chittagong Chamber of Commerce & Industry; General Secretary of Rose Velly Residential Area, Kulshi, Ctg & Sports Secretary, Feni Samity, Chittagong.', NULL, '1597896609-chairman.jpg', '1597896609-md.jpg', NULL, NULL, 'directors', 1, NULL, '2020-08-29 04:37:30'),
-(4, NULL, 'WLPGA', 'ISO-9001', NULL, NULL, 'Universal Lp Gas has been an honored member of WLPGA since 20016.', 'Universal Lp Gas has been certified with ISO-9001 certification for its extraordinart plant and product procesing.', 'Universal Lp Gas has been an honored member of WLPGA since 20016.', 'Universal Lp Gas has been certified with ISO-9001 certification for its extraordinart plant and product procesing.', NULL, NULL, NULL, '1598241397-wlpa.jpg', '1598241397-ISO.jpg', NULL, NULL, 'compliance', 1, NULL, '2020-08-23 21:56:37'),
-(5, NULL, 'Universal Agency', NULL, NULL, NULL, NULL, NULL, 'The benefits of LPG begin from your kitchen and keep going on.\r\n\r\nHere is a fuel with limitless possibilities \r\nLPG is a highly efficient cooking fuel. It is economical and its excellent heating capacity helps you cook your food in less time, saving you a lot on fuel cost. It undergoes complete combustion, produces no residue and particulate matter, which means minimum maintenance cost and lesser carbon footprint. And that’s just some of its benefits that you can count on your fingers', 'LPG has a plethora of benefits which can be a life-changing experience for its users. It’s good for your health, your kitchen and our environment. Paying a little attention while working with LPG can make it even more beneficial, so you can save enough to plan your long-awaited road trip to your favorite destination.', NULL, NULL, NULL, '1598437694-whylpg.jpg', NULL, NULL, NULL, 'whyLPG', 1, NULL, '2020-08-26 04:28:14');
+(4, NULL, 'WLPGA', 'ISO-9001', NULL, NULL, 'Universal Lp Gas has been an honored member of WLPGA since 20016.', 'Universal Lp Gas has been certified with ISO-9001 certification for its extraordinart plant and product procesing.', 'Universal Lp Gas has been an honored member of WLPGA since 20016.', 'Universal Lp Gas has been certified with ISO-9001 certification for its extraordinart plant and product procesing.', NULL, NULL, NULL, '1598241397-wlpa.jpg', '1598241397-ISO.jpg', NULL, NULL, 'compliance', 1, NULL, '2020-08-30 02:16:30'),
+(5, NULL, 'Why Universal  LP GAS?', NULL, NULL, NULL, NULL, NULL, 'The benefits of LPG begin from your kitchen and keep going on.Here is a fuel with limitless possibilities \r\nLPG is a highly efficient cooking fuel. It is economical and its excellent heating capacity helps you cook your food in less time, saving you a lot on fuel cost. It undergoes complete combustion, produces no residue and particulate matter, which means minimum maintenance cost and lesser carbon footprint. And that’s just some of its benefits that you can count on your fingers', 'LPG has a plethora of benefits which can be a life-changing experience for its users. It’s good for your health, your kitchen and our environment. Paying a little attention while working with LPG can make it even more beneficial, so you can save enough to plan your long-awaited road trip to your favorite destination.', NULL, NULL, NULL, '1598775609-whylpg.jpg', NULL, NULL, NULL, 'whyLPG', 1, NULL, '2020-08-30 02:20:09');
 
 -- --------------------------------------------------------
 
@@ -242,7 +242,7 @@ INSERT INTO `management` (`id`, `management_category_id`, `name`, `img`, `design
 (10, 11, 'Mohiuddin Sagar', '1598700969-sagar.jpg', 'Manager-Accounts & Banking', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:36:09', '2020-08-29 05:36:09'),
 (11, 11, 'Khandaker Fahim Ahmmed', '1598701021-fahim.jpg', 'Deputy Manager (In Charge-HR & Admin Division)', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:37:01', '2020-08-29 05:37:01'),
 (12, 11, 'Mohammad Mukit Ibn Siddique', '1598701045-Manager-supplychain.jpg', 'Manager-Supply Chain', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:37:25', '2020-08-29 05:37:25'),
-(13, 12, 'Samir Deb Nath', '1598701082-samir.jpg', 'Plant Manager', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:38:02', '2020-08-29 05:38:02'),
+(13, 12, 'Samir Deb Nath', '1598701082-samir.jpg', 'Plant Manager', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:38:02', '2020-08-29 05:52:04'),
 (14, 13, 'Moriom Begum', '1598701225-dm.jpg', 'Deputy Manager-Commercial', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:40:25', '2020-08-29 05:40:25');
 
 -- --------------------------------------------------------
@@ -382,17 +382,19 @@ CREATE TABLE IF NOT EXISTS `plants` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `plants`
 --
 
 INSERT INTO `plants` (`id`, `img`, `heading`, `text1`, `text2`, `delete_status`, `created_at`, `updated_at`) VALUES
+(44, '1598774942-mission-vission.jpg', 'Comilla Plant', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1', '2020-08-30 02:09:02', '2020-08-30 02:09:02'),
 (43, '1598239368-logo.png', 'dfbgvf', 'bdtfgb dtgf', 'b vnvgn', '0', '2020-08-23 21:22:48', '2020-08-23 21:22:53'),
 (41, '1598179624-ele(1).jpg', 'Dhaka', 'ne wmnew', 'gooo', '0', '2020-08-23 04:16:35', '2020-08-23 21:22:23'),
-(42, '1598238185-mission-vission.jpg', 'new', 'trfbhtghmmm', NULL, '1', '2020-08-23 21:03:05', '2020-08-29 01:23:03'),
-(40, '1598238922-missionVision.jpg', 'look2', 'see', NULL, '0', '2020-08-23 04:16:20', '2020-08-23 21:22:32');
+(42, '1598238185-mission-vission.jpg', 'Dhaka Plant', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1', '2020-08-23 21:03:05', '2020-08-30 02:07:40'),
+(40, '1598238922-missionVision.jpg', 'look2', 'see', NULL, '0', '2020-08-23 04:16:20', '2020-08-23 21:22:32'),
+(45, '1598774988-mission-vission.jpg', 'Chattogram  Plant', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1', '2020-08-30 02:09:48', '2020-08-30 02:09:48');
 
 -- --------------------------------------------------------
 
@@ -409,7 +411,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
@@ -420,13 +422,23 @@ INSERT INTO `products` (`id`, `product_categories_id`, `img`, `delete_status`, `
 (9, 4, '1598504780-footer-logo.png', 0, '2020-08-26 23:06:20', '2020-08-26 23:38:05'),
 (8, 2, '1598504457-whylpg.jpg', 0, '2020-08-26 23:00:57', '2020-08-26 23:38:08'),
 (7, 1, '1598504425-missionVision.jpg', 0, '2020-08-26 23:00:25', '2020-08-26 23:38:11'),
-(11, 1, '1598505320-tiger.jpg', 1, '2020-08-26 23:15:20', '2020-08-26 23:15:20'),
-(12, 1, '1598505371-favicon1.png', 1, '2020-08-26 23:16:11', '2020-08-26 23:16:11'),
-(13, 3, '1598508095-ele(1).jpg', 1, '2020-08-27 00:01:35', '2020-08-27 00:01:35'),
-(14, 4, '1598508556-whylpg.jpg', 1, '2020-08-27 00:09:16', '2020-08-27 00:09:16'),
-(15, 5, '1598508794-download.jpg', 1, '2020-08-27 00:13:14', '2020-08-27 00:13:14'),
+(11, 1, '1598505320-tiger.jpg', 0, '2020-08-26 23:15:20', '2020-08-30 00:02:07'),
+(12, 1, '1598505371-favicon1.png', 0, '2020-08-26 23:16:11', '2020-08-30 00:02:17'),
+(13, 3, '1598508095-ele(1).jpg', 0, '2020-08-27 00:01:35', '2020-08-30 00:02:14'),
+(14, 4, '1598508556-whylpg.jpg', 0, '2020-08-27 00:09:16', '2020-08-30 00:02:10'),
+(15, 5, '1598508794-download.jpg', 0, '2020-08-27 00:13:14', '2020-08-30 00:02:24'),
 (16, 6, '1598509022-tiger.jpg', 0, '2020-08-27 00:17:02', '2020-08-27 00:21:08'),
-(17, 6, '1598509278-small-cylender.png', 0, '2020-08-27 00:21:18', '2020-08-27 00:21:22');
+(17, 6, '1598509278-small-cylender.png', 0, '2020-08-27 00:21:18', '2020-08-27 00:21:22'),
+(18, 1, '1598768196-project-2.jpg', 1, '2020-08-30 00:16:37', '2020-08-30 00:16:37'),
+(19, 1, '1598768210-project-8.jpg', 1, '2020-08-30 00:16:50', '2020-08-30 00:16:50'),
+(20, 3, '1598768270-project-3.jpg', 1, '2020-08-30 00:17:50', '2020-08-30 00:17:50'),
+(21, 3, '1598769341-images.jpg', 1, '2020-08-30 00:35:41', '2020-08-30 00:35:41'),
+(22, 4, '1598769430-download (1).jpg', 1, '2020-08-30 00:37:10', '2020-08-30 00:37:10'),
+(23, 3, '1598769448-download (2).jpg', 1, '2020-08-30 00:37:28', '2020-08-30 00:37:28'),
+(24, 2, '1598769481-download (3).jpg', 0, '2020-08-30 00:38:01', '2020-08-30 00:41:40'),
+(25, 2, '1598769514-download (4).jpg', 1, '2020-08-30 00:38:34', '2020-08-30 00:38:34'),
+(26, 2, '1598769531-download (5).jpg', 1, '2020-08-30 00:38:51', '2020-08-30 00:38:51'),
+(27, 4, '1598769553-download.jpg', 1, '2020-08-30 00:39:13', '2020-08-30 00:39:13');
 
 -- --------------------------------------------------------
 
@@ -442,7 +454,7 @@ CREATE TABLE IF NOT EXISTS `product_categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `product_categories`
@@ -452,9 +464,7 @@ INSERT INTO `product_categories` (`id`, `title`, `delete_status`, `created_at`, 
 (1, 'Gas Cylinder', 1, NULL, NULL),
 (2, 'Autogas', 1, NULL, NULL),
 (3, 'Households Gas', 1, NULL, NULL),
-(4, 'Industrial Gas', 1, NULL, NULL),
-(5, 'new', 1, '2020-08-27 00:13:14', '2020-08-27 00:13:14'),
-(6, 'tiger', 1, '2020-08-27 00:17:02', '2020-08-27 00:17:02');
+(4, 'Industrial Gas', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 

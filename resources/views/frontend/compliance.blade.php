@@ -22,18 +22,16 @@
             <!-- single-managemant-left -->
             <div class="col-lg-4 mission-vission-left single-managemant-left">
                 <figure class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                    <img src="{{url('frontend/assets/images/wlpa.jpg')}}" alt="management">
+                    <img src="{{ asset('/storage/information/' . $compliance->img1) }}" alt="management">
                 </figure>
             </div>
             <!-- /.single-managemant-left -->
 
             <!-- single-managemant-right -->
             <div class="col-lg-7 offset-lg-1 mission-vission-right single-managemant-right">
-                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">WLPGA</h4>
+                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{{ $compliance->heading1 }}</h4>
 
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                    Universal Lp Gas has been an honored member of WLPGA since 20016.
-                </p>
+                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $compliance->text1 }}</p>
             </div>
             <!-- /.single-managemant-right -->
         </div>
@@ -44,17 +42,15 @@
         <div class="row">
             <!-- single-managemant-right -->
             <div class="col-lg-7 mission-vission-right single-managemant-right">
-                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">ISO-9001</h4>
+                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{{ $compliance->heading2 }}</h4>
 
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                     Universal Lp Gas has been certified with ISO-9001 certification for its extraordinart plant and product procesing.
-                </p>
+                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $compliance->text2 }}</p>
             </div>
             <!-- /.single-managemant-right -->
             <!-- single-managemant-left -->
             <div class="col-lg-4 offset-lg-1 mission-vission-left single-managemant-left">
                 <figure class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                    <img src="{{url('frontend/assets/images/ISO.jpg')}}" alt="management">
+                    <img src="{{ asset('/storage/information/' . $compliance->img2) }}" alt="management">
                 </figure>
             </div>
             <!-- /.single-managemant-left -->

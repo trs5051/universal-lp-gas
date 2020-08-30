@@ -14,6 +14,8 @@
 </section>
 <!--/.page-header-section -->
 
+@forelse ($plants as $item)
+
 
 <!-- mission-vission-section -->
 <section class="mission-vission-section sp">
@@ -22,82 +24,26 @@
             <!-- mission-vission-left -->
             <div class="col-md-5 mission-vission-left">
                 <figure class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                    <img src="{{url('frontend/assets/images/mission-vission/mission-vission.jpg')}}" alt="mission-vission">
+                    <img src="{!!  asset('/storage/plantsimage/' . $item->img) !!}" alt="mission-vission">
                 </figure>
             </div>
             <!-- /.mission-vission-left -->
 
             <!-- mission-vission-left -->
             <div class="col-md-7 mission-vission-right">
-                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Dhaka Plant</h4>
+                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{!! $item->heading ?? '' !!}</h4>
 
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                    We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.
-                </p>
+                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{!! $item->text1 ?? '' !!}</p>
 
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                    Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.
-                </p>
+                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">{!! $item->text2 ?? '' !!}</p>
             </div>
             <!-- /.mission-vission-left -->
         </div>
     </div>
 </section>
-<!-- 2nd -->
-<section class="mission-vission-section sp">
-    <div class="container">
-        <div class="row">
-            <!-- mission-vission-left -->
-            <div class="col-md-5 mission-vission-left">
-                <figure class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                    <img src="{{url('frontend/assets/images/mission-vission/mission-vission.jpg')}}" alt="mission-vission">
-                </figure>
-            </div>
-            <!-- /.mission-vission-left -->
+@empty
 
-            <!-- mission-vission-left -->
-            <div class="col-md-7 mission-vission-right">
-                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Chittagong Plant</h4>
+@endforelse
 
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                    We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.
-                </p>
-
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                    Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.
-                </p>
-            </div>
-            <!-- /.mission-vission-left -->
-        </div>
-    </div>
-</section>
-<!-- 3rd -->
-<section class="mission-vission-section sp">
-    <div class="container">
-        <div class="row">
-            <!-- mission-vission-left -->
-            <div class="col-md-5 mission-vission-left">
-                <figure class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                    <img src="{{url('frontend/assets/images/mission-vission/mission-vission.jpg')}}" alt="mission-vission">
-                </figure>
-            </div>
-            <!-- /.mission-vission-left -->
-
-            <!-- mission-vission-left -->
-            <div class="col-md-7 mission-vission-right">
-                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Bogra Plant</h4>
-
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                    We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.
-                </p>
-
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                    Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.
-                </p>
-            </div>
-            <!-- /.mission-vission-left -->
-        </div>
-    </div>
-</section>
 <!--/.mission-vission-section -->
 @endsection

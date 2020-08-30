@@ -295,11 +295,29 @@
                         </ul>
                     </li>
 
-                    <li class="{{ Request::routeIs('backend.product') ? 'active' : '' }}">
-                    <a href="{{ route('backend.product') }}">
-                            <i class="fa fa-product-hunt"></i>
+
+                    <li class="treeview {{ (request()->is('backend/product*')) ? 'active' : '' }}">
+                    <a href="">
+                            <i class="fa fa-users"></i>
                             <span>Products</span>
+                            <i class="fa fa-angle-left pull-right"></i>
                         </a>
+                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/product*')) ? 'block' : 'none' }}; ">
+
+                            <li class="{{ Request::routeIs('backend.product') ? 'active' : '' }}">
+                                <a href="{{Route('backend.product')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>All Products</span>
+                                </a>
+                            </li>
+                            <li class="{{ Request::routeIs('backend.product.category') ? 'active' : '' }}">
+                                <a href="{{Route('backend.product.category')}}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Product Category</span>
+                                </a>
+                            </li>
+
+                        </ul>
                     </li>
 
                     <li class="treeview {{ (request()->is('backend/plant-process*')) ? 'active' : '' }}">

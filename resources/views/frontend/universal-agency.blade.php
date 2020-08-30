@@ -20,22 +20,18 @@
             <!-- mission-vission-left -->
             <div class="col-md-5 mission-vission-left">
                 <figure class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                    <img src="{{url('frontend/assets/images/mission-vission/mission-vission.jpg')}}" alt="mission-vission">
+                    <img src="{{ asset('/storage/image/' . $concern->img) }}" alt="mission-vission">
                 </figure>
             </div>
             <!-- /.mission-vission-left -->
 
             <!-- mission-vission-left -->
             <div class="col-md-7 mission-vission-right">
-                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Universal Agency</h4>
+                <h4 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{{ $concern->heading }}</h4>
 
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                    Established in 2000 is another trading concern of Universal Group.  Like MS Enterprise the firm is mainly dealing with the import and supply business of the group. Main imported items are LPG Cylinders, Bitumen, Lube etc. Though the firm was involved with import of various items initially but recently it concentrated on the import of Bitumen and LPG Cylinders.
-                </p>
+                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $concern->text1 }}</p>
 
-                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                    Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.
-                </p>
+                <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">{{ $concern->text2 }}</p>
             </div>
             <!-- /.mission-vission-left -->
         </div>
