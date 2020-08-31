@@ -37,8 +37,8 @@
                             <a href="#tab2" aria-controls="1" role="tab" data-toggle="tab">Managing Director</a>
                         </li>
                         <!-- <li role="presentation">
-                                <a href="#tab3" aria-controls="2" role="tab" data-toggle="tab">Social Network</a>
-                            </li> -->
+                                    <a href="#tab3" aria-controls="2" role="tab" data-toggle="tab">Social Network</a>
+                                </li> -->
 
                     </ul>
 
@@ -59,7 +59,8 @@
                                     <br>
 
                                     <div class="custom-file-input">
-                                        <input class="form-control inputfile inputfile-1" name="img1" type="file" id="image1">
+                                        <input class="form-control inputfile inputfile-1" name="img1" type="file"
+                                            id="image1">
                                         <label for="image1">
                                             <i class="fa fa-upload"></i>
                                             <span>Change image</span>
@@ -113,7 +114,8 @@
                                     <br>
 
                                     <div class="custom-file-input">
-                                        <input class="form-control inputfile inputfile-1" name="img2" type="file" id="image2">
+                                        <input class="form-control inputfile inputfile-1" name="img2" type="file"
+                                            id="image2">
                                         <label for="image2">
                                             <i class="fa fa-upload"></i>
                                             <span>Change image</span>

@@ -68,7 +68,7 @@ class ConcernController extends Controller
                 Storage::delete('/public/image/' . $oldImg);
             }
             $imgName = time().'-'.$request->img->getClientOriginalName();
-            $request->img->storeAs('image', $imgName, 'public');
+            $request->img->move('storage/image', $imgName);
             Concern::where('id', $request->concern_Id)->where('delete_status', 1)->first()->update(['img' => $imgName]);
         }
         if ($request->heading) {

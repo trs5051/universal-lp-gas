@@ -28,7 +28,7 @@ class OurProudController extends Controller
                     Storage::delete('/public/ourProud/' . $oldfavicon);
                 }
                 $faviconName = time().'-'.$request->img1->getClientOriginalName();
-                $request->img1->storeAs('ourProud', $faviconName, 'public');
+                $request->img1->move('storage/ourProud', $faviconName);
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['img1' => $faviconName]);
             }
             if ($request->hasFile('img2')) {
@@ -37,7 +37,7 @@ class OurProudController extends Controller
                     Storage::delete('/public/ourProud/' . $oldfavicon);
                 }
                 $faviconName = time().'-'.$request->img2->getClientOriginalName();
-                $request->img2->storeAs('ourProud', $faviconName, 'public');
+                $request->img2->move('storage/ourProud', $faviconName);
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['img2' => $faviconName]);
             }
             if ($request->hasFile('img3')) {
@@ -46,7 +46,7 @@ class OurProudController extends Controller
                     Storage::delete('/public/ourProud/' . $oldfavicon);
                 }
                 $faviconName = time().'-'.$request->img3->getClientOriginalName();
-                $request->img3->storeAs('ourProud', $faviconName, 'public');
+                $request->img3->move('storage/ourProud', $faviconName);
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['img3' => $faviconName]);
             }
             if ($request->hasFile('img4')) {
@@ -55,7 +55,7 @@ class OurProudController extends Controller
                     Storage::delete('/public/ourProud/' . $oldfavicon);
                 }
                 $faviconName = time().'-'.$request->img4->getClientOriginalName();
-                $request->img4->storeAs('ourProud', $faviconName, 'public');
+                $request->img4->move('storage/ourProud', $faviconName);
                 OurProud::where('id', $request->ourProud_Id)->where('delete_status', 1)->first()->update(['img4' => $faviconName]);
             }
             // dd($request->all());

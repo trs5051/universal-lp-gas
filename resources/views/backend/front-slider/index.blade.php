@@ -65,7 +65,6 @@
                                     </tr>
                                 @empty
 
-
                                 @endforelse
 
                             </tbody>

@@ -33,7 +33,7 @@ class ProductController extends Controller
         ]);
         if ($request->hasFile('image')) {
             $img = time() . '-' . $request->image->getClientOriginalName();
-            $request->image->storeAs('productimage', $img, 'public');
+            $request->image->move('storage/productimage', $img);
         }
         $category_id = $request->category;
         $findCategory = ProductCategory::where('id',$category_id)->first();
@@ -66,7 +66,7 @@ class ProductController extends Controller
         ]);
         if ($request->hasFile('image')) {
             $img = time() . '-' . $request->image->getClientOriginalName();
-            $request->image->storeAs('productimage', $img, 'public');
+            $request->image->move('storage/productimage', $img);
         }
 
         $products = Product::findOrFail($request->Plant_Id);

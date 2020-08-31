@@ -355,7 +355,7 @@
                         </ul>
                     </li>
                     <li class="">
-                        <a href="#">
+                    <a href="{{Route('backend.event')}}">
                             <i class="fa fa-newspaper-o"></i>
                             <span>News & Events</span>
                         </a>

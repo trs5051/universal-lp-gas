@@ -32,7 +32,7 @@ class ManagementController extends Controller
         ]);
         if ($request->hasFile('img')) {
             $img = time() . '-' . $request->img->getClientOriginalName();
-            $request->img->storeAs('managementImage', $img, 'public');
+            $request->img->move('storage/managementImage', $img);
         }
 
         $managements = new Management();
@@ -66,7 +66,7 @@ class ManagementController extends Controller
                     Storage::delete('/public/managementImage/' . $oldimg);
                 }
             $img = time() . '-' . $request->image->getClientOriginalName();
-            $request->image->storeAs('managementImage', $img, 'public');
+            $request->image->move('storage/managementImage', $img);
             $managements->img = $img;
         }
         $managements->name = $request->Name;

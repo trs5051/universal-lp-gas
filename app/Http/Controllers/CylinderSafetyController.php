@@ -69,7 +69,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->top_img->getClientOriginalName();
-                $request->top_img->storeAs('cylinderSafety', $imgName, 'public');
+                $request->top_img->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['top_img' => $imgName]);
             }
             if ($request->hasFile('safety_tips_img1')) {
@@ -78,7 +78,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->safety_tips_img1->getClientOriginalName();
-                $request->safety_tips_img1->storeAs('cylinderSafety', $imgName, 'public');
+                $request->safety_tips_img1->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['safety_tips_img1' => $imgName]);
             }
 
@@ -88,7 +88,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->safety_tips_img2->getClientOriginalName();
-                $request->safety_tips_img2->storeAs('cylinderSafety', $imgName, 'public');
+                $request->safety_tips_img2->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['safety_tips_img2' => $imgName]);
             }
             if ($request->hasFile('stove_img1')) {
@@ -97,7 +97,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->stove_img1->getClientOriginalName();
-                $request->stove_img1->storeAs('cylinderSafety', $imgName, 'public');
+                $request->stove_img1->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['stove_img1' => $imgName]);
             }
             if ($request->hasFile('stove_img2')) {
@@ -106,7 +106,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->stove_img2->getClientOriginalName();
-                $request->stove_img2->storeAs('cylinderSafety', $imgName, 'public');
+                $request->stove_img2->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['stove_img2' => $imgName]);
             }
             if ($request->hasFile('leakage_img1')) {
@@ -115,7 +115,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->leakage_img1->getClientOriginalName();
-                $request->leakage_img1->storeAs('cylinderSafety', $imgName, 'public');
+                $request->leakage_img1->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['leakage_img1' => $imgName]);
             }
             if ($request->hasFile('leakage_img2')) {
@@ -124,7 +124,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->leakage_img2->getClientOriginalName();
-                $request->leakage_img2->storeAs('cylinderSafety', $imgName, 'public');
+                $request->leakage_img2->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['leakage_img2' => $imgName]);
             }
             if ($request->hasFile('leakage_img3')) {
@@ -133,7 +133,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->leakage_img3->getClientOriginalName();
-                $request->leakage_img3->storeAs('cylinderSafety', $imgName, 'public');
+                $request->leakage_img3->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['leakage_img3' => $imgName]);
             }
             if ($request->hasFile('leakage_img4')) {
@@ -142,7 +142,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->leakage_img4->getClientOriginalName();
-                $request->leakage_img4->storeAs('cylinderSafety', $imgName, 'public');
+                $request->leakage_img4->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['leakage_img4' => $imgName]);
             }
             if ($request->hasFile('safely_img1')) {
@@ -151,7 +151,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->safely_img1->getClientOriginalName();
-                $request->safely_img1->storeAs('cylinderSafety', $imgName, 'public');
+                $request->safely_img1->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['safely_img1' => $imgName]);
             }
             if ($request->hasFile('safely_img2')) {
@@ -160,7 +160,7 @@ class CylinderSafetyController extends Controller
                     Storage::delete('/public/cylinderSafety/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->safely_img2->getClientOriginalName();
-                $request->safely_img2->storeAs('cylinderSafety', $imgName, 'public');
+                $request->safely_img2->move('storage/cylinderSafety', $imgName);
                 CylinderSafety::where('id', $request->cylinderSafety_Id)->where('delete_status', 1)->first()->update(['safely_img2' => $imgName]);
             }
 

@@ -31,7 +31,7 @@ class SettingController extends Controller
                     Storage::delete('/public/logo/' . $oldLogo);
                 }
                 $logoName = time().'-'.$request->logo->getClientOriginalName();
-                $request->logo->storeAs('logo', $logoName, 'public');
+                $request->logo->move('storage/logo', $logoName);
                 Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['logo' => $logoName]);
             }
             if ($request->hasFile('favicon')) {
@@ -40,7 +40,7 @@ class SettingController extends Controller
                     Storage::delete('/public/favicon/' . $oldfavicon);
                 }
                 $faviconName = time().'-'.$request->favicon->getClientOriginalName();
-                $request->favicon->storeAs('favicon', $faviconName, 'public');
+                $request->favicon->move('storage/favicon', $faviconName);
                 Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['favicon' => $faviconName]);
             }
             // dd($request->all());
@@ -90,13 +90,13 @@ class SettingController extends Controller
             $settings->email = $email;
             if ($request->hasFile('logo')) {
                 $logoName = time().'-'.$request->logo->getClientOriginalName();
-                $request->logo->storeAs('logo', $logoName, 'public');
+                $request->logo->move('storage/logo', $logoName);
                 $settings->logo = $logoName;
             }
             if ($request->hasFile('favicon')) {
 
                 $faviconName = time().'-'.$request->favicon->getClientOriginalName();
-                $request->favicon->storeAs('favicon', $faviconName, 'public');
+                $request->favicon->move('storage/favicon', $faviconName);
                 $settings->favicon = $faviconName;
             }
             $settings->save();

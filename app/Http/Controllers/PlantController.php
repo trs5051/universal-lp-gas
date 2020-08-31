@@ -34,7 +34,7 @@ class PlantController extends Controller
         ]);
         if ($request->hasFile('image')) {
             $img = time() . '-' . $request->image->getClientOriginalName();
-            $request->image->storeAs('plantsimage', $img, 'public');
+            $request->image->move('storage/plantsimage', $img);
         }
         $plants = new Plant();
         $plants->img = $img;
@@ -59,7 +59,7 @@ class PlantController extends Controller
         ]);
         if ($request->hasFile('image')) {
             $img = time() . '-' . $request->image->getClientOriginalName();
-            $request->image->storeAs('plantsimage', $img, 'public');
+            $request->image->move('storage/plantsimage', $img);
         }
 
         $plants = Plant::findOrFail($request->Plant_Id);

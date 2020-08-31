@@ -171,6 +171,18 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::post('/backend/management/update', 'ManagementController@update')->name('management.update');
     Route::post('/backend/management/destroy', 'ManagementController@destroy')->name('management.destroy');
 
+    // backend.event
+    Route::get('/backend/event', 'NewsEventController@event')->name('backend.event');
+    Route::get('/backend/event/create', 'NewsEventController@create')->name('event.create');
+    Route::post('/backend/event/store', 'NewsEventController@store')->name('event.store');
+    Route::get('/backend/event/findOne', 'NewsEventController@findOne')->name('findOne.event');
+    Route::post('/backend/event/update', 'NewsEventController@update')->name('event.update');
+    Route::post('/backend/event/destroy', 'NewsEventController@destroy')->name('event.destroy');
+
+    // Store image
+Route::post('/image-upload', 'NewsEventController@fileUpload')->name('imageUpload');
+
+
 // backend end
 
 });

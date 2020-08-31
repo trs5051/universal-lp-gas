@@ -97,7 +97,7 @@ class InformationController extends Controller
                     Storage::delete('/public/information/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->img1->getClientOriginalName();
-                $request->img1->storeAs('information', $imgName, 'public');
+                $request->img1->move('storage/information', $imgName);
                 Information::where('id', $request->information_Id)->where('delete_status', 1)->first()->update(['img1' => $imgName]);
             }
             if ($request->hasFile('img2')) {
@@ -106,7 +106,7 @@ class InformationController extends Controller
                     Storage::delete('/public/information/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->img2->getClientOriginalName();
-                $request->img2->storeAs('information', $imgName, 'public');
+                $request->img2->move('storage/information', $imgName);
                 Information::where('id', $request->information_Id)->where('delete_status', 1)->first()->update(['img2' => $imgName]);
             }
             if ($request->hasFile('img3')) {
@@ -115,7 +115,7 @@ class InformationController extends Controller
                     Storage::delete('/public/information/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->img3->getClientOriginalName();
-                $request->img3->storeAs('information', $imgName, 'public');
+                $request->img3->move('storage/information', $imgName);
                 Information::where('id', $request->information_Id)->where('delete_status', 1)->first()->update(['img3' => $imgName]);
             }
             if ($request->hasFile('img4')) {
@@ -124,7 +124,7 @@ class InformationController extends Controller
                     Storage::delete('/public/information/' . $oldImg);
                 }
                 $imgName = time().'-'.$request->img4->getClientOriginalName();
-                $request->img4->storeAs('information', $imgName, 'public');
+                $request->img4->move('storage/information', $imgName);
                 Information::where('id', $request->information_Id)->where('delete_status', 1)->first()->update(['img4' => $imgName]);
             }
             // dd($request->all());
