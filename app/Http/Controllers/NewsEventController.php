@@ -28,7 +28,7 @@ class NewsEventController extends Controller
     }
     public function edit($id)
     {
-        $event = NewsEvent::findOrFail($id);
+        $event = NewsEvent::with('eventPictures')->findOrFail($id);
 
         return view('backend.event.edit',compact('event'));
     }
@@ -58,7 +58,7 @@ class NewsEventController extends Controller
             foreach($request->file('Event_pic') as $image)
             {
                 $name= time().'-'. $image->getClientOriginalName();
-                $image->move(public_path().'/eventImage/', $name);
+                $image->move('storage/eventImage', $name);
                 $event_pic = new EventPicture();
                 $event_pic->news_event_id = $events->id;
                 $event_pic->img = $name;

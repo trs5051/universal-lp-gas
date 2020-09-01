@@ -35,7 +35,7 @@
                     <div class="form-group">
                         <label for="event_img" class="col-lg-2 control-label required">Event Main Image</label>
                         <div class="col-lg-10">
-                            <div class="preview-logo">
+                            <div class="preview-logo ">
 
                                 @isset($event)
                                     <img src="{{ asset('/storage/eventImage/' . $event->main_img) }}" alt="Site Logo"
@@ -70,10 +70,22 @@
                         </div>
                     </div>
 
+
                     {{-- event-img --}}
                     <div class="form-group">
-                        <label for="Event_pic" class="col-lg-2 control-label required">Event Pictures</label>
+                        <label for="Event_pic" class="col-lg-2 control-label">Event Pictures</label>
                         <div class="col-lg-10">
+                            <div class="img-preview ">
+
+                                @forelse ($event->eventPictures as $img)
+
+                                <img src="{{ asset('/storage/eventImage/' . $img->img) }}" alt="Event Pictures"/>
+                                @empty
+
+                                @endforelse
+
+                            </div>
+                            <br>
                             <div class="custom-file-input">
                                 <input class="form-control inputfile inputfile-1" name="Event_pic[]" type="file"
                                     id="Event_pic" multiple>

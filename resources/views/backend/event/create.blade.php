@@ -35,6 +35,7 @@
                     <div class="form-group">
                         <label for="event_img" class="col-lg-2 control-label required">Event Main Image</label>
                         <div class="col-lg-10">
+                            <div class="main-img img-preview"></div><br>
                             <div class="custom-file-input">
                                 <input class="form-control inputfile inputfile-1" name="Event Image" type="file"
                                     id="event_img">
@@ -50,7 +51,7 @@
                         <label for="event_title" class="col-lg-2 control-label">Event Title</label>
                         <div class="col-lg-10">
                             <input class="form-control" placeholder="Event Title" rows="2" name="Event Title" type="text"
-                                style="max-width: 75%;"  id="event_title">
+                                style="max-width: 75%;" id="event_title">
                         </div>
                     </div>
 
@@ -61,7 +62,7 @@
                                 id="text1" style="max-width: 75% ; min-height: 150px;"></textarea>
                         </div>
                     </div>
-      
+
                     {{-- event-img --}}
                     <div class="form-group">
                         <label for="Event_pic" class="col-lg-2 control-label required">Event Pictures</label>
@@ -69,13 +70,13 @@
                             <div class="custom-file-input">
                                 <input class="form-control inputfile inputfile-1" name="Event_pic[]" type="file"
                                     id="Event_pic" multiple>
-                                <label for="Event_pic" >
+                                <label for="Event_pic">
                                     <i class="fa fa-upload"></i>
                                     <span>Choose images</span>
                                 </label>
                             </div>
 
-                            <div class="gallery-adm"></div>
+                            <div class="gallery-adm img-preview"></div>
                         </div>
                     </div>
                     {{-- event-img --}}
@@ -97,40 +98,40 @@
 @section('js')
 
     <script>
-       $(document).ready(function() {
+        $(document).ready(function() {
 
 
+            // Multiple images preview in browser
+            var imagesPreview = function(input, placeToInsertImagePreview) {
 
-            $(function() {
-                // Multiple images preview in browser
-                var imagesPreview = function(input, placeToInsertImagePreview) {
+                if (input.files) {
+                    var filesAmount = input.files.length;
 
-                    if (input.files) {
-                        var filesAmount = input.files.length;
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
 
-                        for (i = 0; i < filesAmount; i++) {
-                            var reader = new FileReader();
-
-                            reader.onload = function(event) {
-                                $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                            }
-
-                            reader.readAsDataURL(input.files[i]);
+                        reader.onload = function(event) {
+                            $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(
+                                placeToInsertImagePreview);
                         }
+                        reader.readAsDataURL(input.files[i]);
                     }
+                }
 
-                };
+            };
 
-                $('#Event_pic').on('change', function() {
-                    imagesPreview(this, 'div.gallery-adm');
-                });
+            $('#event_img').on('change', function() {
+                $('div.main-img').empty();
+                imagesPreview(this, 'div.main-img');
+            });
+            $('#Event_pic').on('change', function() {
+                $('div.gallery-adm').empty();
+                imagesPreview(this, 'div.gallery-adm');
             });
 
 
 
-            
         });
-
 
     </script>
 
