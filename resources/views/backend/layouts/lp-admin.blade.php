@@ -48,6 +48,7 @@
         .img-preview {
             margin: 5px -5px;
         }
+
         .img-preview img {
             width: 120px;
             height: auto;
@@ -159,15 +160,16 @@
                         </a>
                     </li>
 
-                <li class="treeview {{ (request()->is('backend/home*')) ? 'active' : '' }} ">
+                    <li class="treeview {{ request()->is('backend/home*') ? 'active' : '' }} ">
                         <a href="">
                             <i class="fa fa-home"></i>
-                        <span>Home</span>
+                            <span>Home</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu" style="display: {{ (request()->is('backend/home*')) ? 'block' : 'none' }} ; ">
+                        <ul class="treeview-menu"
+                            style="display: {{ request()->is('backend/home*') ? 'block' : 'none' }} ; ">
 
-                            <li class="{{ (request()->is('backend/home/front-slider')) ? 'active' : '' }}">
+                            <li class="{{ request()->is('backend/home/front-slider') ? 'active' : '' }}">
                                 <a href="{{ route('backend.front-slider') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Front Slider</span>
@@ -195,13 +197,14 @@
 
                         </ul>
                     </li>
-                    <li class="treeview {{ (request()->is('backend/about*')) ? 'active' : '' }}">
+                    <li class="treeview {{ request()->is('backend/about*') ? 'active' : '' }}">
                         <a href="">
                             <i class="fa fa-info-circle"></i>
                             <span>About</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/about*')) ? 'block' : 'none' }}; ">
+                        <ul class="treeview-menu "
+                            style="display: {{ request()->is('backend/about*') ? 'block' : 'none' }}; ">
                             <li class="{{ Request::routeIs('backend.about-us') ? 'active' : '' }}">
                                 <a href="{{ route('backend.about-us') }}">
                                     <i class="fa fa-hand-o-right"></i>
@@ -230,22 +233,23 @@
                         </ul>
                     </li>
 
-                    <li class="treeview {{ (request()->is('backend/management*')) ? 'active' : '' }}">
-                    <a href="">
+                    <li class="treeview {{ request()->is('backend/management*') ? 'active' : '' }}">
+                        <a href="">
                             <i class="fa fa-users"></i>
                             <span>Management</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/management*')) ? 'block' : 'none' }}; ">
+                        <ul class="treeview-menu "
+                            style="display: {{ request()->is('backend/management*') ? 'block' : 'none' }}; ">
 
                             <li class="{{ Request::routeIs('backend.management') ? 'active' : '' }}">
-                                <a href="{{Route('backend.management')}}">
+                                <a href="{{ Route('backend.management') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Member List</span>
                                 </a>
                             </li>
                             <li class="{{ Request::routeIs('backend.management.category') ? 'active' : '' }}">
-                                <a href="{{Route('backend.management.category')}}">
+                                <a href="{{ Route('backend.management.category') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Management Category</span>
                                 </a>
@@ -254,13 +258,14 @@
                         </ul>
                     </li>
 
-                    <li class="treeview {{ (request()->is('backend/concern*')) ? 'active' : '' }}">
+                    <li class="treeview {{ request()->is('backend/concern*') ? 'active' : '' }}">
                         <a href="">
                             <i class="fa fa-bars"></i>
                             <span>Associate Connccern's</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/concern*')) ? 'block' : 'none' }}; ">
+                        <ul class="treeview-menu "
+                            style="display: {{ request()->is('backend/concern*') ? 'block' : 'none' }}; ">
                             <li class="{{ Request::routeIs('backend.universal-Agency') ? 'active' : '' }}">
                                 <a href="{{ route('backend.universal-Agency') }}">
                                     <i class="fa fa-hand-o-right"></i>
@@ -308,22 +313,23 @@
                     </li>
 
 
-                    <li class="treeview {{ (request()->is('backend/product*')) ? 'active' : '' }}">
-                    <a href="">
+                    <li class="treeview {{ request()->is('backend/product*') ? 'active' : '' }}">
+                        <a href="">
                             <i class="fa fa-users"></i>
                             <span>Products</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/product*')) ? 'block' : 'none' }}; ">
+                        <ul class="treeview-menu "
+                            style="display: {{ request()->is('backend/product*') ? 'block' : 'none' }}; ">
 
                             <li class="{{ Request::routeIs('backend.product') ? 'active' : '' }}">
-                                <a href="{{Route('backend.product')}}">
+                                <a href="{{ Route('backend.product') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>All Products</span>
                                 </a>
                             </li>
                             <li class="{{ Request::routeIs('backend.product.category') ? 'active' : '' }}">
-                                <a href="{{Route('backend.product.category')}}">
+                                <a href="{{ Route('backend.product.category') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Product Category</span>
                                 </a>
@@ -332,15 +338,16 @@
                         </ul>
                     </li>
 
-                    <li class="treeview {{ (request()->is('backend/plant-process*')) ? 'active' : '' }}">
+                    <li class="treeview {{ request()->is('backend/plant-process*') ? 'active' : '' }}">
                         <a href="">
                             <i class="fa fa-spinner"></i>
                             <span>Plant & Process</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
-                        <ul class="treeview-menu " style="display: {{ (request()->is('backend/plant-process*')) ? 'block' : 'none' }}; ">
+                        <ul class="treeview-menu "
+                            style="display: {{ request()->is('backend/plant-process*') ? 'block' : 'none' }}; ">
                             <li class="{{ Request::routeIs('backend.cylinderSafety') ? 'active' : '' }}">
-                            <a href="{{ route('backend.cylinderSafety') }}">
+                                <a href="{{ route('backend.cylinderSafety') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Cylinder Safety</span>
                                 </a>
@@ -352,13 +359,13 @@
                                 </a>
                             </li>
                             <li class="{{ Request::routeIs('backend.compliance') ? 'active' : '' }}">
-                            <a href="{{ route('backend.compliance')}}">
+                                <a href="{{ route('backend.compliance') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Compliance</span>
                                 </a>
                             </li>
                             <li class="{{ Request::routeIs('backend.whyLPG') ? 'active' : '' }}">
-                            <a href="{{ route('backend.whyLPG') }}">
+                                <a href="{{ route('backend.whyLPG') }}">
                                     <i class="fa fa-hand-o-right"></i>
                                     <span>Why LPG?</span>
                                 </a>
@@ -367,7 +374,7 @@
                         </ul>
                     </li>
                     <li class="">
-                    <a href="{{Route('backend.event')}}">
+                        <a href="{{ Route('backend.event') }}">
                             <i class="fa fa-newspaper-o"></i>
                             <span>News & Events</span>
                         </a>
@@ -375,7 +382,7 @@
 
 
                     <li class="{{ Request::routeIs('backend.contact') ? 'active' : '' }}">
-                    <a href="{{ route('backend.contact') }}">
+                        <a href="{{ route('backend.contact') }}">
                             <i class="fa fa-address-card"></i>
                             <span>Contact</span>
                         </a>
@@ -407,7 +414,6 @@
     <script>
         $(document).ready(function() {
             $('.datatable').DataTable();
-
 
 
 

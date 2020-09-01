@@ -65,7 +65,7 @@
 
                     {{-- event-img --}}
                     <div class="form-group">
-                        <label for="Event_pic" class="col-lg-2 control-label required">Event Pictures</label>
+                        <label for="Event_pic" class="col-lg-2 control-label ">Event Pictures</label>
                         <div class="col-lg-10">
                             <div class="custom-file-input">
                                 <input class="form-control inputfile inputfile-1" name="Event_pic[]" type="file"
@@ -102,6 +102,7 @@
 
 
             // Multiple images preview in browser
+
             var imagesPreview = function(input, placeToInsertImagePreview) {
 
                 if (input.files) {
