@@ -45,6 +45,18 @@
             border-bottom: 0 solid transparent;
         }
 
+        .gallery-adm {
+            margin: 5px -5px;
+        }
+        .gallery-adm img {
+            width: 120px;
+            height: auto;
+            max-height: 100px;
+            margin: 5px;
+            border: 1px solid;
+            padding: 5px;
+        }
+
     </style>
 
 
@@ -395,6 +407,37 @@
     <script>
         $(document).ready(function() {
             $('.datatable').DataTable();
+
+
+
+            $(function() {
+                // Multiple images preview in browser
+                var imagesPreview = function(input, placeToInsertImagePreview) {
+
+                    if (input.files) {
+                        var filesAmount = input.files.length;
+
+                        for (i = 0; i < filesAmount; i++) {
+                            var reader = new FileReader();
+
+                            reader.onload = function(event) {
+                                $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                            }
+
+                            reader.readAsDataURL(input.files[i]);
+                        }
+                    }
+
+                };
+
+                $('#Event_pic').on('change', function() {
+                    imagesPreview(this, 'div.gallery-adm');
+                });
+            });
+
+
+
+            
         });
 
     </script>

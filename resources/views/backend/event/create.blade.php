@@ -61,7 +61,7 @@
                                 id="text1" style="max-width: 75% ; min-height: 150px;"></textarea>
                         </div>
                     </div>
-
+      
                     {{-- event-img --}}
                     <div class="form-group">
                         <label for="Event_pic" class="col-lg-2 control-label required">Event Pictures</label>
@@ -74,6 +74,8 @@
                                     <span>Choose images</span>
                                 </label>
                             </div>
+
+                            <div class="gallery-adm"></div>
                         </div>
                     </div>
                     {{-- event-img --}}
@@ -95,11 +97,40 @@
 @section('js')
 
     <script>
-        $(document).ready(function() {
+       $(document).ready(function() {
 
 
 
+            $(function() {
+                // Multiple images preview in browser
+                var imagesPreview = function(input, placeToInsertImagePreview) {
+
+                    if (input.files) {
+                        var filesAmount = input.files.length;
+
+                        for (i = 0; i < filesAmount; i++) {
+                            var reader = new FileReader();
+
+                            reader.onload = function(event) {
+                                $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                            }
+
+                            reader.readAsDataURL(input.files[i]);
+                        }
+                    }
+
+                };
+
+                $('#Event_pic').on('change', function() {
+                    imagesPreview(this, 'div.gallery-adm');
+                });
+            });
+
+
+
+            
         });
+
 
     </script>
 
