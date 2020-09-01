@@ -68,12 +68,12 @@
 
                     {{-- event-img --}}
                     <div class="form-group">
-                        <label for="event_img" class="col-lg-2 control-label required">Event Pictures</label>
+                        <label for="Event_pic" class="col-lg-2 control-label required">Event Pictures</label>
                         <div class="col-lg-10">
                             <div class="custom-file-input">
                                 <input class="form-control inputfile inputfile-1" name="Event_pic[]" type="file"
-                                    id="event_img" multiple>
-                                <label for="event_img" >
+                                    id="Event_pic" multiple>
+                                <label for="Event_pic" >
                                     <i class="fa fa-upload"></i>
                                     <span>Choose  images</span>
                                 </label>
