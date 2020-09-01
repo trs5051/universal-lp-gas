@@ -174,6 +174,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     // backend.event
     Route::get('/backend/event', 'NewsEventController@event')->name('backend.event');
     Route::get('/backend/event/create', 'NewsEventController@create')->name('event.create');
+    Route::get('/backend/event/edit/{id}', 'NewsEventController@edit')->name('event.edit');
     Route::post('/backend/event/store', 'NewsEventController@store')->name('event.store');
     Route::get('/backend/event/findOne', 'NewsEventController@findOne')->name('findOne.event');
     Route::post('/backend/event/update', 'NewsEventController@update')->name('event.update');

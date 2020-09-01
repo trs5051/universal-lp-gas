@@ -44,15 +44,14 @@
                             @forelse ($events as $key => $item)
                                 <tr id="tr_{{ $item->id }}">
                                     <th>{{ $key + 1 }}</th>
-                                    <td><span><img src="{!!  asset('/storage/eventImage/' . $item->img) !!}"
+                                    <td><span><img src="{!!  asset('/storage/eventImage/' . $item->main_img) !!}"
                                                 width="100px"></span> </td>
                                     <td>
                                         <h4> {!! $item->title ?? '' !!}</h4>
                                     </td>
 
                                     <td>
-                                        <a id="edit_event" data-id="{{ $item->id }}" data-toggle="modal"
-                                            data-target="#editModal" data-backdrop='static' data-keyboard='false'
+                                    <a href="{{Route('event.edit',$item->id)}}" id="edit_event" data-id="{{ $item->id }}"
                                             class="btn btn-primary text-white">Edit</a>
                                         <a id="delete_event" data-id="{{ $item->id }}"
                                             class="btn btn-danger text-white">Delete</a>

@@ -6,6 +6,7 @@ use App\Models\EventPicture;
 use App\Models\NewsEvent;
 use Illuminate\Http\Request;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Storage;
 
 class NewsEventController extends Controller
 {
@@ -25,29 +26,11 @@ class NewsEventController extends Controller
     {
         return view('backend.event.create');
     }
-
-    public function fileUpload(Request $req)
+    public function edit($id)
     {
+        $event = NewsEvent::findOrFail($id);
 
-      // Image validation
-      $this->validate($req, [
-        'imageFile' => 'required|max:2048',
-        'imageFile.*' => 'mimes:jpg,jpeg,png,gif'
-      ]);
-
-      if ($imageFiles = $req->file('imageFile')) {
-        foreach ($imageFiles as $file) {
-          $name = $file->getClientOriginalName();
-          $path = $file->storeAs('photos', $name);
-          if ($file->move($path, $name)) {
-            $save   =   Image::create([
-              'name' => $name,
-              'image_path' => $path
-            ]);
-          }
-        }
-        return back()->with("success", "File has been uploaded.");
-      }
+        return view('backend.event.edit',compact('event'));
     }
 
 
@@ -60,7 +43,7 @@ class NewsEventController extends Controller
         ]);
         if ($request->hasFile('Event_Image')) {
             $Event_Image = time() . '-' . $request->Event_Image->getClientOriginalName();
-            $request->Event_Image->move('storage/eventImages', $Event_Image);
+            $request->Event_Image->move('storage/eventImage', $Event_Image);
         }
 
         $events = new NewsEvent();
@@ -75,7 +58,7 @@ class NewsEventController extends Controller
             foreach($request->file('Event_pic') as $image)
             {
                 $name= time().'-'. $image->getClientOriginalName();
-                $image->move(public_path().'/eventImages/', $name);
+                $image->move(public_path().'/eventImage/', $name);
                 $event_pic = new EventPicture();
                 $event_pic->news_event_id = $events->id;
                 $event_pic->img = $name;
