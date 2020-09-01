@@ -57,6 +57,25 @@
             border: 1px solid;
             padding: 5px;
         }
+        .prev-item {
+            display: inline-block;
+            position: relative;
+        }
+
+        .prev-item .remove-img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: red;
+            border: 1px solid #000;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            text-align: center;
+            background: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
 
     </style>
 

@@ -78,8 +78,11 @@
                             <div class="img-preview ">
 
                                 @forelse ($event->eventPictures as $img)
+                                <div class="prev-item">                                
+                                    <img src="{{ asset('/storage/eventImage/' . $img->img) }}" alt="Event Pictures"/>
+                                    <span class="remove-img">X</span>
+                                </div>
 
-                                <img src="{{ asset('/storage/eventImage/' . $img->img) }}" alt="Event Pictures"/>
                                 @empty
 
                                 @endforelse
