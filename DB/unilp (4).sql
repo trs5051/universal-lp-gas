@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Aug 30, 2020 at 09:15 AM
+-- Generation Time: Sep 01, 2020 at 07:06 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `concerns` (
 --
 
 INSERT INTO `concerns` (`id`, `title`, `heading`, `text1`, `text2`, `img`, `img_title`, `bk_img`, `text3`, `information_for`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'Mission and Vision', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', 'missionVision.jpg', NULL, NULL, NULL, 'mission-vision', 1, NULL, '2020-08-29 04:33:28'),
+(1, NULL, 'Mission and Vision', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1598848231-mission-vission.jpg', NULL, NULL, NULL, 'mission-vision', 1, NULL, '2020-08-30 22:30:31'),
 (3, NULL, 'Universal Group', 'Universal Group is one of the reputed business houses in Bangladesh. The Group is currently engaged in the business of Petroleum & Petroleum products (i.e. LPG, Bitumen, Lube Oil etc.), Power & Energy (Refueling Station.Construction Material (Stone Chips) etc. The business of the group within these sectors is performed through both trading, distribution and industrial supports. Mr. Md. Shahjahan Shaju, is the promoter and founding Managing Director of Universal Group.', 'Universal group presently has following entity under its name:Universal Agency M.S Enterprise, Universal Gas & Gas Cylinder Ltd. AMB Traders Pvt. Ltd. US Energy & Power Pvt. Ltd. Global Survey & Inspection Company, Universal Refueling Station. Together with these concerns the annual turnover of the company was very much favorable in last year which is expected to rise in manifold in upcoming year with the commercial operation of the LPG import & storage terminal which is all set and started its commercial operation since June 2019.', '1598697414-tiger.jpg', NULL, NULL, NULL, 'universal_lp_gas', 1, NULL, '2020-08-29 04:36:54'),
 (4, NULL, 'Universal Agency', 'Established in 2000 is another trading concern of Universal Group. Like MS Enterprise the firm is mainly dealing with the import and supply business of the group. Main imported items are LPG Cylinders, Bitumen, Lube etc. Though the firm was involved with import of various items initially but recently it concentrated on the import of Bitumen and LPG Cylinders.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1597906536-download.png', NULL, NULL, NULL, 'universal_agency', 1, NULL, '2020-08-20 00:55:36'),
 (5, NULL, 'MS Enterprise', 'Established in 1990 is the first concern of Universal Group. The firm is mainly dealing with the import and supply business of the group. Main imported items are LPG Cylinders, Bitumen, Lube etc. Though the firm was involved with import of various items initially but recently it concentrated on the import of Bitumen and LPG Cylinders.', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1597906094-download1.jpg', NULL, NULL, NULL, 'msEnterprise', 1, NULL, '2020-08-20 00:48:14'),
@@ -132,6 +132,34 @@ CREATE TABLE IF NOT EXISTS `cylinder_safeties` (
 
 INSERT INTO `cylinder_safeties` (`id`, `top_heading`, `top_text`, `top_img`, `safety_tips_img1`, `safety_tips_img2`, `safety_tips_heading`, `safety_tips_text`, `stove_img1`, `stove_img2`, `stove_text1`, `stove_text2`, `leakage_img1`, `leakage_img2`, `leakage_img3`, `leakage_img4`, `leakage_text1`, `leakage_text2`, `leakage_text3`, `leakage_text4`, `safely_img1`, `safely_img2`, `delete_status`, `created_at`, `updated_at`) VALUES
 (1, 'User Safety1', 'Universal LP Gas is the First WLPGA Member and so, safety is of paramount concern to all involved in the LPG business, from producers through the supply, storage, handling and distribution chain, through to the consumers.1', '1598435951-tiger.jpg', '1598437514-3cylinder.jpg', '1598437514-user-tips-1.jpg', 'Factors to consider before purchasing an LPG Cylinder.', 'Thermo-seal is in the appropriat e place. Safety Cap is in the appropriate place. LPG will cause natural rubber and some plastics to deteriorate. Only use hoses and other equipment specifically designed for LPG', '1598437558-guide-to-attach-1.jpg', '1598437558-guide-to-attach-2.jpg', 'LP Gas must be stored beneath the stove on an adjacent level.', 'LP Gas cylinders must be checked for leakage with soap water, keeping the regulator attached.', '1598437618-action-to-avoid-1.jpg', '1598437618-action-to-avoid-2.jpg', '1598437618-action-to-avoid-3.jpg', '1598437618-action-to-avoid-4.jpg', 'Never test a leakage with lighting fire.', 'Avoid smoking anywhere around the suspected leakage area.', 'Avoid candle anywhere around the suspected leakage area.', 'Avoid switching mobile phones or electric switches on and off. 111111111111', '1598437642-tips-to-safety-1.jpg', '1598437642-tips-to-safety-2.jpg', '1', NULL, '2020-08-30 02:00:54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `event_pictures`
+--
+
+DROP TABLE IF EXISTS `event_pictures`;
+CREATE TABLE IF NOT EXISTS `event_pictures` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `news_event_id` int(11) NOT NULL,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `delete_status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `event_pictures`
+--
+
+INSERT INTO `event_pictures` (`id`, `news_event_id`, `img`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, 7, '1598943954-morsed.jpg', 1, '2020-09-01 01:05:54', '2020-09-01 01:05:54'),
+(2, 7, '1598943954-sagar.jpg', 1, '2020-09-01 01:05:54', '2020-09-01 01:05:54'),
+(3, 7, '1598943954-samir.jpg', 1, '2020-09-01 01:05:54', '2020-09-01 01:05:54'),
+(4, 7, '1598943954-shamim.jpg', 1, '2020-09-01 01:05:54', '2020-09-01 01:05:54'),
+(5, 7, '1598943954-tareq.jpg', 1, '2020-09-01 01:05:54', '2020-09-01 01:05:54');
 
 -- --------------------------------------------------------
 
@@ -285,7 +313,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -308,7 +336,37 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2020_08_27_032832_create_product_categories_table', 6),
 (16, '2020_08_27_033406_create_products_table', 7),
 (17, '2020_08_27_091608_create_management_categories_table', 8),
-(18, '2020_08_27_101027_create_management_table', 9);
+(18, '2020_08_27_101027_create_management_table', 9),
+(19, '2020_08_31_082025_create_news_events_table', 10),
+(21, '2020_09_01_070227_create_event_pictures_table', 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news_events`
+--
+
+DROP TABLE IF EXISTS `news_events`;
+CREATE TABLE IF NOT EXISTS `news_events` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `main_img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text1` text COLLATE utf8mb4_unicode_ci,
+  `text2` text COLLATE utf8mb4_unicode_ci,
+  `delete_status` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `news_events`
+--
+
+INSERT INTO `news_events` (`id`, `title`, `main_img`, `heading`, `text1`, `text2`, `delete_status`, `created_at`, `updated_at`) VALUES
+(7, 'retgf', '1598943954-advisor.jpg', NULL, 'tgfhdtfbhtyg', NULL, 1, '2020-09-01 01:05:54', '2020-09-01 01:05:54'),
+(6, 'new event', '1598943598-advisor.jpg', NULL, 'dsbvgdfbhgf', NULL, 1, '2020-09-01 00:59:58', '2020-09-01 00:59:58');
 
 -- --------------------------------------------------------
 
@@ -495,7 +553,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 --
 
 INSERT INTO `settings` (`id`, `favicon`, `logo`, `contact`, `address_first_part`, `address_second_part`, `email`, `facebook`, `linkedin`, `twitter`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, 'favicon.png', 'logo.png', '+88028419450', 'House: #514 (3rd Floor), Road: #9', 'DOHS, Baridhara, Dhaka, Bangladesh', 'info@universallpgas.com', NULL, NULL, NULL, '1', '2020-08-17 21:24:52', '2020-08-18 05:59:21');
+(1, '1598938215-favicon.png', '1598848363-footer-logo.png', '+88028419450', 'House: #514 (3rd Floor), Road: #9', 'DOHS, Baridhara, Dhaka, Bangladesh', 'info@universallpgas.com', NULL, NULL, NULL, '1', '2020-08-17 21:24:52', '2020-08-31 23:30:15');
 
 -- --------------------------------------------------------
 
@@ -514,18 +572,14 @@ CREATE TABLE IF NOT EXISTS `sliders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `serial`, `title`, `img`, `slider_for`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, 'Slider-1.jpg', 'front_slider', 1, '2020-08-17 21:26:01', '2020-08-17 21:26:01'),
-(2, NULL, NULL, '1598691528-Slider-2.jpg', 'front_slider', 1, '2020-08-29 02:58:48', '2020-08-29 02:58:48'),
-(3, NULL, NULL, '1598692239-Slider-3.jpg', 'front_slider', 1, '2020-08-29 03:10:39', '2020-08-29 03:10:39'),
-(4, NULL, NULL, '1598694338-Slider-5.jpg', 'front_slider', 1, '2020-08-29 03:45:38', '2020-08-29 03:45:38'),
-(5, NULL, NULL, '1598694511-Slider-4.jpg', 'front_slider', 1, '2020-08-29 03:48:31', '2020-08-29 03:48:31');
+(34, NULL, NULL, '1598859136-Slider-1.jpg', 'front_slider', 1, '2020-08-31 01:32:16', '2020-08-31 01:32:16');
 
 -- --------------------------------------------------------
 

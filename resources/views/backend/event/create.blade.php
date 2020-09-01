@@ -75,12 +75,11 @@
                                     id="Event_pic" multiple>
                                 <label for="Event_pic" >
                                     <i class="fa fa-upload"></i>
-                                    <span>Choose  images</span>
+                                    <span>Choose images</span>
                                 </label>
                             </div>
                         </div>
                     </div>
-
                     {{-- event-img --}}
 
                 </div>

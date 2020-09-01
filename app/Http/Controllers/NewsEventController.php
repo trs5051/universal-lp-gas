@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventPicture;
 use App\Models\NewsEvent;
 use Illuminate\Http\Request;
 use App\Models\Setting;
@@ -50,32 +51,41 @@ class NewsEventController extends Controller
     }
 
 
-
-
-
-
     public function store(Request $request)
     {
         // dd($request->all());
         $validatedData = $request->validate([
-            'Name' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'Event_Title' => 'required',
+            'Event_Image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
-        if ($request->hasFile('img')) {
-            $img = time() . '-' . $request->img->getClientOriginalName();
-            $request->img->move('storage/managementImage', $img);
+        if ($request->hasFile('Event_Image')) {
+            $Event_Image = time() . '-' . $request->Event_Image->getClientOriginalName();
+            $request->Event_Image->move('storage/eventImages', $Event_Image);
         }
 
         $events = new NewsEvent();
-        $events->img = $img;
-        $events->name = $request->Name;
-        $events->designation = $request->designation;
-        $events->management_category_id = $request->post;
-        $events->text = $request->text;
+        $events->main_img = $Event_Image;
+        $events->title = $request->Event_Title;
+        $events->text1 = $request->text1;
         $events->save();
 
+        if($request->hasfile('Event_pic'))
+         {
 
-        return array($events);
+            foreach($request->file('Event_pic') as $image)
+            {
+                $name= time().'-'. $image->getClientOriginalName();
+                $image->move(public_path().'/eventImages/', $name);
+                $event_pic = new EventPicture();
+                $event_pic->news_event_id = $events->id;
+                $event_pic->img = $name;
+                $event_pic->save();
+            }
+         }
+
+
+         return redirect()->route('backend.event');
+
     }
 
     public function findOne(Request $request)
