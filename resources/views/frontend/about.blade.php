@@ -35,7 +35,7 @@
                     <p>{{ $aboutUs->description2 }}
                     <p>
                         <a href="our-services.html" class="btn-lpg">Our Services <i class="fa fa-arrow-right"></i></a>
-                        <a href="contact.html" class="btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
+                        <a href="{{Route('frontend.contact')}}" class="btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
                     </p>
                 </div>
                 <!-- /.leading-left -->

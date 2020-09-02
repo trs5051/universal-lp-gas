@@ -210,7 +210,7 @@
                     <!-- trusted-partner-right -->
                     <div class="col-lg-3 col-md-5 trusted-partner-right text-right">
                         <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                            <a href="contact.html" class="btn-lpg">work with us <i class="fa fa-arrow-right"></i></a>
+                        <a href="{{Route('frontend.contact')}}" class="btn-lpg">work with us <i class="fa fa-arrow-right"></i></a>
                         </p>
                     </div>
                     <!-- /.trusted-partner-right -->

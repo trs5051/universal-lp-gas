@@ -14,11 +14,19 @@ class NewsEventController extends Controller
     public function index()
     {
         $settings = Setting::where('delete_status', 1)->first();
-        return view('frontend.news-events', compact("settings"));
+        $events = NewsEvent::with('eventPictures')->where('delete_status', 1)->orderBy('id')->get();
+        return view('frontend.news-events', compact("settings",'events'));
+    }
+    public function eventShow($id)
+    {
+        $settings = Setting::where('delete_status', 1)->first();
+        $event = NewsEvent::with('eventPictures')->findOrFail($id);
+
+        return view('frontend.eventShow', compact('settings','event'));
     }
     public function event()
     {
-        $events = NewsEvent::where('delete_status', 1)->get();
+        $events = NewsEvent::where('delete_status', 1)->orderBy('id')->get();
         // dd($events);
         return view('backend.event.index', compact('events'));
     }
@@ -30,7 +38,14 @@ class NewsEventController extends Controller
     {
         $event = NewsEvent::with('eventPictures')->findOrFail($id);
 
-        return view('backend.event.edit',compact('event'));
+        return view('backend.event.edit', compact('event'));
+    }
+    public function eventImgDelete(Request $request)
+    {
+        $event_pic= EventPicture::findOrFail($request->id);
+        $event_pic->delete();
+
+        return $event_pic;
     }
 
 
@@ -52,23 +67,18 @@ class NewsEventController extends Controller
         $events->text1 = $request->text1;
         $events->save();
 
-        if($request->hasfile('Event_pic'))
-         {
-
-            foreach($request->file('Event_pic') as $image)
-            {
-                $name= time().'-'. $image->getClientOriginalName();
+        if ($request->hasfile('Event_pic')) {
+            foreach ($request->file('Event_pic') as $image) {
+                $name = time() . '-' . $image->getClientOriginalName();
                 $image->move('storage/eventImage', $name);
                 $event_pic = new EventPicture();
                 $event_pic->news_event_id = $events->id;
                 $event_pic->img = $name;
                 $event_pic->save();
             }
-         }
+        }
 
-
-         return redirect()->route('backend.event');
-
+        return redirect()->route('backend.event');
     }
 
     public function findOne(Request $request)
@@ -81,24 +91,32 @@ class NewsEventController extends Controller
     {
         // dd($request->all());
         $validatedData = $request->validate([
-            'Name' => 'required|max:255',
+            'Event_Title' => 'required',
+            'Event_Image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
-        $events = NewsEvent::findOrFail($request->Management_Id);
-        if ($request->hasFile('image')) {
-            $oldimg = $events->img;
-            if ($oldimg) {
-                Storage::delete('/public/managementImage/' . $oldimg);
-            }
-            $img = time() . '-' . $request->image->getClientOriginalName();
-            $request->image->move('storage/managementImage', $img);
-            $events->img = $img;
+
+        $events = NewsEvent::findOrFail($request->event_id);
+        if ($request->hasFile('Event_Image')) {
+            $Event_Image = time() . '-' . $request->Event_Image->getClientOriginalName();
+            $request->Event_Image->move('storage/eventImage', $Event_Image);
+            $events->main_img = $Event_Image;
         }
-        $events->name = $request->Name;
-        $events->designation = $request->designation;
-        $events->management_category_id = $request->post;
-        $events->text = $request->text;
+
+        $events->title = $request->Event_Title;
+        $events->text1 = $request->text1;
         $events->update();
-        return $events;
+
+        if ($request->hasfile('Event_pic')) {
+            foreach ($request->file('Event_pic') as $image) {
+                $name = time() . '-' . $image->getClientOriginalName();
+                $image->move('storage/eventImage', $name);
+                $event_pic = new EventPicture();
+                $event_pic->news_event_id = $events->id;
+                $event_pic->img = $name;
+                $event_pic->save();
+            }
+        }
+        return redirect()->back();
     }
 
     public function destroy(Request $request)

@@ -26,7 +26,8 @@
                 <h3 class="box-title">Products Management</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-backdrop='static' data-keyboard='false' data-whatever="@add">Add New Product</button>
+                        data-backdrop='static' data-keyboard='false' data-whatever="@add"><i class="fa fa-plus-square"></i>
+                        Add New Product</button>
                 </div>
             </div>
 
@@ -56,7 +57,7 @@
                                     </td>
                                     <td>
                                         <a id="delete_product" data-id="{{ $item->id }}"
-                                            class="btn btn-danger text-white">Delete</a>
+                                            class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
                             @empty
@@ -283,7 +284,7 @@
                     var category = data[1]['title'];
 
                     var btn = '<a id="delete_product"  data-id="' + id +
-                        '"class="btn btn-danger text-white">Delete</a>';
+                        '"class="btn btn-danger text-white"> <i class="fa fa-trash"></i> Delete</a>';
 
                     table.row.add([
                         sl + 1,

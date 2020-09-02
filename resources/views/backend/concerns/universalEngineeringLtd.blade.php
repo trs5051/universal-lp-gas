@@ -24,7 +24,7 @@
             @csrf
             <div class="box box-info">
                 <div class="box-header">
-                    <h3 class="box-title">Edit Universal Engineering Ltd</h3>
+                    <h3 class="box-title"><i class="fa fa-pencil-square"></i> Edit Universal Engineering Ltd</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body setting-block">

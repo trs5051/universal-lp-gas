@@ -49,6 +49,14 @@
             margin: 5px -5px;
         }
 
+        .main-img-preview img {
+            width: 320px;
+            height: auto;
+            max-height: 200px;
+            margin: 5px;
+            border: 1px solid;
+            padding: 5px;
+        }
         .img-preview img {
             width: 120px;
             height: auto;
@@ -392,7 +400,7 @@
 
                         </ul>
                     </li>
-                    <li class="">
+                    <li class="{{ request()->is('backend/event*') ? 'active' : '' }}">
                         <a href="{{ Route('backend.event') }}">
                             <i class="fa fa-newspaper-o"></i>
                             <span>News & Events</span>

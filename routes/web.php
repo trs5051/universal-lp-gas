@@ -25,6 +25,7 @@ Route::get('/mission-and-vision', 'MissionVisionController@index')->name('fronte
 Route::get('/universal-lp-gas', 'UniversalLPGasController@index')->name('frontend.universal-lp-gas');
 Route::get('/board-of-directors', 'DirectorController@index')->name('frontend.board-of-directors');
 Route::get('/management', 'ManagementController@index')->name('frontend.management');
+
 Route::get('/universal-agency', 'UniversalAgencyController@index')->name('frontend.universal-agency');
 Route::get('/ms-enterprise', 'MsEnterpriseController@index')->name('frontend.ms-enterprise');
 Route::get('/universal-gas-cylinder', 'UniversalGasCylinderController@index')->name('frontend.universal-gas-cylinder');
@@ -32,6 +33,7 @@ Route::get('/amb-traders-pvt', 'AmbTradersPvtController@index')->name('frontend.
 Route::get('/us-energy-power-pvt', 'UsEnergyPowerPvtController@index')->name('frontend.us-energy-power-pvt');
 Route::get('/universal-cng-petrol-pump', 'UniversalCngPetrolPumpController@index')->name('frontend.universal-cng-petrol-pump');
 Route::get('/universal-engineering-ltd', 'UniversalEngineeringLtdController@index')->name('frontend.universal-engineering-ltd');
+
 Route::get('/product', 'ProductController@index')->name('frontend.product');
 Route::get('/cylinder-safety', 'CylinderSafetyController@index')->name('frontend.cylinder-safety');
 Route::get('/plants', 'PlantController@index')->name('frontend.plants');
@@ -39,6 +41,9 @@ Route::get('/compliance', 'ComplianceController@index')->name('frontend.complian
 Route::get('/why-lpg', 'WhyLpgController@index')->name('frontend.why-lpg');
 Route::get('/distribution', 'DistributionController@index')->name('frontend.distribution');
 Route::get('/news-events', 'NewsEventController@index')->name('frontend.news-events');
+// frontend.eventShow
+Route::get('/news/events/show/{id}', 'NewsEventController@eventShow')->name('frontend.eventShow');
+
 Route::get('/contact', 'ContactController@index')->name('frontend.contact');
 Route::get('/projects', 'ProductController@product')->name('frontend.products');
 // frontend end
@@ -50,7 +55,7 @@ Route::group(['middleware' => ['web','auth']], function () {
 // backend
 
     Route::get('/profile', 'HomeController@getProfile');
-    Route::post('/change/password', 'HomeController@changePassword');
+    Route::post('/change/password', 'HomeController@changePassword')->name('profile.update');
 
     Route::get('/home', 'HomeController@index')->name('backend-home');
     Route::get('/settings', 'SettingController@settings')->name('backend-settings');
@@ -180,8 +185,8 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::post('/backend/event/update', 'NewsEventController@update')->name('event.update');
     Route::post('/backend/event/destroy', 'NewsEventController@destroy')->name('event.destroy');
 
-    // Store image
-Route::post('/image-upload', 'NewsEventController@fileUpload')->name('imageUpload');
+    // Delete One Event Img
+Route::post('/backend/event/img/delete', 'NewsEventController@eventImgDelete')->name('eventOneimg.delete');
 
 
 // backend end

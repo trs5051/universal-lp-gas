@@ -25,7 +25,7 @@
                 <h3 class="box-title"> Management</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-backdrop='static' data-keyboard='false' data-whatever="@add">Add New Member</button>
+                        data-backdrop='static' data-keyboard='false' data-whatever="@add"><i class="fa fa-plus-square"></i> Add New Member</button>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
                                 <th>Designation</th>
                                 <th>Post</th>
                                 <th>text</th>
-                                <th>Action</th>
+                                <th width="15%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,9 +56,9 @@
                                     <td>
                                         <a id="edit_management" data-id="{{ $item->id }}" data-toggle="modal"
                                             data-target="#editModal" data-backdrop='static' data-keyboard='false'
-                                            class="btn btn-primary text-white">Edit</a>
+                                            class="btn btn-primary text-white"><i class="fa fa-pencil-square"></i> Edit</a>
                                         <a id="delete_management" data-id="{{ $item->id }}"
-                                            class="btn btn-danger text-white">Delete</a>
+                                            class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
 
                                 </tr>

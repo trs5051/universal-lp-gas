@@ -25,9 +25,9 @@
 
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title"> Add New Event</h3>
+                    <h3 class="box-title"> <i class="fa fa-plus-square"></i> Add New Event</h3>
                     <div class="box-tools pull-right">
-                        <a class="btn btn-primary" href="{{ route('backend.event') }}">View All Event</a>
+                        <a class="btn btn-primary" href="{{ route('backend.event') }}"><i class="fa fa-list-alt"></i> All Events</a>
                     </div>
                 </div>
 

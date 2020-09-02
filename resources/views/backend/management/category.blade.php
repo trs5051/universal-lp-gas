@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Management Category Management
+            Management Category
             <small>Edit Management Category</small>
         </h1>
         <!-- Breadcrumbs would render from routes/breadcrumb.php -->
@@ -22,10 +22,11 @@
         <div class="box box-info">
 
             <div class="box-header with-border">
-                <h3 class="box-title">Management Category Management</h3>
+                <h3 class="box-title">Management Category</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-backdrop='static' data-keyboard='false' data-whatever="@add">Add New ManagementCategory</button>
+                        data-backdrop='static' data-keyboard='false' data-whatever="@add"><i class="fa fa-plus-square"></i>
+                        Add New Category</button>
                 </div>
             </div>
 
@@ -54,7 +55,7 @@
 
                                     <td>
                                        <a id="delete_managementCategory" data-id="{{ $item->id }}"
-                                            class="btn btn-danger text-white">Delete</a>
+                                            class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
 
                                 </tr>

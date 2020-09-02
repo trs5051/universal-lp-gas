@@ -47,7 +47,7 @@
 
                         <p>
                             <a href="#" class="btn btn-lpg">Get Notification <i class="fa fa-arrow-right"></i></a>
-                            <a href="#" class="btn btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
+                            <a href="{{Route('frontend.contact')}}" class="btn btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
                         </p>
                     </div>
                     <!-- /.head-office-info -->
@@ -90,7 +90,7 @@
 
                         <p>
                             <a href="#" class="btn btn-lpg">Get Notification <i class="fa fa-arrow-right"></i></a>
-                            <a href="#" class="btn btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
+                            <a href="{{Route('frontend.contact')}}" class="btn btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
                         </p>
                     </div>
                     <!-- /.head-office-info -->

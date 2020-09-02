@@ -6,7 +6,7 @@
     <section class="content-header">
         <h1>
             News & Event
-            <small>Edit </small>
+            <small> </small>
         </h1>
         <!-- Breadcrumbs would render from routes/breadcrumb.php -->
         <ol class="breadcrumb">
@@ -24,7 +24,7 @@
             <div class="box-header with-border">
                 <h3 class="box-title"> News & Event</h3>
                 <div class="box-tools pull-right">
-                    <a class="btn btn-primary" href="{{ route('event.create') }}">Add New Event</a>
+                    <a class="btn btn-primary" href="{{ route('event.create') }}"><i class="fa fa-plus-square"></i> Add New Event</a>
                 </div>
             </div>
 
@@ -51,10 +51,10 @@
                                     </td>
 
                                     <td>
-                                    <a href="{{Route('event.edit',$item->id)}}" id="edit_event" data-id="{{ $item->id }}"
-                                            class="btn btn-primary text-white">Edit</a>
+                                        <a href="{{ Route('event.edit', $item->id) }}" id="edit_event" data-id="{{ $item->id }}"
+                                            class="btn btn-primary text-white"><i class="fa fa-pencil-square"></i> Edit</a>
                                         <a id="delete_event" data-id="{{ $item->id }}"
-                                            class="btn btn-danger text-white">Delete</a>
+                                            class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
 
                                 </tr>

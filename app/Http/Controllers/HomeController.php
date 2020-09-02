@@ -43,20 +43,22 @@ class HomeController extends Controller
     public function getProfile()
     {
         $profile = User::findOrFail(auth()->id());
+        // dd($profile);
         return view('backend.profile', compact('profile'));
     }
 
     public function changePassword(Request $request)
     {
+        // dd($request->all());
 
         $this->validate($request, [
-            'current_password' => 'required',
-            'new_password' => 'required|confirmed|min:6'
+            'password' => 'required',
+            'password_confirmation' => 'required|confirmed|min:6'
         ]);
 
         $user = User::findOrFail(auth()->user()->id);
-        if (Hash::check($request->current_password, $user['password']) && $request->new_password == $request->new_password_confirmation) {
-            $user->password = bcrypt($request->new_password);
+        if (Hash::check($request->password, $user['password']) && $request->password_confirmation == $request->new_password_confirmation) {
+            $user->password = bcrypt($request->password_confirmation);
             $user->update();
             return back()->with('success', 'Password Changed Successfully!');
         } else {

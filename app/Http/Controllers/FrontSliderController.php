@@ -24,9 +24,9 @@ class FrontSliderController extends Controller
 
     {
         // dd($request->all());
-        if ($request->hasFile('Slider_Image')) {
-            $imgName = time().'-'.$request->Slider_Image->getClientOriginalName();
-            $request->Slider_Image->move('storage/sliderImage', $imgName);
+        if ($request->hasFile('image')) {
+            $imgName = time().'-'.$request->image->getClientOriginalName();
+            $request->image->move('storage/sliderImage', $imgName);
         }
 
         $slider = new Slider();
@@ -34,7 +34,7 @@ class FrontSliderController extends Controller
         $slider->title = $request->Slider_Title;
         $slider->slider_for = 'front_slider';
         $slider->save();
-        return redirect()->route('backend.front-slider') ;
+        return $slider ;
     }
 
     public function destroy(Request $request){
@@ -44,7 +44,7 @@ class FrontSliderController extends Controller
 
         if ($frontSlider->img) {
             $img = 'public/sliderImage/' . $frontSlider->img;
-            unlink(storage_path('sliderImage/'.$frontSlider->img));
+            Storage::delete('/public/sliderImage/' .$frontSlider->img);
 
         }
         return $frontSlider;

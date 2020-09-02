@@ -25,7 +25,8 @@
                 <h3 class="box-title">Plants Management</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-backdrop='static' data-keyboard='false' data-whatever="@add">Add New Plant</button>
+                        data-backdrop='static' data-keyboard='false' data-whatever="@add"><i class="fa fa-plus-square"></i>
+                        Add New Plant</button>
                 </div>
             </div>
 
@@ -39,7 +40,7 @@
                                 <th>image</th>
                                 <th>Plant Name</th>
                                 <th>Description</th>
-                                <th>Action</th>
+                                <th width = "15%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,9 +57,10 @@
                                     <td>
                                         <a id="edit_plant" data-id="{{ $item->id }}" data-toggle="modal"
                                             data-target="#editModal" data-backdrop='static' data-keyboard='false'
-                                            class="btn btn-primary text-white">Edit</a>
+                                            class="btn btn-primary text-white"><i class="fa fa-pencil-square"></i>
+                                            Edit</a>
                                         <a id="delete_plant" data-id="{{ $item->id }}"
-                                            class="btn btn-danger text-white">Delete</a>
+                                            class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
 
                                 </tr>
@@ -299,9 +301,9 @@
                         image + '" width="100px"></span>';
 
                     var btn = '<a id="edit_plant" data-id="' + id +
-                        '" class="btn btn-primary text-white">Edit</a>' +
+                        '" class="btn btn-primary text-white"> <i class="fa fa-pencil-square"></i> Edit</a>' +
                         ' <a id="delete_plant"  data-id="' + id +
-                        '"  class="btn btn-danger text-white">Delete</a>';
+                        '"  class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>';
 
                     table.row.add([
                         sl + 1,
