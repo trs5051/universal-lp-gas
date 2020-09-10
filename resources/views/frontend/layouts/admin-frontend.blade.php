@@ -9,7 +9,7 @@
 
     <!-- Favicon -->
     @isset($settings)
-        <link rel="shortcut icon" href="{{ asset('/storage/favicon/' . $settings->favicon) }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/storage/favicon/' . $settings->favicon) }}" type="image/x-icon">
     @endisset
 
 
@@ -55,15 +55,14 @@
                                 <a href="{{ route('frontend.index') }}">
 
                                     @isset($settings)
-                                        <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" />
+                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" />
                                     @endisset
                                 </a>
                             </div>
                         </div>
 
                         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-5 phone-col">
-                            <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}"
-                                class="phone-wrapper">
+                            <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}" class="phone-wrapper">
                                 <i class="fa fa-phone"></i>
 
                                 <div class="phone-no">
@@ -181,6 +180,15 @@
         </header>
         <!-- /.site-header -->
 
+        <div class="ticker-wrap tickers">
+            <div class="ticker">
+                <div class="ticker__item">Welcome To Universal Group</div>
+                <div class="ticker__item">We are announcing that our is a sample scrolling text that has scrolls texts to left. Helvetica.</div>
+                <div class="ticker__item">Ugh PBR&B kale chips Echo Park.</div>
+                <div class="ticker__item">Gluten-free mumblecore chambray mixtape food truck. </div>
+            </div>
+        </div>
+
         <!-- main part -->
 
         <!-- Main content -->
@@ -208,7 +216,7 @@
                     <!-- trusted-partner-right -->
                     <div class="col-lg-3 col-md-5 trusted-partner-right text-right">
                         <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                        <a href="{{Route('frontend.contact')}}" class="btn-lpg">work with us <i class="fa fa-arrow-right"></i></a>
+                            <a href="{{Route('frontend.contact')}}" class="btn-lpg">work with us <i class="fa fa-arrow-right"></i></a>
                         </p>
                     </div>
                     <!-- /.trusted-partner-right -->
@@ -223,41 +231,35 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- our-clients -->
-                        <div class="our-clients owl-carousel owl-theme wow fadeInUp" data-wow-duration="0.75s"
-                            data-wow-delay="0s">
+                        <div class="our-clients owl-carousel owl-theme wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-1.png') }}"
-                                    alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-1.png') }}" alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-2.png') }}"
-                                    alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-2.png') }}" alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-3.png') }}"
-                                    alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-3.png') }}" alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-4.png') }}"
-                                    alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-4.png') }}" alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-5.png') }}"
-                                    alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-5.png') }}" alt="our-client">
 
                             </div>
                             <!-- /.single-client -->
@@ -280,13 +282,11 @@
                     <div class="row footer-widgets">
 
                         <!-- footer-widget -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp"
-                            data-wow-duration="0.75s" data-wow-delay="0s">
+                        <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                             <div class="footer-logo">
 
                                 @isset($settings)
-                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200"
-                                        alt="site logo" />
+                                <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" alt="site logo" />
                                 @endisset
                             </div>
 
@@ -302,21 +302,30 @@
 
                             <p>Phone: {{ !empty($settings->contact) ? $settings->contact : 'no number' }}</p>
 
-                            <p>Email : <a
-                                    href="mailto:{{ !empty($settings->email) ? $settings->email : 'no email' }}">{{ !empty($settings->email) ? $settings->email : 'no email' }}</a>
+                            <p>Email : <a href="mailto:{{ !empty($settings->email) ? $settings->email : 'no email' }}">{{ !empty($settings->email) ? $settings->email : 'no email' }}</a>
                             </p>
                         </div>
                         <!-- /.footer-widget -->
 
                         <!-- footer-widget -->
-                        <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-12  footer-widget widget-2 wow fadeInUp"
-                            data-wow-duration="0.75s" data-wow-delay="0.1s">
+                        <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-12  footer-widget widget-2 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
 
                             <h4 class="widget-title">
-                                &nbsp;
+                                Visitor Counter
                             </h4>
+                            <ul class="list-group v-counts">
+                                <li class="list-group-item">
+                                    <i class="fa fa-twitter"></i> Total visitor: 6217
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-twitter"></i> Unique visitor: 504
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fa fa-twitter"></i> Page visitor: 36217
+                                </li>
+                            </ul>
 
-                            <ul class="unstyled">
+                            <ul class="unstyled d-none">
                                 <li><a href="{{ route('frontend.index') }}">Home</a></li>
                                 <li><a href="about.html">about</a></li>
                                 <li><a href="cylinder-safety.html">Cylinder Safety</a></li>
@@ -327,14 +336,27 @@
                         <!-- /.footer-widget -->
 
                         <!-- footer-widget -->
-                        <div class="col-xl-4 offset-xl-1 col-lg-4 col-md-6  footer-widget widget-3 wow fadeInUp"
-                            data-wow-duration="0.75s" data-wow-delay="0.2s">
+                        <div class="col-xl-4 offset-xl-1 col-lg-4 col-md-6  footer-widget widget-3 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
 
                             <h4 class="widget-title">
-                                &nbsp;
+                                Contact Us
                             </h4>
+
+                            <div class="contact-form">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="user-email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="messages" rows="3" placeholder="Message"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                </form>
+                            </div>
+
+
                             <!-- newsletter-wrapper -->
-                            <div class="newsletter-wrapper text-center">
+                            <div class="newsletter-wrapper text-center d-none">
                                 <h3>Subscribe for latest newsletter</h3>
 
                                 <form action="#" class="newsletter-form">
@@ -354,8 +376,7 @@
 
                                     <div class="call-us">
                                         or <br>
-                                        <b>Call us: <a
-                                                href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}">{{ !empty($settings->contact) ? $settings->contact : 'no number' }}</a></b>
+                                        <b>Call us: <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}">{{ !empty($settings->contact) ? $settings->contact : 'no number' }}</a></b>
                                     </div>
                                 </form>
                             </div>
@@ -391,8 +412,7 @@
                         <!-- /.copyright  -->
 
                         <!-- developer  -->
-                        <div class="col-md-6 developer text-right wow fadeInUp" data-wow-duration="0.75s"
-                            data-wow-delay="0s">
+                        <div class="col-md-6 developer text-right wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                             Designed & Developed by <a href="https://www.ennvisiodigital.tech/" target="_blank">Ennvisio
                                 Digital Pvt. Ltd.</a>
                         </div>
@@ -440,7 +460,6 @@
             }
         }
         injectSvgSprite('https://demo.bootstrapious.com/sell/1-2-0/icons/orion-svg-sprite.svg');
-
     </script>
 </body>
 

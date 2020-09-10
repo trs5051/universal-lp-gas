@@ -546,7 +546,7 @@ section.slider-area {
     box-shadow: 4px 3px 10px -5px rgba(0,0,0,0.75);
     background: #FFF;
     padding: 0;
-    margin: -145px 0px 0;
+    margin: -0px 0px 0;
 }
 
 .our-proud-left {
@@ -942,7 +942,7 @@ section.footer-top-section {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 30px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 
@@ -951,6 +951,26 @@ section.footer-top-section {
 }
 
 
+.v-counts li {
+    color: #ddd;
+    background-color: transparent;
+    padding: .75rem 0!important;
+    text-align: left!important;
+}
+
+.v-counts li i {
+    margin-right: 5px;
+}
+
+
+.contact-form .form-control {
+    background: transparent;
+    color: #ddd;
+}
+
+.contact-form .form-control:focus {
+    background: rgb(0 0 0 / 75%);
+}
 /**
  * .footer-widget ul
  */
@@ -2797,6 +2817,7 @@ body.cylinder-sefety .page-header .page-subtitle {
     left: 0;
     position: absolute;
 	top: 50%;
+    transform: translateY(-50%);
 }
 .cylinder-slider.owl-theme .owl-nav .owl-next {
     right: 0;
@@ -2833,7 +2854,7 @@ body.cylinder-sefety .page-header .page-subtitle {
     height: 600px;
 }
 section.cylinder-slider-section {
-    margin-bottom: 100px;
+    margin-bottom: 0px;
 }
 
 @media (max-width: 767px) {
@@ -2841,3 +2862,62 @@ section.cylinder-slider-section {
 		height: auto;
 	}
 }
+
+@-webkit-keyframes ticker {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  @keyframes ticker {
+    0% {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+    }
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+  .ticker-wrap {
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 3rem;
+    background: #4800ff;
+    padding-left: 100%;
+    box-sizing: content-box;
+    z-index: 9999;
+  }
+  .ticker-wrap .ticker {
+    display: inline-block;
+    height: 3rem;
+    line-height: 3rem;
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 30s;
+    animation-duration: 30s;
+  }
+  .ticker-wrap .ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 24px;
+    color: yellow;
+    font-weight: bold;
+  }
+
+
