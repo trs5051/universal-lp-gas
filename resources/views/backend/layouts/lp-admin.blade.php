@@ -244,6 +244,12 @@
                                     <span>Mission & Vission</span>
                                 </a>
                             </li>
+                            <li class="{{ Request::routeIs('backend.achievement-and-award') ? 'active' : '' }}">
+                                <a href="{{ route('backend.achievement-and-award') }}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Achievement & Award</span>
+                                </a>
+                            </li>
                             <li class="{{ Request::routeIs('backend.universal-lp-gas') ? 'active' : '' }}">
                                 <a href="{{ route('backend.universal-lp-gas') }}">
                                     <i class="fa fa-hand-o-right"></i>

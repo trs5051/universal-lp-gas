@@ -23,6 +23,9 @@ Route::get('/', 'IndexController@index')->name('frontend.index');
 Route::get('/about', 'AboutController@index')->name('frontend.about');
 Route::get('/mission-and-vision', 'MissionVisionController@index')->name('frontend.mission-and-vision');
 Route::get('/universal-lp-gas', 'UniversalLPGasController@index')->name('frontend.universal-lp-gas');
+
+Route::get('/achievement-and-award', 'AchievementController@index')->name('frontend.achievement-and-award');
+
 Route::get('/board-of-directors', 'DirectorController@index')->name('frontend.board-of-directors');
 Route::get('/management', 'ManagementController@index')->name('frontend.management');
 
@@ -126,18 +129,21 @@ Route::group(['middleware' => ['web','auth']], function () {
 
     // backend.plants
     Route::get('/backend/plant-process/plants', 'PlantController@plants')->name('backend.plants');
-    Route::get('/backend/plants/create', 'PlantController@create')->name('plants.create');
+    // Route::get('/backend/plants/create', 'PlantController@create')->name('plants.create');
     Route::post('/backend/plants/store', 'PlantController@store')->name('plants.store');
     Route::get('/backend/plants/findOne', 'PlantController@findOne')->name('plantfindOne');
     Route::post('/backend/plants/update', 'PlantController@update')->name('plants.update');
     Route::post('/backend/plants/destroy', 'PlantController@destroy')->name('plant.destroy');
 
     // backend.compliance
-    Route::get('/backend/plant-process/backend/compliance', 'InformationController@compliance')->name('backend.compliance');
-    Route::post('/backend/compliance/update', 'InformationController@informationUpdate')->name('compliance.update');
+    Route::get('/backend/plant-process/compliance', 'ComplianceController@compliance')->name('backend.compliance');
+    Route::post('/backend/compliance/store', 'ComplianceController@store')->name('compliances.store');
+    Route::get('/backend/compliance/findOne', 'ComplianceController@findOne')->name('compliancefindOne');
+    Route::post('/backend/compliance/update', 'ComplianceController@update')->name('compliances.update');
+    Route::post('/backend/compliance/destroy', 'ComplianceController@destroy')->name('compliance.destroy');
 
     // backend.whyLPG
-    Route::get('/backend/plant-process/backend/whyLPG', 'InformationController@whyLPG')->name('backend.whyLPG');
+    Route::get('/backend/plant-process/whyLPG', 'InformationController@whyLPG')->name('backend.whyLPG');
     Route::post('/backend/whyLPG/update', 'InformationController@informationUpdate')->name('whyLPG.update');
 
     // backend.contact
@@ -145,7 +151,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::post('/backend/contact/update', 'ContactController@contactUpdate')->name('contact.update');
 
     // backend.cylinderSafety
-    Route::get('/backend/plant-process/backend/cylinderSafety', 'CylinderSafetyController@cylinderSafety')->name('backend.cylinderSafety');
+    Route::get('/backend/plant-process/cylinderSafety', 'CylinderSafetyController@cylinderSafety')->name('backend.cylinderSafety');
     Route::post('/backend/cylinderSafety/update', 'CylinderSafetyController@cylinderSafetyUpdate')->name('cylinderSafety.update');
 
     // backend.product
@@ -184,9 +190,15 @@ Route::group(['middleware' => ['web','auth']], function () {
     Route::get('/backend/event/findOne', 'NewsEventController@findOne')->name('findOne.event');
     Route::post('/backend/event/update', 'NewsEventController@update')->name('event.update');
     Route::post('/backend/event/destroy', 'NewsEventController@destroy')->name('event.destroy');
-
     // Delete One Event Img
-Route::post('/backend/event/img/delete', 'NewsEventController@eventImgDelete')->name('eventOneimg.delete');
+    Route::post('/backend/event/img/delete', 'NewsEventController@eventImgDelete')->name('eventOneimg.delete');
+
+    // backend.achievement-and-award
+    Route::get('/backend/about/achievement-and-award', 'AchievementController@achievementAward')->name('backend.achievement-and-award');
+    Route::post('/backend/achievement-and-award/store', 'AchievementController@store')->name('achievements.store');
+    Route::get('/backend/achievement-and-award/findOne', 'AchievementController@findOne')->name('achievement.findOne');
+    Route::post('/backend/achievement-and-award/update', 'AchievementController@update')->name('achievements.update');
+    Route::post('/backend/achievement-and-award/destroy', 'AchievementController@destroy')->name('achievement.destroy');
 
 
 // backend end

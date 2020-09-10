@@ -5,13 +5,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Compliances Management
-            <small>Edit Compliances</small>
+            Achievements & Awards Management
+            <small>Edit Achievements & Awards</small>
         </h1>
         <!-- Breadcrumbs would render from routes/breadcrumb.php -->
         <ol class="breadcrumb">
             <li><a href="{{ route('backend-home') }}">Dashboard</a></li>
-            <li class="active">Compliances</li>
+            <li class="active">Achievements & Awards</li>
         </ol>
 
     </section>
@@ -22,18 +22,18 @@
         <div class="box box-info">
 
             <div class="box-header with-border">
-                <h3 class="box-title">Compliances Management</h3>
+                <h3 class="box-title">Achievements & Awards Management</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                         data-backdrop='static' data-keyboard='false' data-whatever="@add"><i class="fa fa-plus-square"></i>
-                        Add New Compliance</button>
+                        Add New </button>
                 </div>
             </div>
 
             <div class="box-body">
                 <div class="table-responsive data-table-wrapper">
 
-                    <table id="compliance_table" class="datatable table table-condensed table-hover table-bordered">
+                    <table id="achievement_table" class="datatable table table-condensed table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th>Sl</th>
@@ -44,10 +44,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($compliances as $key => $item)
+                            @forelse ($achievements as $key => $item)
                                 <tr id="tr_{{ $item->id }}">
                                     <th>{{ $key + 1 }}</th>
-                                    <td><span><img src="{!!  asset('/storage/compliancesimage/' . $item->img) !!}"
+                                    <td><span><img src="{!!  asset('/storage/achievementsImage/' . $item->img) !!}"
                                                 width="100px"></span>
                                     </td>
                                     <td>
@@ -55,11 +55,11 @@
                                     </td>
                                     <td>{!! $item->text1 ?? '' !!}</td>
                                     <td>
-                                        <a id="edit_compliance" data-id="{{ $item->id }}" data-toggle="modal"
+                                        <a id="edit_achievements" data-id="{{ $item->id }}" data-toggle="modal"
                                             data-target="#editModal" data-backdrop='static' data-keyboard='false'
                                             class="btn btn-primary text-white"><i class="fa fa-pencil-square"></i>
                                             Edit</a>
-                                        <a id="delete_compliance" data-id="{{ $item->id }}"
+                                        <a id="delete_achievements" data-id="{{ $item->id }}"
                                             class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
 
@@ -91,11 +91,11 @@
             <div class="modal-dialog modal-lg" role="document">
 
                 <form method="POST" action="#" accept-charset="UTF-8" class="form-horizontal" role="form"
-                    id="add_compliance_form" enctype="multipart/form-data">
+                    id="add_achievement_form" enctype="multipart/form-data">
                     @csrf
                     <div class="box box-info">
                         <div class="box-header">
-                            <h3 class="box-title"><i class="fa fa-plus-square"></i> Add New Compliance </h3>
+                            <h3 class="box-title"><i class="fa fa-plus-square"></i> Add New Achievement </h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -129,7 +129,7 @@
                                 <div class="col-lg-10">
                                     <input class="form-control" placeholder="Heading" rows="2" name="title" type=""
                                         style="max-width: 75% ;">
-                                    <span id="Compliance_Name_errors"></span>
+                                    <span id="Achievement_Name_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -154,7 +154,7 @@
                                 <div class="col-lg-offset-2 col-lg-10 footer-btn">
                                     <input class="btn btn-primary btn-md " type="button" data-dismiss="modal" value="Close">
 
-                                    <button class="btn btn-primary btn-md " id="add_compliance">Add</button>
+                                    <button class="btn btn-primary btn-md " id="add_achievement">Add</button>
                                     <div class="clearfix"></div>
                                 </div>
 
@@ -175,11 +175,11 @@
             <div class="modal-dialog modal-lg" role="document">
 
                 <form method="POST" action="#" accept-charset="UTF-8" class="form-horizontal" role="form"
-                    id="edit_compliance_form" enctype="multipart/form-data">
+                    id="edit_achievement_form" enctype="multipart/form-data">
                     @csrf
                     <div class="box box-info">
                         <div class="box-header">
-                            <h3 class="box-title"><i class="fa fa-pencil-square"></i> Edit Compliance </h3>
+                            <h3 class="box-title"><i class="fa fa-pencil-square"></i> Edit Achievement </h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -215,9 +215,9 @@
                             <div class="form-group">
                                 <label for="heading" class="col-lg-2 control-label">Title</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="title" rows="2" name="title" type="text" id="edit_compliance_name"
+                                    <input class="form-control" placeholder="Title" rows="2" name="title" type="text" id="edit_achievement_name"
                                         style="max-width: 75% ;">
-                                    <span id="update_Compliance_Name_errors"></span>
+                                    <span id="update_Achievement_Name_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -241,7 +241,7 @@
                             <div class="row">
                                 <div class="col-lg-offset-2 col-lg-10 footer-btn">
                                     <input class="btn btn-primary btn-md " type="button" data-dismiss="modal" value="Close">
-                                    <button class="btn btn-primary btn-md " id="update_compliance">Update</button>
+                                    <button class="btn btn-primary btn-md " id="update_achievement">Update</button>
                                     <div class="clearfix"></div>
                                 </div>
 
@@ -252,7 +252,7 @@
                     <!--box-->
 
                     <!-- hidden setting id variable -->
-                    <input type="hidden" id="compliance_id" name="Compliance Id">
+                    <input type="hidden" id="achievement_id" name="Achievement Id">
 
                 </form>
             </div>
@@ -269,21 +269,21 @@
     $(document).ready(function() {
         $("#exampleModal").on("hidden.bs.modal", function() {
             $('#image_errors').empty();
-            $('#Compliance_Name_errors').empty();
+            $('#Achievement_Name_errors').empty();
             $('#img_span').empty().append('Choose an image');
-            $("#add_compliance_form").trigger("reset");
+            $("#add_achievement_form").trigger("reset");
         });
 
 
-        $(document).on('submit', '#add_compliance_form', function(e) {
+        $(document).on('submit', '#add_achievement_form', function(e) {
             e.preventDefault();
             $('#image_errors').empty();
-            $('#Compliance_Name_errors').empty();
-            var table = $('#compliance_table').DataTable();
+            $('#Achievement_Name_errors').empty();
+            var table = $('#achievement_table').DataTable();
             var sl = table.rows().count();
 
             $.ajax({
-                url: "{{ route('compliances.store') }}",
+                url: "{{ route('achievements.store') }}",
                 method: "POST",
                 data: new FormData(this),
                 dataType: 'JSON',
@@ -293,16 +293,16 @@
                 success: function(data) {
                     console.log('Submission was successful.');
                     console.log(data);
-                    swal('Congratulation!', 'New Compliance Added successfully', 'success')
+                    swal('Congratulation!', 'New Achievement Added successfully', 'success')
                     var id = data['id'];
                     var image = data['img'];
 
-                    var img = '<span><img src="{{ asset('/storage/compliancesimage') }}/' +
+                    var img = '<span><img src="{{ asset('/storage/achievementsImage') }}/' +
                         image + '" width="100px"></span>';
 
-                    var btn = '<a id="edit_compliance" data-id="' + id +
+                    var btn = '<a id="edit_achievements" data-id="' + id +
                         '" class="btn btn-primary text-white"> <i class="fa fa-pencil-square"></i> Edit</a>' +
-                        ' <a id="delete_compliance"  data-id="' + id +
+                        ' <a id="delete_achievements"  data-id="' + id +
                         '"  class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>';
 
                     table.row.add([
@@ -314,7 +314,7 @@
                     ]).node().id = 'tr_' + id;
                     table.draw(false);
 
-                    $("#add_compliance_form").trigger("reset");
+                    $("#add_achievement_form").trigger("reset");
 
                     $('#img_span').empty().append('Choose an image');
                     $('#exampleModal').modal('toggle');
@@ -328,7 +328,7 @@
                                 '</strong');
                         }
                         if (key == 'title') {
-                            $('#Compliance_Name_errors').empty().append(
+                            $('#Achievement_Name_errors').empty().append(
                                 '<strong style="color:red;">' + value +
                                 '</strong');
                         }
@@ -338,13 +338,13 @@
             });
         });
 
-        $(document).on('click', '#edit_compliance', function(e) {
+        $(document).on('click', '#edit_achievements', function(e) {
             e.preventDefault();
             var id = $(this).data('id');
-            var table = $('#compliance_table').DataTable();
+            var table = $('#achievement_table').DataTable();
             $.ajax({
                 type: "get",
-                url: "{{ route('compliancefindOne') }}",
+                url: "{{ route('achievement.findOne') }}",
                 data: {
                     id: id
                 },
@@ -352,22 +352,22 @@
                     console.log(data);
                     var id = data['id'];
                     var image = data['img'];
-                    var complianceName = data['heading'];
+                    var achievementName = data['heading'];
                     var txt1 = data['text1'];
                     var txt2 = data['text2'];
 
-                    var img = '<span><img src="{{ asset('/storage/compliancesimage') }}/' +
+                    var img = '<span><img src="{{ asset('/storage/achievementsImage') }}/' +
                         image + '" width="200px"></span>';
 
-                    var btn = '<a id="edit_compliance" data-id="' + id +
+                    var btn = '<a id="edit_achievements" data-id="' + id +
                         '" class="btn btn-primary text-white">Edit</a>' +
-                        '<a id="delete_compliance"  data-id="' + id +
+                        '<a id="delete_achievements"  data-id="' + id +
                         '"  class="btn btn-danger text-white">Delete</a>';
 
 
-                    $('#compliance_id').empty().val(id);
+                    $('#achievement_id').empty().val(id);
                     $('.preview-img').empty().append(img);
-                    $('#edit_compliance_name').empty().val(complianceName);
+                    $('#edit_achievement_name').empty().val(achievementName);
                     $('#edit_text1').empty().append(txt1);
                     $('#edit_text12').empty().append(txt2);
 
@@ -375,15 +375,15 @@
             });
         });
 
-        $(document).on('submit', '#edit_compliance_form', function(e) {
+        $(document).on('submit', '#edit_achievement_form', function(e) {
             e.preventDefault();
             $('#image_errors').empty();
-            $('#Compliance_Name_errors').empty();
-            var table = $('#compliance_table').DataTable();
+            $('#Achievement_Name_errors').empty();
+            var table = $('#achievement_table').DataTable();
             var sl = table.rows().count();
 
             $.ajax({
-                url: "{{ route('compliances.update') }}",
+                url: "{{ route('achievements.update') }}",
                 method: "POST",
                 data: new FormData(this),
                 dataType: 'JSON',
@@ -393,19 +393,19 @@
                 success: function(data) {
                     console.log('Submission was successful.');
                     console.log(data);
-                    swal('Congratulation!', 'Compliance Updated successfully', 'success')
+                    swal('Congratulation!', 'Achievement Updated successfully', 'success')
                     var id = data['id'];
                     var image = data['img'];
 
-                    var img = '<span><img src="{{ asset('/storage/compliancesimage') }}/' +
+                    var img = '<span><img src="{{ asset('/storage/achievementsImage') }}/' +
                         image + '" width="100px"></span>';
 
-                    var btn = '<a id="edit_compliance" data-id="' + id +
+                    var btn = '<a id="edit_achievements" data-id="' + id +
                         '" class="btn btn-primary text-white">Edit</a>' +
-                        ' <a id="delete_compliance"  data-id="' + id +
+                        ' <a id="delete_achievements"  data-id="' + id +
                         '"  class="btn btn-danger text-white">Delete</a>';
 
-                    $("#edit_compliance_form").trigger("reset");
+                    $("#edit_achievement_form").trigger("reset");
 
                     $('#img_span').empty().append('Choose an image');
                     $('#editModal').modal('toggle');
@@ -421,7 +421,7 @@
                                 '</strong');
                         }
                         if (key == 'title') {
-                            $('#update_Compliance_Name_errors').empty().append(
+                            $('#update_Achievement_Name_errors').empty().append(
                                 '<strong style="color:red;">' + value +
                                 '</strong');
                         }
@@ -432,9 +432,9 @@
         });
 
 
-        $(document).on('click', '#delete_compliance', function(e) {
+        $(document).on('click', '#delete_achievements', function(e) {
             e.preventDefault();
-            var table = $('#compliance_table').DataTable();
+            var table = $('#achievement_table').DataTable();
             var id = $(this).data('id');
             swal({
                     title: "Are you sure!",
@@ -448,14 +448,14 @@
 
                     $.ajax({
                         type: "POST",
-                        url: "{{ route('compliance.destroy') }}",
+                        url: "{{ route('achievement.destroy') }}",
                         data: {
                             id: id
                         },
                         success: function(data) {
                             var tr_id = data['id'];
                             swal('Congratulation!',
-                                'Requested compliance deleted successfully', 'success')
+                                'Requested achievement deleted successfully', 'success')
                             table.row("tr#tr_" + tr_id).remove().draw();
                         }
                     });

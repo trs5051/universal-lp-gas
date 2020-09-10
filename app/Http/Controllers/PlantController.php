@@ -11,14 +11,16 @@ use Faker\Provider\Image;
 
 class PlantController extends Controller
 {
-    //
+    //Frontend
     public function index()
     {
         $settings = Setting::where('delete_status', 1)->first();
         $plants = Plant::where('delete_status', 1)->get();
 
-        return view('frontend.plants', compact("settings",'plants'));
+        return view('frontend.plants', compact("settings", 'plants'));
     }
+
+    // backend
     public function plants()
     {
         $plants = Plant::where('delete_status', 1)->get();
@@ -76,10 +78,9 @@ class PlantController extends Controller
 
     public function destroy(Request $request)
     {
-        $plants = Plant::where('id',$request->id)->first();
+        $plants = Plant::where('id', $request->id)->first();
         $plants->delete_status = 0;
         $plants->update();
         return $plants;
-
     }
 }

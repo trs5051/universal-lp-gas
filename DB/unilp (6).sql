@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 02, 2020 at 10:43 AM
+-- Generation Time: Sep 10, 2020 at 10:14 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -21,6 +21,61 @@ SET time_zone = "+00:00";
 --
 -- Database: `unilp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `achievements`
+--
+
+DROP TABLE IF EXISTS `achievements`;
+CREATE TABLE IF NOT EXISTS `achievements` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text1` text COLLATE utf8mb4_unicode_ci,
+  `text2` text COLLATE utf8mb4_unicode_ci,
+  `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `achievements`
+--
+
+INSERT INTO `achievements` (`id`, `img`, `heading`, `text1`, `text2`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'Test1', 'Achievement Awards are designed to recognize sustained, exceptional performance and/or significant contributions over an extended period of time that represents a major portion of the employee\'s area of responsibilities, including performance or project goals above and beyond normal performance expectations.', NULL, '0', NULL, '2020-09-10 02:16:24'),
+(2, '1599725763-mission-vission - Copy (2).jpg', 'demo 1', 'this is demo text', NULL, '1', '2020-09-10 02:16:03', '2020-09-10 02:47:57'),
+(3, '1599725846-download.jpg', 'demo 2', 'This id demo 2', NULL, '1', '2020-09-10 02:17:26', '2020-09-10 02:48:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `compliances`
+--
+
+DROP TABLE IF EXISTS `compliances`;
+CREATE TABLE IF NOT EXISTS `compliances` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text1` text COLLATE utf8mb4_unicode_ci,
+  `text2` text COLLATE utf8mb4_unicode_ci,
+  `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `compliances`
+--
+
+INSERT INTO `compliances` (`id`, `img`, `heading`, `text1`, `text2`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, '1599732676-missionVision.jpg', 'demo 1', 'this is demo text', NULL, '1', '2020-09-10 04:11:16', '2020-09-10 04:11:40'),
+(2, '1599732722-tiger.jpg', 'gjvgv', 'hgbvyhugbv', 'asfcds', '0', '2020-09-10 04:12:02', '2020-09-10 04:12:16');
 
 -- --------------------------------------------------------
 
@@ -342,7 +397,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -367,7 +422,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (17, '2020_08_27_091608_create_management_categories_table', 8),
 (18, '2020_08_27_101027_create_management_table', 9),
 (19, '2020_08_31_082025_create_news_events_table', 10),
-(21, '2020_09_01_070227_create_event_pictures_table', 11);
+(21, '2020_09_01_070227_create_event_pictures_table', 11),
+(22, '2020_09_10_045518_create_achievements_table', 12),
+(23, '2020_09_10_100600_create_compliances_table', 13);
 
 -- --------------------------------------------------------
 
@@ -584,7 +641,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 --
 
 INSERT INTO `settings` (`id`, `favicon`, `logo`, `contact`, `address_first_part`, `address_second_part`, `email`, `facebook`, `linkedin`, `twitter`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, '1599043036-favicon.png', '1599043036-logo.png', '+88028419450', 'House: #514 (3rd Floor), Road: #9', 'DOHS, Baridhara, Dhaka, Bangladesh', 'info@universallpgas.com', NULL, NULL, NULL, '1', '2020-08-17 21:24:52', '2020-09-02 04:37:16');
+(1, '1599449577-favicon.png', '1599449577-logo.png', '+88028419450', 'House: #514 (3rd Floor), Road: #9', 'DOHS, Baridhara, Dhaka, Bangladesh', 'info@universallpgas.com', NULL, NULL, NULL, '1', '2020-08-17 21:24:52', '2020-09-06 21:32:57');
 
 -- --------------------------------------------------------
 

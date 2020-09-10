@@ -37,9 +37,9 @@
                         <li role="presentation">
                             <a href="#tab2" aria-controls="1" role="tab" data-toggle="tab">Company Contact Details</a>
                         </li>
-                        <!-- <li role="presentation">
-                                <a href="#tab3" aria-controls="2" role="tab" data-toggle="tab">Social Network</a>
-                            </li> -->
+                        <li role="presentation">
+                            <a href="#tab3" aria-controls="2" role="tab" data-toggle="tab">Social Network</a>
+                        </li>
 
                     </ul>
 
@@ -143,27 +143,23 @@
                         <div role="tabpanel" class="tab-pane" id="tab3">
 
                             <div class="form-group">
-                                <label for="instagram" class="col-lg-2 control-label">Instagram</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" placeholder="Instragram" rows="2" name="instagram"
-                                        type="text" id="instagram">
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="facebook" class="col-lg-2 control-label">Facebook</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="Facebook" rows="2" name="facebook" type="text"
-                                        id="facebook">
+                                    <input class="form-control" placeholder="Facebook" rows="2" name="facebook" type="text" id="facebook">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="twitter" class="col-lg-2 control-label">Twitter</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="Twitter" rows="2" name="twitter" type="text"
-                                        id="twitter">
+                                    <input class="form-control" placeholder="Twitter" rows="2" name="twitter" type="text" id="twitter">
                                 </div>
                             </div>
-
+                            <div class="form-group">
+                                <label for="youtube" class="col-lg-2 control-label">Youtube</label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" placeholder="Youtube" rows="2" name="youtube" type="text" id="youtube">
+                                </div>
+                            </div>
                             <!--form control-->
                         </div>
                     </div>

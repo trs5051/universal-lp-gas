@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCompliancesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('compliances', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('img')->nullable();
+            $table->string('heading')->nullable();
+            $table->text('text1')->nullable();
+            $table->text('text2')->nullable();
+            $table->string('delete_status')->default(1);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('compliances');
+    }
+}
