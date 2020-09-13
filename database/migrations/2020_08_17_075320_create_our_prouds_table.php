@@ -30,7 +30,8 @@ class CreateOurProudsTable extends Migration
             $table->string('number4')->nullable();
             $table->string('img4')->nullable();
             $table->text('text4')->nullable();
-            $table->string('status')->default(1);
+            $table->string('use_for')->nullable();
+            $table->string('delete_status')->default(1);
             $table->timestamps();
         });
     }

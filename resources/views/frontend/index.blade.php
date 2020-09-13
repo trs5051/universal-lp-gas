@@ -41,10 +41,10 @@
                             <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Our proud</p>
 
                             <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                                {{ $ourProud->heading }}</h3>
+                                {{ $ourProud->heading ?? '' }}</h3>
 
                             <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                                {{ $ourProud->description }}</p>
+                                {{ $ourProud->description ?? '' }}</p>
                         </div>
                         <!-- /.our-proud-desc -->
                     </div>
@@ -62,9 +62,9 @@
                                 </figure>
 
                                 <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                                    <div class="pf-number">{{ $ourProud->number1 }}</div>
+                                    <div class="pf-number">{{ $ourProud->number1 ?? ''}}</div>
 
-                                    <p>{{ $ourProud->text1 }}</p>
+                                    <p>{{ $ourProud->text1 ?? '' }}</p>
                                 </div>
                             </div>
                             <!-- /.single-pfeature -->
@@ -77,9 +77,9 @@
                                 </figure>
 
                                 <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                                    <div class="pf-number">{{ $ourProud->number2 }}</div>
+                                    <div class="pf-number">{{ $ourProud->number2 ?? '' }}</div>
 
-                                    <p>{{ $ourProud->text2 }}</p>
+                                    <p>{{ $ourProud->text2 ?? '' }}</p>
                                 </div>
                             </div>
                             <!-- /.single-pfeature -->
@@ -92,9 +92,9 @@
                                 </figure>
 
                                 <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                                    <div class="pf-number">{{ $ourProud->number3 }}</div>
+                                    <div class="pf-number">{{ $ourProud->number3 ?? ''}}</div>
 
-                                    <p>{{ $ourProud->text3 }}</p>
+                                    <p>{{ $ourProud->text3 ?? '' }}</p>
                                 </div>
                             </div>
                             <!-- /.single-pfeature -->
@@ -107,9 +107,9 @@
                                 </figure>
 
                                 <div class="single-pfeature-text wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                                    <div class="pf-number">{{ $ourProud->number4 }}</div>
+                                    <div class="pf-number">{{ $ourProud->number4 ?? ''}}</div>
 
-                                    <p>{{ $ourProud->text4 }}</p>
+                                    <p>{{ $ourProud->text4 ?? '' }}</p>
                                 </div>
                             </div>
                             <!-- /.single-pfeature -->
@@ -134,7 +134,7 @@
                 <div class="section-header text-center">
                     <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">Our business <span class="colored">Concern</span></h3>
                     <p class="sub-title wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                        {{ $information->text1 }}</p>
+                        {{ $information->text1 ?? ''}}</p>
                 </div>
             </div>
         </div>
@@ -154,7 +154,7 @@
                         </figure>
 
                         <div class="concern-feature-desc">
-                            <h3>{{ $concern->heading }}</h3>
+                            <h3>{{ $concern->heading ?? ''}}</h3>
                         </div>
                     </div>
                 </a>
@@ -181,11 +181,11 @@
             <div class="col-lg-6 col-md-6 col-sm-12 sustainability-left">
                 <h5 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">SUSTAINABILITY</h5>
 
-                <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $sustainability->heading }}
+                <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">{{ $sustainability->heading ?? ''  }}
                 </h3>
 
                 <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
-                    {{ $sustainability->description }}</p>
+                    {{ $sustainability->description ?? ''}}</p>
             </div>
             <!-- /.sustainability-left -->
 
@@ -193,10 +193,10 @@
             <!-- sustainability-right -->
             <div class="col-lg-6 col-md-6 col-sm-12 sustainability-right">
 
-                <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{{ $sustainability->heading2 }}
+                <h3 class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">{{ $sustainability->heading2 ?? ''}}
                 </h3>
                 <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
-                    {{ $sustainability->description2 }}</p>
+                    {{ $sustainability->description2 ?? ''}}</p>
                 <!-- best-fields -->
                 <div class="row best-fields">
 
@@ -208,7 +208,7 @@
                             @endisset
                         </figure>
 
-                        <h5>{{ $sustainability->text1 }}</h5>
+                        <h5>{{ $sustainability->text1 ?? ''}}</h5>
                     </div>
                     <!-- /.single-best-field -->
                     <!-- single-best-field -->
@@ -219,7 +219,7 @@
                             @endisset
                         </figure>
 
-                        <h5>{{ $sustainability->text2 }}</h5>
+                        <h5>{{ $sustainability->text2 ?? ''}}</h5>
                     </div>
                     <!-- /.single-best-field -->
                     <!-- single-best-field -->
@@ -230,7 +230,7 @@
                             @endisset
                         </figure>
 
-                        <h5>{{ $sustainability->text3 }}</h5>
+                        <h5>{{ $sustainability->text3 ?? ''}}</h5>
                     </div>
                     <!-- /.single-best-field -->
                     <!-- single-best-field -->
@@ -241,7 +241,7 @@
                             @endisset
                         </figure>
 
-                        <h5>{{ $sustainability->text4 }}</h5>
+                        <h5>{{ $sustainability->text4 ?? ''}}</h5>
                     </div>
                     <!-- /.single-best-field -->
 

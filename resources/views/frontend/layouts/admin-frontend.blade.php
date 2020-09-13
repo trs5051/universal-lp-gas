@@ -182,10 +182,8 @@
 
         <div class="ticker-wrap tickers">
             <div class="ticker">
-                <div class="ticker__item">Welcome To Universal Group</div>
-                <div class="ticker__item">We are announcing that our is a sample scrolling text that has scrolls texts to left. Helvetica.</div>
-                <div class="ticker__item">Ugh PBR&B kale chips Echo Park.</div>
-                <div class="ticker__item">Gluten-free mumblecore chambray mixtape food truck. </div>
+            <div class="ticker__item">{{$settings->ticker ?? ''}}</div>
+                {{-- <div class="ticker__item">Ugh PBR&B kale chips Echo Park.</div> --}}
             </div>
         </div>
 
@@ -285,9 +283,12 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
                             <div class="footer-logo">
 
-                                @isset($settings)
-                                <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" alt="site logo" />
-                                @endisset
+                                <a href="{{ route('frontend.index') }}">
+
+                                    @isset($settings)
+                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" />
+                                    @endisset
+                                </a>
                             </div>
 
                             <h4 class="widget-title">
@@ -323,6 +324,12 @@
                                 <li class="list-group-item">
                                     <i class="fa fa-twitter"></i> Page visitor: 36217
                                 </li>
+                            </ul>
+                            <ul class="unstyled social-medias">
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
                             </ul>
 
                             <ul class="unstyled d-none">

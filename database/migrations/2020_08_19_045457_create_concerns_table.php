@@ -24,6 +24,7 @@ class CreateConcernsTable extends Migration
             $table->string('bk_img')->nullable();
             $table->text('text3')->nullable();
             $table->string('information_for')->nullable();
+            $table->string('label')->nullable();
             $table->tinyInteger('delete_status')->default(1);
             $table->timestamps();
         });

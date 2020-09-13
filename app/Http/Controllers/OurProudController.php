@@ -11,7 +11,7 @@ class OurProudController extends Controller
 {
     public function index()
     {
-        // $settings = Setting::where('delete_status',1)->first();
+        $settings = Setting::where('delete_status',1)->first();
         $ourProud = OurProud::where('delete_status', 1)->where('use_for', 'our_proud')->first();
         return view('backend.our-proud', compact('settings', 'ourProud'));
     }

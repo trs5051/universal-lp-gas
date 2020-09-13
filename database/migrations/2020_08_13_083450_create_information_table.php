@@ -24,6 +24,8 @@ class CreateInformationTable extends Migration
             $table->text('text2')->nullable();
             $table->text('text3')->nullable();
             $table->string('information_for')->nullable();
+            $table->string('delete_status')->default(1);
+
 
             $table->timestamps();
         });

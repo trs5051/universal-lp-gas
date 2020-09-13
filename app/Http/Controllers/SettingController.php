@@ -21,6 +21,7 @@ class SettingController extends Controller
     }
     public function headerFooterUpdate(Request $request)
     {
+        // dd($request->all());
         $oldSettings = Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first();
 
         if ($oldSettings) {
@@ -58,14 +59,17 @@ class SettingController extends Controller
             if ($request->company_email) {
                 Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['email' => $request->company_email]);
             }
-            if ($request->instagram) {
-                Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['instagram' => $request->instagram]);
+            if ($request->youtube) {
+                Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['youtube' => $request->youtube]);
             }
             if ($request->facebook) {
                 Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['facebook' => $request->facebook]);
             }
             if ($request->twitter) {
                 Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['twitter' => $request->twitter]);
+            }
+            if ($request->news_ticker) {
+                Setting::where('id', $request->Settings_Id)->where('delete_status', 1)->first()->update(['ticker' => $request->news_ticker]);
             }
         } else {
 
@@ -81,6 +85,9 @@ class SettingController extends Controller
             if ($request->company_email) {
                 $email = $request->company_email;
             }
+            if ($request->news_ticker) {
+                $ticker = $request->news_ticker;
+            }
 
             $settings = new Setting();
 
@@ -88,6 +95,7 @@ class SettingController extends Controller
             $settings->address_second_part = $company_address_second;
             $settings->contact = $contact;
             $settings->email = $email;
+            $settings->ticker = $ticker;
             if ($request->hasFile('logo')) {
                 $logoName = time().'-'.$request->logo->getClientOriginalName();
                 $request->logo->move('storage/logo', $logoName);
