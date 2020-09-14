@@ -21,8 +21,8 @@ Route::get('/clear-cache', function () {
 // frontend
 Route::get('/', 'IndexController@index')->name('frontend.index');
 Route::get('/about', 'AboutController@index')->name('frontend.about');
-Route::get('/carrier', function () {
-    return view('frontend.carrier');
+Route::get('/career', function () {
+    return view('frontend.career');
 });
 Route::get('/mission-and-vision', 'MissionVisionController@index')->name('frontend.mission-and-vision');
 Route::get('/universal-lp-gas', 'UniversalLPGasController@index')->name('frontend.universal-lp-gas');
