@@ -21,9 +21,7 @@ Route::get('/clear-cache', function () {
 // frontend
 Route::get('/', 'IndexController@index')->name('frontend.index');
 Route::get('/about', 'AboutController@index')->name('frontend.about');
-Route::get('/career', function () {
-    return view('frontend.career');
-});
+
 Route::get('/mission-and-vision', 'MissionVisionController@index')->name('frontend.mission-and-vision');
 Route::get('/universal-lp-gas', 'UniversalLPGasController@index')->name('frontend.universal-lp-gas');
 
@@ -51,6 +49,8 @@ Route::get('/news-events', 'NewsEventController@index')->name('frontend.news-eve
 Route::get('/news/events/show/{id}', 'NewsEventController@eventShow')->name('frontend.eventShow');
 
 Route::get('/contact', 'ContactController@index')->name('frontend.contact');
+Route::get('/career', 'CareerController@index')->name('frontend.career');
+Route::post('/cv/submit', 'CareerController@cvSubmit')->name('cv.submit');
 Route::get('/projects', 'ProductController@product')->name('frontend.products');
 // frontend end
 
@@ -203,6 +203,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('/backend/achievement-and-award/update', 'AchievementController@update')->name('achievements.update');
     Route::post('/backend/achievement-and-award/destroy', 'AchievementController@destroy')->name('achievement.destroy');
 
+    // backend.career
+    Route::get('/backend/career', 'CareerController@career')->name('backend.career');
+    Route::post('/backend/career/destroy', 'CareerController@destroy')->name('career.destroy');
 
     // backend end
 
