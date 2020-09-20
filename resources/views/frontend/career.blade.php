@@ -14,6 +14,8 @@
             color: #b10a0a;
         }
 
+
+
         section.career-section-2 {
             position: relative;
         }
@@ -115,19 +117,6 @@
         }
 
     </style>
-    <!-- page-header-section -->
-    <section class="page-header-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="page-header wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                        <h3>Career</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--/.page-header-section -->
 
     <!-- career-section-1 -->
     <section class="career-section-1 sp d-none">
@@ -199,12 +188,21 @@
                     <!-- career-form-wrapper -->
                     <div class="career-form-wrapper">
 
+                        <div class="career-form-desc">
+                            <h3 class="section-title text-center">SUBMIT YOUR CV</h3>
+                            <p class="text-center">We are working hard to ensure healthy products for a perfect healthy life
+                                of customer through innovation processes. We are devoted to investing in our people, our
+                                company and the communities where we operate to help position the company for long-term,
+                                sustainable growth.</p>
+                        </div>
+
                         <div class="career-form">
                             <div class="row justify-content-center">
                                 <div class="col-lg-6 career-form-inner">
-                                    <h3 class="section-title text-center">SUBMIT YOUR CV</h3>
-                                    <form action="{{ Route('cv.submit') }}" method="post" enctype="multipart/form-data">
-                                        @csrf
+                                    <h3 class="text-center">Universal Job Application</h3>
+                                <form action="{{ Route('cv.submit') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
+
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-sm-4">
@@ -214,7 +212,7 @@
                                                 </div>
 
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control"  name="name" id="name">
+                                                    <input type="text" class="form-control" name="name" id="name">
                                                 </div>
                                             </div>
                                         </div>
@@ -227,21 +225,22 @@
                                                 </div>
 
                                                 <div class="col-sm-8">
-                                                    <input type="email" class="form-control" id="email" name="email"
+                                                    <input type="email" class="form-control" name="email" id="email"
                                                         placeholder="emaill@example.com">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group d-none">
                                             <div class="row">
                                                 <div class="col-sm-4">
                                                     <label for="position" class="form-label">Position<span
                                                             class="required">*</span></label>
                                                     <p class="help-note">SELECT PREFERRED JOB</p>
+
                                                 </div>
 
                                                 <div class="col-sm-8">
-                                                    <select class="form-control" id="position" name="position">
+                                                    <select class="form-control" id="position">
                                                         <option value="">Select Position</option>
                                                         <option value="Corporate Planning">Corporate Planning</option>
                                                         <option value="Operation & SHE">Operation & SHE</option>

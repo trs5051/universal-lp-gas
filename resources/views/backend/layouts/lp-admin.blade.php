@@ -421,6 +421,13 @@
                         </a>
                     </li>
 
+                    <li class="{{ Request::routeIs('backend.career') ? 'active' : '' }}">
+                        <a href="{{ route('backend.career') }}">
+                            <i class="fa fa-address-card"></i>
+                            <span>Career</span>
+                        </a>
+                    </li>
+
                 </ul><!-- /.sidebar-menu -->
             </section><!-- /.sidebar -->
         </aside>
