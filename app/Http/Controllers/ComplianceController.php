@@ -11,9 +11,11 @@ class ComplianceController extends Controller
 {
     public function index(){
         $settings = Setting::where('delete_status',1)->first();
-        $compliance  = Information::where('information_for','compliance')->where('delete_status',1)->first();
+        $compliances  = Compliance::where('delete_status',1)->get();
 
-        return view('frontend.compliance',compact("settings",'compliance'));
+        // dd($compliances);
+
+        return view('frontend.compliance',compact("settings",'compliances'));
     }
      // backend
      public function compliance()

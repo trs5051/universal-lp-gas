@@ -41,6 +41,8 @@ class ManagementController extends Controller
         $managements->designation = $request->designation;
         $managements->management_category_id = $request->post;
         $managements->text = $request->text;
+        $managements->phone = $request->phone;
+        $managements->email = $request->email;
         $managements->save();
         $category = ManagementCategory::findOrFail($request->post);
 
@@ -73,6 +75,8 @@ class ManagementController extends Controller
         $managements->designation = $request->designation;
         $managements->management_category_id = $request->post;
         $managements->text = $request->text;
+        $managements->phone = $request->phone;
+        $managements->email = $request->email;
         $managements->update();
         return $managements;
     }

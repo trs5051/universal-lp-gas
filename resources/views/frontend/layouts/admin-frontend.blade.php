@@ -164,6 +164,7 @@
                                         </li>
                                         <li><a href="{{ route('frontend.distribution') }}">Distribution</a></li>
                                         <li><a href="{{ route('frontend.news-events') }}">News & Events</a></li>
+                                        <li><a href="{{ route('frontend.career') }}">Career</a></li>
                                         <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -326,10 +327,10 @@
                                 </li>
                             </ul>
                             <ul class="unstyled social-medias">
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                                <li><a href="{{ $settings->facebook }}"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="{{ $settings->twitter }}"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="{{ $settings->youtube }}"><i class="fab fa-youtube"></i></a></li>
+                                {{-- <li><a href="#"><i class="fab fa-google-plus"></i></a></li> --}}
                             </ul>
 
                             <ul class="unstyled d-none">
@@ -389,12 +390,7 @@
                             </div>
                             <!-- ./newsletter-wrapper -->
 
-                            <ul class="unstyled social-medias">
-                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                            </ul>
+
                         </div>
                         <!-- /.footer-widget -->
                     </div>

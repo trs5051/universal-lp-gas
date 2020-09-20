@@ -21,9 +21,6 @@ Route::get('/clear-cache', function () {
 // frontend
 Route::get('/', 'IndexController@index')->name('frontend.index');
 Route::get('/about', 'AboutController@index')->name('frontend.about');
-Route::get('/career', function () {
-    return view('frontend.career');
-});
 Route::get('/mission-and-vision', 'MissionVisionController@index')->name('frontend.mission-and-vision');
 Route::get('/universal-lp-gas', 'UniversalLPGasController@index')->name('frontend.universal-lp-gas');
 
@@ -52,12 +49,13 @@ Route::get('/news/events/show/{id}', 'NewsEventController@eventShow')->name('fro
 
 Route::get('/contact', 'ContactController@index')->name('frontend.contact');
 Route::get('/projects', 'ProductController@product')->name('frontend.products');
+Route::get('/career', 'CareerController@index')->name('frontend.career');
+Route::post('/cv/submit', 'CareerController@cvSubmit')->name('cv.submit');
 // frontend end
 
 Auth::routes();
 
 Route::group(['middleware' => ['web', 'auth']], function () {
-
     // backend
 
     Route::get('/profile', 'HomeController@getProfile');

@@ -57,16 +57,16 @@
                                 <h2>{!! $management->name ?? '' !!}</h2>
                                 <p class="title">{!! $management->designation ?? '' !!}</p>
                                 <p>{!! $management->text ?? '' !!}</p>
+                                <p class="title">{!! $management->phone ?? '' !!}</p>
+                                <p class="title">{!! $management->email ?? '' !!}</p>
                             </div>
                             <div class="card-footer">
-                                <a href="#" class="facebook"><i class="fa fa-google w-25 text-center p-2"></i></a>
-                                <a href="#" class="twitter"><i class="fa fa-twitter w-25 text-center p-2"></i></a>
-                                <a href="#" class="linkedin"><i class="fa fa-linkedin w-25 text-center p-2"></i></a>
+                                <a href="{!! $management->gmail ?? '' !!}" class="google"><i class="fa fa-google w-25 text-center p-2"></i></a>
+                                <a href="{!! $management->twitter ?? '' !!}" class="twitter"><i class="fa fa-twitter w-25 text-center p-2"></i></a>
+                                <a href="{!! $management->linkedin ?? '' !!}" class="linkedin"><i class="fa fa-linkedin w-25 text-center p-2"></i></a>
                             </div>
                         </div>
                     </div>
-
-
 
                 @endif
             @empty

@@ -159,6 +159,22 @@
                                         id="text" style="max-width: 75% ; min-height: 150px;"></textarea>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="phone" class="col-lg-2 control-label">Phone</label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" placeholder="phone" rows="2" name="phone" type=""
+                                        style="max-width: 75% ;">
+                                    <span id="Management_Phone_errors"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-lg-2 control-label">E-mail</label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" placeholder="email" rows="2" name="email" type=""
+                                        style="max-width: 75% ;">
+                                    <span id="Management_email_errors"></span>
+                                </div>
+                            </div>
 
                         </div>
 
@@ -171,7 +187,6 @@
                                     <button class="btn btn-primary btn-md " id="add_management">Add</button>
                                     <div class="clearfix"></div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -260,6 +275,22 @@
                                 <div class="col-lg-10">
                                     <textarea class="form-control" placeholder="text" rows="2" name="text" cols="500"
                                         id="edit_text" style="max-width: 75% ; min-height: 150px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="col-lg-2 control-label">Phone</label>
+                                <div class="col-lg-10">
+                                <input class="form-control" placeholder="phone" rows="2" name="phone" type="" value="" id="edit_phone"
+                                        style="max-width: 75% ;">
+                                    <span id="Management_Phone_errors"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-lg-2 control-label">E-mail</label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" placeholder="email" rows="2" name="email" type="" value="" id="edit_email"
+                                        style="max-width: 75% ;">
+                                    <span id="Management_email_errors"></span>
                                 </div>
                             </div>
 
@@ -383,6 +414,8 @@
                     var name = data['name'];
                     var designation = data['designation'];
                     var text = data['text'];
+                    var phone = data['phone'];
+                    var email = data['email'];
 
                     var img = '<span><img src="{{ asset('/storage/managementImage') }}/' +
                         image + '" width="200px"></span>';
@@ -397,6 +430,8 @@
                     $('.preview-img').empty().append(img);
                     $('#edit_member_name').empty().val(name);
                     $('#edit_designation').empty().val(designation);
+                    $('#edit_phone').empty().val(phone);
+                    $('#edit_email').empty().val(email);
                     $('#edit_text').empty().append(text);
 
                 }
