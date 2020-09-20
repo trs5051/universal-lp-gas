@@ -317,14 +317,14 @@
                             </h4>
                             <ul class="list-group v-counts">
                                 <li class="list-group-item">
-                                    <i class="fa fa-twitter"></i> Total visitor: 6217
+                                    <i class="fa fa-twitter"></i> Total visitor: {{$settings->visitor}}
                                 </li>
-                                <li class="list-group-item">
+                                {{-- <li class="list-group-item">
                                     <i class="fa fa-twitter"></i> Unique visitor: 504
                                 </li>
                                 <li class="list-group-item">
                                     <i class="fa fa-twitter"></i> Page visitor: 36217
-                                </li>
+                                </li> --}}
                             </ul>
                             <ul class="unstyled social-medias">
                                 <li><a href="{{ $settings->facebook }}"><i class="fab fa-facebook"></i></a></li>
@@ -350,13 +350,24 @@
                                 Contact Us
                             </h4>
 
+
                             <div class="contact-form">
-                                <form>
+                                @if (session()->has('messageBox'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('messageBox') }}
+                                </div>
+                            @endif
+
+                            <form action="{{ Route('message.submit') }}" method="post">
+                                @csrf
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="user-email" placeholder="Email">
+                                        <input type="name" class="form-control" id="user-name" placeholder="Full Name" name="name">
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" id="messages" rows="3" placeholder="Message"></textarea>
+                                        <input type="email" class="form-control" id="user-email" placeholder="Email" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="messages" rows="3" name="message" placeholder="Message"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-info">Submit</button>
                                 </form>

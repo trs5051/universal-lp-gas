@@ -22,6 +22,7 @@ class CareerController extends Controller
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
+            'cv' => 'required',
 
         ]);
         if ($request->hasFile('cv')) {
@@ -34,7 +35,8 @@ class CareerController extends Controller
         $career->email = $request->email;
         $career->phone = $request->phone;
         $career->save();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Successfully Submitted!');
+
 
     }
 

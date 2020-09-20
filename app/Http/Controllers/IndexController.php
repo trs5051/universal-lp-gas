@@ -16,6 +16,14 @@ class IndexController extends Controller
 {
     public function index(){
 
+        $visitors = Setting::where('delete_status',1)->first();
+        $visitors->visitor = $visitors->visitor+1;
+
+        $visitors->update();
+
+        // $ip = request()->ip();
+
+
         $settings = Setting::where('delete_status',1)->first();
         $frontSliders = Slider::where('delete_status',1)->where('slider_for','front_slider')->get();
         $ourProud = OurProud::where('use_for','our_proud')->where('delete_status',1)->first();

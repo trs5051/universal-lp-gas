@@ -33,7 +33,7 @@
                     <h3>{{ $aboutUs->heading1 }}</h3>
                     <p>{{ $aboutUs->description1 }}</p>
                     <p>{{ $aboutUs->description2 }}
-                    <p>
+                    <p class="d-none">
                         <a href="our-services.html" class="btn-lpg">Our Services <i class="fa fa-arrow-right"></i></a>
                         <a href="{{Route('frontend.contact')}}" class="btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
                     </p>

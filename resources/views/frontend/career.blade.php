@@ -200,8 +200,22 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-6 career-form-inner">
                                     <h3 class="text-center">Universal Job Application</h3>
-                                <form action="{{ Route('cv.submit') }}" method="post" enctype="multipart/form-data">
-                                    @csrf
+                                    @if (session()->has('message'))
+                                        <div class="alert alert-success">
+                                            {{ session()->get('message') }}
+                                        </div>
+                                    @endif
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    <form action="{{ Route('cv.submit') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
 
                                         <div class="form-group">
                                             <div class="row">
@@ -212,7 +226,8 @@
                                                 </div>
 
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="name" id="name">
+                                                    <input type="text" class="form-control" name="name"
+                                                        value="{{ old('name') }}" id="name">
                                                 </div>
                                             </div>
                                         </div>
@@ -226,7 +241,7 @@
 
                                                 <div class="col-sm-8">
                                                     <input type="email" class="form-control" name="email" id="email"
-                                                        placeholder="emaill@example.com">
+                                                        value="{{ old('email') }}" placeholder="emaill@example.com">
                                                 </div>
                                             </div>
                                         </div>
@@ -258,7 +273,8 @@
                                                 </div>
 
                                                 <div class="col-sm-8">
-                                                    <input type="phone" class="form-control" name="phone" id="phone">
+                                                    <input type="phone" class="form-control" name="phone" id="phone"
+                                                        value="{{ old('phone') }}">
                                                 </div>
                                             </div>
                                         </div>

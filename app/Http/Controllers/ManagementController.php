@@ -52,6 +52,9 @@ class ManagementController extends Controller
     public function findOne(Request $request)
     {
         $managements = Management::findOrFail($request->id);
+
+        // dd($managements);
+
         return $managements;
     }
 

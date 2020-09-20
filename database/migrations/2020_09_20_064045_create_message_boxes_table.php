@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCareersTable extends Migration
+class CreateMessageBoxesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateCareersTable extends Migration
      */
     public function up()
     {
-        Schema::create('careers', function (Blueprint $table) {
+        Schema::create('message_boxes', function (Blueprint $table) {
+
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
-            $table->string('position');
-            $table->string('phone');
-            $table->string('cv');
-            $table->tinyInteger('delete_status')->default(1);
+            $table->text('message');
+            $table->string('delete_status')->default(1);
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateCareersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('careers');
+        Schema::dropIfExists('message_boxes');
     }
 }

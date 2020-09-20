@@ -5,13 +5,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Career Management
-            <small>Edit Career</small>
+            Message Box Management
+            <small>Edit Message Box</small>
         </h1>
         <!-- Breadcrumbs would render from routes/breadcrumb.php -->
         <ol class="breadcrumb">
             <li><a href="{{ route('backend-home') }}">Dashboard</a></li>
-            <li class="active">Career</li>
+            <li class="active">Message Box</li>
         </ol>
 
     </section>
@@ -19,7 +19,7 @@
     <section class="content">
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Career Management</h3>
+                <h3 class="box-title">Message Box Management</h3>
             </div>
             <div class="box-body">
                 <div class="table-responsive data-table-wrapper">
@@ -30,27 +30,20 @@
                                 <th>Sl</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Apply Date</th>
-                                <th>CV</th>
+                                <th>Message</th>
                                 <th width = "15%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($careers as $key => $item)
+                            @forelse ($messageBox as $key => $item)
                                 <tr id="tr_{{ $item->id }}">
                                     <th>{{ $key + 1 }}</th>
                                     <td>
                                         <h4> {!! $item->name ?? '' !!}</h4>
                                     </td>
                                     <td>{!! $item->email ?? '' !!}</td>
-                                    <td>{!! $item->phone ?? '' !!}</td>
-                                    <td>{!! $item->created_at ?? '' !!}</td>
+                                    <td>{!! $item->message ?? '' !!}</td>
 
-                                    <td><span>
-                                        <a href="{!!  asset('/storage/cv/' . $item->cv) !!}" class="btn btn-primary" download=""><i class="fa fa-download" aria-hidden="true"></i> Download Cv</a>
-                                    </span>
-                                </td>
                                     <td>
                                         <a id="delete_plant" data-id="{{ $item->id }}"
                                             class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
@@ -67,9 +60,7 @@
                                 <th>Sl</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Apply Date</th>
-                                <th>CV</th>
+                                <th>Message</th>
                                 <th width = "15%">Action</th>
                             </tr>
                         </tfoot>
@@ -115,7 +106,7 @@
 
                     $.ajax({
                         type: "POST",
-                        url: "{{ route('career.destroy') }}",
+                        url: "{{ route('message.destroy') }}",
                         data: {
                             id: id
                         },

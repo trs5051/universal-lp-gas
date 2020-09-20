@@ -427,6 +427,12 @@
                             <span>Career</span>
                         </a>
                     </li>
+                    <li class="{{ Request::routeIs('backend.message') ? 'active' : '' }}">
+                        <a href="{{ route('backend.message') }}">
+                            <i class="fa fa-address-card"></i>
+                            <span>Meaasge Box</span>
+                        </a>
+                    </li>
 
                 </ul><!-- /.sidebar-menu -->
             </section><!-- /.sidebar -->

@@ -45,7 +45,7 @@
 
                         <p>Email : {{ !empty($headOffice->email) ? $headOffice->email : '' }}</p>
 
-                        <p>
+                        <p class="d-none" >
                             <a href="#" class="btn btn-lpg">Get Notification <i class="fa fa-arrow-right"></i></a>
                             <a href="{{Route('frontend.contact')}}" class="btn btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
                         </p>
@@ -88,7 +88,7 @@
                             Brahmondi, Araihajar, Narayanganj, Bangladesh.
                         </p>
 
-                        <p>
+                        <p class="d-none">
                             <a href="#" class="btn btn-lpg">Get Notification <i class="fa fa-arrow-right"></i></a>
                             <a href="{{Route('frontend.contact')}}" class="btn btn-lpg alt">Contact Us <i class="fa fa-arrow-right"></i></a>
                         </p>

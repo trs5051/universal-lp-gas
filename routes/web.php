@@ -48,11 +48,10 @@ Route::get('/news-events', 'NewsEventController@index')->name('frontend.news-eve
 Route::get('/news/events/show/{id}', 'NewsEventController@eventShow')->name('frontend.eventShow');
 
 Route::get('/contact', 'ContactController@index')->name('frontend.contact');
-Route::get('/career', 'CareerController@index')->name('frontend.career');
-Route::post('/cv/submit', 'CareerController@cvSubmit')->name('cv.submit');
 Route::get('/projects', 'ProductController@product')->name('frontend.products');
 Route::get('/career', 'CareerController@index')->name('frontend.career');
 Route::post('/cv/submit', 'CareerController@cvSubmit')->name('cv.submit');
+Route::post('/message/submit', 'MessageBoxController@messageSubmit')->name('message.submit');
 // frontend end
 
 Auth::routes();
@@ -206,6 +205,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     // backend.career
     Route::get('/backend/career', 'CareerController@career')->name('backend.career');
     Route::post('/backend/career/destroy', 'CareerController@destroy')->name('career.destroy');
+
+    // backend.message
+    Route::get('/backend/message', 'MessageBoxController@message')->name('backend.message');
+    Route::post('/backend/message/destroy', 'MessageBoxController@destroy')->name('message.destroy');
 
     // backend end
 
