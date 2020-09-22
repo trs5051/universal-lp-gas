@@ -22,7 +22,7 @@
         <div class="box box-info">
 
             <div class="box-header with-border">
-                <h3 class="box-title"> News & Event</h3>
+                <h3 class="box-title"><i class="fa fa-table" aria-hidden="true"></i> News & Event</h3>
                 <div class="box-tools pull-right">
                     <a class="btn btn-primary" href="{{ route('event.create') }}"><i class="fa fa-plus-square"></i> Add New Event</a>
                 </div>

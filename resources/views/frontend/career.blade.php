@@ -190,10 +190,7 @@
 
                         <div class="career-form-desc">
                             <h3 class="section-title text-center">SUBMIT YOUR CV</h3>
-                            <p class="text-center">We are working hard to ensure healthy products for a perfect healthy life
-                                of customer through innovation processes. We are devoted to investing in our people, our
-                                company and the communities where we operate to help position the company for long-term,
-                                sustainable growth.</p>
+                            <p class="text-center"></p>
                         </div>
 
                         <div class="career-form">
@@ -287,7 +284,8 @@
                                                 </div>
 
                                                 <div class="col-sm-8">
-                                                    <input type="file" class="form-control-file" name="cv" id="cv">
+                                                    <input type="file" class="form-control-file" accept="application/pdf" name="cv" id="cv">
+                                                    <small style="color:#3a8859" >*Upload Only PDF file</small>
                                                 </div>
                                             </div>
                                         </div>

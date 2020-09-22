@@ -22,7 +22,7 @@ class CareerController extends Controller
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
-            'cv' => 'required',
+            'cv' => "required|mimes:pdf|max:300",
 
         ]);
         if ($request->hasFile('cv')) {

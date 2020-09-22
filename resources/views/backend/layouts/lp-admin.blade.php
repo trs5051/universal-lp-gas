@@ -129,26 +129,26 @@
 
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="{{ asset('/images/admin.jpg') }}" class="user-image" alt="User Avatar" />
-                                <span class="hidden-xs">Admin</span>
+                                <img src="{{ asset('/storage/profile/' . Auth::user()->img) ?? ' ' }}" class="user-image" alt="User Avatar" />
+                            <span class="hidden-xs">{{Auth::user()->name}}</span>
                                 <div class="clearfix"></div>
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="user-header">
-                                    <img src="{{ asset('/images/admin.jpg') }}" class="img-circle" alt="User Avatar" />
+                                    <img src="{{ asset('/storage/profile/' . Auth::user()->img) ?? ' ' }}" class="img-circle" alt="User Avatar" />
                                 </li>
 
-
                                 <li class="user-footer">
-                                    <div class="pull-left">
+
+                                    <div class="pull-left ">
                                         <a href="{{ url('/profile') }}" class="btn btn-default btn-flat">
                                             <i class="fa fa-home"></i>
                                             My Profile
                                         </a>
                                     </div>
-                                    <div class="pull-right">
 
+                                    <div class="pull-right">
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();"
                                             class="btn btn-danger btn-flat">
@@ -159,7 +159,6 @@
                                             style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-
                                     </div>
                                 </li>
                             </ul>
@@ -423,19 +422,19 @@
 
                     <li class="{{ Request::routeIs('backend.career') ? 'active' : '' }}">
                         <a href="{{ route('backend.career') }}">
-                            <i class="fa fa-address-card"></i>
+                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                             <span>Career</span>
                         </a>
                     </li>
                     <li class="{{ Request::routeIs('backend.message') ? 'active' : '' }}">
                         <a href="{{ route('backend.message') }}">
-                            <i class="fa fa-address-card"></i>
-                            <span>Meaasge Box</span>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span>Message Box</span>
                         </a>
                     </li>
 
-                </ul><!-- /.sidebar-menu -->
-            </section><!-- /.sidebar -->
+                </ul> <!-- /.sidebar-menu -->
+            </section> <!-- /.sidebar -->
         </aside>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">

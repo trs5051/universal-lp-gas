@@ -145,6 +145,12 @@
                         </div>
 
                         <div role="tabpanel" class="tab-pane" id="tab3">
+                            <div class="form-group">
+                                <label for="twitter" class="col-lg-2 control-label">LinkedIn </label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" placeholder="Twitter" rows="2" name="twitter" value="{{ $settings->twitter ?? ''}}" type="text" id="twitter">
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <label for="facebook" class="col-lg-2 control-label">Facebook</label>
@@ -152,12 +158,7 @@
                                 <input class="form-control" placeholder="Facebook" rows="2" name="facebook" value="{{ $settings->facebook ?? ''}}" type="text" id="facebook">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="twitter" class="col-lg-2 control-label">Twitter</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" placeholder="Twitter" rows="2" name="twitter" value="{{ $settings->twitter ?? ''}}" type="text" id="twitter">
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <label for="youtube" class="col-lg-2 control-label">Youtube</label>
                                 <div class="col-lg-10">

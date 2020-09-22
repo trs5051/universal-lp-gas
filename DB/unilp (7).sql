@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 13, 2020 at 09:04 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Host: 127.0.0.1:3306
+-- Generation Time: Sep 22, 2020 at 12:01 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ulpg`
+-- Database: `unilp`
 --
 
 -- --------------------------------------------------------
@@ -28,16 +28,18 @@ SET time_zone = "+00:00";
 -- Table structure for table `achievements`
 --
 
-CREATE TABLE `achievements` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `achievements`;
+CREATE TABLE IF NOT EXISTS `achievements` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text1` text COLLATE utf8mb4_unicode_ci,
   `text2` text COLLATE utf8mb4_unicode_ci,
   `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `achievements`
@@ -51,19 +53,49 @@ INSERT INTO `achievements` (`id`, `img`, `heading`, `text1`, `text2`, `delete_st
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `careers`
+--
+
+DROP TABLE IF EXISTS `careers`;
+CREATE TABLE IF NOT EXISTS `careers` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cv` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `careers`
+--
+
+INSERT INTO `careers` (`id`, `name`, `email`, `phone`, `cv`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, 'system', 'admin@gmail.com', '0467986798', '1600578816-missionVision.jpg', '1', '2020-09-19 23:13:36', '2020-09-19 23:13:36'),
+(2, 'test', 'sso1@gmail.com', '3467578457', '1600578935-download.jpg', '0', '2020-09-19 23:15:35', '2020-09-19 23:39:13'),
+(3, 'index', 'admin@gmail.com', '0467986798', '1600583051-small-cylender.png', '0', '2020-09-20 00:24:11', '2020-09-20 01:21:21');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `compliances`
 --
 
-CREATE TABLE `compliances` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `compliances`;
+CREATE TABLE IF NOT EXISTS `compliances` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text1` text COLLATE utf8mb4_unicode_ci,
   `text2` text COLLATE utf8mb4_unicode_ci,
   `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `compliances`
@@ -71,7 +103,8 @@ CREATE TABLE `compliances` (
 
 INSERT INTO `compliances` (`id`, `img`, `heading`, `text1`, `text2`, `delete_status`, `created_at`, `updated_at`) VALUES
 (1, '1599732676-missionVision.jpg', 'demo 1', 'this is demo text', NULL, '1', '2020-09-10 04:11:16', '2020-09-10 04:11:40'),
-(2, '1599732722-tiger.jpg', 'gjvgv', 'hgbvyhugbv', 'asfcds', '0', '2020-09-10 04:12:02', '2020-09-10 04:12:16');
+(2, '1599732722-tiger.jpg', 'gjvgv', 'hgbvyhugbv', 'asfcds', '0', '2020-09-10 04:12:02', '2020-09-10 04:12:16'),
+(3, '1600575586-mission-vission - Copy (2).jpg', 'test', 'gfhg', 'hnyg', '1', '2020-09-19 22:19:46', '2020-09-19 22:19:46');
 
 -- --------------------------------------------------------
 
@@ -79,8 +112,9 @@ INSERT INTO `compliances` (`id`, `img`, `heading`, `text1`, `text2`, `delete_sta
 -- Table structure for table `concerns`
 --
 
-CREATE TABLE `concerns` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `concerns`;
+CREATE TABLE IF NOT EXISTS `concerns` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text1` text COLLATE utf8mb4_unicode_ci,
@@ -94,8 +128,9 @@ CREATE TABLE `concerns` (
   `route` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `concerns`
@@ -118,8 +153,9 @@ INSERT INTO `concerns` (`id`, `title`, `heading`, `text1`, `text2`, `img`, `img_
 -- Table structure for table `contacts`
 --
 
-CREATE TABLE `contacts` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `contacts`;
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `office_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -128,8 +164,9 @@ CREATE TABLE `contacts` (
   `contact_for` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `contacts`
@@ -145,8 +182,9 @@ INSERT INTO `contacts` (`id`, `title`, `office_name`, `address`, `land_line`, `e
 -- Table structure for table `cylinder_safeties`
 --
 
-CREATE TABLE `cylinder_safeties` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `cylinder_safeties`;
+CREATE TABLE IF NOT EXISTS `cylinder_safeties` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `top_heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `top_text` text COLLATE utf8mb4_unicode_ci,
   `top_img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -170,8 +208,9 @@ CREATE TABLE `cylinder_safeties` (
   `safely_img2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `cylinder_safeties`
@@ -186,14 +225,16 @@ INSERT INTO `cylinder_safeties` (`id`, `top_heading`, `top_text`, `top_img`, `sa
 -- Table structure for table `event_pictures`
 --
 
-CREATE TABLE `event_pictures` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `event_pictures`;
+CREATE TABLE IF NOT EXISTS `event_pictures` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `news_event_id` int(11) NOT NULL,
   `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `event_pictures`
@@ -239,13 +280,15 @@ INSERT INTO `event_pictures` (`id`, `news_event_id`, `img`, `delete_status`, `cr
 -- Table structure for table `failed_jobs`
 --
 
-CREATE TABLE `failed_jobs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `failed_jobs`;
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -254,10 +297,12 @@ CREATE TABLE `failed_jobs` (
 -- Table structure for table `front_sliders`
 --
 
-CREATE TABLE `front_sliders` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `front_sliders`;
+CREATE TABLE IF NOT EXISTS `front_sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -266,8 +311,9 @@ CREATE TABLE `front_sliders` (
 -- Table structure for table `information`
 --
 
-CREATE TABLE `information` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `information`;
+CREATE TABLE IF NOT EXISTS `information` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `heading1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `heading2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -287,8 +333,9 @@ CREATE TABLE `information` (
   `information_for` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `information`
@@ -307,35 +354,39 @@ INSERT INTO `information` (`id`, `title`, `heading1`, `heading2`, `heading3`, `h
 -- Table structure for table `management`
 --
 
-CREATE TABLE `management` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `management`;
+CREATE TABLE IF NOT EXISTS `management` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `management_category_id` int(11) NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `designation` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `management`
 --
 
-INSERT INTO `management` (`id`, `management_category_id`, `name`, `img`, `designation`, `text`, `delete_status`, `created_at`, `updated_at`) VALUES
-(5, 15, 'fgnhg', '1598683303-missionVision.jpg', 'nfn', 'fghmnjg', 0, '2020-08-29 00:41:44', '2020-08-29 05:31:08'),
-(4, 12, 'mr Why', '1598683218-whylpg.jpg', 'jjbnjb', 'iojubnjbn', 0, '2020-08-29 00:40:18', '2020-08-29 05:31:12'),
-(3, 11, 'Tiger', '1598682981-tiger.jpg', 'bd', 'this is new', 0, '2020-08-29 00:36:21', '2020-08-29 05:31:15'),
-(6, 15, 'voot', '1598690765-mission-vission.jpg', 'vorooooccccc', 'hoooocccccc', 0, '2020-08-29 00:57:52', '2020-08-29 02:48:47'),
-(7, 11, 'Md.Sirajul Haque FCA', '1598700713-GM.jpg', 'GM & CFO', 'Mr. Sirajul Haque FCA is working here as GM & CFO. Under their supervision a well professional experienced team are working.', 1, '2020-08-29 05:31:53', '2020-08-29 05:31:53'),
-(8, 11, 'Sirajuddin Ahmmad', '1598700741-advisor.jpg', 'Advisor', 'Mr. Sirajuddin Ahmed has been advising us since the beginning of the journey of Universal as an advisor', 1, '2020-08-29 05:32:21', '2020-08-29 05:32:21'),
-(9, 11, 'Md.Tariq Wazed', '1598700768-tareq.jpg', 'Project Manager(Technical Operations)', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:32:48', '2020-08-29 05:32:48'),
-(10, 11, 'Mohiuddin Sagar', '1598700969-sagar.jpg', 'Manager-Accounts & Banking', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:36:09', '2020-08-29 05:36:09'),
-(11, 11, 'Khandaker Fahim Ahmmed', '1598701021-fahim.jpg', 'Deputy Manager (In Charge-HR & Admin Division)', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:37:01', '2020-08-29 05:37:01'),
-(12, 11, 'Mohammad Mukit Ibn Siddique', '1598701045-Manager-supplychain.jpg', 'Manager-Supply Chain', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:37:25', '2020-08-29 05:37:25'),
-(13, 12, 'Samir Deb Nath', '1598701082-samir.jpg', 'Plant Manager', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:38:02', '2020-08-29 05:52:04'),
-(14, 13, 'Moriom Begum', '1598701225-dm.jpg', 'Deputy Manager-Commercial', 'Some text that describes me lorem ipsum ipsum lorem.', 1, '2020-08-29 05:40:25', '2020-08-29 05:40:25');
+INSERT INTO `management` (`id`, `management_category_id`, `name`, `img`, `designation`, `text`, `phone`, `email`, `delete_status`, `created_at`, `updated_at`) VALUES
+(5, 15, 'fgnhg', '1598683303-missionVision.jpg', 'nfn', 'fghmnjg', NULL, NULL, 0, '2020-08-29 00:41:44', '2020-08-29 05:31:08'),
+(4, 12, 'mr Why', '1598683218-whylpg.jpg', 'jjbnjb', 'iojubnjbn', NULL, NULL, 0, '2020-08-29 00:40:18', '2020-08-29 05:31:12'),
+(3, 11, 'Tiger', '1598682981-tiger.jpg', 'bd', 'this is new', NULL, NULL, 0, '2020-08-29 00:36:21', '2020-08-29 05:31:15'),
+(6, 15, 'voot', '1598690765-mission-vission.jpg', 'vorooooccccc', 'hoooocccccc', NULL, NULL, 0, '2020-08-29 00:57:52', '2020-08-29 02:48:47'),
+(7, 11, 'Md.Sirajul Haque FCA', '1598700713-GM.jpg', 'GM & CFO', 'Mr. Sirajul Haque FCA is working here as GM & CFO. Under their supervision a well professional experienced team are working.', NULL, NULL, 1, '2020-08-29 05:31:53', '2020-08-29 05:31:53'),
+(8, 11, 'Sirajuddin Ahmmad', '1598700741-advisor.jpg', 'Advisor', 'Mr. Sirajuddin Ahmed has been advising us since the beginning of the journey of Universal as an advisor', NULL, NULL, 1, '2020-08-29 05:32:21', '2020-08-29 05:32:21'),
+(9, 11, 'Md.Tariq Wazed', '1598700768-tareq.jpg', 'Project Manager(Technical Operations)', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:32:48', '2020-08-29 05:32:48'),
+(10, 11, 'Mohiuddin Sagar', '1598700969-sagar.jpg', 'Manager-Accounts & Banking', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:36:09', '2020-08-29 05:36:09'),
+(11, 11, 'Khandaker Fahim Ahmmed', '1598701021-fahim.jpg', 'Deputy Manager (In Charge-HR & Admin Division)', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:37:01', '2020-08-29 05:37:01'),
+(12, 11, 'Mohammad Mukit Ibn Siddique', '1598701045-Manager-supplychain.jpg', 'Manager-Supply Chain', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:37:25', '2020-08-29 05:37:25'),
+(13, 11, 'Samir Deb Nath', '1598701082-samir.jpg', 'Plant Manager', 'Some text that describes me lorem ipsum ipsum lorem.', '04555555', 'tst@gmail.com', 1, '2020-08-29 05:38:02', '2020-09-20 00:11:17'),
+(14, 13, 'Moriom Begum', '1598701225-dm.jpg', 'Deputy Manager-Commercial', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:40:25', '2020-08-29 05:40:25');
 
 -- --------------------------------------------------------
 
@@ -343,13 +394,15 @@ INSERT INTO `management` (`id`, `management_category_id`, `name`, `img`, `design
 -- Table structure for table `management_categories`
 --
 
-CREATE TABLE `management_categories` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `management_categories`;
+CREATE TABLE IF NOT EXISTS `management_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `management_categories`
@@ -366,14 +419,43 @@ INSERT INTO `management_categories` (`id`, `title`, `delete_status`, `created_at
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `message_boxes`
+--
+
+DROP TABLE IF EXISTS `message_boxes`;
+CREATE TABLE IF NOT EXISTS `message_boxes` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `message_boxes`
+--
+
+INSERT INTO `message_boxes` (`id`, `name`, `email`, `message`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, 'system', 'admin@gmail.com', 'swedrgvrfeddth', '1', '2020-09-20 01:08:45', '2020-09-20 01:08:45'),
+(2, 'test', 'admin@gmail.com', 'zasdb vfdvbzgf', '1', '2020-09-20 01:10:32', '2020-09-20 01:10:32'),
+(3, 'sdrfgbtf', 'dftebhrty@srgdtfh', 'hnjdcvgftj nrtvgfy', '0', '2020-09-20 01:20:44', '2020-09-20 01:22:55');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -400,7 +482,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (19, '2020_08_31_082025_create_news_events_table', 10),
 (21, '2020_09_01_070227_create_event_pictures_table', 11),
 (22, '2020_09_10_045518_create_achievements_table', 12),
-(23, '2020_09_10_100600_create_compliances_table', 13);
+(23, '2020_09_10_100600_create_compliances_table', 13),
+(24, '2020_09_20_043300_create_careers_table', 14),
+(25, '2020_09_20_064045_create_message_boxes_table', 15);
 
 -- --------------------------------------------------------
 
@@ -408,8 +492,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Table structure for table `news_events`
 --
 
-CREATE TABLE `news_events` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `news_events`;
+CREATE TABLE IF NOT EXISTS `news_events` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `main_img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -417,8 +502,9 @@ CREATE TABLE `news_events` (
   `text2` text COLLATE utf8mb4_unicode_ci,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `news_events`
@@ -435,8 +521,9 @@ INSERT INTO `news_events` (`id`, `title`, `main_img`, `heading`, `text1`, `text2
 -- Table structure for table `our_prouds`
 --
 
-CREATE TABLE `our_prouds` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `our_prouds`;
+CREATE TABLE IF NOT EXISTS `our_prouds` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `heading2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -457,8 +544,9 @@ CREATE TABLE `our_prouds` (
   `use_for` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `our_prouds`
@@ -474,10 +562,12 @@ INSERT INTO `our_prouds` (`id`, `title`, `heading`, `heading2`, `description`, `
 -- Table structure for table `password_resets`
 --
 
-CREATE TABLE `password_resets` (
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -486,16 +576,18 @@ CREATE TABLE `password_resets` (
 -- Table structure for table `plants`
 --
 
-CREATE TABLE `plants` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `plants`;
+CREATE TABLE IF NOT EXISTS `plants` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `text1` text COLLATE utf8mb4_unicode_ci,
   `text2` text COLLATE utf8mb4_unicode_ci,
   `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `plants`
@@ -515,14 +607,16 @@ INSERT INTO `plants` (`id`, `img`, `heading`, `text1`, `text2`, `delete_status`,
 -- Table structure for table `products`
 --
 
-CREATE TABLE `products` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `product_categories_id` int(11) NOT NULL,
   `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
@@ -558,13 +652,15 @@ INSERT INTO `products` (`id`, `product_categories_id`, `img`, `delete_status`, `
 -- Table structure for table `product_categories`
 --
 
-CREATE TABLE `product_categories` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `product_categories`;
+CREATE TABLE IF NOT EXISTS `product_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `delete_status` tinyint(4) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `product_categories`
@@ -582,8 +678,9 @@ INSERT INTO `product_categories` (`id`, `title`, `delete_status`, `created_at`, 
 -- Table structure for table `settings`
 --
 
-CREATE TABLE `settings` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `settings`;
+CREATE TABLE IF NOT EXISTS `settings` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `favicon` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `logo` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `contact` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -592,20 +689,23 @@ CREATE TABLE `settings` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `facebook` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `linkedin` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `twitter` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `youtube` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ticker` text COLLATE utf8mb4_unicode_ci,
+  `visitor` int(11) NOT NULL,
+  `unique_visitor` int(11) NOT NULL,
   `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `favicon`, `logo`, `contact`, `address_first_part`, `address_second_part`, `email`, `facebook`, `linkedin`, `twitter`, `youtube`, `ticker`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, '1599449577-favicon.png', '1599795539-footer-logo.png', '+88028419450', 'House: #514 (3rd Floor), Road: #9', 'DOHS, Baridhara, Dhaka, Bangladesh', 'info@universallpgas.com', 'facebook.com', NULL, 'twitter.com', 'youtube.com', 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', '1', '2020-08-17 21:24:52', '2020-09-12 19:16:35');
+INSERT INTO `settings` (`id`, `favicon`, `logo`, `contact`, `address_first_part`, `address_second_part`, `email`, `facebook`, `linkedin`, `youtube`, `twitter`, `ticker`, `visitor`, `unique_visitor`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, '1599449577-favicon.png', '1599449577-logo.png', '+88028419450', 'House: #514 (3rd Floor), Road: #9', 'DOHS, Baridhara, Dhaka, Bangladesh', 'info@universallpgas.com', 'https://www.facebook.com/Universal-Lp-Gas-Gas-Cylinder-Ltd-157384465016083/', NULL, 'https://www.youtube.com/channel/UCsjeJ87qcRH_6dYNoPmGl5A', 'https://www.linkedin.com/company/universal-lpg', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 29, 0, '1', '2020-08-17 21:24:52', '2020-09-22 05:37:21');
 
 -- --------------------------------------------------------
 
@@ -613,16 +713,18 @@ INSERT INTO `settings` (`id`, `favicon`, `logo`, `contact`, `address_first_part`
 -- Table structure for table `sliders`
 --
 
-CREATE TABLE `sliders` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `sliders`;
+CREATE TABLE IF NOT EXISTS `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `serial` int(11) DEFAULT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `slider_for` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `delete_status` int(11) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sliders`
@@ -641,15 +743,17 @@ INSERT INTO `sliders` (`id`, `serial`, `title`, `img`, `slider_for`, `delete_sta
 -- Table structure for table `tests`
 --
 
-CREATE TABLE `tests` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `tests`;
+CREATE TABLE IF NOT EXISTS `tests` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_no` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `age` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `area` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `delete_status` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -658,291 +762,28 @@ CREATE TABLE `tests` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `img`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', 'fff', NULL, '$2y$10$uXn8Bp8diSh47ePNgsE8eurqlepwwzodI7bfYQCeVOQMqCbwO1SrC', NULL, '2020-08-17 21:22:48', '2020-08-17 21:22:48');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `achievements`
---
-ALTER TABLE `achievements`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `compliances`
---
-ALTER TABLE `compliances`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `concerns`
---
-ALTER TABLE `concerns`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `contacts`
---
-ALTER TABLE `contacts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `cylinder_safeties`
---
-ALTER TABLE `cylinder_safeties`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `event_pictures`
---
-ALTER TABLE `event_pictures`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `front_sliders`
---
-ALTER TABLE `front_sliders`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `information`
---
-ALTER TABLE `information`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `management`
---
-ALTER TABLE `management`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `management_categories`
---
-ALTER TABLE `management_categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `news_events`
---
-ALTER TABLE `news_events`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `our_prouds`
---
-ALTER TABLE `our_prouds`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
-
---
--- Indexes for table `plants`
---
-ALTER TABLE `plants`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `product_categories`
---
-ALTER TABLE `product_categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `settings`
---
-ALTER TABLE `settings`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sliders`
---
-ALTER TABLE `sliders`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tests`
---
-ALTER TABLE `tests`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `achievements`
---
-ALTER TABLE `achievements`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `compliances`
---
-ALTER TABLE `compliances`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `concerns`
---
-ALTER TABLE `concerns`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `contacts`
---
-ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `cylinder_safeties`
---
-ALTER TABLE `cylinder_safeties`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `event_pictures`
---
-ALTER TABLE `event_pictures`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
-
---
--- AUTO_INCREMENT for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `front_sliders`
---
-ALTER TABLE `front_sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `information`
---
-ALTER TABLE `information`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `management`
---
-ALTER TABLE `management`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `management_categories`
---
-ALTER TABLE `management_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
--- AUTO_INCREMENT for table `news_events`
---
-ALTER TABLE `news_events`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `our_prouds`
---
-ALTER TABLE `our_prouds`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `plants`
---
-ALTER TABLE `plants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
---
--- AUTO_INCREMENT for table `product_categories`
---
-ALTER TABLE `product_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `settings`
---
-ALTER TABLE `settings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `sliders`
---
-ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
-
---
--- AUTO_INCREMENT for table `tests`
---
-ALTER TABLE `tests`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+(3, 'Admin', 'admin@gmail.com', '1600769319-Anisul.jpg', NULL, '$2y$10$oqjBAGYecXHMnyVnQ/KWa.NvHg0QQVN8HUfojcUlthzHJcQAUXwyu', NULL, '2020-09-22 00:13:03', '2020-09-22 05:31:28'),
+(4, 'test', 'test@gmail.com', '1600768638-advisor.jpg', NULL, '$2y$10$AyGV5OOuExgFyjk8q0nwluIX6GswImzudrcB2y4HXW5oaDFj9jO76', NULL, '2020-09-22 03:07:02', '2020-09-22 04:07:28');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

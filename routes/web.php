@@ -60,6 +60,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     // backend
 
     Route::get('/profile', 'HomeController@getProfile');
+    Route::post('/change/profileinfo', 'HomeController@profileinfo')->name('profileinfo.update');
     Route::post('/change/password', 'HomeController@changePassword')->name('profile.update');
 
     Route::get('/home', 'HomeController@index')->name('backend-home');

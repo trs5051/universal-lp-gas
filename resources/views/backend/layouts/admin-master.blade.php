@@ -129,7 +129,7 @@ $totaldata = 0;
         <header id="header" class="header" style="background: #849c7a">
             <div class="top-left">
                 <div class="navbar-header" style="background: #849c7a;">
-                    <a class="navbar-brand" href="{{url('/home')}}" style="color: #fff;"><img style="width:105px;height: auto; margin-right: 5px;" src="{{asset('images/logo.png')}}" class="site-logo"></a>
+                    <a class="navbar-brand" href="{{url('/home')}}" style="color: #fff;"><img style="width:105px;height: auto; margin-right: 5px;" src="{{ asset('/storage/profile/' . $profile->img) }}" class="site-logo"></a>
                     <a id="menuToggle" class="menutoggle"><i style="color: #fff;" class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -137,7 +137,7 @@ $totaldata = 0;
                 <div class="header-menu">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="{{asset('')}}images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{{ asset('/storage/profile/' . $profile->img) }}" alt="User Avatar">
                         </a>
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="{{url('/profile')}}"><i class="fas fa-user"></i> My Profile</a>

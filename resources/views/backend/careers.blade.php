@@ -19,7 +19,7 @@
     <section class="content">
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Career Management</h3>
+                <h3 class="box-title"><i class="fa fa-table" aria-hidden="true"></i> Career Management</h3>
             </div>
             <div class="box-body">
                 <div class="table-responsive data-table-wrapper">

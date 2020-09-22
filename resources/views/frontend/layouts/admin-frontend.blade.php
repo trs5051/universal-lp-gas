@@ -317,7 +317,7 @@
                             </h4>
                             <ul class="list-group v-counts">
                                 <li class="list-group-item">
-                                    <i class="fa fa-twitter"></i> Total visitor: {{$settings->visitor}}
+                                    <i class="fa fa-twitter"></i> Total Site Visits : {{$settings->visitor}}
                                 </li>
                                 {{-- <li class="list-group-item">
                                     <i class="fa fa-twitter"></i> Unique visitor: 504
@@ -327,8 +327,8 @@
                                 </li> --}}
                             </ul>
                             <ul class="unstyled social-medias">
+                                <li><a href="{{ $settings->twitter }}"><i class="fab fa-linkedin"></i></a></li>
                                 <li><a href="{{ $settings->facebook }}"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="{{ $settings->twitter }}"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="{{ $settings->youtube }}"><i class="fab fa-youtube"></i></a></li>
                                 {{-- <li><a href="#"><i class="fab fa-google-plus"></i></a></li> --}}
                             </ul>
@@ -448,8 +448,6 @@
     <!-- /.site-wrapper -->
 
     <!-- Scripts -->
-
-
 
     <script src="{{ url('frontend/assets/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url('frontend/assets/js/popper.min.js') }}"></script>

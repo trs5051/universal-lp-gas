@@ -12,7 +12,9 @@ use App\Models\OwnerFlatCurrentOwner;
 use App\Models\OwnerFlatFutureOwner;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -35,10 +37,6 @@ class HomeController extends Controller
     {
         return view('backend.home');
     }
-    public function formIndex()
-    {
-        return view('land-tax-form');
-    }
 
     public function getProfile()
     {
@@ -47,18 +45,48 @@ class HomeController extends Controller
         return view('backend.profile', compact('profile'));
     }
 
+    public function profileinfo(Request $request)
+    {
+        // dd($request->all());
+
+        $user = User::findOrFail(auth()->user()->id);
+        if ($request->name) {
+            $user->name = $request->name;
+        }
+        if ($request->email) {
+            $user->email = $request->email;
+        }
+
+        if ($request->hasFile('profile')) {
+            $img = time() . '-' . $request->profile->getClientOriginalName();
+            $request->profile->move('storage/profile', $img);
+        }
+        if ($request->hasFile('profile')) {
+            $user->img = $img;
+        }
+
+        $user->update();
+        return back()->with('successinfo', 'Updated Successfully!');
+
+    }
+
+
     public function changePassword(Request $request)
     {
         // dd($request->all());
 
         $this->validate($request, [
-            'password' => 'required',
-            'password_confirmation' => 'required|confirmed|min:6'
+
+            'current_password' => 'required',
+            'password' => 'required|confirmed|min:6'
+
         ]);
 
         $user = User::findOrFail(auth()->user()->id);
-        if (Hash::check($request->password, $user['password']) && $request->password_confirmation == $request->new_password_confirmation) {
-            $user->password = bcrypt($request->password_confirmation);
+
+        if (Hash::check($request->current_password, $user['password']) && $request->password == $request->password_confirmation) {
+
+            $user->password = bcrypt($request->password);
             $user->update();
             return back()->with('success', 'Password Changed Successfully!');
         } else {

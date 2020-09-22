@@ -26,7 +26,7 @@
             <div class="box box-info">
 
                 <div class="box-header with-border">
-                    <h3 class="box-title"> Add New Front Slider</h3>
+                    <h3 class="box-title"><i class="fa fa-plus-square"></i> Add New Front Slider</h3>
                     <div class="box-tools pull-right">
 
                         <a class="btn btn-primary" href="{{ route('backend.front-slider') }}">View All Front Slider</a>
