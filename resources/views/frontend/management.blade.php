@@ -49,21 +49,30 @@
                 @if ($management->managementCategory->title == $category->title )
 
                     <div class="col-lg-3 col-sm-12 m-5">
-                        <div class="card" style="width: 20rem;height: 42rem;">
+                        <div class="card" style="width: 20rem;height: 47rem;">
                             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-                            <img src="{!!  asset('/storage/managementImage/' . $management->img) !!}" class="card-img-top img-thumbnail"
-                                alt="management" style=" height: 343px;">
+
                             <div class="card-body">
+                                <img src="{!!  asset('/storage/managementImage/' . $management->img) !!}" class="card-img-top img-thumbnail"
+                                alt="management" style="height: 343px;">
+                                <br>
+                                <br>
                                 <h2>{!! $management->name ?? '' !!}</h2>
                                 <p class="title">{!! $management->designation ?? '' !!}</p>
                                 <p>{!! $management->text ?? '' !!}</p>
-                                <p class="title">{!! $management->phone ?? '' !!}</p>
-                                <p class="title">{!! $management->email ?? '' !!}</p>
+                                @if ($management->phone)
+                                <p class="title"><i class="fa fa-phone-square" aria-hidden="true"></i> {!! $management->phone ?? '' !!}</p>
+                                @endif
+                                @if ($management->email)
+                                <p class="title"><i class="fa fa-envelope" aria-hidden="true"></i>
+                                    {!! $management->email ?? '' !!}</p>
+                                @endif
+
                             </div>
                             <div class="card-footer">
-                                <a href="{!! $management->gmail ?? '' !!}" class="google"><i class="fa fa-google w-25 text-center p-2"></i></a>
+                                {{-- <a href="{!! $management->gmail ?? '' !!}" class="google"><i class="fa fa-google w-25 text-center p-2"></i></a>
                                 <a href="{!! $management->twitter ?? '' !!}" class="twitter"><i class="fa fa-twitter w-25 text-center p-2"></i></a>
-                                <a href="{!! $management->linkedin ?? '' !!}" class="linkedin"><i class="fa fa-linkedin w-25 text-center p-2"></i></a>
+                                <a href="{!! $management->linkedin ?? '' !!}" class="linkedin"><i class="fa fa-linkedin w-25 text-center p-2"></i></a> --}}
                             </div>
                         </div>
                     </div>

@@ -33,7 +33,7 @@
                 <!-- project  -->
                 <div class="col-xl-3 col-lg-4 col-sm-6 project mix category_{{ $product->category->id }}">
                     <figure class="project-thumb">
-                        <img src="{!!  asset('/storage/productimage/' . $product->img) !!}" alt="project">
+                        <img src="{!! asset('/storage/productimage/' . $product->img) !!}" style="height: 200px;" alt="project">
                     </figure>
                     <div class="project-desc">
                     </div>

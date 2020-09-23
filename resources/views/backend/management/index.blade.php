@@ -22,10 +22,11 @@
         <div class="box box-info">
 
             <div class="box-header with-border">
-                <h3 class="box-title"><i class="fa fa-table" aria-hidden="true"></i>  Management</h3>
+                <h3 class="box-title"><i class="fa fa-table" aria-hidden="true"></i> Management</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-backdrop='static' data-keyboard='false' data-whatever="@add"><i class="fa fa-plus-square"></i> Add New Member</button>
+                        data-backdrop='static' data-keyboard='false' data-whatever="@add"><i class="fa fa-plus-square"></i>
+                        Add New Member</button>
                 </div>
             </div>
 
@@ -39,7 +40,7 @@
                                 <th>image</th>
                                 <th>Name</th>
                                 <th>Designation</th>
-                                <th>Post</th>
+                                <th>Location</th>
                                 <th>text</th>
                                 <th width="15%">Action</th>
                             </tr>
@@ -48,8 +49,11 @@
                             @forelse ($managements as $key => $item)
                                 <tr id="tr_{{ $item->id }}">
                                     <th>{{ $key + 1 }}</th>
-                                    <td><span><img src="{!!  asset('/storage/managementImage/' . $item->img) !!}" width="100px"></span> </td>
-                                    <td><h4> {!! $item->name ?? '' !!}</h4> </td>
+                                    <td><span><img src="{!!  asset('/storage/managementImage/' . $item->img) !!}"
+                                                width="100px"></span> </td>
+                                    <td>
+                                        <h4> {!! $item->name ?? '' !!}</h4>
+                                    </td>
                                     <td>{!! $item->designation ?? '' !!}</td>
                                     <td>{!! $item->managementCategory->title ?? '' !!}</td>
                                     <td>{!! $item->text ?? '' !!}</td>
@@ -57,8 +61,8 @@
                                         <a id="edit_management" data-id="{{ $item->id }}" data-toggle="modal"
                                             data-target="#editModal" data-backdrop='static' data-keyboard='false'
                                             class="btn btn-primary text-white"><i class="fa fa-pencil-square"></i> Edit</a>
-                                        <a id="delete_management" data-id="{{ $item->id }}"
-                                            class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
+                                        <a id="delete_management" data-id="{{ $item->id }}" class="btn btn-danger text-white"><i
+                                                class="fa fa-trash"></i> Delete</a>
                                     </td>
 
                                 </tr>
@@ -73,7 +77,7 @@
                                 <th>image</th>
                                 <th>Name</th>
                                 <th>Designation</th>
-                                <th>Post</th>
+                                <th>Location</th>
                                 <th>text</th>
                                 <th>Action</th>
                             </tr>
@@ -136,16 +140,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="post" class="col-lg-2 control-label required">Post</label>
+                                <label for="post" class="col-lg-2 control-label required">Location</label>
 
                                 <div class="col-lg-10">
-                                    <select class="form-control select2 post box-size" required="required" id="post" name="post">
+                                    <select class="form-control select2 post box-size" required="required" id="post"
+                                        name="post">
 
-                                       @forelse ($categories as $item)
-                                    <option value="{{$item->id}}">{{$item->title}}</option>
-                                       @empty
+                                        @forelse ($categories as $item)
+                                            <option value="{{ $item->id }}">{{ $item->title }}</option>
+                                        @empty
 
-                                       @endforelse
+                                        @endforelse
 
                                     </select>
                                 </div>
@@ -155,14 +160,14 @@
                             <div class="form-group">
                                 <label for="text" class="col-lg-2 control-label">Text</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" placeholder="text" rows="2" name="text" cols="500"
-                                        id="text" style="max-width: 75% ; min-height: 150px;"></textarea>
+                                    <textarea class="form-control" placeholder="text" rows="2" name="text" cols="500" maxlength="125"
+                                        id="text" style="max-width: 75% ; min-height: 80px;"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone" class="col-lg-2 control-label">Phone</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="phone" rows="2" name="phone" type=""
+                                    <input class="form-control" placeholder="phone" rows="2" name="phone" type="text" maxlength="15"
                                         style="max-width: 75% ;">
                                     <span id="Management_Phone_errors"></span>
                                 </div>
@@ -170,7 +175,7 @@
                             <div class="form-group">
                                 <label for="email" class="col-lg-2 control-label">E-mail</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="email" rows="2" name="email" type=""
+                                    <input class="form-control" placeholder="email" rows="2" name="email" type="email"
                                         style="max-width: 75% ;">
                                     <span id="Management_email_errors"></span>
                                 </div>
@@ -240,31 +245,30 @@
                             <div class="form-group">
                                 <label for="name" class="col-lg-2 control-label">Name</label>
                                 <div class="col-lg-10">
-                                <input class="form-control" placeholder="name" rows="2" name="Name" id="edit_member_name" value=""
-                                        style="max-width: 75% ;">
+                                    <input class="form-control" placeholder="name" rows="2" name="Name"
+                                        id="edit_member_name" value="" style="max-width: 75% ;">
                                     <span id="Management_Name_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="designation" class="col-lg-2 control-label">Designation</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="designation" rows="2" name="designation" id="edit_designation" value=""
-                                        type="" style="max-width: 75% ;">
+                                    <input class="form-control" placeholder="designation" rows="2" name="designation"
+                                        id="edit_designation" value="" type="" style="max-width: 75% ;">
                                     <span id="Management_Name_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="post" class="col-lg-2 control-label required">Post</label>
+                                <label for="post" class="col-lg-2 control-label required">Location</label>
 
                                 <div class="col-lg-10">
-                                    <select class="form-control select2 post box-size" required="required" id="edit_post" name="post">
+                                    <select class="form-control select2 post box-size" required="required" id="edit_post"
+                                        name="post">
 
-                                       @forelse ($categories as $item)
-                                    <option value="{{$item->id}}">{{$item->title}}</option>
-                                       @empty
-
-                                       @endforelse
-
+                                        @forelse ($categories as $item)
+                                            <option value="{{ $item->id }}">{{ $item->title }}</option>
+                                        @empty
+                                        @endforelse
                                     </select>
                                 </div>
                                 <!--col-lg-3-->
@@ -273,23 +277,23 @@
                             <div class="form-group">
                                 <label for="text" class="col-lg-2 control-label">Text</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" placeholder="text" rows="2" name="text" cols="500"
-                                        id="edit_text" style="max-width: 75% ; min-height: 150px;"></textarea>
+                                    <textarea class="form-control" placeholder="text" rows="2" name="text" cols="500" maxlength="125"
+                                        id="edit_text" style="max-width: 75% ; min-height: 80px;"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone" class="col-lg-2 control-label">Phone</label>
                                 <div class="col-lg-10">
-                                <input class="form-control" placeholder="phone" rows="2" name="phone" type="" value="" id="edit_phone"
-                                        style="max-width: 75% ;">
+                                    <input class="form-control" placeholder="phone" rows="2" name="phone" type="" value=""
+                                        id="edit_phone" style="max-width: 75% ;">
                                     <span id="Management_Phone_errors"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="col-lg-2 control-label">E-mail</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="email" rows="2" name="email" type="" value="" id="edit_email"
-                                        style="max-width: 75% ;">
+                                    <input class="form-control" placeholder="email" rows="2" name="email" type="" value=""
+                                        id="edit_email" style="max-width: 75% ;">
                                     <span id="Management_email_errors"></span>
                                 </div>
                             </div>
@@ -322,212 +326,212 @@
 
 @section('js')
 
-<script>
-    $(document).ready(function() {
-        $("#exampleModal").on("hidden.bs.modal", function() {
-            $('#image_errors').empty();
-            $('#Management_Name_errors').empty();
-            $('#img_span').empty().append('Choose an image');
-            $("#add_management_form").trigger("reset");
-        });
-
-
-        $(document).on('submit', '#add_management_form', function(e) {
-            e.preventDefault();
-            $('#image_errors').empty();
-            $('#Management_Name_errors').empty();
-            var table = $('#management_table').DataTable();
-            var sl = table.rows().count();
-
-            $.ajax({
-                url: "{{ route('management.store') }}",
-                method: "POST",
-                data: new FormData(this),
-                dataType: 'JSON',
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(data) {
-                    console.log('Submission was successful.');
-                    console.log(data);
-                    swal('Congratulation!', 'New Management Added successfully', 'success')
-                    var id = data[0]['id'];
-                    var image = data[0]['img'];
-
-                    var img = '<span><img src="{{ asset('/storage/managementImage') }}/' +
-                        image + '" width="100px"></span>';
-
-                    var btn = '<a id="edit_management" data-id="' + id +
-                        '" class="btn btn-primary text-white">Edit</a>' +
-                        ' <a id="delete_management"  data-id="' + id +
-                        '"  class="btn btn-danger text-white">Delete</a>';
-
-                    table.row.add([
-                        sl + 1,
-                        img,
-                        data[0]['name'],
-                        data[0]['designation'],
-                        data[1]['title'],
-                        data[0]['text'],
-                        btn,
-                    ]).node().id = 'tr_' + id;
-                    table.draw(false);
-
-                    $("#add_management_form").trigger("reset");
-
-                    $('#img_span').empty().append('Choose an image');
-                    $('#exampleModal').modal('toggle');
-                },
-
-                error: function(xhr) {
-                    $.each(xhr.responseJSON.errors, function(key, value) {
-                        if (key == 'img') {
-                            $('#image_errors').empty().append(
-                                '<strong style="color:red;">' + value +
-                                '</strong');
-                        }
-                        if (key == 'Name') {
-                            $('#Management_Name_errors').empty().append(
-                                '<strong style="color:red;">' + value +
-                                '</strong');
-                        }
-                    });
-                },
-
+    <script>
+        $(document).ready(function() {
+            $("#exampleModal").on("hidden.bs.modal", function() {
+                $('#image_errors').empty();
+                $('#Management_Name_errors').empty();
+                $('#img_span').empty().append('Choose an image');
+                $("#add_management_form").trigger("reset");
             });
-        });
-
-        $(document).on('click', '#edit_management', function(e) {
-            e.preventDefault();
-            var id = $(this).data('id');
-            var table = $('#management_table').DataTable();
-            $.ajax({
-                type: "get",
-                url: "{{ route('findOne.management') }}",
-                data: {
-                    id: id
-                },
-                success: function(data) {
-                    console.log(data);
-                    var id = data['id'];
-                    var image = data['img'];
-                    var name = data['name'];
-                    var designation = data['designation'];
-                    var text = data['text'];
-                    var phone = data['phone'];
-                    var email = data['email'];
-
-                    var img = '<span><img src="{{ asset('/storage/managementImage') }}/' +
-                        image + '" width="200px"></span>';
-
-                    var btn = '<a id="edit_management" data-id="' + id +
-                        '" class="btn btn-primary text-white">Edit</a>' +
-                        '<a id="delete_management"  data-id="' + id +
-                        '"  class="btn btn-danger text-white">Delete</a>';
 
 
-                    $('#management_id').empty().val(id);
-                    $('.preview-img').empty().append(img);
-                    $('#edit_member_name').empty().val(name);
-                    $('#edit_designation').empty().val(designation);
-                    $('#edit_phone').empty().val(phone);
-                    $('#edit_email').empty().val(email);
-                    $('#edit_text').empty().append(text);
+            $(document).on('submit', '#add_management_form', function(e) {
+                e.preventDefault();
+                $('#image_errors').empty();
+                $('#Management_Name_errors').empty();
+                var table = $('#management_table').DataTable();
+                var sl = table.rows().count();
 
-                }
-            });
-        });
+                $.ajax({
+                    url: "{{ route('management.store') }}",
+                    method: "POST",
+                    data: new FormData(this),
+                    dataType: 'JSON',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        console.log('Submission was successful.');
+                        console.log(data);
+                        swal('Congratulation!', 'New Management Added successfully', 'success')
+                        var id = data[0]['id'];
+                        var image = data[0]['img'];
 
-        $(document).on('submit', '#edit_management_form', function(e) {
-            e.preventDefault();
-            $('#image_errors').empty();
-            $('#Management_Name_errors').empty();
-            var table = $('#management_table').DataTable();
-            var sl = table.rows().count();
+                        var img = '<span><img src="{{ asset('/storage/managementImage') }}/' +
+                            image + '" width="100px"></span>';
 
-            $.ajax({
-                url: "{{ route('management.update') }}",
-                method: "POST",
-                data: new FormData(this),
-                dataType: 'JSON',
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(data) {
-                    console.log('Submission was successful.');
-                    console.log(data);
-                    swal('Congratulation!', 'Management Updated successfully', 'success')
-                    var id = data['id'];
-                    var image = data['img'];
+                        var btn = '<a id="edit_management" data-id="' + id +
+                            '" class="btn btn-primary text-white">Edit</a>' +
+                            ' <a id="delete_management"  data-id="' + id +
+                            '"  class="btn btn-danger text-white">Delete</a>';
 
-                    var img = '<span><img src="{{ asset('/storage/managementImage ') }}/' +
-                        image + '" width="100px"></span>';
+                        table.row.add([
+                            sl + 1,
+                            img,
+                            data[0]['name'],
+                            data[0]['designation'],
+                            data[1]['title'],
+                            data[0]['text'],
+                            btn,
+                        ]).node().id = 'tr_' + id;
+                        table.draw(false);
 
-                    var btn = '<a id="edit_management" data-id="' + id +
-                        '" class="btn btn-primary text-white">Edit</a>' +
-                        ' <a id="delete_management"  data-id="' + id +
-                        '"  class="btn btn-danger text-white">Delete</a>';
+                        $("#add_management_form").trigger("reset");
 
-                    $("#edit_management_form").trigger("reset");
+                        $('#img_span').empty().append('Choose an image');
+                        $('#exampleModal').modal('toggle');
+                    },
 
-                    $('#img_span').empty().append('Choose an image');
-                    $('#editModal').modal('toggle');
-                    location.reload();
-
-                },
-
-                error: function(xhr) {
-                    $.each(xhr.responseJSON.errors, function(key, value) {
-                        if (key == 'image') {
-                            $('.#update_image_errors').empty().append(
-                                '<strong style="color:red;">' + value +
-                                '</strong');
-                        }
-                        if (key == 'Management_Name') {
-                            $('#update_Management_Name_errors').empty().append(
-                                '<strong style="color:red;">' + value +
-                                '</strong');
-                        }
-                    });
-                },
-
-            });
-        });
-
-
-        $(document).on('click', '#delete_management', function(e) {
-            e.preventDefault();
-            var table = $('#management_table').DataTable();
-            var id = $(this).data('id');
-            swal({
-                    title: "Are you sure!",
-                    text: "Once clicked, this will be deleted!",
-                    type: "error",
-                    confirmButtonClass: "btn-danger",
-                    confirmButtonText: "Yes!",
-                    showCancelButton: true,
-                },
-                function() {
-
-                    $.ajax({
-                        type: "POST",
-                        url: "{{ route('management.destroy') }}",
-                        data: {
-                            id: id
-                        },
-                        success: function(data) {
-                            var tr_id = data['id'];
-                            swal('Congratulation!',
-                                'Requested management deleted successfully',
-                                'success')
-                            table.row("tr#tr_" + tr_id).remove().draw();
-                        }
-                    });
+                    error: function(xhr) {
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            if (key == 'img') {
+                                $('#image_errors').empty().append(
+                                    '<strong style="color:red;">' + value +
+                                    '</strong');
+                            }
+                            if (key == 'Name') {
+                                $('#Management_Name_errors').empty().append(
+                                    '<strong style="color:red;">' + value +
+                                    '</strong');
+                            }
+                        });
+                    },
 
                 });
-        });
-    });
+            });
 
-</script>
+            $(document).on('click', '#edit_management', function(e) {
+                e.preventDefault();
+                var id = $(this).data('id');
+                var table = $('#management_table').DataTable();
+                $.ajax({
+                    type: "get",
+                    url: "{{ route('findOne.management') }}",
+                    data: {
+                        id: id
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        var id = data['id'];
+                        var image = data['img'];
+                        var name = data['name'];
+                        var designation = data['designation'];
+                        var text = data['text'];
+                        var phone = data['phone'];
+                        var email = data['email'];
+
+                        var img = '<span><img src="{{ asset('/storage/managementImage') }}/' +
+                            image + '" width="200px"></span>';
+
+                        var btn = '<a id="edit_management" data-id="' + id +
+                            '" class="btn btn-primary text-white">Edit</a>' +
+                            '<a id="delete_management"  data-id="' + id +
+                            '"  class="btn btn-danger text-white">Delete</a>';
+
+
+                        $('#management_id').empty().val(id);
+                        $('.preview-img').empty().append(img);
+                        $('#edit_member_name').empty().val(name);
+                        $('#edit_designation').empty().val(designation);
+                        $('#edit_phone').empty().val(phone);
+                        $('#edit_email').empty().val(email);
+                        $('#edit_text').empty().append(text);
+
+                    }
+                });
+            });
+
+            $(document).on('submit', '#edit_management_form', function(e) {
+                e.preventDefault();
+                $('#image_errors').empty();
+                $('#Management_Name_errors').empty();
+                var table = $('#management_table').DataTable();
+                var sl = table.rows().count();
+
+                $.ajax({
+                    url: "{{ route('management.update') }}",
+                    method: "POST",
+                    data: new FormData(this),
+                    dataType: 'JSON',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(data) {
+                        console.log('Submission was successful.');
+                        console.log(data);
+                        swal('Congratulation!', 'Management Updated successfully', 'success')
+                        var id = data['id'];
+                        var image = data['img'];
+
+                        var img = '<span><img src="{{ asset('/storage/managementImage') }}/' +
+                            image + '" width="100px"></span>';
+
+                        var btn = '<a id="edit_management" data-id="' + id +
+                            '" class="btn btn-primary text-white">Edit</a>' +
+                            ' <a id="delete_management"  data-id="' + id +
+                            '"  class="btn btn-danger text-white">Delete</a>';
+
+                        $("#edit_management_form").trigger("reset");
+
+                        $('#img_span').empty().append('Choose an image');
+                        $('#editModal').modal('toggle');
+                        location.reload();
+
+                    },
+
+                    error: function(xhr) {
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            if (key == 'image') {
+                                $('.#update_image_errors').empty().append(
+                                    '<strong style="color:red;">' + value +
+                                    '</strong');
+                            }
+                            if (key == 'Management_Name') {
+                                $('#update_Management_Name_errors').empty().append(
+                                    '<strong style="color:red;">' + value +
+                                    '</strong');
+                            }
+                        });
+                    },
+
+                });
+            });
+
+
+            $(document).on('click', '#delete_management', function(e) {
+                e.preventDefault();
+                var table = $('#management_table').DataTable();
+                var id = $(this).data('id');
+                swal({
+                        title: "Are you sure!",
+                        text: "Once clicked, this will be deleted!",
+                        type: "error",
+                        confirmButtonClass: "btn-danger",
+                        confirmButtonText: "Yes!",
+                        showCancelButton: true,
+                    },
+                    function() {
+
+                        $.ajax({
+                            type: "POST",
+                            url: "{{ route('management.destroy') }}",
+                            data: {
+                                id: id
+                            },
+                            success: function(data) {
+                                var tr_id = data['id'];
+                                swal('Congratulation!',
+                                    'Requested management deleted successfully',
+                                    'success')
+                                table.row("tr#tr_" + tr_id).remove().draw();
+                            }
+                        });
+
+                    });
+            });
+        });
+
+    </script>
 
 @endsection
