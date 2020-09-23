@@ -42,7 +42,7 @@ class CareerController extends Controller
 
     public function career()
     {
-        $careers = Career::where('delete_status', 1)->get();
+        $careers = Career::where('delete_status', 1)->orderBy('created_at','desc')->get();
         return view('backend.careers', compact('careers'));
 
     }

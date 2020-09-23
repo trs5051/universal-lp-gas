@@ -285,7 +285,7 @@
 
                                                 <div class="col-sm-8">
                                                     <input type="file" class="form-control-file" accept="application/pdf" name="cv" id="cv">
-                                                    <small style="color:#3a8859" >*Upload Only PDF file</small>
+                                                    <small style="color:#3a8859" >*Upload Only PDF of CV</small>
                                                 </div>
                                             </div>
                                         </div>
