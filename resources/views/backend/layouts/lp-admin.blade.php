@@ -405,6 +405,7 @@
 
                         </ul>
                     </li>
+
                     <li class="{{ request()->is('backend/event*') ? 'active' : '' }}">
                         <a href="{{ Route('backend.event') }}">
                             <i class="fa fa-newspaper-o"></i>
@@ -420,12 +421,41 @@
                         </a>
                     </li>
 
-                    <li class="{{ Request::routeIs('backend.career') ? 'active' : '' }}">
-                        <a href="{{ route('backend.career') }}">
-                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+
+
+
+                    <li class="treeview {{ request()->is('backend/career*') ? 'active' : '' }}">
+                        <a href="">
+                            <i class="fa fa-graduation-cap"></i>
                             <span>Career</span>
+                            <i class="fa fa-angle-left pull-right"></i>
                         </a>
+                        <ul class="treeview-menu "
+                            style="display: {{ request()->is('backend/career*') ? 'block' : 'none' }}; ">
+
+
+                            <li class="{{ Request::routeIs('backend.notice') ? 'active' : '' }}">
+                                <a href="{{ route('backend.notice') }}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>Notice</span>
+                                </a>
+                            </li>
+
+                            <li class="{{ Request::routeIs('backend.career') ? 'active' : '' }}">
+                                <a href="{{ route('backend.career') }}">
+                                    <i class="fa fa-hand-o-right"></i>
+                                    <span>CV</span>
+                                </a>
+                            </li>
+
+                        </ul>
                     </li>
+
+
+
+
+
+
                     <li class="{{ Request::routeIs('backend.message') ? 'active' : '' }}">
                         <a href="{{ route('backend.message') }}">
                             <i class="fa fa-envelope" aria-hidden="true"></i>

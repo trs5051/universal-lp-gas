@@ -164,7 +164,14 @@
                                         </li>
                                         <li><a href="{{ route('frontend.distribution') }}">Distribution</a></li>
                                         <li><a href="{{ route('frontend.news-events') }}">News & Events</a></li>
-                                        <li><a href="{{ route('frontend.career') }}">Career</a></li>
+
+                                        <li><a href="#">Career</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{{ route('frontend.notice') }}">Job Notice</a></li>
+                                                <li><a href="{{ route('frontend.career') }}">CV Submit</a></li>
+                                            </ul>
+                                        </li>
+
                                         <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
                                     </ul>
                                 </nav>

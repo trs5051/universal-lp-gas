@@ -50,6 +50,7 @@
 
                     <div class="col-lg-3 col-sm-12 m-5">
                         <div class="card" style="width: 20rem;height: 47rem;">
+
                             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
 
                             <div class="card-body">

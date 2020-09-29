@@ -52,6 +52,9 @@ Route::get('/projects', 'ProductController@product')->name('frontend.products');
 Route::get('/career', 'CareerController@index')->name('frontend.career');
 Route::post('/cv/submit', 'CareerController@cvSubmit')->name('cv.submit');
 Route::post('/message/submit', 'MessageBoxController@messageSubmit')->name('message.submit');
+// frontend.notice
+Route::get('/notice', 'NoticeController@index')->name('frontend.notice');
+
 // frontend end
 
 Auth::routes();
@@ -210,6 +213,13 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     // backend.message
     Route::get('/backend/message', 'MessageBoxController@message')->name('backend.message');
     Route::post('/backend/message/destroy', 'MessageBoxController@destroy')->name('message.destroy');
+
+    // backend.notice
+    Route::get('/backend/career/notice', 'NoticeController@notice')->name('backend.notice');
+    Route::post('/backend/notice/store', 'NoticeController@store')->name('notices.store');
+    Route::get('/backend/notice/findOne', 'NoticeController@findOne')->name('noticefindOne');
+    Route::post('/backend/notice/update', 'NoticeController@update')->name('notices.update');
+    Route::post('/backend/notice/destroy', 'NoticeController@destroy')->name('notice.destroy');
 
     // backend end
 
