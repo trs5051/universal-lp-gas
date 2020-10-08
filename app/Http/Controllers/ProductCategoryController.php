@@ -13,6 +13,9 @@ class ProductCategoryController extends Controller
 
         return view('backend.product.category',compact('productCategory'));
     }
+
+
+
     public function store(Request $request)
     {
         // dd($request->all());

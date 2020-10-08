@@ -3,7 +3,6 @@
 
 <!-- main part -->
 
-
 <!-- slider-area -->
 <section class="cylinder-slider-section">
     <div class="cylinder-slider owl-carousel owl-theme">

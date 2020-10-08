@@ -31,7 +31,7 @@
             </div>
 
             <div class="box-body">
-                <div class="table-responsive data-table-wrapper">
+                <div class="table-responsive data-table-wrapper " id="table_data">
 
                     <table id="ProductCategory_table" class="datatable table table-condensed table-hover table-bordered">
                         <thead>
@@ -54,7 +54,7 @@
                                     </td>
 
                                     <td>
-                                       <a id="delete_ProductCategory" data-id="{{ $item->id }}"
+                                        <a id="delete_ProductCategory" data-id="{{ $item->id }}"
                                             class="btn btn-danger text-white"><i class="fa fa-trash"></i> Delete</a>
                                     </td>
 
@@ -73,6 +73,7 @@
                         </tfoot>
 
                     </table>
+
                 </div>
 
             </div>
@@ -175,7 +176,8 @@
                             <div class="form-group">
                                 <label for="heading" class="col-lg-2 control-label">ProductCategory Name</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" placeholder="ProductCategory Name" rows="2" name="ProductCategory Name" type="text" id="edit_ProductCategory_name"
+                                    <input class="form-control" placeholder="ProductCategory Name" rows="2"
+                                        name="ProductCategory Name" type="text" id="edit_ProductCategory_name"
                                         style="max-width: 75% ;">
                                     <span id="update_ProductCategory_Name_errors"></span>
                                 </div>
@@ -227,6 +229,11 @@
 
 <script>
     $(document).ready(function() {
+
+
+
+
+
         $("#exampleModal").on("hidden.bs.modal", function() {
             $('#image_errors').empty();
             $('#ProductCategory_Name_errors').empty();
@@ -253,7 +260,8 @@
                 success: function(data) {
                     console.log('Submission was successful.');
                     console.log(data);
-                    swal('Congratulation!', 'New ProductCategory Added successfully', 'success')
+                    swal('Congratulation!', 'New ProductCategory Added successfully',
+                        'success')
                     var id = data['id'];
 
                     var btn = ' <a id="delete_ProductCategory"  data-id="' + id +
@@ -307,7 +315,7 @@
                     var txt1 = data['text1'];
                     var txt2 = data['text2'];
 
-                    var img = '<span><img src="{{ asset('/storage/ProductCategoryimage') }}/' +
+                    var img = '<span><img src="{{ asset('/storage/ProductCategoryimage ') }}/' +
                         image + '" width="200px"></span>';
 
                     var btn = '<a id="edit_ProductCategory" data-id="' + id +
@@ -344,11 +352,12 @@
                 success: function(data) {
                     console.log('Submission was successful.');
                     console.log(data);
-                    swal('Congratulation!', 'ProductCategory Updated successfully', 'success')
+                    swal('Congratulation!', 'ProductCategory Updated successfully',
+                        'success')
                     var id = data['id'];
                     var image = data['img'];
 
-                    var img = '<span><img src="{{ asset('/storage/ProductCategoryimage') }}/' +
+                    var img = '<span><img src="{{ asset('/storage/ProductCategoryimage ') }}/' +
                         image + '" width="100px"></span>';
 
                     var btn = '<a id="edit_ProductCategory" data-id="' + id +
@@ -406,7 +415,8 @@
                         success: function(data) {
                             var tr_id = data['id'];
                             swal('Congratulation!',
-                                'Requested ProductCategory deleted successfully', 'success')
+                                'Requested ProductCategory deleted successfully',
+                                'success')
                             table.row("tr#tr_" + tr_id).remove().draw();
                         }
                     });

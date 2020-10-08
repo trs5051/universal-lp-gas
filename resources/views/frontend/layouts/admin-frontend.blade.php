@@ -9,7 +9,7 @@
 
     <!-- Favicon -->
     @isset($settings)
-    <link rel="shortcut icon" href="{{ asset('/storage/favicon/' . $settings->favicon) }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('/storage/favicon/' . $settings->favicon) }}" type="image/x-icon">
     @endisset
 
 
@@ -28,6 +28,30 @@
     <link href="{{ url('frontend/assets/css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    {{-- preloder --}}
+    <style>
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-right: .5rem;
+            padding-left: .5rem;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .navbar .dropdown-menu a {
+            padding: 10px;
+            font-size: .9375rem;
+            font-weight: bold;
+            color: #f8ffff;
+            background-color: #212121;
+        }
+
+        .navbar .dropdown-menu {
+            position: absolute !important;
+            margin-top: 0;
+            background-color: #212121;
+        }
+
+    </style>
 </head>
 
 <body class="home">
@@ -55,14 +79,15 @@
                                 <a href="{{ route('frontend.index') }}">
 
                                     @isset($settings)
-                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" />
+                                        <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" />
                                     @endisset
                                 </a>
                             </div>
                         </div>
 
                         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-5 phone-col">
-                            <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}" class="phone-wrapper">
+                            <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}"
+                                class="phone-wrapper">
                                 <i class="fa fa-phone"></i>
 
                                 <div class="phone-no">
@@ -101,97 +126,106 @@
             <!--/.header-top-area -->
 
             <!-- header-area -->
-            <section class="header-area">
-                <!-- section-title -->
-                <h6 class="section-title d-none">&nbsp;</h6>
-                <!-- /.section-title -->
-                <div class="menu-area">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="menu-search-form-wrapper">
-                                <!-- main-menu-wrapper -->
-                                {{-- main nav-bar --}}
-                                <nav class="main-menu-wrapper">
-                                    <button class="nav-icon d-none">
-                                        <i class="fa fa-bars"></i>
-                                    </button>
+            <section class="header-area ">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08"
+                        aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                                    <ul class="unstyled main-menu">
+                    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                        <ul class="navbar-nav">
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{ route('frontend.index') }}">Home </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">About</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('frontend.about') }}">About Us</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.mission-and-vision') }}">Mission &
+                                        Vision</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.universal-lp-gas') }}">Universal
+                                        LP Gas</a>
+                                    <a class="dropdown-item"
+                                        href="{{ route('frontend.achievement-and-award') }}">Achievement & Award</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.board-of-directors') }}">Board of
+                                        Directors</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.management') }}">Management</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Associate Connccern's</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('frontend.universal-agency') }}">Universal
+                                        Agency</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.ms-enterprise') }}">MS
+                                        Enterprise</a>
+                                    <a class="dropdown-item"
+                                        href="{{ route('frontend.universal-gas-cylinder') }}">Universal Gas & Gas
+                                        Cylinder Ltd</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.amb-traders-pvt') }}">AMB Traders
+                                        Pvt Ltd</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.us-energy-power-pvt') }}">US
+                                        Energy & Power Pvt Ltd</a>
+                                    <a class="dropdown-item"
+                                        href="{{ route('frontend.universal-cng-petrol-pump') }}">Universal CNG & Petrol
+                                        Pump</a>
+                                    <a class="dropdown-item"
+                                        href="{{ route('frontend.universal-engineering-ltd') }}">Universal Engineering
+                                        Ltd</a>
 
-                                        <li class="active"><a href="{{ route('frontend.index') }}">Home</a></li>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('frontend.product') }}">Products</a>
+                            </li>
 
-                                        <li>
-                                            <a href="#">about</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Plant & Process</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('frontend.cylinder-safety') }}">Cylinder
+                                        Safety</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.plants') }}">Plants</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.compliance') }}">Compliance</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.why-lpg') }}">Why LPG?</a>
+                                </div>
+                            </li>
 
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ route('frontend.about') }}">About Us</a></li>
-                                                <li><a href="{{ route('frontend.mission-and-vision') }}">Mission & Vision </a></li>
-                                                <li><a href="{{ route('frontend.universal-lp-gas') }}">Universal LP Gas</a></li>
-                                                <li><a href="{{ route('frontend.achievement-and-award') }}">Achievement & Award</a></li>
-                                                <li><a href="{{ route('frontend.board-of-directors') }}">Board of Directors</a></li>
-                                                <li><a href="{{ route('frontend.management') }}">Management</a></li>
-                                            </ul>
-
-                                        </li>
-                                        <li>
-                                            <a href="#">Associate Connccern's</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ route('frontend.universal-agency') }}">Universal Agency</a></li>
-                                                <li><a href="{{ route('frontend.ms-enterprise') }}">MS Enterprise</a> </li>
-                                                <li><a href="{{ route('frontend.universal-gas-cylinder') }}">Universal Gas & Gas Cylinder Ltd</a></li>
-                                                <li><a href="{{ route('frontend.amb-traders-pvt') }}">AMB Traders Pvt
-                                                        Ltd</a></li>
-                                                <li><a href="{{ route('frontend.us-energy-power-pvt') }}">US Energy &
-                                                        Power Pvt Ltd</a>
-                                                </li>
-                                                <li><a href="{{ route('frontend.universal-cng-petrol-pump') }}">Universal
-                                                        CNG & Petrol
-                                                        Pump</a></li>
-                                                <li><a href="{{ route('frontend.universal-engineering-ltd') }}">Universal
-                                                        Engineering
-                                                        Ltd</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ route('frontend.product') }}">Products</a></li>
-                                        <li><a href="#">Plant & Process</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ route('frontend.cylinder-safety') }}">Cylinder Safety</a>
-                                                </li>
-                                                <li><a href="{{ route('frontend.plants') }}">Plants</a></li>
-                                                <li><a href="{{ route('frontend.compliance') }}">Compliance</a></li>
-                                                <li><a href="{{ route('frontend.why-lpg') }}">Why LPG?</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ route('frontend.distribution') }}">Distribution</a></li>
-                                        <li><a href="{{ route('frontend.news-events') }}">News & Events</a></li>
-
-                                        <li><a href="#">Career</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{{ route('frontend.notice') }}">Job Notice</a></li>
-                                                <li><a href="{{ route('frontend.career') }}">CV Submit</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li><a href="{{ route('frontend.contact') }}">Contact</a></li>
-                                    </ul>
-                                </nav>
-                                <!-- /.main-menu-wrapper -->
-
-                            </div>
-                        </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('frontend.distribution') }}">Distribution</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('frontend.news-events') }}">News & Events</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Career</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('frontend.notice') }}">Job Notice</a>
+                                    <a class="dropdown-item" href="{{ route('frontend.career') }}">CV Submit</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('frontend.contact') }}">Contact</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-
+                </nav>
 
             </section>
             <!--/.header-area -->
+
         </header>
         <!-- /.site-header -->
 
         <div class="ticker-wrap tickers">
             <div class="ticker">
-            <div class="ticker__item">{{$settings->ticker ?? ''}}</div>
-                {{-- <div class="ticker__item">Ugh PBR&B kale chips Echo Park.</div> --}}
+                <div class="ticker__item" scrollamount="500">{{ $settings->ticker ?? '' }}</div>
+                {{-- <div class="ticker__item">Ugh PBR&B kale chips Echo Park.</div>
+                --}}
             </div>
         </div>
 
@@ -222,7 +256,8 @@
                     <!-- trusted-partner-right -->
                     <div class="col-lg-3 col-md-5 trusted-partner-right text-right">
                         <p class="wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
-                            <a href="{{Route('frontend.contact')}}" class="btn-lpg">work with us <i class="fa fa-arrow-right"></i></a>
+                            <a href="{{ Route('frontend.contact') }}" class="btn-lpg">work with us <i
+                                    class="fa fa-arrow-right"></i></a>
                         </p>
                     </div>
                     <!-- /.trusted-partner-right -->
@@ -237,36 +272,41 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- our-clients -->
-                        <div class="our-clients owl-carousel owl-theme wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                        <div class="our-clients owl-carousel owl-theme wow fadeInUp" data-wow-duration="0.75s"
+                            data-wow-delay="0s">
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-1.png') }}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-1.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-2.png') }}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-2.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-3.png') }}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-3.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-4.png') }}" alt="our-client">
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-4.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
 
                             <!-- single-client -->
                             <div class="single-client">
-                                <img src="{{ url('frontend/assets/images/our-clients/our-client-5.png') }}" alt="our-client">
-
+                                <img src="{{ url('frontend/assets/images/our-clients/our-client-5.png') }}"
+                                    alt="our-client">
                             </div>
                             <!-- /.single-client -->
                         </div>
@@ -277,8 +317,6 @@
         </section>
         <!--/.our-clients-section -->
 
-
-
         <!-- site-footer -->
         <footer class="site-footer">
             <!-- footer-top-section -->
@@ -288,13 +326,14 @@
                     <div class="row footer-widgets">
 
                         <!-- footer-widget -->
-                        <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                        <div class="col-xl-3 col-lg-4 col-md-6 footer-widget widget-1 wow fadeInUp"
+                            data-wow-duration="0.75s" data-wow-delay="0s">
                             <div class="footer-logo">
 
                                 <a href="{{ route('frontend.index') }}">
 
                                     @isset($settings)
-                                    <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" />
+                                        <img src="{{ asset('/storage/logo/' . $settings->logo) }}" width="200" />
                                     @endisset
                                 </a>
                             </div>
@@ -311,20 +350,22 @@
 
                             <p>Phone: {{ !empty($settings->contact) ? $settings->contact : 'no number' }}</p>
 
-                            <p>Email : <a href="mailto:{{ !empty($settings->email) ? $settings->email : 'no email' }}">{{ !empty($settings->email) ? $settings->email : 'no email' }}</a>
+                            <p>Email : <a
+                                    href="mailto:{{ !empty($settings->email) ? $settings->email : 'no email' }}">{{ !empty($settings->email) ? $settings->email : 'no email' }}</a>
                             </p>
                         </div>
                         <!-- /.footer-widget -->
 
                         <!-- footer-widget -->
-                        <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-12  footer-widget widget-2 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
+                        <div class="col-xl-3 offset-xl-1 col-lg-4 col-md-12  footer-widget widget-2 wow fadeInUp"
+                            data-wow-duration="0.75s" data-wow-delay="0.1s">
 
                             <h4 class="widget-title">
                                 Visitor Counter
                             </h4>
                             <ul class="list-group v-counts">
                                 <li class="list-group-item">
-                                    <i class="fa fa-twitter"></i> Total Site Visits : {{$settings->visitor}}
+                                    <i class="fa fa-twitter"></i> Total Site Visits : {{ $settings->visitor }}
                                 </li>
                                 {{-- <li class="list-group-item">
                                     <i class="fa fa-twitter"></i> Unique visitor: 504
@@ -337,7 +378,8 @@
                                 <li><a href="{{ $settings->twitter }}"><i class="fab fa-linkedin"></i></a></li>
                                 <li><a href="{{ $settings->facebook }}"><i class="fab fa-facebook"></i></a></li>
                                 <li><a href="{{ $settings->youtube }}"><i class="fab fa-youtube"></i></a></li>
-                                {{-- <li><a href="#"><i class="fab fa-google-plus"></i></a></li> --}}
+                                {{-- <li><a href="#"><i
+                                            class="fab fa-google-plus"></i></a></li> --}}
                             </ul>
 
                             <ul class="unstyled d-none">
@@ -351,7 +393,8 @@
                         <!-- /.footer-widget -->
 
                         <!-- footer-widget -->
-                        <div class="col-xl-4 offset-xl-1 col-lg-4 col-md-6  footer-widget widget-3 wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.2s">
+                        <div class="col-xl-4 offset-xl-1 col-lg-4 col-md-6  footer-widget widget-3 wow fadeInUp"
+                            data-wow-duration="0.75s" data-wow-delay="0.2s">
 
                             <h4 class="widget-title">
                                 Contact Us
@@ -360,21 +403,24 @@
 
                             <div class="contact-form">
                                 @if (session()->has('messageBox'))
-                                <div class="alert alert-success">
-                                    {{ session()->get('messageBox') }}
-                                </div>
-                            @endif
+                                    <div class="alert alert-success">
+                                        {{ session()->get('messageBox') }}
+                                    </div>
+                                @endif
 
-                            <form action="{{ Route('message.submit') }}" method="post">
-                                @csrf
+                                <form action="{{ Route('message.submit') }}" method="post">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="name" class="form-control" id="user-name" placeholder="Full Name" name="name">
+                                        <input type="name" class="form-control" id="user-name" placeholder="Full Name"
+                                            name="name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="user-email" placeholder="Email" name="email">
+                                        <input type="email" class="form-control" id="user-email" placeholder="Email"
+                                            name="email">
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" id="messages" rows="3" name="message" placeholder="Message"></textarea>
+                                        <textarea class="form-control" id="messages" rows="3" name="message"
+                                            placeholder="Message"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-info">Submit</button>
                                 </form>
@@ -402,7 +448,8 @@
 
                                     <div class="call-us">
                                         or <br>
-                                        <b>Call us: <a href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}">{{ !empty($settings->contact) ? $settings->contact : 'no number' }}</a></b>
+                                        <b>Call us: <a
+                                                href="callto:{{ !empty($settings->contact) ? $settings->contact : 'no number' }}">{{ !empty($settings->contact) ? $settings->contact : 'no number' }}</a></b>
                                     </div>
                                 </form>
                             </div>
@@ -433,7 +480,8 @@
                         <!-- /.copyright  -->
 
                         <!-- developer  -->
-                        <div class="col-md-6 developer text-right wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0s">
+                        <div class="col-md-6 developer text-right wow fadeInUp" data-wow-duration="0.75s"
+                            data-wow-delay="0s">
                             Designed & Developed by <a href="https://www.ennvisiodigital.tech/" target="_blank">Ennvisio
                                 Digital Pvt. Ltd.</a>
                         </div>
@@ -479,6 +527,7 @@
             }
         }
         injectSvgSprite('https://demo.bootstrapious.com/sell/1-2-0/icons/orion-svg-sprite.svg');
+
     </script>
 </body>
 

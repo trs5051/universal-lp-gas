@@ -57,9 +57,9 @@ img {
   padding: 0 0 80px;
 }
 
-/**
- * .section-header
- */
+    /**
+    * .section-header
+    */
 
 .section-header {
     margin-bottom: 50px;
@@ -145,9 +145,6 @@ img {
   }
 }
 
-
-
-
 /**===============================================
  * header-top-area
  *===============================================*/
@@ -202,9 +199,7 @@ address.address-wrapper i {
     color: #f2a918;
 }
 
-address.address-wrapper .address {
-    /* width: auto; */
-}
+
 
 /**=========================================================================
  * menu-search-form-wrapper
@@ -264,6 +259,7 @@ nav.main-menu-wrapper ul li a:focus {
 nav.main-menu-wrapper li.has-childern {
     position: relative;
 }
+
 nav.main-menu-wrapper  ul.sub-menu {
     position: absolute;
     width: 250px;
@@ -1855,8 +1851,9 @@ a.email-wrapper {
 }
 /*header-area*/
 nav.main-menu-wrapper ul li a {
-    font-size: 16px;
-    padding: 20px 15px 21px;
+    font-size: 14px;
+    /* padding: 20px 15px 21px; */
+    padding: 8px;
 }
 
 nav.main-menu-wrapper ul.sub-menu li a {
@@ -2891,7 +2888,7 @@ section.cylinder-slider-section {
     width: 100%;
     overflow: hidden;
     height: 3rem;
-    background: #4800ff;
+    background: #329333;
     padding-left: 100%;
     box-sizing: content-box;
     z-index: 9999;
@@ -2916,7 +2913,7 @@ section.cylinder-slider-section {
     display: inline-block;
     padding: 0 2rem;
     font-size: 24px;
-    color: yellow;
+    color: whitesmoke;
     font-weight: bold;
   }
 

@@ -38,8 +38,8 @@
                                 <figure class="text-center wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.1s">
 <div class="map-bn">
 
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 15.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+    <!-- Generator: Adobe Illustrator 15.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 width="700px" height="800px" viewBox="0 0 700 800" enable-background="new 0 0 700 800" xml:space="preserve">
@@ -1846,7 +1846,7 @@ l0.271-0.272l-0.271-0.815l-0.273-0.549h-0.815v-0.02H426.408L426.408,423.561z"/>
 434.605,322.995 434.326,323.266 434.057,323.539 433.785,323.539 433.24,323.812 432.967,324.085 432.422,324.359 432.146,324.359
 431.875,324.359 430.506,324.635 430.236,324.907 429.688,324.907 429.412,324.907 428.865,324.907 428.596,324.635
 428.049,324.359 427.771,324.359 427.229,324.359 426.682,324.085 426.135,324.085 "/>
-<polygon class="zilla Tangail" fill="#86E995" points="315.992,352.232 316.271,351.96 316.271,351.686 316.537,351.414 316.816,351.414 317.092,351.143
+<polygon class="zilla Dhaka" fill="#86E995" points="315.992,352.232 316.271,351.96 316.271,351.686 316.537,351.414 316.816,351.414 317.092,351.143
 317.363,350.866 317.906,350.594 318.184,350.325 318.184,350.044 318.449,349.773 319.002,349.229 319.822,348.678
 320.367,348.135 320.641,347.585 320.91,346.77 320.91,346.495 321.189,345.128 320.91,344.582 320.641,344.038 320.641,343.762
 320.367,343.217 320.367,342.395 320.094,341.852 320.094,340.208 320.094,339.666 320.367,339.118 320.641,338.573
@@ -14730,13 +14730,13 @@ l-0.271,0.275l-0.548,0.27l-0.543,0.271h-0.547h-0.552l-0.545,0.273h-0.548h-0.273L
 <div class="distributor-location">
 
 <!-- zillaname -->
-<div class="zillaname Tangail">
+<div class="zillaname Comilla">
 <figure style="margin-bottom: 5px">
     <img src="{{url('frontend/assets/images/small-cylinder.png')}}" alt="small-cylinder">
 </figure>
 
 <address>
-    <h3>Tagail Office</h3>
+    <h3>Comilla Office</h3>
 
     <p>
         Universal House

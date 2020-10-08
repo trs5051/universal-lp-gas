@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 22, 2020 at 12:01 PM
+-- Generation Time: Sep 29, 2020 at 10:11 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -67,16 +67,18 @@ CREATE TABLE IF NOT EXISTS `careers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `careers`
 --
 
 INSERT INTO `careers` (`id`, `name`, `email`, `phone`, `cv`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, 'system', 'admin@gmail.com', '0467986798', '1600578816-missionVision.jpg', '1', '2020-09-19 23:13:36', '2020-09-19 23:13:36'),
+(1, 'system', 'admin@gmail.com', '0467986798', '1600578816-missionVision.jpg', '0', '2020-09-19 23:13:36', '2020-09-22 23:19:07'),
 (2, 'test', 'sso1@gmail.com', '3467578457', '1600578935-download.jpg', '0', '2020-09-19 23:15:35', '2020-09-19 23:39:13'),
-(3, 'index', 'admin@gmail.com', '0467986798', '1600583051-small-cylender.png', '0', '2020-09-20 00:24:11', '2020-09-20 01:21:21');
+(3, 'index', 'admin@gmail.com', '0467986798', '1600583051-small-cylender.png', '0', '2020-09-20 00:24:11', '2020-09-20 01:21:21'),
+(4, 'Mr Test', 'test@test.com', '9856378458', '1600856875-test1.pdf', '1', '2020-09-23 04:27:55', '2020-09-23 04:27:55'),
+(5, 'test2', 'test2@gmail.com', '034675376', '1600856940-test2.pdf', '1', '2020-09-23 04:29:00', '2020-09-23 04:29:00');
 
 -- --------------------------------------------------------
 
@@ -379,14 +381,14 @@ INSERT INTO `management` (`id`, `management_category_id`, `name`, `img`, `design
 (4, 12, 'mr Why', '1598683218-whylpg.jpg', 'jjbnjb', 'iojubnjbn', NULL, NULL, 0, '2020-08-29 00:40:18', '2020-08-29 05:31:12'),
 (3, 11, 'Tiger', '1598682981-tiger.jpg', 'bd', 'this is new', NULL, NULL, 0, '2020-08-29 00:36:21', '2020-08-29 05:31:15'),
 (6, 15, 'voot', '1598690765-mission-vission.jpg', 'vorooooccccc', 'hoooocccccc', NULL, NULL, 0, '2020-08-29 00:57:52', '2020-08-29 02:48:47'),
-(7, 11, 'Md.Sirajul Haque FCA', '1598700713-GM.jpg', 'GM & CFO', 'Mr. Sirajul Haque FCA is working here as GM & CFO. Under their supervision a well professional experienced team are working.', NULL, NULL, 1, '2020-08-29 05:31:53', '2020-08-29 05:31:53'),
-(8, 11, 'Sirajuddin Ahmmad', '1598700741-advisor.jpg', 'Advisor', 'Mr. Sirajuddin Ahmed has been advising us since the beginning of the journey of Universal as an advisor', NULL, NULL, 1, '2020-08-29 05:32:21', '2020-08-29 05:32:21'),
-(9, 11, 'Md.Tariq Wazed', '1598700768-tareq.jpg', 'Project Manager(Technical Operations)', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:32:48', '2020-08-29 05:32:48'),
-(10, 11, 'Mohiuddin Sagar', '1598700969-sagar.jpg', 'Manager-Accounts & Banking', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:36:09', '2020-08-29 05:36:09'),
-(11, 11, 'Khandaker Fahim Ahmmed', '1598701021-fahim.jpg', 'Deputy Manager (In Charge-HR & Admin Division)', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:37:01', '2020-08-29 05:37:01'),
-(12, 11, 'Mohammad Mukit Ibn Siddique', '1598701045-Manager-supplychain.jpg', 'Manager-Supply Chain', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:37:25', '2020-08-29 05:37:25'),
-(13, 11, 'Samir Deb Nath', '1598701082-samir.jpg', 'Plant Manager', 'Some text that describes me lorem ipsum ipsum lorem.', '04555555', 'tst@gmail.com', 1, '2020-08-29 05:38:02', '2020-09-20 00:11:17'),
-(14, 13, 'Moriom Begum', '1598701225-dm.jpg', 'Deputy Manager-Commercial', 'Some text that describes me lorem ipsum ipsum lorem.', NULL, NULL, 1, '2020-08-29 05:40:25', '2020-08-29 05:40:25');
+(7, 11, 'Md.Sirajul Haque FCA', '1598700713-GM.jpg', 'GM & CFO', 'Mr. Sirajul Haque FCA is working here as GM & CFO. Under their supervision a well professional experienced team are working.', '01500000000', 'demo@demo.com', 1, '2020-08-29 05:31:53', '2020-09-23 02:57:47'),
+(8, 11, 'Sirajuddin Ahmmad', '1598700741-advisor.jpg', 'Advisor', 'Mr. Sirajuddin Ahmed has been advising us since the beginning of the journey of Universal as an advisor', '01500000000', 'demo@demo.com', 1, '2020-08-29 05:32:21', '2020-09-23 02:58:34'),
+(9, 11, 'Md.Tariq Wazed', '1598700768-tareq.jpg', 'Project Manager(Technical Operations)', 'Some text that describes me lorem ipsum ipsum lorem.', '01500000000', 'demo@demo.com', 1, '2020-08-29 05:32:48', '2020-08-29 05:32:48'),
+(10, 11, 'Mohiuddin Sagar', '1598700969-sagar.jpg', 'Manager-Accounts & Banking', 'Some text that describes me lorem ipsum ipsum lorem.', '01500000000', 'demo@demo.com', 1, '2020-08-29 05:36:09', '2020-08-29 05:36:09'),
+(11, 11, 'Khandaker Fahim Ahmmed', '1598701021-fahim.jpg', 'Deputy Manager (In Charge-HR & Admin Division)', 'Some text that describes me lorem ipsum ipsum lorem.', '01500000000', 'demo@demo.com', 1, '2020-08-29 05:37:01', '2020-08-29 05:37:01'),
+(12, 11, 'Mohammad Mukit Ibn Siddique', '1598701045-Manager-supplychain.jpg', 'Manager-Supply Chain', 'Some text that describes me lorem ipsum ipsum lorem.', '01500000000', 'demo@demo.com', 1, '2020-08-29 05:37:25', '2020-08-29 05:37:25'),
+(13, 11, 'Samir Deb Nath', '1598701082-samir.jpg', 'Plant Manager', 'Some text that describes me lorem ipsum ipsum lorem.', '01500000000', 'demo@demo.com', 1, '2020-08-29 05:38:02', '2020-09-20 00:11:17'),
+(14, 13, 'Moriom Begum', '1598701225-dm.jpg', 'Deputy Manager-Commercial', 'Some text that describes me lorem ipsum ipsum lorem.', '01500000000', 'demo@demo.com', 1, '2020-08-29 05:40:25', '2020-08-29 05:40:25');
 
 -- --------------------------------------------------------
 
@@ -455,7 +457,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `migrations`
@@ -484,7 +486,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (22, '2020_09_10_045518_create_achievements_table', 12),
 (23, '2020_09_10_100600_create_compliances_table', 13),
 (24, '2020_09_20_043300_create_careers_table', 14),
-(25, '2020_09_20_064045_create_message_boxes_table', 15);
+(25, '2020_09_20_064045_create_message_boxes_table', 15),
+(26, '2020_09_29_043722_create_notices_table', 16);
 
 -- --------------------------------------------------------
 
@@ -514,6 +517,35 @@ INSERT INTO `news_events` (`id`, `title`, `main_img`, `heading`, `text1`, `text2
 (11, 'Annual Picnic -2020', '1599028572-event1.1.jpg', NULL, 'The picnic is a source of pleasure and enjoyment. The hours spent in a picnic are always exciting and thrilling. ; sat month I along with some of my friends had a picnic at Mondragon, a place of historical interest. On the fixed day, we hired a minibus to go to the picnic spot. We took all the necessary foodstuff and utensils with us. We started for the place at 8 a.m. finishing our breakfast. We reached sonnargaon at 10.30 a.m. after visiting the nearby area, we sat down to give our food. We ate to our heart’s content.', NULL, 1, '2020-09-02 00:36:12', '2020-09-02 00:36:12'),
 (10, 'Dealer Conference-2020', '1599028459-main.jpg', NULL, 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', NULL, 1, '2020-09-01 03:57:06', '2020-09-02 00:34:19'),
 (12, 'For Test', '1599036256-mission-vission.jpg', NULL, 'Our vision is to become a global leader in every business of ourselves through product diversification, innovation and customer’s satisfaction. We also endeavor to attain a high level of productivity in all our operations through effective and efficient use of resources, adaptation of appropriate technology and alignment with core competencies.', NULL, 1, '2020-09-02 01:45:00', '2020-09-02 02:44:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notices`
+--
+
+DROP TABLE IF EXISTS `notices`;
+CREATE TABLE IF NOT EXISTS `notices` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `img` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heading` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text1` text COLLATE utf8mb4_unicode_ci,
+  `text2` text COLLATE utf8mb4_unicode_ci,
+  `delete_status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `notices`
+--
+
+INSERT INTO `notices` (`id`, `img`, `heading`, `text1`, `text2`, `delete_status`, `created_at`, `updated_at`) VALUES
+(1, '1601356278-download (1).jpg', 'Job circular 1 - Technical  Engineer', 'Universal LP Gas Cylinder Limited Job Circular 2020', 'Post Position Name: Technical  Engineer \r\n\r\nJob Published Date: 28 December 2019\r\n\r\nApplication Deadline: 31 January 2020\r\n\r\nSalary: Negotiable \r\n\r\nEducational Requirements: Bsc in CSE\r\n\r\nExperience Requirements: 2 years+\r\n\r\nNumber of Job Vacancy: 5\r\n\r\nJobs Location: Anywhere in Bangladesh.\r\n\r\nJob Nature: Full-time', '1', '2020-09-28 23:11:18', '2020-09-29 03:37:32'),
+(3, NULL, 'Job circular 2 - Merketing', 'Universal LP GAS looking for smart people', 'Organization Name: Universal LP Gas Cylinder Limited  \r\n\r\nPost Position Name: Merketing \r\n\r\nJob Published Date: 28 December 2019\r\n\r\nApplication Deadline: 31 January 2020\r\n\r\nSalary: Negotiable \r\n\r\nEducational Requirements: Bsc in BBA\r\n\r\nExperience Requirements: 2 years+\r\n\r\nNumber of Job Vacancy: 5\r\n\r\nJobs Location: Anywhere in Bangladesh.\r\n\r\nJob Nature: Full-time', '1', '2020-09-29 03:33:05', '2020-09-29 03:37:56'),
+(2, '1601363310-download.jpg', 'Job circular 3 - Accounting', 'Universal LP GAS looking for experienced Accountant', 'Organization Name: Universal LP Gas Cylinder Limited  \r\n\r\nPost Position Name: Merketing \r\n\r\nJob Published Date: 28 December 2019\r\n\r\nApplication Deadline: 31 January 2020\r\n\r\nSalary: Negotiable \r\n\r\nEducational Requirements: Bsc in BBA\r\n\r\nExperience Requirements: 2 years+\r\n\r\nNumber of Job Vacancy: 5\r\n\r\nJobs Location: Anywhere in Bangladesh.\r\n\r\nJob Nature: Full-time', '1', '2020-09-29 00:59:45', '2020-09-29 03:53:33'),
+(4, '1601363310-download.jpg', 'Job circular 4 - Test', 'Test', 'Organization Name: Universal LP Gas Cylinder Limited  \r\n\r\nPost Position Name: Merketing \r\n\r\nJob Published Date: 28 December 2019\r\n\r\nApplication Deadline: 31 January 2020\r\n\r\nSalary: Negotiable \r\n\r\nEducational Requirements: Bsc in BBA\r\n\r\nExperience Requirements: 2 years+\r\n\r\nNumber of Job Vacancy: 5\r\n\r\nJobs Location: Anywhere in Bangladesh.\r\n\r\nJob Nature: Full-time', '1', '2020-09-29 00:59:45', '2020-09-29 03:38:45');
 
 -- --------------------------------------------------------
 
@@ -705,7 +737,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 --
 
 INSERT INTO `settings` (`id`, `favicon`, `logo`, `contact`, `address_first_part`, `address_second_part`, `email`, `facebook`, `linkedin`, `youtube`, `twitter`, `ticker`, `visitor`, `unique_visitor`, `delete_status`, `created_at`, `updated_at`) VALUES
-(1, '1599449577-favicon.png', '1599449577-logo.png', '+88028419450', 'House: #514 (3rd Floor), Road: #9', 'DOHS, Baridhara, Dhaka, Bangladesh', 'info@universallpgas.com', 'https://www.facebook.com/Universal-Lp-Gas-Gas-Cylinder-Ltd-157384465016083/', NULL, 'https://www.youtube.com/channel/UCsjeJ87qcRH_6dYNoPmGl5A', 'https://www.linkedin.com/company/universal-lpg', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 29, 0, '1', '2020-08-17 21:24:52', '2020-09-22 05:37:21');
+(1, '1599449577-favicon.png', '1599449577-logo.png', '+88028419450', 'House: #514 (3rd Floor), Road: #9', 'DOHS, Baridhara, Dhaka, Bangladesh', 'info@universallpgas.com', 'https://www.facebook.com/Universal-Lp-Gas-Gas-Cylinder-Ltd-157384465016083/', NULL, 'https://www.youtube.com/channel/UCsjeJ87qcRH_6dYNoPmGl5A', 'https://www.linkedin.com/company/universal-lpg', 'We are working hard to ensure healthy products for a perfect healthy life of customer through innovation processes. We are devoted to investing in our people, our company and the communities where we operate to help position the company for long-term, sustainable growth.', 47, 0, '1', '2020-08-17 21:24:52', '2020-09-29 01:26:56');
 
 -- --------------------------------------------------------
 

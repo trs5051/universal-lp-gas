@@ -17,7 +17,7 @@
 
                     @forelse ($categories as $category)
                         <li><a href="javascript:void(0)" class="control"
-                                data-filter=".category_{{ $category->id }}">{{ $category->title }}</a></li>
+                                data-filter=".category_{{ $category->id ?? '' }}">{{ $category->title ?? "" }}</a></li>
                     @empty
                     @endforelse
                 </ul>
