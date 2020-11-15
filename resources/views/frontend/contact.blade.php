@@ -54,7 +54,8 @@
 
                     <!-- head-office-location -->
                     <div class="col-md-7 head-office-location">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14681.86096850902!2d91.34677919665384!3d23.08005887915131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753660fcbdbdef5%3A0xdb2f1fc464fa4ada!2sUniversal+LP+Gas!5e0!3m2!1sen!2sbd!4v1557041322325!5m2!1sen!2sbd"  frameborder="0" style="border:0; width:100%;height:100%" allowfullscreen ></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.76150000301!2d91.79871754840059!3d22.362632606025723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd8fa4cf866f9%3A0x52151c21d392cace!2sRose%20Valley%20Residential%20Area%2C%20Chattogram!5e0!3m2!1sen!2sbd!4v1605457519217!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14681.86096850902!2d91.34677919665384!3d23.08005887915131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753660fcbdbdef5%3A0xdb2f1fc464fa4ada!2sUniversal+LP+Gas!5e0!3m2!1sen!2sbd!4v1557041322325!5m2!1sen!2sbd"  frameborder="0" style="border:0; width:100%;height:100%" allowfullscreen ></iframe> --}}
                     </div>
                     <!-- /.head-office-location -->
                 </div>
@@ -97,7 +98,8 @@
 
                     <!-- head-office-location -->
                     <div class="col-md-7 head-office-location">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14681.86096850902!2d91.34677919665384!3d23.08005887915131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753660fcbdbdef5%3A0xdb2f1fc464fa4ada!2sUniversal+LP+Gas!5e0!3m2!1sen!2sbd!4v1557041322325!5m2!1sen!2sbd"  frameborder="0" style="border:0; width:100%;height:100%" allowfullscreen ></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233668.28756833775!2d90.27937101057701!3d23.780628607924317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe1efe97f35863a57!2sUniversal%20Gas%20%26%20Gas%20Cylinder%20Ltd.!5e0!3m2!1sen!2sbd!4v1605456620145!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14681.86096850902!2d91.34677919665384!3d23.08005887915131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3753660fcbdbdef5%3A0xdb2f1fc464fa4ada!2sUniversal+LP+Gas!5e0!3m2!1sen!2sbd!4v1557041322325!5m2!1sen!2sbd"  frameborder="0" style="border:0; width:100%;height:100%" allowfullscreen ></iframe> --}}
                     </div>
                     <!-- /.head-office-location -->
                 </div>
